@@ -25,10 +25,29 @@ const USERACCOUNTPAGE=(DIV)=>{
 
             <div class='EmailHolder'></div>
 
-            
-            
-        
         </div>
+
+        <div class='FunctionsHolders'>
+
+            <button>Premium</button>
+
+            <button>Community</button>
+
+            <button>Settings</button>
+
+            <button>Privacy Policy</button>
+
+            <button>Saved Movies</button>
+
+            <button>More Apps</button>
+
+            <button>Contact Us</button>
+
+        </div>
+
+
+
+        
     
     `;
 
