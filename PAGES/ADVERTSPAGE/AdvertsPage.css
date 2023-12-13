@@ -1,0 +1,9 @@
+.AdvertsImage{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
