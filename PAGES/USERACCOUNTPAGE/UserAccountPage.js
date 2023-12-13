@@ -17,7 +17,7 @@ const USERACCOUNTPAGE=(DIV)=>{
 
             <div class='ProfileImageHolder'>
             
-                <img class='ProfileImage' src='../../IMAGES/Logos/movie lander logo.jpg'/>
+                <img class='ProfileImage' src='./IMAGES/Logos/movie lander logo.jpg'/>
 
             </div>
 
