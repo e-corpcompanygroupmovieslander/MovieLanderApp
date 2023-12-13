@@ -5,7 +5,7 @@
 .UserDetails{
     position: relative;
     width: 95%;
-    height: 50%;
+    height: 40%;
     background: #00000080;
     left: 2%;
     top: 10%;
@@ -45,7 +45,7 @@
     width: 98%;
     height: 50px;
     background: #00000080;
-    bottom: 5%;
+    bottom: 1%;
     left: 1%;
     border-radius: 10px;
     display: inline-flex;
@@ -65,8 +65,8 @@
 
 #UserName{
     font-size: 16px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
     text-align: left;
     margin-left: 1rem;
 }
