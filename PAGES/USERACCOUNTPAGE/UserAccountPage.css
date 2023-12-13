@@ -42,11 +42,11 @@
 
 .EmailHolder{
     position: absolute;
-    width: 95%;
+    width: 98%;
     height: 50px;
     background: #00000080;
     bottom: 5%;
-    left: 2%;
+    left: 1%;
     border-radius: 10px;
     display: inline-flex;
 }
@@ -54,7 +54,7 @@
 #EmailHolder{
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: auto;
+    margin-left: 1rem;
     margin-right: auto;
 }
 
