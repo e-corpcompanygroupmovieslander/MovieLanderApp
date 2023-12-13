@@ -54,8 +54,9 @@
 #EmailHolder{
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     margin-right: auto;
+    font-style: italic;
 }
 
 #UserLoading{
