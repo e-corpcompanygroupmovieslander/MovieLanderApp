@@ -3,6 +3,7 @@ import { RECOMMENDEDANIMATIONS } from "../RECOMMENDEDANIMATIONS/RecommendedAnima
 import { RECOMMENDEDMARATHONS } from "../RECOMMENDEDMARATHONS/RecommendedMarathons.js";
 import { RECOMMENDEDMOVIES } from "../RECOMMENDEDMOVIES/RecommendedMovies.js";
 import { RECOMMENDEDSERIES } from "../RECOMMENDEDSERIES/RecommendedSeries.js";
+import { USERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const HOMEPAGE=(DIV)=>{
 
@@ -72,11 +73,11 @@ const HOMEPAGE=(DIV)=>{
 
     <footer>
     
-    <img src='./IMAGES/Icons/list.png'/>
+        <img src='./IMAGES/Icons/list.png'/>
 
-    <img src='./IMAGES/Icons/movies.png'/>
+        <img src='./IMAGES/Icons/movies.png'/>
 
-    <img src='./IMAGES/Icons/profile.png'/>
+        <img id='UserAccountIcon' src='./IMAGES/Icons/profile.png'/>
 
     </footer>
 
@@ -92,6 +93,14 @@ const HOMEPAGE=(DIV)=>{
     RECOMMENDEDMARATHONS(DIV);
 
     RECOMMENDEDSERIES(DIV);
+
+    const UserAccountIcon=document.querySelector('#UserAccountIcon');
+
+    UserAccountIcon.addEventListener('click',()=>{
+
+        USERACCOUNTPAGE(DIV);
+
+    })
 
 }
 

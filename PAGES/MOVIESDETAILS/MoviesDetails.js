@@ -21,6 +21,7 @@ const MOVIESDETAILS=(DIV,element)=>{
         MOVIESSETUPPAGE(DIV,element);
 
     })
+    
 }
 
 export{MOVIESDETAILS}

@@ -1,0 +1,71 @@
+.ModeIcon{
+    margin-right: 1rem;
+}
+
+.UserDetails{
+    position: relative;
+    width: 95%;
+    height: 50%;
+    background: #00000080;
+    left: 2%;
+    top: 10%;
+    border-radius: 10px;
+    display: block;
+}
+
+.ProfileImageHolder{
+    position: absolute;
+    width: 40%;
+    height: 70%;
+    top: 5%;
+    left: 1%;
+    display: block;
+    background: #00000080;
+    border-radius: 20px;
+}
+
+.ProfileImage{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.UserDetailsHolder{
+    position: absolute;
+    right: 1%;
+    height: 70%;
+    width: 55%;
+    border-radius: 10px;
+    top: 5%;
+    display: block;
+}
+
+.EmailHolder{
+    position: absolute;
+    width: 95%;
+    height: 50px;
+    background: #00000080;
+    bottom: 5%;
+    left: 2%;
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+#EmailHolder{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#UserLoading{
+    top: 50%;
+}
+
+#UserName{
+    font-size: 16px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    margin-left: 1rem;
+}
