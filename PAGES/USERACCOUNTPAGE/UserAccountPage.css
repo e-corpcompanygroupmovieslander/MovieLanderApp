@@ -76,8 +76,24 @@
     position: absolute;
     width: 100%;
     background: #00000080;
-    height: 48%;
+    height: 49%;
     bottom: 0;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+#TagName{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    text-align: left;
+}
+
+#TagImage{
+    position: absolute;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    right: 1%;
+    top: 0;
 }

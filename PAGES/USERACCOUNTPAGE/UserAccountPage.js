@@ -29,19 +29,62 @@ const USERACCOUNTPAGE=(DIV)=>{
 
         <div class='FunctionsHolders'>
 
-            <button>Premium</button>
+            <button>
+            
+                <h1 id='TagName'>Premium</h1>
 
-            <button>Community</button>
+                <img  id='TagImage' src='./IMAGES/Icons/lock.png'/>
 
-            <button>Settings</button>
+            </button>
 
-            <button>Privacy Policy</button>
+            
+            <button>
+            
+                <h1 id='TagName'>Community</h1>
 
-            <button>Saved Movies</button>
+                <img  id='TagImage' src='./IMAGES/Icons/chat.png'/>
 
-            <button>More Apps</button>
+            </button>
 
-            <button>Contact Us</button>
+            <button>
+            
+                <h1 id='TagName'>Settings</h1>
+
+                <img  id='TagImage' src='./IMAGES/Icons/setting.png'/>
+
+            </button>
+
+            <button>
+            
+                <h1 id='TagName'>Privacy Policy</h1>
+
+                <img  id='TagImage' src='./IMAGES/Icons/privacypolicy.png'/>
+
+            </button>
+
+            <button>
+            
+                <h1 id='TagName'>Saved Movies</h1>
+
+                <img  id='TagImage' src='./IMAGES/Icons/saved.png'/>
+
+            </button>
+
+            <button>
+            
+                <h1 id='TagName'>More Apps</h1>
+
+                <img  id='TagImage' src='./IMAGES/Icons/app.png'/>
+
+            </button>
+
+            <button>
+            
+                <h1 id='TagName'>Contact Us</h1>
+
+                <img  id='TagImage' src='./IMAGES/Icons/phone.png'/>
+
+            </button>
 
         </div>
 
