@@ -1,0 +1,7 @@
+const DISPLAYDATA=(ELEMENT,MESSAGE)=>{
+
+    ELEMENT.innerHTML=MESSAGE;
+
+}
+
+export{DISPLAYDATA};

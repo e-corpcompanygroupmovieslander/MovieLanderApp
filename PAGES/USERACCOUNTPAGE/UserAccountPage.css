@@ -1,0 +1,25 @@
+.UserDetails{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    top: 40px;
+    bottom: 0;
+    left: 0%;
+    display: block;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.UserHolderDetails{
+    position: relative;
+    width: 95%;
+    left: 2%;
+    height: 30%;
+    border-radius: 20px;
+    background: red;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

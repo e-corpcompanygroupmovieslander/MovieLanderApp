@@ -1,0 +1,4 @@
+const ICONSPATH=`../ASSETS/ICONS/`;
+
+
+export{ICONSPATH}

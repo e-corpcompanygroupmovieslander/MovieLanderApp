@@ -1,0 +1,7 @@
+const ADDPACKAGE=(ELEMENT,ELEMENT1)=>{
+
+    ELEMENT.append(ELEMENT1);
+
+}
+
+export{ADDPACKAGE}

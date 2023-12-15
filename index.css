@@ -1,0 +1,78 @@
+@import url('./CONNECTION/Connection.css');
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: white;
+    transition: 1s;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    position: fixed;
+    
+}
+
+div{
+    position: fixed;
+    background: gray;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+img{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+input{
+    position: relative;
+    width: 95%;
+    min-height: 16px;
+    height: 32px;
+    max-height: 32px;
+    background: #00000080;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    left: 2%;
+    border-radius: 5px;
+    border: none;
+    text-align: left;
+    padding-left: 1%;
+    color: white;
+}
+
+button{
+    position: relative;
+    width: 95%;
+    min-height: 32px;
+    height: 50px;
+    max-height: 50px;
+    background: #00000080;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    left: 2%;
+    border-radius: 5px;
+    border: none;
+    padding-left: 1%;
+    color: white;
+}
+
+
+h1{
+    position: relative;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 25px;
+}
