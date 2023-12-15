@@ -1,5 +1,7 @@
 import { STYLED } from "../../CONNECTION/Connection.js";
+import { COMMUNITYPAGE } from "../COMMUNITYPAGE/CommunityPage.js";
 import { HOMEPAGE } from "../HOMEPAGE/HomePage.js";
+import { SETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
 
 const USERACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
 
@@ -21,18 +23,53 @@ const USERACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
 
         <div class='UserHolderDetails'></div>
 
-        <button>Premium</button>
+        <button class='UserAccountButtons'>
 
-        <button>Commnunity</button>
+            <h1 class='buttonHolders'>Premium</h1>
 
-        <button>Wish List</button>
+            <img class='UserAccountImages' src='${ICONS}lock.png'/>
+        
+        </button>
 
-        <button>Settings</button>
+        <button id='Community' class='UserAccountButtons'>
 
-        <button>Contact Us</button>
+            <h1 class='buttonHolders'>Community</h1>
 
-        <button>More Apps</button>
+            <img class='UserAccountImages' src='${ICONS}chat.png'/>
+        
+        </button>
 
+        <button class='UserAccountButtons'>
+
+            <h1 class='buttonHolders'>Wish List</h1>
+
+            <img class='UserAccountImages' src='${ICONS}saved.png'/>
+        
+        </button>
+
+        <button id='Settings' class='UserAccountButtons'>
+
+            <h1 class='buttonHolders'>Settings</h1>
+
+            <img class='UserAccountImages' src='${ICONS}setting.png'/>
+        
+        </button>
+
+        <button class='UserAccountButtons'>
+
+            <h1 class='buttonHolders'>More Apps</h1>
+
+            <img class='UserAccountImages' src='${ICONS}app.png'/>
+        
+        </button>
+
+        <button class='UserAccountButtons'>
+
+            <h1 class='buttonHolders'>Contact Us</h1>
+
+            <img class='UserAccountImages' src='${ICONS}phone.png'/>
+        
+        </button>
     
     </div>
     
@@ -112,6 +149,23 @@ const USERACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
         STYLED(DARKMODE,'display','none');
 
     })
+
+    const COMMUNITYBUTTON=document.querySelector('#Community');
+
+    COMMUNITYBUTTON.addEventListener('click',()=>{
+
+        COMMUNITYPAGE(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS);
+
+    })
+
+    const SETTINGS=document.querySelector('#Settings');
+
+    SETTINGS.addEventListener('click',()=>{
+
+        SETTINGSPAGE(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS);
+
+    })
+
 
 }
 

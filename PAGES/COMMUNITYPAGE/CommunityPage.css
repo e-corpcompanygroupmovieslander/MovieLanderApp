@@ -1,0 +1,26 @@
+.MovieDisplayDiv{
+    position: absolute;
+    width: 95%;
+    left: 2%;
+    height: auto;
+    bottom: 49px;
+    border-radius: 10px;
+    background: #00000080;
+    top: 53px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.RequestMovie{
+    position: absolute;
+    bottom: 0;
+}
+
+.SendButton{
+    position: absolute;
+    bottom: 0;
+    width: 20%;
+    height: 32px;
+    display: none;
+    left:78%;
+}
