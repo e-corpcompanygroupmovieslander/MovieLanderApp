@@ -74,6 +74,8 @@ const USERACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
             
         } else {
             
+            themeColorMetaTag.setAttribute('content', '#212121');
+
         }
 
         STYLED(DIV,'background','#212121');
@@ -94,6 +96,8 @@ const USERACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
             StatusBar.backgroundColorByHexString('#5C829A');
             
         } else {
+           
+            themeColorMetaTag.setAttribute('content', '#5C829A');
             
         }
 
