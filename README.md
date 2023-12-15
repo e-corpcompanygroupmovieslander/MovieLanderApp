@@ -1,3 +1,0 @@
-# MovieLanderApp
-# MovieLanderApp
-# MovieLanderApp
