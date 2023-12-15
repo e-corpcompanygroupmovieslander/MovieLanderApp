@@ -51,6 +51,8 @@ const USERACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
 
     const DARKMODE=document.querySelector('#DarkModeIcon');
 
+    const themeColorMetaTag = document.getElementById('theme-color-meta');
+
     if (localStorage.getItem('ModeColour')==='#212121') {
 
         STYLED(MODE,'display','inline-flex');
