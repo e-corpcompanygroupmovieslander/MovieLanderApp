@@ -1,3 +1,4 @@
+import { LOGOUTPAGE } from "../LOGOUTPAGE/LogOutPage.js";
 import { USERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const SETTINGSPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
@@ -66,7 +67,7 @@ const SETTINGSPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
         
         </button>
 
-        <button class='UserAccountButtons'>
+        <button id='Logout' class='UserAccountButtons'>
 
             <h1 class='buttonHolders'>LogOut</h1>
 
@@ -83,6 +84,14 @@ const SETTINGSPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
     BackIcon.addEventListener('click',()=>{
 
         USERACCOUNTPAGE(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS);
+
+    })
+
+    const LOGOUT=document.querySelector('#Logout');
+
+    LOGOUT.addEventListener('click',()=>{
+
+        LOGOUTPAGE(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS);
 
     })
 

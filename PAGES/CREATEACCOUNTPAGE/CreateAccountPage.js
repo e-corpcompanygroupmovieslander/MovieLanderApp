@@ -185,6 +185,15 @@ const CREATEACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
                             
                             if (user) {
 
+                                if (user.Premium) {
+
+                                    ADVANCE.ADDSTORAGE('local','Premium','TRUE');
+            
+                                } else {
+                                    
+                                    ADVANCE.REMOVESTORAGE('local','Premium');
+                                }
+
                                 ADVANCE.ADDSTORAGE('local','User',user.SecretCode);  
 
                                 HOMEPAGE(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS);

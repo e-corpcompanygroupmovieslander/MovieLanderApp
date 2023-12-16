@@ -1,6 +1,7 @@
 import { STYLED } from "../../CONNECTION/Connection.js";
 import { COMMUNITYPAGE } from "../COMMUNITYPAGE/CommunityPage.js";
 import { HOMEPAGE } from "../HOMEPAGE/HomePage.js";
+import { MOREAPPSPAGE } from "../MOREAPPSPAGE/MoreAppsPage.js";
 import { SETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
 
 const USERACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
@@ -55,7 +56,7 @@ const USERACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
         
         </button>
 
-        <button class='UserAccountButtons'>
+        <button id='MoreApps' class='UserAccountButtons'>
 
             <h1 class='buttonHolders'>More Apps</h1>
 
@@ -163,6 +164,14 @@ const USERACCOUNTPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
     SETTINGS.addEventListener('click',()=>{
 
         SETTINGSPAGE(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS);
+
+    })
+
+    const MOREAPPS=document.querySelector('#MoreApps');
+
+    MOREAPPS.addEventListener('click',()=>{
+
+        MOREAPPSPAGE(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS);
 
     })
 
