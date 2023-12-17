@@ -30,6 +30,7 @@
     margin-top: 1rem;
     display: block;
     border-radius: 20px;
+    background: #00000080;
 }
 
 .ProfileUserImage{
@@ -46,6 +47,7 @@
     margin-top: 1rem;
     display: block;
     border-radius: 20px;
+    background: #00000080;
 }
 
 .NameHolders{
