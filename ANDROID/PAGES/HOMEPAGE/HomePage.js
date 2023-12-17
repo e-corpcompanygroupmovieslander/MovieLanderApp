@@ -80,8 +80,6 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     </div>
 
-    
-
     `);
 
 

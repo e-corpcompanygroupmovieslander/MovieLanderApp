@@ -20,6 +20,16 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         
         </div>
     
+
+        <div class='AndroidFooter'>
+
+            <img src='${ICONS}review.png'/>
+
+            <img src='${ICONS}library.png'/>
+
+            <img id='MenuIcon' class='ProfileIcon' src='${ICONS}menu.png'/>
+        
+        </div>
     
     `);
 
