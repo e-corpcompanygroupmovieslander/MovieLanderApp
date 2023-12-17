@@ -68,7 +68,22 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     DETAILSICON.addEventListener('click',()=>{
 
+        
+        if (localStorage.getItem('ModeColour')==='#5C829A') {
+
+            STYLED(DETAILSDIV,'background','#5C829A');
+
+            
+        } else {
+            
+            STYLED(DETAILSDIV,'background','#212121');
+            
+        }
+
+
         if (element.MovieDetails) {
+
+            
 
             STYLED(DETAILSDIV,'height','100%');
             
