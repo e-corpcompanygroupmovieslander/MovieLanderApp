@@ -2,6 +2,7 @@ import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDCOMMUNITYPAGE } from "../COMMUNITYPAGE/CommunityPage.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { ANDROIDSETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
+import { GETUSERDETAILS } from "./GetUserDetails.js";
 
 const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -19,7 +20,20 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         </div>
 
-        <div class='UserAccountDetails'></div>
+        <div class='UserAccountDetails'>
+
+            <div class='ProfileImage'>
+
+                <img class='ProfileUserImage'  src='./ASSETS/IMAGES/playstore.png'/>
+            
+            </div>
+
+            <div class='UserDetailsHolder'>
+            
+            </div>
+        
+        
+        </div>
 
         <button>Premium</button>
 
@@ -36,6 +50,8 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         <button>Contact US</button>
 
     `)
+
+    GETUSERDETAILS(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     const BACKICON=document.querySelector('.BackIcon');
 
