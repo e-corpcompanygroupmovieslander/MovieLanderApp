@@ -15,6 +15,8 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         </div>
         <br><br><br><br>
 
+        <button>Connect Device</button>
+
         <button>Parental Control</button>
 
         <button>Privacy Policy</button>

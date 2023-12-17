@@ -43,8 +43,6 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         <button class='Settings'>Settings</button>
 
-        <button>Connect Device</button>
-
         <button>More Apps</button>
 
         <button>Contact US</button>
