@@ -20,3 +20,15 @@
 #MenuIcon{
     transform: rotate(90deg);
 }
+
+.WatchMovieButton{
+    position: absolute;
+    top: 40%;
+}
+
+.MovieDetailsHolder{
+    position: absolute;
+    top: 50%;
+    background: #00000080;
+    border-radius: 20px 20px 0px 0px;
+}
