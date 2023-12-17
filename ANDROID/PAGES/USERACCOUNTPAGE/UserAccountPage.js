@@ -24,7 +24,7 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <div class='ProfileImage'>
 
-                <img class='ProfileUserImage'  src='./ASSETS/IMAGES/playstore.png'/>
+                <img class='ProfileUserImage'  src='https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/ASSETS/IMAGES/playstore.png'/>
             
             </div>
 
