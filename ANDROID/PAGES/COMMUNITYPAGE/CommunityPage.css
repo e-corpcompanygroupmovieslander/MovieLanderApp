@@ -1,0 +1,27 @@
+.ChatDivMessages{
+    position: absolute;
+    width: 95%;
+    left: 2%;
+    border-radius: 20px;
+    height: auto;
+    bottom: 0;
+    background: #00000080;
+    top: 60px;
+    margin-bottom: 4rem;
+}
+
+
+.RequestMovieInput{
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+}
+
+.RequestSendButton{
+    position: absolute;
+    bottom: 0;
+    height: 32px;
+    width: 20%;
+    left:  77%;
+    margin-bottom: 1rem;
+}

@@ -13,71 +13,16 @@
 
 body{
     position: fixed;
-    background:#5C829A ;
+    background: #5C829A;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
-    display: block;
+    display: block;  
 }
-
 
 div{
     position: fixed;
-    background: transparent;
-    overflow: hidden;
+    background: #5C829A;
     width: 100%;
     height: 100%;
     display: block;
-}
-
-img{
-    position: relative;
-    width: 20px;
-    height: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-input{
-    position: relative;
-    width: 95%;
-    min-height: 16px;
-    height: 32px;
-    max-height: 32px;
-    background: #00000080;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    left: 2%;
-    border-radius: 5px;
-    border: none;
-    text-align: left;
-    padding-left: 1%;
-    color: white;
-}
-
-button{
-    position: relative;
-    width: 95%;
-    min-height: 32px;
-    height: 50px;
-    max-height: 50px;
-    background: #00000080;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    left: 2%;
-    border-radius: 5px;
-    border: none;
-    padding-left: 1%;
-    color: white;
-}
-
-
-h1{
-    position: relative;
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: 25px;
+    overflow: hidden;
 }

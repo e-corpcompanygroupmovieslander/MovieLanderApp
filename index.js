@@ -1,25 +1,30 @@
+ document.addEventListener('touchstart', function(event) {
+
+        if (event.touches.length > 1) {
+  
+          event.preventDefault();
+  
+        }
+  
+      },
+  
+       { passive: false });
+    
+      document.addEventListener('wheel', function(event) {
+  
+        if ((event.ctrlKey || event.metaKey) && !event.shiftKey) {
+  
+          event.preventDefault();
+  
+       
+        }
+        
+});
+
 const DIV=document.querySelector('div');
 
-localStorage.setItem('Device','Web');
+localStorage.setItem('Device','Android');
 
-const themeColorMetaTag = document.getElementById('theme-color-meta');
-
-// Now you can use the StatusBar API
-let STATUSMODE = localStorage.getItem('ModeColour');
- 
-if (STATUSMODE) {
- 
-    DIV.style.background=STATUSMODE;
-
-    themeColorMetaTag.setAttribute('content', '#ff5733');
-    
-} else {
-    
-    DIV.style.background='#5C829A';
-
-    themeColorMetaTag.setAttribute('content', '#ff5733');
-    
-}
 
 setTimeout(() => {
 

@@ -1,5 +1,7 @@
+import { ANDROIDAUTOLOGINPAGE } from "../ANDROID/PAGES/AUTOLOGINPAGE/AutoLoginPage.js";
 import * as ADVANCE from "../CONNECTION/Connection.js"
-import { AUTOLOGINPAGE } from "../PAGES/AUTOLOGINPAGE/AutoLoginPage.js";
+import { WEBHOMEPAGE } from "../WEB/PAGES/HOMEPAGE/HomePage.js";
+
 
 const CONNECTION=(DIV)=>{
 
@@ -17,7 +19,17 @@ const CONNECTION=(DIV)=>{
 
     console.log(ADVANCE);
 
-    AUTOLOGINPAGE(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS);
+    if (localStorage.getItem('Device')==='Web') {
+       
+        WEBHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+        
+    } else {
+      
+        ANDROIDAUTOLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    }
+
+
     
 }
 
