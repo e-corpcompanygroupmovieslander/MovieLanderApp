@@ -32,4 +32,6 @@ const Termslinks='https://e-corpcompanygroupmovieslander.github.io/MovieLander/T
 
 const ADVERTSPATH=`https://e-corpcompanygroupmovieslander.github.io/MovieLander/AdvertsImages/`;
 
-export{LOGINAPI,ADVERTSAPI,ADVERTSPATH,ANIMATIONAPI,MOVIESPATH,SERIESAPI,MARATHONAPI,MOVIESAPI}
+const CREATEACCOUNTAPI=`https://script.google.com/macros/s/AKfycbyxZa-t073EY1dMSxIUXuiXD9B03gcgaJyGTpXvV8qpRPG6TGMtk6WKocQ8Rsf0aXEF/exec`;
+
+export{LOGINAPI,ADVERTSAPI,ADVERTSPATH,ANIMATIONAPI,MOVIESPATH,SERIESAPI,MARATHONAPI,MOVIESAPI,CREATEACCOUNTAPI,PRIVACYTEXT}
