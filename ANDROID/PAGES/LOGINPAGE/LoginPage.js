@@ -1,4 +1,5 @@
 import { LOGINAPI } from "../../../APIS/Api.js";
+import { ANDROIDCREATEACCOUNTPAGE } from "../CREATEACCOUNTPAGE/CreateAccountPage.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 
 const ANDROIDLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -17,7 +18,7 @@ const ANDROIDLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         <button class='LogInButton'>LogIn</button>
 
-        <button>Create Account</button>
+        <button class='CreateAccountButton'>Create Account</button>
 
     `);
 
@@ -99,6 +100,14 @@ const ANDROIDLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             }, 2000);
             
         }
+
+    })
+
+    const CREATEACCOUNTBUTTON=document.querySelector('.CreateAccountButton');
+
+    CREATEACCOUNTBUTTON.addEventListener('click',()=>{
+
+        ANDROIDCREATEACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     })
 

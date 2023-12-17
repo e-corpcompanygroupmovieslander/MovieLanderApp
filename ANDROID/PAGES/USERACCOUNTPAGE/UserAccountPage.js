@@ -1,7 +1,10 @@
 import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDCOMMUNITYPAGE } from "../COMMUNITYPAGE/CommunityPage.js";
+import { ANDROIDCONTACTUS } from "../CONTACTUSPAGE/ContactUsPage.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
+import { ANDROIDMOREAPPS } from "../MOREAPPS/MoreApps.js";
 import { ANDROIDSETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
+import { ANDROIDWISHLISTPAGE } from "../WISHLISTPAGE/WishListPage.js";
 import { GETUSERDETAILS } from "./GetUserDetails.js";
 
 const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -35,17 +38,53 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </div>
 
-        <button>Premium</button>
+        <button>
+            
+            <h1 class='HolderName'>Premium</h1>
 
-        <button class='Community'>Community</button>
+            <img class='AppIcon' src='${ICONS}lock.png'/>
 
-        <button>Wish List</button>
+        </button>
 
-        <button class='Settings'>Settings</button>
+        <button class='Community'>
 
-        <button>More Apps</button>
+            <h1 class='HolderName'>Community</h1>
 
-        <button>Contact US</button>
+            <img class='AppIcon' src='${ICONS}chat.png'/>
+            
+        </button>
+
+        <button class='Wishlist'>
+
+            <h1 class='HolderName'>WishList</h1>
+
+            <img class='AppIcon' src='${ICONS}saved.png'/>
+        
+        </button>
+
+        <button class='Settings'>
+
+            <h1 class='HolderName'>Settings</h1>
+
+            <img class='AppIcon' src='${ICONS}setting.png'/>
+        
+        </button>
+
+        <button class='MoreApps'>
+
+            <h1 class='HolderName'>More Apps</h1>
+
+            <img class='AppIcon' src='${ICONS}app.png'/>
+        
+        </button>
+
+        <button class='ContactUs'>
+
+            <h1 class='HolderName'>Contact US</h1>
+
+            <img class='AppIcon' src='${ICONS}phone.png'/>
+        
+        </button>
 
     `)
 
@@ -138,6 +177,30 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         }
 
     }
+
+    const WISHLIST=document.querySelector('.Wishlist');
+
+    WISHLIST.addEventListener('click',()=>{
+
+        ANDROIDWISHLISTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
+
+    const MOREAPPS=document.querySelector('.MoreApps');
+
+    MOREAPPS.addEventListener('click',()=>{
+
+        ANDROIDMOREAPPS(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
+
+    const CONTACTUS=document.querySelector('.ContactUs');
+
+    CONTACTUS.addEventListener('click',()=>{
+
+        ANDROIDCONTACTUS(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
     
 }
 

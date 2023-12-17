@@ -1,3 +1,5 @@
+import { ANDROIDLOGOUTPAGE } from "../LOGOUTPAGE/LogOutPage.js";
+import { ANDROIDPARENTALCONTROL } from "../PARENTALCONTROL/ParentalControl.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -15,17 +17,61 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         </div>
         <br><br><br><br>
 
-        <button>Connect Device</button>
+        <button>
 
-        <button>Parental Control</button>
+            <h1 class='HolderName'>Connect Device</h1>
 
-        <button>Privacy Policy</button>
+            <img class='AppIcon' src='${ICONS}secretcode.png'/>
+        
+        </button>
 
-        <button>App Updates</button>
+        <button class='ParentalControl'>
 
-        <button>Delete Account</button>
+            <h1 class='HolderName'>Parental Control</h1>
 
-        <button>Log Out</button>
+            <img class='AppIcon' src='${ICONS}parentalcontrol.png'/>
+        
+        </button>
+
+        <button>
+
+            <h1 class='HolderName'>Privacy Policy</h1>
+
+            <img class='AppIcon' src='${ICONS}privacypolicy.png'/>
+        
+        </button>
+
+        <button>
+
+            <h1 class='HolderName'>Help </h1>
+
+            <img class='AppIcon' src='${ICONS}help.png'/>
+    
+        </button>
+
+        <button>
+        
+            <h1 class='HolderName'>Updates </h1>
+
+            <img class='AppIcon' src='${ICONS}upload.png'/>
+        
+        </button>
+
+        <button>
+
+            <h1 class='HolderName'>Delete Account </h1>
+
+            <img class='AppIcon' src='${ICONS}delete.png'/>
+        
+        </button>
+
+        <button class='LogOut'>
+
+            <h1 class='HolderName'>LogOut </h1>
+
+            <img class='AppIcon' src='${ICONS}logout.png'/>
+        
+        </button>
 
 
     `);
@@ -37,6 +83,22 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         ANDROIDUSERACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     });
+
+    const LOGOUT=document.querySelector('.LogOut');
+
+    LOGOUT.addEventListener('click',()=>{
+
+        ANDROIDLOGOUTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
+
+    const PARENTALCONTROL=document.querySelector('.ParentalControl');
+
+    PARENTALCONTROL.addEventListener('click',()=>{
+
+        ANDROIDPARENTALCONTROL(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
 
 
 }
