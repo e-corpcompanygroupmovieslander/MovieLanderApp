@@ -63,7 +63,7 @@ const SETTINGSPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
 
             <h1 class='buttonHolders'>Delete Account</h1>
 
-            <img class='UserAccountImages' src='${ICONS}Delete.png'/>
+            <img class='UserAccountImages' src='${ICONS}delete.png'/>
         
         </button>
 

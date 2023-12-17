@@ -1,3 +1,4 @@
+import { REQUESTAPI } from "../../APIS/Api.js";
 import { USERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const COMMUNITYPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
@@ -49,6 +50,14 @@ const COMMUNITYPAGE=(DIV,ADVANCE,ADD,DISPLAY,CLEAR,ICONS)=>{
             STYLED(SENDBUTTON,'display','none');
 
         }
+
+    })
+
+    SENDBUTTON.addEventListener('click',()=>{
+
+        
+
+        REQUESTAPI
 
     })
     
