@@ -1,3 +1,4 @@
+import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 
 const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
@@ -29,10 +30,18 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
             <img src='${ICONS}review.png'/>
 
-            <img src='${ICONS}library.png'/>
+            <img class='DetailsIcon' src='${ICONS}library.png'/>
 
             <img id='MenuIcon' class='ProfileIcon' src='${ICONS}menu.png'/>
         
+        </div>
+
+        <div class='DetailsDiv'>
+
+            ${element.MovieDetails}
+
+            <img class='CloseIcon' src='${ICONS}close.png'/>
+
         </div>
     
     `);
@@ -44,6 +53,34 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     });
+
+    const DETAILSICON=document.querySelector('.DetailsIcon');
+
+    const DETAILSDIV=document.querySelector('.DetailsDiv');
+
+    const CLOSEICON=document.querySelector('.CloseIcon');
+
+    CLOSEICON.addEventListener('click',()=>{
+        
+        STYLED(DETAILSDIV,'height','0');
+
+    })
+
+    DETAILSICON.addEventListener('click',()=>{
+
+        if (element.MovieDetails) {
+
+            STYLED(DETAILSDIV,'height','100%');
+            
+        } else {
+           
+            STYLED(DETAILSDIV,'height','0');
+
+        }
+
+
+
+    })
 
 }
 
