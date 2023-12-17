@@ -41,6 +41,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     display: block;
+    background: transparent;
 }
 
 .CloseIcon{
