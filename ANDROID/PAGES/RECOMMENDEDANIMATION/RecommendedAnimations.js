@@ -1,4 +1,5 @@
 import { ANIMATIONAPI, MOVIESPATH } from "../../../APIS/Api.js"
+import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 
 const ANDROIDRECOMMENDEDANIMATION=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -26,7 +27,13 @@ const ANDROIDRECOMMENDEDANIMATION=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             RECOMMENDEDIMAGES.src=MOVIESPATH+element.MovieImage;
             RECOMMENDEDIMAGES.classList.add('RecommendedImages')
 
-            ADD(ANIMATIONDIV,RECOMMENDEDIMAGES)
+            ADD(ANIMATIONDIV,RECOMMENDEDIMAGES);
+
+            RECOMMENDEDIMAGES.addEventListener('click',()=>{
+
+                MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)
+
+            })
         });
 
     }).catch((err) => {
