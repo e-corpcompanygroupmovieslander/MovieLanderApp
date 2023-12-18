@@ -1,4 +1,5 @@
 import { STYLED } from "../../../CONNECTION/Connection.js";
+import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 
 
 const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
@@ -149,6 +150,13 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     PLAYBUTTON.addEventListener('click',()=>{
 
+        if (localStorage.getItem('AppPlayer')==='Drive') {
+            
+            open(`https://drive.google.com/uc?export=download&id=${element.MovieSource}`);
+
+        } else {
+            
+        }
 
 
     })
