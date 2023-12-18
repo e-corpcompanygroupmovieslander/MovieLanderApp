@@ -1,3 +1,4 @@
+import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDCOMMUNITYPAGE } from "../COMMUNITYPAGE/CommunityPage.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { ANDROIDSETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
@@ -13,6 +14,8 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             <img class='BackIcon' src='${ICONS}back.png'/>
 
             <img class='LightModeIcon' src='${ICONS}sun.png'/>
+
+            <img class='DarkModeIcon' src='${ICONS}moon.png'/>
 
         </div>
 
@@ -58,11 +61,33 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     })
 
-    // 
-
     const LIGHTMODE=document.querySelector('.LightModeIcon');
 
-    LIGHTMODE.addEventListener('click',()=>{
+    const DARKMODE=document.querySelector('.DarkModeIcon');
+
+    if (localStorage.getItem('ModeColour')==='#5C829A') {
+
+        STYLED(DARKMODE,'display','none');
+
+        STYLED(LIGHTMODE,'display','inline-flex');
+        
+   
+
+    } else {
+        
+        STYLED(LIGHTMODE,'display','none');
+
+        STYLED(DARKMODE,'display','inline-flex');
+       
+    }
+
+    LIGHTMODE.onclick=()=>{
+
+        DIV.style.background='#212121';
+
+        STYLED(LIGHTMODE,'display','none');
+
+        STYLED(DARKMODE,'display','inline-flex');
 
         if (localStorage.getItem('Device')==='Android') {
 
@@ -76,10 +101,30 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             
         }
 
-        DIV.style.background='#212121';
+    }
 
-    })
+    DARKMODE.onclick=()=>{
 
+        DIV.style.background='#5C829A';
+
+        STYLED(DARKMODE,'display','none');
+
+        STYLED(LIGHTMODE,'display','inline-flex');
+
+        if (localStorage.getItem('Device')==='Android') {
+
+            ADVANCE.ADDSTORAGE('local','ModeColour','#5C829A');
+
+            StatusBar.backgroundColorByHexString('#5C829A');
+            
+        } else {
+           
+            console.log('Android Version Changed Colour');
+            
+        }
+
+    }
+    
 }
 
 export{ANDROIDUSERACCOUNTPAGE}
