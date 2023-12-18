@@ -43,7 +43,7 @@
     display: block;
     background: transparent;
 }
-
+ 
 .CloseIcon{
     position: absolute;
     background: #00000080;
@@ -100,4 +100,21 @@
     margin-bottom: 1rem;
     text-align: center;
     width: 100%;
+}
+
+.SelectPlayer{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    border-radius: 20px 20px 0px 0px;
+    display: block;
+}
+
+.OpenWith{
+   position: relative;
+   width: 100%;
+   text-align: center;
+   margin-top: 1rem;
+   margin-bottom: 1rem; 
 }

@@ -76,6 +76,28 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
             <img class='CloseIcon' src='${ICONS}close.png'/>
 
         </div>
+
+        <div class='SelectPlayer'>
+
+        <h1 class='OpenWith'>Open With</h1>
+
+        <button>
+
+            <h1 class='HolderName'>Drive Player</h1>
+
+            <img class='AppIcon' src='${ICONS}drive.png'/>
+        
+        </button>
+
+        <button>
+
+            <h1 class='HolderName'>Movie Lander Player</h1>
+
+            <img class='AppIcon' src='${ICONS}phone.png'/>
+        
+        </button>
+        
+        </div>
     
     `);
 
@@ -118,7 +140,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
     })
 
     DETAILSICON.addEventListener('click',()=>{
-
         
         if (localStorage.getItem('ModeColour')==='#5C829A') {
 
@@ -144,9 +165,11 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
         }
 
-
-
     })
+
+    const SELECTPLAYER=document.querySelector('.SelectPlayer');
+
+    
 
 }
 
