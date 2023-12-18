@@ -1,6 +1,7 @@
 import { LOGINAPI } from "../../../APIS/Api.js";
+import { ANDROIDPLAYER } from "../ANDROIDPLAYER/AndroidPlayer.js";
 import { ANDROIDCREATEACCOUNTPAGE } from "../CREATEACCOUNTPAGE/CreateAccountPage.js";
-import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
+
 
 const ANDROIDLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -59,7 +60,7 @@ const ANDROIDLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                     
                     ADVANCE.ADDSTORAGE('local','User',users.SecretCode);
 
-                    ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+                    ANDROIDPLAYER(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
                     
                 } else {
                    

@@ -19,6 +19,14 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         <button>
 
+            <h1 class='HolderName'>App Player</h1>
+
+            <img class='AppIcon' src='${ICONS}movies.png'/>
+    
+        </button>
+
+        <button>
+
             <h1 class='HolderName'>Connect Device</h1>
 
             <img class='AppIcon' src='${ICONS}secretcode.png'/>
