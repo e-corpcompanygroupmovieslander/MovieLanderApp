@@ -17,7 +17,7 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         </div>
         <br><br><br><br>
 
-        <button>
+        <button class='AppPlayer'>
 
             <h1 class='HolderName'>App Player</h1>
 
@@ -105,6 +105,28 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     PARENTALCONTROL.addEventListener('click',()=>{
 
         ANDROIDPARENTALCONTROL(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
+
+    const APPPLAYER=document.querySelector('.AppPlayer');
+    
+    APPPLAYER.addEventListener('click',()=>{
+
+        if (localStorage.getItem('AppPlayer')) {
+
+            if (localStorage.getItem('AppPlayer')==='Drive') {
+
+                localStorage.setItem('AppPlayer','LanderPlayer')
+                
+            } else {
+                
+                localStorage.setItem('AppPlayer','Drive')
+
+            }
+            
+        }
+
+        alert('Player Type Changed')
 
     })
 
