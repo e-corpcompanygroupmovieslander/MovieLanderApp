@@ -1,5 +1,8 @@
 import { ANDROIDADVERTSPAGE } from "../ADVERTSPAGE/AdvertsPage.js";
 import { ANDROIDRECOMMENDEDANIMATION} from "../RECOMMENDEDANIMATION/RecommendedAnimations.js";
+import { ANDROIDRECOMMENDEDMARATHONS } from "../RECOMMENDEDMARATHON/RecommendedMarathon.js";
+import { ANDROIDRECOMMENDEDMOVIES } from "../RECOMMENDEDMOVIES/RecommendedMovies.js";
+import { ANDROIDRECOMMENDEDSERIES } from "../RECOMMENDEDSERIES/RecommendedSeries.js";
 import { ANDROIDUSERACCOUNTPAGE} from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -36,7 +39,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             </div>
 
-            <div id='AndroidAnimationsDiv' class='RecommendedHoldersSections'></div>
+            <div id='AndroidMoviesDiv' class='RecommendedHoldersSections'></div>
         
         </div>
 
@@ -50,7 +53,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             </div>
 
-            <div id='AndroidAnimationsDiv' class='RecommendedHoldersSections'></div>
+            <div id='AndroidMarathonsDiv' class='RecommendedHoldersSections'></div>
         
         </div>
 
@@ -64,7 +67,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             </div>
 
-            <div id='AndroidAnimationsDiv' class='RecommendedHoldersSections'></div>
+            <div id='AndroidSeriesDiv' class='RecommendedHoldersSections'></div>
         
         </div>
     
@@ -95,9 +98,11 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     ANDROIDRECOMMENDEDANIMATION(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
+    ANDROIDRECOMMENDEDMOVIES(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
+    ANDROIDRECOMMENDEDMARATHONS(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
-
+    ANDROIDRECOMMENDEDSERIES(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
 }
 
