@@ -58,6 +58,28 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     })
 
+    // 
+
+    const LIGHTMODE=document.querySelector('.LightModeIcon');
+
+    LIGHTMODE.addEventListener('click',()=>{
+
+        if (localStorage.getItem('Device')==='Android') {
+
+            ADVANCE.ADDSTORAGE('local','ModeColour','#212121');
+
+            StatusBar.backgroundColorByHexString('#212121');
+            
+        } else {
+           
+            console.log('Android Version Changed Colour');
+            
+        }
+
+        DIV.style.background='#212121';
+
+    })
+
 }
 
 export{ANDROIDUSERACCOUNTPAGE}
