@@ -52,3 +52,51 @@
     left: 45%;
     top: 0;
 }
+
+.MovieName{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.SegegmetsHolders{
+    position: relative;
+    width: 100%;
+    top: 20px;
+    height: 30%;
+    display: inline-flex;
+    background: #00000080;
+}
+
+.HolderSectionsMovies{
+    position: relative;
+    width: 30%;
+    height: 80%;
+    border-radius: 20px;
+    display: inline-flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+    background: #00000080;
+    border: 1px solid #00808080 ;
+}
+
+.CatergoryHolder{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    
+}
+
+.CatergoryName{
+    position: absolute;
+    bottom: 0;
+    font-size: 15px;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}

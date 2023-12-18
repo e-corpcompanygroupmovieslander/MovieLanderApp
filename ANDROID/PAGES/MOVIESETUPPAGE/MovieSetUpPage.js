@@ -23,7 +23,40 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
         <button class='WatchMovieButton'>Play</button>
 
-        <div class='MovieDetailsHolder'></div>
+        <div class='MovieDetailsHolder'>
+
+            <h1 class='MovieName'>${element.MovieName}</h1>
+
+            <div class='SegegmetsHolders' >
+
+                <div class='HolderSectionsMovies'>
+
+                    <img class='CatergoryHolder' src='${ICONS}grid.png'/>
+                
+                    <h1 class='CatergoryName'>${element.Catergory}</h1>
+
+                </div>
+
+                <div class='HolderSectionsMovies'>
+
+                    <img id='PremiumIcon' class='CatergoryHolder' src=''/>
+                    
+                    <h1  id='PremiumName' class='CatergoryName'></h1>
+                
+                </div>
+
+                <div class='HolderSectionsMovies'>
+
+                    
+                    <img class='CatergoryHolder' src='${ICONS}menu (1).png'/>
+                    
+                    <h1 class='CatergoryName'>${element.Rated}</h1>
+                
+                </div>
+            
+            </div>
+        
+        </div>
     
 
         <div class='AndroidFooter'>
@@ -45,6 +78,24 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         </div>
     
     `);
+
+    const PREMIUMICON=document.querySelector('#PremiumIcon');
+
+    const PREMIUMNAME=document.querySelector('#PremiumName');
+
+    if (element.Subscription) {
+        
+        PREMIUMICON.src=ICONS+'lock.png';
+
+        DISPLAY(PREMIUMNAME,'Paid');
+
+    } else {
+        
+        PREMIUMICON.src=ICONS+'unlocked.png';
+
+        DISPLAY(PREMIUMNAME,'Free');
+
+    }
 
     const BACKICON=document.querySelector('.BackIcon');
 
