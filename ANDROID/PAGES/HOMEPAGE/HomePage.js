@@ -25,6 +25,48 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             <div id='AndroidAnimationsDiv' class='RecommendedHoldersSections'></div>
         
         </div>
+
+        <div class='RecommendedSectionDiv'>
+
+            <div class='SectionHolder'>
+
+                <h1 class='RecommendedHolder'>Recommended Movies</h1>
+            
+                <h1 class='SeeMore'>SeeMore</h1>
+
+            </div>
+
+            <div id='AndroidAnimationsDiv' class='RecommendedHoldersSections'></div>
+        
+        </div>
+
+        <div class='RecommendedSectionDiv'>
+
+            <div class='SectionHolder'>
+
+                <h1 class='RecommendedHolder'>Recommended Marathons</h1>
+            
+                <h1 class='SeeMore'>SeeMore</h1>
+
+            </div>
+
+            <div id='AndroidAnimationsDiv' class='RecommendedHoldersSections'></div>
+        
+        </div>
+
+        <div class='RecommendedSectionDiv'>
+
+            <div class='SectionHolder'>
+
+                <h1 class='RecommendedHolder'>Recommended Series</h1>
+            
+                <h1 class='SeeMore'>SeeMore</h1>
+
+            </div>
+
+            <div id='AndroidAnimationsDiv' class='RecommendedHoldersSections'></div>
+        
+        </div>
     
     </div>
     
@@ -37,6 +79,8 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         <img class='ProfileIcon' src='${ICONS}profile.png'/>
     
     </div>
+
+    
 
     `);
 
