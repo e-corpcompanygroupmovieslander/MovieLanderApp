@@ -113,6 +113,40 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     ANDROIDRECOMMENDEDSERIES(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
+    
+    const Main=document.querySelector('.AndroidHomeDiv');
+
+    const RoundFooter=document.querySelector('.AndroidFooter')
+
+    let prevScrollPos = Main.scrollTop;
+
+    Main.addEventListener('scroll', () => {
+
+        const currentScrollPos = Main.scrollTop;
+
+        if (currentScrollPos > prevScrollPos) {
+            // Scrolling down, hide the footer
+            RoundFooter.style.display = 'none';
+        } else {
+            // Scrolling up, show the footer
+            RoundFooter.style.display = 'inline-flex';
+        }
+
+        prevScrollPos = currentScrollPos;
+
+    });
+
+    if (localStorage.getItem('ModeColour')==='#5C829A') {
+
+        RoundFooter.style.background='#5C829A';
+     
+    
+    } else {
+        
+        RoundFooter.style.background='#00000080';
+    
+    }
+
 }
 
 export{ANDROIDHOMEPAGE}
