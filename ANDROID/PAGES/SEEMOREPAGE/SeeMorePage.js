@@ -40,6 +40,8 @@ const ANDROIDSEEMOREPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)=>{
         
         CLEAR(CATERGORIESSTORE);
 
+        ADVANCE.SHUFFLEDATA(result);
+
         result.forEach(element => {
  
            const CATERGORIESHOLDER=document.createElement('div');
@@ -65,7 +67,7 @@ const ANDROIDSEEMOREPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)=>{
     }).catch((err) => {
 
         console.log(err);
-        
+
     });
 
 }
