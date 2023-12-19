@@ -47,7 +47,9 @@ const ANDROIDPRIVACYPOLICY=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         DISPLAY(PRIVACYPOLICYDIV,result);
 
     }).catch((err) => {
-        console.log(err)
+
+        console.log(err);
+        
     });
 
 }

@@ -1,5 +1,6 @@
 import { SERIESAPI, MOVIESPATH } from "../../../APIS/Api.js"
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
+import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
 
 const ANDROIDRECOMMENDEDSERIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -20,8 +21,6 @@ const ANDROIDRECOMMENDEDSERIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         ADVANCE.SHUFFLEDATA(result);
         
         result.forEach(element => {
-
-            //console.log(result);
             
             const RECOMMENDEDIMAGES=document.createElement('img');
             RECOMMENDEDIMAGES.src=MOVIESPATH+element.MovieImage;
@@ -37,10 +36,21 @@ const ANDROIDRECOMMENDEDSERIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         });
 
     }).catch((err) => {
-        console.log(err)
-    });
-    
 
+        console.log(err);
+
+    });
+
+    const URL=SERIESAPI;
+
+    const SEEMORE=document.querySelector('#SeriesSeeMore');
+
+    SEEMORE.addEventListener('click',()=>{
+
+        ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL);
+
+    })
+    
 }
 
 export{ANDROIDRECOMMENDEDSERIES}

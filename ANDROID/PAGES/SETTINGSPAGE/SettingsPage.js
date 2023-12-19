@@ -1,3 +1,4 @@
+import { UPDATEAPI } from "../../../APIS/Api.js";
 import { ANDROIDLOGOUTPAGE } from "../LOGOUTPAGE/LogOutPage.js";
 import { ANDROIDPARENTALCONTROL } from "../PARENTALCONTROL/ParentalControl.js";
 import { ANDROIDPRIVACYPOLICY } from "../PRIVACYPOLICYPAGE/PrivacyPolicyPage.js";
@@ -58,7 +59,7 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
         </button>
 
-        <button>
+        <button class='Updates'>
         
             <h1 class='HolderName'>Updates </h1>
 
@@ -81,7 +82,6 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             <img class='AppIcon' src='${ICONS}logout.png'/>
         
         </button>
-
 
     `);
 
@@ -117,17 +117,17 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             if (localStorage.getItem('AppPlayer')==='Drive') {
 
-                localStorage.setItem('AppPlayer','LanderPlayer')
+                localStorage.setItem('AppPlayer','LanderPlayer');
                 
             } else {
                 
-                localStorage.setItem('AppPlayer','Drive')
+                localStorage.setItem('AppPlayer','Drive');
 
             }
             
         }
 
-        alert('Player Type Changed')
+        alert('Player Type Changed');
 
     })
 
@@ -137,8 +137,15 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         ANDROIDPRIVACYPOLICY(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
-    })
+    });
 
+    const UPDATE=document.querySelector('.Updates');
+
+    UPDATE.addEventListener('click',()=>{
+
+        open(UPDATEAPI);
+
+    });
 
 }
 

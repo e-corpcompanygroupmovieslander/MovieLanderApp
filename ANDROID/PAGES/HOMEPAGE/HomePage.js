@@ -36,7 +36,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <h1 class='RecommendedHolder'>Recommended Movies</h1>
             
-                <h1 class='SeeMore'>SeeMore</h1>
+                <h1 id='MoviesSeeMore' class='SeeMore'>SeeMore</h1>
 
             </div>
 
@@ -50,7 +50,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <h1 class='RecommendedHolder'>Recommended Marathons</h1>
             
-                <h1 class='SeeMore'>SeeMore</h1>
+                <h1 id='MarathonsSeeMore' class='SeeMore'>SeeMore</h1>
 
             </div>
 
@@ -64,7 +64,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <h1 class='RecommendedHolder'>Recommended Series</h1>
             
-                <h1 class='SeeMore'>SeeMore</h1>
+                <h1 id='SeriesSeeMore' class='SeeMore'>SeeMore</h1>
 
             </div>
 

@@ -135,8 +135,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
         if (element.MovieDetails) {
 
-            
-
             STYLED(DETAILSDIV,'height','100%');
             
         } else {

@@ -51,11 +51,11 @@ const ANDROIDPARENTALCONTROL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     if (localStorage.getItem('ParentalControlPin')) {
                  
-        DISPLAY(ParentalControlButton,`ON`)
+        DISPLAY(ParentalControlButton,`ON`);
         
     } else {
         
-        DISPLAY(ParentalControlButton,`OFF`)
+        DISPLAY(ParentalControlButton,`OFF`);
 
     }
 
@@ -93,7 +93,7 @@ const ANDROIDPARENTALCONTROL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                     
                     ParentalControlInput.value='';
 
-                    STYLED(MessageDiv,'height','0')
+                    STYLED(MessageDiv,'height','0');
 
                     MESSAGE.innerHTML='';
 

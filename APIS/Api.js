@@ -18,7 +18,7 @@ const CATERGORIESPATH=`https://e-corpcompanygroupmovieslander.github.io/MovieLan
 
 const HELPTEXT=`https://e-corpcompanygroupmovieslander.github.io/MovieLander/HelpPage/HelpPage.txt`;
 
-const UPDATE=`https://play.google.com/store/apps/details?id=com.ecorpcompanygroup.movie_lander`;
+const UPDATEAPI=`https://play.google.com/store/apps/details?id=com.ecorpcompanygroup.movie_lander`;
 
 const PRIVACYTEXT=`https://e-corpcompanygroupmovieslander.github.io/MovieLander/PrivacyPolicyPage/PrivacyPolicy.txt`;
 
@@ -34,4 +34,4 @@ const ADVERTSPATH=`https://e-corpcompanygroupmovieslander.github.io/MovieLander/
 
 const CREATEACCOUNTAPI=`https://script.google.com/macros/s/AKfycbyxZa-t073EY1dMSxIUXuiXD9B03gcgaJyGTpXvV8qpRPG6TGMtk6WKocQ8Rsf0aXEF/exec`;
 
-export{LOGINAPI,ADVERTSAPI,ADVERTSPATH,ANIMATIONAPI,MOVIESPATH,SERIESAPI,MARATHONAPI,MOVIESAPI,CREATEACCOUNTAPI,PRIVACYTEXT,CATERGORYAPI,CATERGORIESPATH}
+export{LOGINAPI,ADVERTSAPI,ADVERTSPATH,ANIMATIONAPI,MOVIESPATH,SERIESAPI,MARATHONAPI,MOVIESAPI,CREATEACCOUNTAPI,PRIVACYTEXT,CATERGORYAPI,CATERGORIESPATH,UPDATEAPI}

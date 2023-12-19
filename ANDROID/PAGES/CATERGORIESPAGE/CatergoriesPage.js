@@ -43,7 +43,6 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         CLEAR(CATERGORIESSTORE);
 
         result.forEach(element => {
-           console.log(element) 
 
            const CATERGORIESHOLDER=document.createElement('div');
            CATERGORIESHOLDER.classList.add('CATERGORIESHOLDER');
@@ -54,7 +53,7 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
            const CATERGORIESNAME=document.createElement('h1');
            CATERGORIESNAME.classList.add('CATERGORIESNAME');
-           CATERGORIESNAME.innerHTML=element.Sections;
+           DISPLAY(CATERGORIESNAME,element.Sections)
 
            ADD(CATERGORIESHOLDER,CATERGORIESIMAGES);
 
@@ -69,9 +68,6 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)
 
            })
-
-
-
 
         });
 
