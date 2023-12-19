@@ -1,5 +1,6 @@
 import { ANDROIDLOGOUTPAGE } from "../LOGOUTPAGE/LogOutPage.js";
 import { ANDROIDPARENTALCONTROL } from "../PARENTALCONTROL/ParentalControl.js";
+import { ANDROIDPRIVACYPOLICY } from "../PRIVACYPOLICYPAGE/PrivacyPolicyPage.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -41,7 +42,7 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button>
+        <button class='PrivacyPolicy'>
 
             <h1 class='HolderName'>Privacy Policy</h1>
 
@@ -127,6 +128,14 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         }
 
         alert('Player Type Changed')
+
+    })
+
+    const PRIVACYPOLICY=document.querySelector('.PrivacyPolicy');
+
+    PRIVACYPOLICY.addEventListener('click',()=>{
+
+        ANDROIDPRIVACYPOLICY(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     })
 
