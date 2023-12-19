@@ -1,8 +1,8 @@
-import { CATERGORIESPATH, CATERGORYAPI } from "../../../APIS/Api.js";
+import { MOVIESPATH } from "../../../APIS/Api.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
-import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
+import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 
-const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
+const ANDROIDSEEMOREPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)=>{
 
     CLEAR(DIV);
 
@@ -11,8 +11,6 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     <div class='AndroidHeader'>
 
         <img class='BackIcon' src='${ICONS}back.png'/>
-
-        <img class='LightModeIcon' src='${ICONS}list.png'/>
 
     </div>
 
@@ -36,7 +34,7 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     `);
 
-    ADVANCE.GETPACKAGE(CATERGORYAPI,'cors')
+    ADVANCE.GETPACKAGE(URL,'cors')
 
     .then((result) => {
         
@@ -49,29 +47,19 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
            CATERGORIESHOLDER.classList.add('CATERGORIESHOLDER');
 
            const CATERGORIESIMAGES=document.createElement('img');
-           CATERGORIESIMAGES.classList.add('CATERGORIESIMAGES');
-           CATERGORIESIMAGES.src=CATERGORIESPATH+element.Image;
+           CATERGORIESIMAGES.classList.add('RecommendedImage');
+           CATERGORIESIMAGES.src=MOVIESPATH+element.MovieImage;
 
-           const CATERGORIESNAME=document.createElement('h1');
-           CATERGORIESNAME.classList.add('CATERGORIESNAME');
-           CATERGORIESNAME.innerHTML=element.Sections;
 
            ADD(CATERGORIESHOLDER,CATERGORIESIMAGES);
 
-           ADD(CATERGORIESHOLDER,CATERGORIESNAME);
-
            ADD(CATERGORIESSTORE,CATERGORIESHOLDER);
 
-           const URL=element.link;
+           CATERGORIESIMAGES.addEventListener('click',()=>{
 
-           CATERGORIESHOLDER.addEventListener('click',()=>{
-
-            ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)
+            MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
 
            })
-
-
-
 
         });
 
@@ -81,4 +69,4 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
 }
 
-export{ANDROIDCATERGORIES}
+export{ANDROIDSEEMOREPAGE}

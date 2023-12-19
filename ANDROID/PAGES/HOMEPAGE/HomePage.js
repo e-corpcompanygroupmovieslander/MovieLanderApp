@@ -22,7 +22,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <h1 class='RecommendedHolder'>Recommended Animations</h1>
             
-                <h1 class='SeeMore'>SeeMore</h1>
+                <h1 id='AnimationSeeMore' class='SeeMore'>SeeMore</h1>
 
             </div>
 

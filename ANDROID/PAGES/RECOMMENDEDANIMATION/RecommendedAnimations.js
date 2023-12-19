@@ -1,5 +1,6 @@
 import { ANIMATIONAPI, MOVIESPATH } from "../../../APIS/Api.js"
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
+import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
 
 const ANDROIDRECOMMENDEDANIMATION=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -39,6 +40,16 @@ const ANDROIDRECOMMENDEDANIMATION=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     }).catch((err) => {
         console.log(err)
     });
+
+    const URL=ANIMATIONAPI;
+
+    const SEEMORE=document.querySelector('#AnimationSeeMore');
+
+    SEEMORE.addEventListener('click',()=>{
+
+        ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL);
+
+    })
     
 
 }
