@@ -1,0 +1,46 @@
+.CatergoriesStore{
+    position: absolute;
+    background: transparent;
+    top: 60px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+    height: auto;
+    bottom: 0;
+}
+
+.CATERGORIESHOLDER{
+    position: relative;
+    width: 30%;
+    height: 30%;
+    background: #00000080;
+    margin-left: 0.4rem;
+    margin-right: 0.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-table;
+    border-radius: 10px;
+}
+
+.CATERGORIESIMAGES{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    display: block;
+}
+
+.CATERGORIESNAME{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    bottom: 0;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+#CatergoriesLoading{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+}

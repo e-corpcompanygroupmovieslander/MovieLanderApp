@@ -1,4 +1,5 @@
 import { ANDROIDADVERTSPAGE } from "../ADVERTSPAGE/AdvertsPage.js";
+import { ANDROIDCATERGORIES } from "../CATERGORIESPAGE/CatergoriesPage.js";
 import { ANDROIDRECOMMENDEDANIMATION} from "../RECOMMENDEDANIMATION/RecommendedAnimations.js";
 import { ANDROIDRECOMMENDEDMARATHONS } from "../RECOMMENDEDMARATHON/RecommendedMarathon.js";
 import { ANDROIDRECOMMENDEDMOVIES } from "../RECOMMENDEDMOVIES/RecommendedMovies.js";
@@ -75,7 +76,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     <div class='AndroidFooter'>
 
-        <img src='${ICONS}list.png'/>
+        <img class='CatergoriesIcon' src='${ICONS}list.png'/>
 
         <img src='${ICONS}movies.png'/>
 
@@ -85,6 +86,14 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     `);
 
+
+    const CATERGORIESICON=document.querySelector('.CatergoriesIcon');
+
+    CATERGORIESICON.addEventListener('click',()=>{
+
+        ANDROIDCATERGORIES(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
 
     const PROFILEICON=document.querySelector('.ProfileIcon');
 

@@ -12,7 +12,7 @@ const SERIESAPI='https://script.googleusercontent.com/macros/echo?user_content_k
 
 const MOVIESPATH=`https://e-corpcompanygroupmovieslander.github.io/MovieLander/MoviesPosters/`;
 
-const CATERGORYLINK='https://script.googleusercontent.com/macros/echo?user_content_key=73Zwb7PgOiKcWAkB8NtGkxfTc90BF9hrUmlWuNnkEviGIBt_rLKR5KcodIDbs_5XVUVVNmV5vcOK_WrIR7FWe5EXZUIScDyBm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDAKcfISMWUvHYXMr5T0pgs4s_9FQHlxjb9feZm4btJ2cCHRmXMUjSkir9e7UGF7ELAFNcuA7nAFjqm93KgKPC3n5M9lbpsdpNz9Jw9Md8uu&lib=MFCxisweHYcb5KS6xW-H5O-zilWmV86UI';
+const CATERGORYAPI='https://script.googleusercontent.com/macros/echo?user_content_key=73Zwb7PgOiKcWAkB8NtGkxfTc90BF9hrUmlWuNnkEviGIBt_rLKR5KcodIDbs_5XVUVVNmV5vcOK_WrIR7FWe5EXZUIScDyBm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDAKcfISMWUvHYXMr5T0pgs4s_9FQHlxjb9feZm4btJ2cCHRmXMUjSkir9e7UGF7ELAFNcuA7nAFjqm93KgKPC3n5M9lbpsdpNz9Jw9Md8uu&lib=MFCxisweHYcb5KS6xW-H5O-zilWmV86UI';
 
 const CATERGORIESPATH=`https://e-corpcompanygroupmovieslander.github.io/MovieLander/CATERGORIES/`;
 
@@ -34,4 +34,4 @@ const ADVERTSPATH=`https://e-corpcompanygroupmovieslander.github.io/MovieLander/
 
 const CREATEACCOUNTAPI=`https://script.google.com/macros/s/AKfycbyxZa-t073EY1dMSxIUXuiXD9B03gcgaJyGTpXvV8qpRPG6TGMtk6WKocQ8Rsf0aXEF/exec`;
 
-export{LOGINAPI,ADVERTSAPI,ADVERTSPATH,ANIMATIONAPI,MOVIESPATH,SERIESAPI,MARATHONAPI,MOVIESAPI,CREATEACCOUNTAPI,PRIVACYTEXT}
+export{LOGINAPI,ADVERTSAPI,ADVERTSPATH,ANIMATIONAPI,MOVIESPATH,SERIESAPI,MARATHONAPI,MOVIESAPI,CREATEACCOUNTAPI,PRIVACYTEXT,CATERGORYAPI,CATERGORIESPATH}

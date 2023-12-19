@@ -21,7 +21,7 @@ const ANDROIDRECOMMENDEDMARATHONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         result.forEach(element => {
 
-            console.log(result);
+            //console.log(result);
             
             const RECOMMENDEDIMAGES=document.createElement('img');
             RECOMMENDEDIMAGES.src=MOVIESPATH+element.MovieImage;
