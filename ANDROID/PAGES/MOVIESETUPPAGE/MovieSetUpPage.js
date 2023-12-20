@@ -84,6 +84,12 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
             <img class='CloseIcon' src='${ICONS}close.png'/>
 
         </div>
+
+        <div class='PremiumMessage'>
+
+            <h1 class='PremiumMessager'>Pay For Premium</h1>
+        
+        </div>
     
     `);
 
@@ -184,9 +190,39 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     const PLAYBUTTON=document.querySelector('.WatchMovieButton');
 
+    const PREMIUMMESSAGE=document.querySelector('.PremiumMessage');
+
+    if (localStorage.getItem('ModeColour')==='#5C829A') {
+
+        STYLED(PREMIUMMESSAGE,'background','#5C829A');
+
+        
+    } else {
+        
+        STYLED(PREMIUMMESSAGE,'background','#212121');
+        
+    }
+
     PLAYBUTTON.addEventListener('click',()=>{
 
-        PLAYTHEMOVIE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
+        if (element.Subscription && localStorage.getItem('Premium')) {
+            
+            STYLED(PREMIUMMESSAGE,'display','inline-flex');
+            STYLED(PREMIUMMESSAGE,'height','50px');
+
+            setTimeout(() => {
+                
+                STYLED(PREMIUMMESSAGE,'display','none');
+
+                STYLED(PREMIUMMESSAGE,'height','0px');
+
+            }, 2000);
+
+        } else {
+            
+            PLAYTHEMOVIE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
+
+        }
 
     })
 
