@@ -1,3 +1,4 @@
+import { MOVIESPATH } from "../../../APIS/Api.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { PLAYTHEMOVIE } from "../PLAYTHEMOVIE/PlayTheMovie.js";
@@ -9,6 +10,8 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
     CLEAR(DIV);
 
     DISPLAY(DIV,`
+
+        <img class='BackgroundImage' src='${MOVIESPATH+element.MovieImage}'/>
 
         <div class='AndroidHeader'>
 
@@ -25,6 +28,8 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         </div>
 
         <button class='WatchMovieButton'>Play</button>
+
+        
 
         <div class='MovieDetailsHolder'>
 
@@ -82,6 +87,16 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
     
     `);
 
+    if (localStorage.getItem('Device')==='Android') {
+
+        StatusBar.backgroundColorByHexString(element.PosterColour);
+        
+    } else {
+       
+        console.log('Android Version Changed Colour');
+        
+    }
+
     const PREMIUMICON=document.querySelector('#PremiumIcon');
 
     const PREMIUMNAME=document.querySelector('#PremiumName');
@@ -103,6 +118,18 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
     const BACKICON=document.querySelector('.BackIcon');
 
     BACKICON.addEventListener('click',()=>{
+
+        if (localStorage.getItem('Device')==='Android') {
+
+            ADVANCE.ADDSTORAGE('local','ModeColour','#212121');
+
+            StatusBar.backgroundColorByHexString('#212121');
+            
+        } else {
+           
+            console.log('Android Version Changed Colour');
+            
+        }
 
         if (localStorage.getItem('MovieNavigation')==='Direct') {
            
