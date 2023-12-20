@@ -115,8 +115,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
             ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL);
         }
 
-        
-
     });
 
     const DETAILSICON=document.querySelector('.DetailsIcon');

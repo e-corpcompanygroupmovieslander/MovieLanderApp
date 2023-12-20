@@ -43,8 +43,7 @@ const CONNECTION=(DIV)=>{
             console.error('Service Worker registration failed:', error);
         });
     }
-  
- 
+   
 }
 
 export{CONNECTION}
