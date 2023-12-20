@@ -205,23 +205,32 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     PLAYBUTTON.addEventListener('click',()=>{
 
+        
         if (element.Subscription && localStorage.getItem('Premium')) {
             
             PLAYTHEMOVIE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
  
         } else {
-            
-            STYLED(PREMIUMMESSAGE,'display','inline-flex');
-            STYLED(PREMIUMMESSAGE,'height','50px');
 
-            setTimeout(() => {
+            if (element.Subscription && !localStorage.getItem('Premium')) {
+               
+                STYLED(PREMIUMMESSAGE,'display','inline-flex');
+                STYLED(PREMIUMMESSAGE,'height','50px');
+
+                setTimeout(() => {
+                    
+                    STYLED(PREMIUMMESSAGE,'display','none');
+
+                    STYLED(PREMIUMMESSAGE,'height','0px');
+
+                }, 2000);
                 
-                STYLED(PREMIUMMESSAGE,'display','none');
+            } else {
+                
+                PLAYTHEMOVIE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
 
-                STYLED(PREMIUMMESSAGE,'height','0px');
-
-            }, 2000);
-
+            }
+            
         }
 
     })
