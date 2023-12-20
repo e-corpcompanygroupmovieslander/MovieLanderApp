@@ -67,6 +67,8 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             ADVANCE.ADDSTORAGE('local','MOVIEURL',URL);
 
+            ADVANCE.ADDSTORAGE('local','MovieNavigation','SeeMore');
+
             ADVANCE.ADDSTORAGE('local','SeeMoreNavigatore','Catergory');
 
             ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)
