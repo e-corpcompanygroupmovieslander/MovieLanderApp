@@ -207,6 +207,10 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
         if (element.Subscription && localStorage.getItem('Premium')) {
             
+            PLAYTHEMOVIE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
+ 
+        } else {
+            
             STYLED(PREMIUMMESSAGE,'display','inline-flex');
             STYLED(PREMIUMMESSAGE,'height','50px');
 
@@ -217,10 +221,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
                 STYLED(PREMIUMMESSAGE,'height','0px');
 
             }, 2000);
-
-        } else {
-            
-            PLAYTHEMOVIE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
 
         }
 
