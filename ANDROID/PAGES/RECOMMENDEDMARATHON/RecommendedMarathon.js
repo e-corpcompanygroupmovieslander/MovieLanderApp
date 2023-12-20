@@ -4,6 +4,8 @@ import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
 
 const ANDROIDRECOMMENDEDMARATHONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
+    const URL=MARATHONAPI;
+
     const ANIMATIONDIV=document.querySelector('#AndroidMarathonsDiv');
 
     DISPLAY(ANIMATIONDIV,`
@@ -32,6 +34,8 @@ const ANDROIDRECOMMENDEDMARATHONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             RECOMMENDEDIMAGES.addEventListener('click',()=>{
 
+                ADVANCE.ADDSTORAGE('local','MOVIEURL',URL);
+
                 MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
 
             })
@@ -43,11 +47,13 @@ const ANDROIDRECOMMENDEDMARATHONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     });
     
-    const URL=MARATHONAPI;
-
     const SEEMORE=document.querySelector('#MarathonsSeeMore');
 
     SEEMORE.addEventListener('click',()=>{
+
+        ADVANCE.ADDSTORAGE('local','SeeMoreNavigatore','Home');
+
+        ADVANCE.ADDSTORAGE('local','MovieNavigation','SeeMore');
 
         ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL);
 

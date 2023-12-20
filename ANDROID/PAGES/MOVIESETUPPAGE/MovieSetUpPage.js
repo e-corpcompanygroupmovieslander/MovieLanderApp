@@ -1,6 +1,7 @@
 import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { PLAYTHEMOVIE } from "../PLAYTHEMOVIE/PlayTheMovie.js";
+import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
 
 
 const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
@@ -103,7 +104,18 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     BACKICON.addEventListener('click',()=>{
 
-        ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+        if (localStorage.getItem('MovieNavigation')==='Direct') {
+           
+            ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+            
+        } else {
+
+            const URL=localStorage.getItem('MOVIEURL')
+            
+            ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL);
+        }
+
+        
 
     });
 

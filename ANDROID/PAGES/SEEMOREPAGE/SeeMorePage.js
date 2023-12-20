@@ -1,8 +1,11 @@
 import { MOVIESPATH } from "../../../APIS/Api.js";
+import { ANDROIDCATERGORIES } from "../CATERGORIESPAGE/CatergoriesPage.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 
 const ANDROIDSEEMOREPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)=>{
+
+    ADVANCE.ADDSTORAGE('local','MOVIEURL',URL);
 
     CLEAR(DIV);
 
@@ -22,7 +25,15 @@ const ANDROIDSEEMOREPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)=>{
 
     BACKICON.addEventListener('click',()=>{
 
-        ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+        if (localStorage.getItem('SeeMoreNavigatore')==='Catergory') {
+            
+            ANDROIDCATERGORIES(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+        } else {
+        
+            ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+        }
 
     });
 

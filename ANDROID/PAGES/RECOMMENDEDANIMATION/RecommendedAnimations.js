@@ -4,6 +4,8 @@ import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
 
 const ANDROIDRECOMMENDEDANIMATION=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
+    const URL=ANIMATIONAPI;
+
     const ANIMATIONDIV=document.querySelector('#AndroidAnimationsDiv');
 
     DISPLAY(ANIMATIONDIV,`
@@ -31,6 +33,10 @@ const ANDROIDRECOMMENDEDANIMATION=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             ADD(ANIMATIONDIV,RECOMMENDEDIMAGES);
 
             RECOMMENDEDIMAGES.addEventListener('click',()=>{
+                
+                ADVANCE.ADDSTORAGE('local','MOVIEURL',URL);
+
+                ADVANCE.ADDSTORAGE('local','MovieNavigation','Direct');
 
                 MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
 
@@ -43,11 +49,13 @@ const ANDROIDRECOMMENDEDANIMATION=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     });
 
-    const URL=ANIMATIONAPI;
-
     const SEEMORE=document.querySelector('#AnimationSeeMore');
 
     SEEMORE.addEventListener('click',()=>{
+
+        ADVANCE.ADDSTORAGE('local','MovieNavigation','SeeMore');
+
+        ADVANCE.ADDSTORAGE('local','SeeMoreNavigatore','Home');
 
         ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL);
 

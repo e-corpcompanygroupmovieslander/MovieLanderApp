@@ -65,6 +65,10 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
            CATERGORIESHOLDER.addEventListener('click',()=>{
 
+            ADVANCE.ADDSTORAGE('local','MOVIEURL',URL);
+
+            ADVANCE.ADDSTORAGE('local','SeeMoreNavigatore','Catergory');
+
             ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)
 
            })
