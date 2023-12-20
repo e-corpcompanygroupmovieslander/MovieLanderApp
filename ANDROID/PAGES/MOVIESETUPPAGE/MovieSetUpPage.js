@@ -95,8 +95,15 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     if (localStorage.getItem('Device')==='Android') {
 
-        StatusBar.backgroundColorByHexString(element.PosterColour);
-        
+        if (element.PosterColour) {
+          
+            StatusBar.backgroundColorByHexString(element.PosterColour);
+            
+        } else {
+            
+            StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
+        }
+  
     } else {
        
         console.log('Android Version Changed Colour');
@@ -195,8 +202,7 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
     if (localStorage.getItem('ModeColour')==='#5C829A') {
 
         STYLED(PREMIUMMESSAGE,'background','#5C829A');
-
-        
+ 
     } else {
         
         STYLED(PREMIUMMESSAGE,'background','#212121');
