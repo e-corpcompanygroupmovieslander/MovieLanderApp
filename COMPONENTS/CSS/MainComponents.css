@@ -41,3 +41,10 @@ button{
     padding-left: 1%;
     color: white;
 }
+
+/* Disable input outline and highlight */
+input, textarea, select, button {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
