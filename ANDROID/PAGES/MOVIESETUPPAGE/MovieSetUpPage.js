@@ -134,8 +134,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
         if (localStorage.getItem('Device')==='Android') {
 
-            ADVANCE.ADDSTORAGE('local','ModeColour','#212121');
-
             StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
             
         } else {
