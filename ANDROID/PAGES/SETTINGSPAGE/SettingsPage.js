@@ -1,4 +1,5 @@
 import { UPDATEAPI } from "../../../APIS/Api.js";
+import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDLOGOUTPAGE } from "../LOGOUTPAGE/LogOutPage.js";
 import { ANDROIDPARENTALCONTROL } from "../PARENTALCONTROL/ParentalControl.js";
 import { ANDROIDPRIVACYPOLICY } from "../PRIVACYPOLICYPAGE/PrivacyPolicyPage.js";
@@ -83,6 +84,8 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
+        <div class='Messagediv'></div>
+
     `);
 
     const BACKICON=document.querySelector('.BackIcon');
@@ -110,24 +113,90 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     })
 
     const APPPLAYER=document.querySelector('.AppPlayer');
+
+    const MESSAGEDIV=document.querySelector('.Messagediv');
     
     APPPLAYER.addEventListener('click',()=>{
 
-        if (localStorage.getItem('AppPlayer')) {
+        if (localStorage.getItem('ModeColour')==='#5C829A') {
 
-            if (localStorage.getItem('AppPlayer')==='Drive') {
+            STYLED(MESSAGEDIV,'background','#5C829A');
 
-                localStorage.setItem('AppPlayer','LanderPlayer');
-                
-            } else {
-                
-                localStorage.setItem('AppPlayer','Drive');
-
-            }
+            
+        } else {
+            
+            STYLED(MESSAGEDIV,'background','#212121');
             
         }
 
-        alert('Player Type Changed');
+        STYLED(MESSAGEDIV,'display','block');
+
+        STYLED(MESSAGEDIV,'height','30%');
+
+        DISPLAY(MESSAGEDIV,`
+
+            <br>
+
+            <button class='Drive'>
+            
+                <h1 class='HolderName'>Drive Player </h1>
+    
+                <img class='AppIcon' src='${ICONS}drive.png'/>
+            
+            </button>
+    
+            <button class='LanderPlayer'>
+            
+                <h1 class='HolderName'>Movie Lander Player </h1>
+    
+                <img id='LanderPlayer' class='AppIcon' src='${ICONS}lander.png'/>
+            
+            </button>
+
+            <button class='Cancel'>
+
+            
+            <h1 class='HolderName'> Cancel </h1>
+    
+            <img class='AppIcon' src='${ICONS}close.png'/>
+
+            </button>
+        
+        `)
+
+        const CLOSEPLAYER=document.querySelector('.Cancel');
+
+        CLOSEPLAYER.addEventListener('click',()=>{
+
+            STYLED(MESSAGEDIV,'display','none');
+
+            STYLED(MESSAGEDIV,'height','0%');
+
+        })
+
+        const DRIVEPLAYER=document.querySelector('.Drive');
+
+        DRIVEPLAYER.addEventListener('click',()=>{
+
+            ADVANCE.ADDSTORAGE('local','AppPlayer','Drive');
+
+            STYLED(MESSAGEDIV,'display','none');
+
+            STYLED(MESSAGEDIV,'height','0%');
+                
+        })
+
+        const LANDERPLAYER=document.querySelector('.LanderPlayer');
+
+        LANDERPLAYER.addEventListener('click',()=>{
+
+            ADVANCE.ADDSTORAGE('local','AppPlayer','LanderPlayer');
+
+            STYLED(MESSAGEDIV,'display','none');
+
+            STYLED(MESSAGEDIV,'height','0%');
+
+        })
 
     })
 
