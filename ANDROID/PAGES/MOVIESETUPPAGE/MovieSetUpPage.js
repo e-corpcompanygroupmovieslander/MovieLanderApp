@@ -136,7 +136,7 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
             ADVANCE.ADDSTORAGE('local','ModeColour','#212121');
 
-            StatusBar.backgroundColorByHexString('#212121');
+            StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
             
         } else {
            
