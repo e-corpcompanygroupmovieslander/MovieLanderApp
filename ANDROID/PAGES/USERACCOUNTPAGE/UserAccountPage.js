@@ -1,4 +1,5 @@
 import { STYLED } from "../../../CONNECTION/Connection.js";
+import { ANDROIDPREMIUMPAYMENT } from "../ANDROIDPREMIUMPAYMENT/AndroidPremiumPayment.js";
 import { ANDROIDCOMMUNITYPAGE } from "../COMMUNITYPAGE/CommunityPage.js";
 import { ANDROIDCONTACTUS } from "../CONTACTUSPAGE/ContactUsPage.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
@@ -38,7 +39,7 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </div>
 
-        <button>
+        <button class='PremiumPayment'>
             
             <h1 class='HolderName'>Premium</h1>
 
@@ -199,6 +200,14 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     CONTACTUS.addEventListener('click',()=>{
 
         ANDROIDCONTACTUS(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
+
+    const PREMIUMPAGE=document.querySelector('.PremiumPayment');
+
+    PREMIUMPAGE.addEventListener('click',()=>{
+
+        ANDROIDPREMIUMPAYMENT(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     })
     
