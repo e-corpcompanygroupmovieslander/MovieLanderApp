@@ -12,6 +12,16 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     </div>
 
+    <br><br><br><br>
+
+    <button class='PalPay'>
+
+        <h1 class='HolderName'>Pay Pal </h1>
+        
+        <img class='AppIcon' src='${ICONS}paypal.png'/>
+    
+    </button>
+
     
     `);
 
@@ -22,6 +32,14 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         ANDROIDUSERACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     });
+
+    const PALPAY=document.querySelector('.PalPay');
+
+    PALPAY.addEventListener('click',()=>{
+
+        open('https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-9Y042815JK734272FMWBPYJQ')
+
+    })
 
 
 }
