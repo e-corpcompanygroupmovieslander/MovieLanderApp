@@ -75,13 +75,13 @@ const ANDROIDMTNINSTRUCTIONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                 <br><br>
 
                 <b>
-                Entering AnyOther Reason Besides the one Provided Will be Invalid And Movie Lander Won't Compensate For Your failure to Follow Instructions
+                Entering Any Other Reason Besides the one Provided Will be Invalid And Movie Lander Won't Compensate For Your failure to Follow Instructions
                 
                 </b>
 
                 <br><br>
 
-                After The Transaction is Scuccessfull,Copy the message of your payments then open Movie Lander And Go To Make payments Section and Finish The Process for Your Premium Payments.
+                After The Transaction is Scuccessful, Copy the SMS message of your payments then open Movie Lander And Go To Make payments Section and Finish The Process for Your Premium Payments.
 
                 <br><br>
 
