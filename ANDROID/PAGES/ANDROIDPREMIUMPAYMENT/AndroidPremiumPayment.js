@@ -47,7 +47,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     PALPAY.addEventListener('click',()=>{
 
-        open('https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-9Y042815JK734272FMWBPYJQ')
+        alert('Under Development');
 
     })
 
