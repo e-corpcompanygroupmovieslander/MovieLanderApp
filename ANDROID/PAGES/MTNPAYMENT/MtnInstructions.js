@@ -29,10 +29,6 @@ const ANDROIDMTNINSTRUCTIONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                 The Merchant Code: <b>928966</b>
 
                 <br><br>
-
-                The Reason : <b>${localStorage.getItem('User')}</b>
-
-                <br><br>
                 
                 Dail *165#
 
@@ -65,17 +61,13 @@ const ANDROIDMTNINSTRUCTIONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                 <b>15000 - Monthly</b>
 
                 <br><br>
-
-                Then Enter <b>${localStorage.getItem('User')} </b> As A Reason
                 
-                <br><br>
-
                 <b>Note</b>
 
                 <br><br>
 
                 <b>
-                Entering Any Other Reason Besides the one Provided Will be Invalid And Movie Lander Won't Compensate For Your failure to Follow Instructions
+                Entering Any Other Merchant Code Besides the one Provided Will be Invalid And Movie Lander Won't Compensate For Your failure to Follow Instructions
                 
                 </b>
 
