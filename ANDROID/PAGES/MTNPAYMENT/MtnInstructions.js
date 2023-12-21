@@ -38,7 +38,7 @@ const ANDROIDMTNINSTRUCTIONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <br><br>
 
-                Choose Option 3
+                Then Choose Option 3
 
                 <br><br>
 
