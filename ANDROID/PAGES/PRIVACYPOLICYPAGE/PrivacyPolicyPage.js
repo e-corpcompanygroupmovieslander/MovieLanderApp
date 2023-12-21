@@ -16,7 +16,7 @@ const ANDROIDPRIVACYPOLICY=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         </div>
 
-        <div class='PrivacyPolicyDiv' ></div>
+        <div class='PrivacyPolicyDiv'></div>
     
     `);
     

@@ -1,3 +1,4 @@
+import { ANDROIDMTNPAYMENT } from "../MTNPAYMENT/MtnPayment.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -49,6 +50,16 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         open('https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-9Y042815JK734272FMWBPYJQ')
 
     })
+
+    const MTN=document.querySelector('.MTN');
+
+    MTN.addEventListener('click',()=>{
+
+        ANDROIDMTNPAYMENT(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    });
+   
+
 
 
 }

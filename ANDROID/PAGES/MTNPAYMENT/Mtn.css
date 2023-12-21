@@ -1,0 +1,10 @@
+.PaymentHeader{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.instructions{
+    padding: 1%;
+}
