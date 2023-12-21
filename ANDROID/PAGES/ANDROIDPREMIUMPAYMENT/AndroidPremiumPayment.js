@@ -23,6 +23,15 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     </button>
 
     
+    <button class='MTN'>
+
+        <h1 class='HolderName'>MTN </h1>
+        
+        <img class='AppIcon' src='${ICONS}mtn.jpg'/>
+    
+    </button>
+
+    
     `);
 
     const BACKICON=document.querySelector('.BackIcon');

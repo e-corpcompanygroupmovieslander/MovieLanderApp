@@ -29,7 +29,7 @@ const CONNECTION=(DIV)=>{
 
     }
 
-    /*
+    
     const linkElement = document.createElement('link');
     linkElement.rel = 'manifest';
     linkElement.href = './manifest.json';
@@ -44,8 +44,6 @@ const CONNECTION=(DIV)=>{
             console.error('Service Worker registration failed:', error);
         });
     }
-
-    */
    
 }
 
