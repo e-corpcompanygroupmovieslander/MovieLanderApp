@@ -1,5 +1,6 @@
 import { ANDROIDPREMIUMPAYMENT } from "../ANDROIDPREMIUMPAYMENT/AndroidPremiumPayment.js";
 import { ANDROIDMTNINSTRUCTIONS } from "./MtnInstructions.js";
+import { ANDROIDMTNPAY } from "./MtnPay.js";
 
 const ANDROIDMTNPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -25,16 +26,14 @@ const ANDROIDMTNPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button>
+        <button class='MTNPAYMENTS' >
 
             <h1 class='HolderName'>Make Payments</h1>
             
             <img class='AppIcon' src='${ICONS}secretcode.png'/>
         
         </button>
-    
-    
-    
+        
     `);
 
     const BACKICON=document.querySelector('.BackIcon');
@@ -51,6 +50,14 @@ const ANDROIDMTNPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     MTNINSTRUCTIONS.addEventListener('click',()=>{
 
         ANDROIDMTNINSTRUCTIONS(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
+
+    const MTNPAY=document.querySelector('.MTNPAYMENTS');
+
+    MTNPAY.addEventListener('click',()=>{
+
+        ANDROIDMTNPAY(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     })
 

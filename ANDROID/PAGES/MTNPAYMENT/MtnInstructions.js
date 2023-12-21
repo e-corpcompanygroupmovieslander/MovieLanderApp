@@ -77,6 +77,10 @@ const ANDROIDMTNINSTRUCTIONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <br><br>
 
+                <b>This Message Pasting Shouldnot exceed 24hours from the date of payment</b>
+
+                <br><br>
+
             </p>
             
 
