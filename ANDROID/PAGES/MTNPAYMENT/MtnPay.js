@@ -1,4 +1,5 @@
 import { MTNPREMIUMPAY, MTNPREMIUMPAYGET } from "../../../APIS/Api.js";
+import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 import { ANDROIDMTNPAYMENT } from "./MtnPayment.js";
 
 const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
@@ -135,7 +136,11 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                 })
 
                   .then(data => {
-                    alert('Success');
+                    
+                    ADVANCE.ADDSTORAGE('local','Premium','TRUE');
+
+                    ANDROIDUSERACCOUNTPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
+
                   })
                   .catch(err => console.log(err));
               }
