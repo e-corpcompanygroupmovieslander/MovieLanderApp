@@ -151,9 +151,9 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
     CREATEACCOUNTBUTTON.addEventListener('click', () => {
         if (USERNAME.value && EMAIL.value && PASSWORD.value && TELEPHONE.value && sessionStorage.getItem('Country')) {
             // Validate phone number format
-            const phoneRegex = /^\d{9,10}$/;
+            const phoneRegex = /^\d{7,10}$/;
             if (!phoneRegex.test(TELEPHONE.value)) {
-                DISPLAY(MESSAGE, `Invalid phone number format. Please enter a valid phone number with 9 to 10 digits.`);
+                DISPLAY(MESSAGE, `Please enter a valid phone number`);
                 setTimeout(() => {
                     DISPLAY(MESSAGE, ``);
                 }, 2000);
