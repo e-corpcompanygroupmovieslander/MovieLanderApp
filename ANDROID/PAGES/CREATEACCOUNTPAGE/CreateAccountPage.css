@@ -19,9 +19,10 @@
 .CountryDiv{
     position: absolute;
     width: 100%;
+    top: 100px;
     bottom: 0;
     background: #00000080;
-    height: 85%;
+    height: auto;
     overflow-y: auto;
     overflow-x: hidden;
 }

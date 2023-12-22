@@ -101,8 +101,6 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     <h1 class='countrycode'>${element.phoneCode}</h1>
                     `);
 
-
-                   
                     CountryHolder.addEventListener('click', () => {
 
                         sessionStorage.setItem('Country', element.name);
@@ -112,6 +110,7 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     });
 
                     SEARCHCOUNTRY.addEventListener('input', () => {
+                        STYLED(SELECTCOUNTRYDIV, 'top', '100px');
                         const searchValue = SEARCHCOUNTRY.value.trim().toLowerCase();
                         const countryHolders = document.querySelectorAll('.CountryHolder');
                         countryHolders.forEach(countryHolder => {
