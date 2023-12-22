@@ -53,3 +53,11 @@
     margin-bottom: auto;
 
 }
+
+.SelectCountryPicker{
+    width: 95%;
+    position: relative;
+    height: 32px;
+    max-height: 32px;
+    display: inline-flex;
+}

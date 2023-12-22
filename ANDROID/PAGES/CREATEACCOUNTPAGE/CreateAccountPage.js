@@ -95,7 +95,7 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                 CLEAR(SELECTDIV);
                 data.forEach(element => {
                     const CountryHolder = document.createElement('button');
-                    CountryHolder.classList.add('SelectCountry');
+                    CountryHolder.classList.add('SelectCountryPicker');
                     CountryHolder.innerHTML = `<h1 class='SelectCountryName'>${element.name}</h1>`+`<h1 class='countrycode'>${element.phoneCode}</h1>`;
 
                     CountryHolder.addEventListener('click', () => {
@@ -107,7 +107,7 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
                     SEARCHCOUNTRY.addEventListener('input', () => {
                         const searchValue = SEARCHCOUNTRY.value.trim().toLowerCase();
-                        const countryHolders = document.querySelectorAll('.SelectCountry');
+                        const countryHolders = document.querySelectorAll('.SelectCountryPicker');
                         countryHolders.forEach(countryHolder => {
                             const countryName = countryHolder.innerHTML.toLowerCase();
                             if (countryName.includes(searchValue)) {
