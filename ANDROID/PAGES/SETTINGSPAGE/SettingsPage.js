@@ -139,9 +139,7 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <button class='Drive'>
             
-                <h1 class='HolderName'>Drive Player </h1>
-    
-                <img class='AppIcon' src='${ICONS}drive.png'/>
+
             
             </button>
     

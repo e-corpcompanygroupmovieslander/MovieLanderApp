@@ -1,4 +1,6 @@
 import { CREATEACCOUNTAPI, LOGINAPI } from "../../../APIS/Api.js";
+import { COUNTRYAPI } from "../../../APIS/IconsApi.js";
+import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDCREATEPRIVACYPOLICYPAGE } from "../CREATEACCOUNTPRIVACYPOLICY/CreateAccountPrivacyPolicy.js";
 import { ANDROIDLOGINPAGE } from "../LOGINPAGE/LoginPage.js";
 
@@ -18,15 +20,42 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
     DISPLAY(DIV, `
         <h1 class='AppName'>Movie Lander</h1>
+
         <h1 class='Message'></h1>
+
         <input type="text" id='UserNameHolder' placeholder="Enter UserName">
+
         <input type="email" id='EmailHolder' placeholder="Enter Email">
+
         <input type="password" id='PasswordHolder' placeholder="Enter Password">
+
         <input type="text" id='DateHolder' placeholder="Enter Date Of Birth">
-        <input type="tel" id='TelephoneHolder' placeholder="Enter Telephone Number">
-        <input type="text" id='LocationHolder' placeholder="Enter Location">
+
+        <button class='SelectCountry'>
+
+            <h1 class='SelectCountryName'>Select Country </h1>
+        
+            <img class='AppIcon1' src='${ICONS}location.png'/>
+        
+        </button>
+
+        <input type="tel" id="TelephoneHolder" placeholder="Enter Telephone Number" minlength="9" maxlength="10">
+
         <button class='CreateUserAccountButton'>Create Account</button>
+
         <button class='LogInAccountButton'>LogIn</button>
+
+        <div class='SelectCountryDiv'>
+
+            <img class='CloseIcon' src='${ICONS}close.png'/>
+
+            <br><br><br>
+
+            <input type="text" id='SearchCountry' placeholder="Search For Country">
+
+            <div class='CountryDiv'></div>  
+
+        </div>
     `);
 
     const MESSAGE = document.querySelector('.Message');
@@ -35,8 +64,63 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
     const DATE = document.querySelector('#DateHolder');
     const PASSWORD = document.querySelector('#PasswordHolder');
     const TELEPHONE = document.querySelector('#TelephoneHolder');
-    const LOCATION = document.querySelector('#LocationHolder');
+    const LOCATION = document.querySelector('.SelectCountry');
     const CREATEACCOUNTBUTTON = document.querySelector('.CreateUserAccountButton');
+    const SELECTCOUNTRYDIV = document.querySelector('.SelectCountryDiv');
+    const SELECTDIV = document.querySelector('.CountryDiv');
+    const CLOSEICON = document.querySelector('.CloseIcon');
+    const SEARCHCOUNTRY = document.querySelector('#SearchCountry');
+
+    CLOSEICON.addEventListener('click', () => {
+        STYLED(SELECTCOUNTRYDIV, 'height', '0');
+    });
+
+    LOCATION.addEventListener('click', () => {
+        if (localStorage.getItem('ModeColour') === '#5C829A') {
+            STYLED(SELECTCOUNTRYDIV, 'background', '#5C829A');
+        } else {
+            STYLED(SELECTCOUNTRYDIV, 'background', '#212121');
+        }
+
+        STYLED(SELECTCOUNTRYDIV, 'height', '100%');
+
+        DISPLAY(SELECTDIV, `
+            <img id='UserLoading' class='LoadingIcon' src='${ICONS}loading.png'/>
+        `);
+
+        ADVANCE.GETPACKAGE(COUNTRYAPI, 'cors')
+            .then(data => {
+                CLEAR(SELECTDIV);
+                data.forEach(element => {
+                    const CountryHolder = document.createElement('button');
+                    CountryHolder.classList.add('CountryHolder');
+                    CountryHolder.innerHTML = element.name;
+
+                    CountryHolder.addEventListener('click', () => {
+                        sessionStorage.setItem('Country', element.name);
+                        sessionStorage.setItem('CountryCode', element.phoneCode);
+                        STYLED(SELECTCOUNTRYDIV, 'height', '0');
+                    });
+
+                    SEARCHCOUNTRY.addEventListener('input', () => {
+                        const searchValue = SEARCHCOUNTRY.value.trim().toLowerCase();
+                        const countryHolders = document.querySelectorAll('.CountryHolder');
+                        countryHolders.forEach(countryHolder => {
+                            const countryName = countryHolder.innerHTML.toLowerCase();
+                            if (countryName.includes(searchValue)) {
+                                countryHolder.style.display = 'block';
+                            } else {
+                                countryHolder.style.display = 'none';
+                            }
+                        });
+                    });
+
+                    ADD(SELECTDIV, CountryHolder);
+                    console.log(element);
+                });
+            })
+            .catch(err => console.log(err));
+    });
 
     EMAIL.addEventListener('input', () => {
         const emailValue = EMAIL.value.trim();
@@ -65,13 +149,23 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
     });
 
     CREATEACCOUNTBUTTON.addEventListener('click', () => {
-        if (USERNAME.value && EMAIL.value && PASSWORD.value && TELEPHONE.value && LOCATION.value) {
+        if (USERNAME.value && EMAIL.value && PASSWORD.value && TELEPHONE.value && sessionStorage.getItem('Country')) {
+            // Validate phone number format
+            const phoneRegex = /^\d{9,10}$/;
+            if (!phoneRegex.test(TELEPHONE.value)) {
+                DISPLAY(MESSAGE, `Invalid phone number format. Please enter a valid phone number with 9 to 10 digits.`);
+                setTimeout(() => {
+                    DISPLAY(MESSAGE, ``);
+                }, 2000);
+                return; // Stop further processing if the phone number is invalid
+            }
+
             const emailValue = EMAIL.value.trim();
             const gmailRegex = /@gmail\.com$/;
 
             if (gmailRegex.test(emailValue) && !/\s/.test(emailValue)) {
                 DISPLAY(CREATEACCOUNTBUTTON, `
-                    <img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>
+                    <img id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>
                 `);
 
                 ADVANCE.GETPACKAGE(LOGINAPI, 'cors')
@@ -97,8 +191,8 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                 "Password": PASSWORD.value,
                                 "Password2": PASSWORD.value,
                                 "Date": DATE.value,
-                                "Telephone": TELEPHONE.value,
-                                "Location": LOCATION.value,
+                                "Telephone": sessionStorage.getItem('CountryCode') + TELEPHONE.value,
+                                "Location": sessionStorage.getItem('Country'),
                                 "CreatedOn": new Date(),
                                 "SecretCode": secretCode,
                                 "Premium": "TRUE",

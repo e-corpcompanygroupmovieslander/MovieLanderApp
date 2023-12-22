@@ -1,0 +1,47 @@
+.SelectCountry{
+    width: 95%;
+    position: relative;
+    height: 32px;
+    max-height: 32px;
+    display: inline-flex;
+}
+
+.SelectCountryDiv{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: transparent;
+    height: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.CountryDiv{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: #00000080;
+    height: 85%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.CountryHolder{
+    text-align: left;
+    padding-left: 5%;
+}
+
+.SelectCountryName{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+}
+
+.AppIcon1{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 1rem;
+}

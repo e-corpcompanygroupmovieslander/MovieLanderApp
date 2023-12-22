@@ -2,5 +2,6 @@
 
 const ICONSPATH=`https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/ASSETS/ICONS/`;
 
+const COUNTRYAPI='https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/DATABASE/Countries.json';
 
-export{ICONSPATH}
+export{ICONSPATH,COUNTRYAPI}

@@ -1,5 +1,4 @@
-{
-    "countries": [
+[
       { "name": "Afghanistan", "code": "AF", "phoneCode": "+93" },
       { "name": "Albania", "code": "AL", "phoneCode": "+355" },
       { "name": "Algeria", "code": "DZ", "phoneCode": "+213" },
@@ -195,7 +194,7 @@
       { "name": "Yemen", "code": "YE", "phoneCode": "+967" },
       { "name": "Zambia", "code": "ZM", "phoneCode": "+260" },
       { "name": "Zimbabwe", "code": "ZW", "phoneCode": "+263" }
-    ]
-  }
+]
+  
   
   
