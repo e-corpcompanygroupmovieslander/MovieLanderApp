@@ -88,6 +88,8 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
             <img id='UserLoading' class='LoadingIcon' src='${ICONS}loading.png'/>
         `);
 
+        const SelectCountryName=document.querySelector('.SelectCountryName');
+
         ADVANCE.GETPACKAGE(COUNTRYAPI, 'cors')
             .then(data => {
                 CLEAR(SELECTDIV);
@@ -100,6 +102,7 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                         sessionStorage.setItem('Country', element.name);
                         sessionStorage.setItem('CountryCode', element.phoneCode);
                         STYLED(SELECTCOUNTRYDIV, 'height', '0');
+                        DISPLAY(SelectCountryName,element.name);
                     });
 
                     SEARCHCOUNTRY.addEventListener('input', () => {

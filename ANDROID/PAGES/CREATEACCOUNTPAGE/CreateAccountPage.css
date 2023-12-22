@@ -36,6 +36,9 @@
     margin-top: auto;
     margin-bottom: auto;
     display: block;
+    color: gainsboro;
+    margin-left: 0.1rem;
+    font-size: 16px;
 }
 
 .AppIcon1{
