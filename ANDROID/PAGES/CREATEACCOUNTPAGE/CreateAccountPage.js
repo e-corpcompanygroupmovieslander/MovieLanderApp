@@ -116,7 +116,7 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     });
 
                     ADD(SELECTDIV, CountryHolder);
-                    console.log(element);
+                    //console.log(element);
                 });
             })
             .catch(err => console.log(err));
