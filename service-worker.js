@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Movie-Lander-V.1.0.2';
+const CACHE_NAME = 'Movie-Lander-V.1.0.3';
 const urlsToCache = ['./'];
 
 self.addEventListener('install', event => {
