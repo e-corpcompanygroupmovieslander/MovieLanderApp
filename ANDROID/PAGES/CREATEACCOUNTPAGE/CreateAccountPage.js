@@ -106,7 +106,6 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     });
 
                     SEARCHCOUNTRY.addEventListener('input', () => {
-                        STYLED(SELECTDIV, 'top', '100px');
                         const searchValue = SEARCHCOUNTRY.value.trim().toLowerCase();
                         const countryHolders = document.querySelectorAll('.SelectCountry');
                         countryHolders.forEach(countryHolder => {
