@@ -39,7 +39,15 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
         
         </button>
 
-        <input type="tel" id="TelephoneHolder" placeholder="Enter Telephone Number" minlength="9" maxlength="10">
+        <div class='telephoneDiv'>
+
+            <h1 id='CountryCodeHolder' class='SelectCountryName'>+</h1>
+        
+            <input type="tel" id="TelephoneHolder" placeholder="Enter Telephone Number" minlength="9" maxlength="10">
+        
+        </div>
+
+        
 
         <button class='CreateUserAccountButton'>Create Account</button>
 
@@ -90,6 +98,8 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
         const SelectCountryName=document.querySelector('.SelectCountryName');
 
+        const CountryCodeHolder=document.querySelector('#CountryCodeHolder');
+
         ADVANCE.GETPACKAGE(COUNTRYAPI, 'cors')
             .then(data => {
                 CLEAR(SELECTDIV);
@@ -103,6 +113,7 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                         sessionStorage.setItem('CountryCode', element.phoneCode);
                         STYLED(SELECTCOUNTRYDIV, 'height', '0');
                         DISPLAY(SelectCountryName,element.name);
+                        DISPLAY(CountryCodeHolder,element.phoneCode);
                     });
 
                     SEARCHCOUNTRY.addEventListener('input', () => {
