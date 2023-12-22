@@ -95,10 +95,16 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                 CLEAR(SELECTDIV);
                 data.forEach(element => {
                     const CountryHolder = document.createElement('button');
-                    CountryHolder.classList.add('CountryHolder');
-                    CountryHolder.innerHTML = element.name;
+                    CountryHolder.classList.add('SelectCountry');
+                    DISPLAY(CountryHolder,`
+                    <h1 class='SelectCountryName'>${element.name}</h1>
+                    <h1 class='countrycode'>${element.phoneCode}</h1>
+                    `);
 
+
+                   
                     CountryHolder.addEventListener('click', () => {
+
                         sessionStorage.setItem('Country', element.name);
                         sessionStorage.setItem('CountryCode', element.phoneCode);
                         STYLED(SELECTCOUNTRYDIV, 'height', '0');

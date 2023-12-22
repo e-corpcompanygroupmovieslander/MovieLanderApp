@@ -26,18 +26,13 @@
     overflow-x: hidden;
 }
 
-.CountryHolder{
-    text-align: left;
-    padding-left: 5%;
-}
-
 .SelectCountryName{
     position: relative;
     margin-top: auto;
     margin-bottom: auto;
     display: block;
     color: gainsboro;
-    margin-left: 0.1rem;
+    margin-left: 0.5rem;
     font-size: 16px;
 }
 
@@ -47,4 +42,13 @@
     margin-bottom: auto;
     margin-left: auto;
     margin-right: 1rem;
+}
+
+.countrycode{
+    position: relative;
+    margin-left: auto;
+    margin-right: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+
 }
