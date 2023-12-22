@@ -136,12 +136,12 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
             })
             .catch(err => console.log(err));
     });
-
+    
     EMAIL.addEventListener('input', () => {
         const emailValue = EMAIL.value.trim();
-        const gmailRegex = /@gmail\.com$/;
-
-        if (gmailRegex.test(emailValue) && !/\s/.test(emailValue)) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+        if (emailRegex.test(emailValue)) {
             console.log('Valid email format');
             DISPLAY(MESSAGE, ``); // Clear any previous error messages
         } else {
