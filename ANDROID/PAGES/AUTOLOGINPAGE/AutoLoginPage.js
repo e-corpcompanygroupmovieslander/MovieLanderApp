@@ -1,5 +1,6 @@
 import { LOGINAPI } from "../../../APIS/Api.js";
 import { ANDROIDPLAYER } from "../ANDROIDPLAYER/AndroidPlayer.js"
+import { ANDROIDCREATEPRIVACYPOLICYPAGE } from "../CREATEACCOUNTPRIVACYPOLICY/CreateAccountPrivacyPolicy.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js"
 import { ANDROIDLOGINPAGE } from "../LOGINPAGE/LoginPage.js"
 
@@ -14,6 +15,16 @@ const ANDROIDAUTOLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         } else {
            
             ANDROIDPLAYER(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+            
+        }
+
+        if (localStorage.getItem('Privacy')) {
+            
+            ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+        } else {
+           
+            ANDROIDCREATEPRIVACYPOLICYPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
             
         }
 

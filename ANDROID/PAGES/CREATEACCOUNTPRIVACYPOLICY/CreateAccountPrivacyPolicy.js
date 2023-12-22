@@ -7,9 +7,7 @@ const ANDROIDCREATEPRIVACYPOLICYPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     DISPLAY(DIV,`
 
-    <div class='CreateAccountPrivacyPolicy' ></div>
-
-    <button class='CreateAccountPrivacyPolicyButton'>Continue</button>
+    <div class='CreateAccountPrivacyPolicy'></div>
     
     `);
 
@@ -29,19 +27,25 @@ const ANDROIDCREATEPRIVACYPOLICYPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         CLEAR(PRIVACYPOLICYDIV);
 
-        DISPLAY(PRIVACYPOLICYDIV,result);
+        DISPLAY(PRIVACYPOLICYDIV,`
+        <h1 class='Message'>Read Our Privacy Policy CareFully</h1>
+        ${result}
+        <button class='CreateAccountPrivacyPolicyButton'>I AGREE</button>
+        `);
+
+        const CONTINUE=document.querySelector('.CreateAccountPrivacyPolicyButton');
+
+        CONTINUE.addEventListener('click',()=>{
+
+            ADVANCE.ADDSTORAGE('local','Privacy','TRUE')
+
+            ANDROIDPLAYER(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+        })
 
     }).catch((err) => {
         console.log(err)
     });
-
-    const CONTINUE=document.querySelector('.CreateAccountPrivacyPolicyButton');
-
-    CONTINUE.addEventListener('click',()=>{
-
-        ANDROIDPLAYER(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-
-    })
 
 }
 

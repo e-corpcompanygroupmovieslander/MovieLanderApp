@@ -11,9 +11,10 @@
 }
 
 .CreateAccountPrivacyPolicyButton{
-    position: absolute;
+    position: relative;
     bottom: 0;
     margin-bottom: 1rem;
+    left: 0;
 }
 
 .PrivacyPolicyTitle{
