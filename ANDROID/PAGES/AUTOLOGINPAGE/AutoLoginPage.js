@@ -48,8 +48,17 @@ const ANDROIDAUTOLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             } else {
 
                 ADVANCE.REMOVESTORAGE('local','User');
+
+                ADVANCE.REMOVESTORAGE('local','AppPlayer');
+
+                ADVANCE.REMOVESTORAGE('local','Privacy');
+
+                ADVANCE.DELETESTORAGE('');
+                
             
-                ANDROIDLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)
+                ANDROIDLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+
                 
             }
 
@@ -60,6 +69,14 @@ const ANDROIDAUTOLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         });
         
     } else {
+
+        ADVANCE.REMOVESTORAGE('local','User');
+
+        ADVANCE.REMOVESTORAGE('local','AppPlayer');
+
+        ADVANCE.REMOVESTORAGE('local','Privacy');
+
+        ADVANCE.DELETESTORAGE('');
        
         ANDROIDLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)
         
