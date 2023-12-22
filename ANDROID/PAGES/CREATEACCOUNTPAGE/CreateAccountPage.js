@@ -96,13 +96,9 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                 data.forEach(element => {
                     const CountryHolder = document.createElement('button');
                     CountryHolder.classList.add('SelectCountry');
-                    DISPLAY(CountryHolder,`
-                    <h1 class='SelectCountryName'>${element.name}</h1>
-                    <h1 class='countrycode'>${element.phoneCode}</h1>
-                    `);
+                    CountryHolder.innerHTML = `<h1 class='SelectCountryName'>${element.name}</h1>`+`<h1 class='countrycode'>${element.phoneCode}</h1>`;
 
                     CountryHolder.addEventListener('click', () => {
-
                         sessionStorage.setItem('Country', element.name);
                         sessionStorage.setItem('CountryCode', element.phoneCode);
                         STYLED(SELECTCOUNTRYDIV, 'height', '0');
@@ -110,15 +106,16 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     });
 
                     SEARCHCOUNTRY.addEventListener('input', () => {
-                        STYLED(SELECTCOUNTRYDIV, 'top', '100px');
+                        STYLED(SELECTDIV, 'top', '100px');
                         const searchValue = SEARCHCOUNTRY.value.trim().toLowerCase();
-                        const countryHolders = document.querySelectorAll('.CountryHolder');
+                        const countryHolders = document.querySelectorAll('.SelectCountry');
                         countryHolders.forEach(countryHolder => {
                             const countryName = countryHolder.innerHTML.toLowerCase();
                             if (countryName.includes(searchValue)) {
-                                countryHolder.style.display = 'block';
+                                countryHolder.style.display = 'inline-flex';
                             } else {
                                 countryHolder.style.display = 'none';
+
                             }
                         });
                     });
