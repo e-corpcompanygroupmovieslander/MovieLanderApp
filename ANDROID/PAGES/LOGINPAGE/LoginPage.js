@@ -2,118 +2,83 @@ import { LOGINAPI } from "../../../APIS/Api.js";
 import { ANDROIDPLAYER } from "../ANDROIDPLAYER/AndroidPlayer.js";
 import { ANDROIDCREATEACCOUNTPAGE } from "../CREATEACCOUNTPAGE/CreateAccountPage.js";
 
-
-const ANDROIDLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
-
+const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
     CLEAR(DIV);
 
-    DISPLAY(DIV,`
-    
+    DISPLAY(DIV, `
         <h1 class='AppName'>Movie Lander</h1>
-
         <h1 class='Message'></h1>
-        
         <input type="email" id='EmailHolder' placeholder="Enter Email">
-
         <input type="password" id='PasswordHolder' placeholder="Enter Password">
-
         <button class='LogInButton'>LogIn</button>
-
         <button class='CreateAccountButton'>Create Account</button>
-
     `);
 
-    const LOGINBUTTON=document.querySelector('.LogInButton');
+    const LOGINBUTTON = document.querySelector('.LogInButton');
 
-    LOGINBUTTON.addEventListener('click',()=>{
+    LOGINBUTTON.addEventListener('click', () => {
+        const EMAIL = document.querySelector('#EmailHolder');
+        const PASSWORD = document.querySelector('#PasswordHolder');
+        const MESSAGE = document.querySelector('.Message');
 
-        const EMAIL=document.querySelector('#EmailHolder');
+        if (EMAIL.value && PASSWORD.value) {
+            DISPLAY(LOGINBUTTON, `<img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>`);
 
-        const PASSWORD=document.querySelector('#PasswordHolder');
+            ADVANCE.GETPACKAGE(LOGINAPI, 'cors')
+                .then((result) => {
+                    const user = result.find(user => user.Email === EMAIL.value);
 
-        const MESSAGE=document.querySelector('.Message');
+                    if (user) {
+                        if (user.Password === PASSWORD.value) {
+                            if (user.Premium) {
+                                ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
+                            } else {
+                                ADVANCE.REMOVESTORAGE('local', 'Premium');
+                            }
 
-        if ( EMAIL.value && PASSWORD.value ) {
+                            ADVANCE.ADDSTORAGE('local', 'Privacy', 'TRUE');
+                            ADVANCE.ADDSTORAGE('local', 'User', user.SecretCode);
 
-            DISPLAY(LOGINBUTTON,`
+                            ANDROIDPLAYER(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
+                        } else {
+                            DISPLAY(MESSAGE, `Wrong password`);
 
-                <img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>
-            
-            `);
-
-            ADVANCE.GETPACKAGE(LOGINAPI,'cors')
-
-            .then((result) => {
-
-                const users=result.find(user => user.Email===EMAIL.value && user.Password ===PASSWORD.value );
-
-                if (users) {
-
-                    if (users.Premium) {
-                        
-                        ADVANCE.ADDSTORAGE('local','Premium','TRUE');
-
+                            setTimeout(() => {
+                                DISPLAY(MESSAGE, '');
+                                DISPLAY(LOGINBUTTON, 'LogIn');
+                            }, 2000);
+                        }
                     } else {
-                        
-                        ADVANCE.REMOVESTORAGE('local','Premium');
+                        DISPLAY(MESSAGE, `Email does not exist`);
+
+                        setTimeout(() => {
+                            DISPLAY(MESSAGE, '');
+                            DISPLAY(LOGINBUTTON, 'LogIn');
+                        }, 2000);
                     }
-
-                    ADVANCE.ADDSTORAGE('local','Privacy','TRUE')
-                    
-                    ADVANCE.ADDSTORAGE('local','User',users.SecretCode);
-
-                    ANDROIDPLAYER(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-                    
-                } else {
-                   
-                    DISPLAY(MESSAGE,`User Doesnot Exist`);
+                })
+                .catch((err) => {
+                    DISPLAY(MESSAGE, 'Something went wrong');
 
                     setTimeout(() => {
-        
-                        DISPLAY(MESSAGE,``);
-        
-                        DISPLAY(LOGINBUTTON,`LogIn`);
-                        
+                        DISPLAY(MESSAGE, '');
+                        DISPLAY(LOGINBUTTON, 'LogIn');
                     }, 2000);
-                    
-                }
-
-            }).catch((err) => {
-
-                DISPLAY(MESSAGE,`SomeThing Went Wrong`);
-
-                setTimeout(() => {
-
-                   DISPLAY(MESSAGE,``);
-
-                   DISPLAY(LOGINBUTTON,`LogIn`);
-                
-                }, 2000);
-
-            });
-            
+                });
         } else {
-           
-            DISPLAY(MESSAGE,`Fill All Parts`);
+            DISPLAY(MESSAGE, 'Fill in all fields');
 
             setTimeout(() => {
-
-                DISPLAY(MESSAGE,``);
-                
+                DISPLAY(MESSAGE, '');
             }, 2000);
-            
         }
+    });
 
-    })
+    const CREATEACCOUNTBUTTON = document.querySelector('.CreateAccountButton');
 
-    const CREATEACCOUNTBUTTON=document.querySelector('.CreateAccountButton');
+    CREATEACCOUNTBUTTON.addEventListener('click', () => {
+        ANDROIDCREATEACCOUNTPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
+    });
+};
 
-    CREATEACCOUNTBUTTON.addEventListener('click',()=>{
-
-        ANDROIDCREATEACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-
-    })
-
-}
-
-export{ANDROIDLOGINPAGE};
+export { ANDROIDLOGINPAGE };
