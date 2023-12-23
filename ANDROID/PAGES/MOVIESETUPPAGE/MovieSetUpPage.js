@@ -3,6 +3,7 @@ import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { PLAYTHEMOVIE } from "../PLAYTHEMOVIE/PlayTheMovie.js";
 import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
+import { ANDROIDWISHLISTPAGE } from "../WISHLISTPAGE/WishListPage.js";
 
 
 const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
@@ -193,9 +194,20 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
             
         } else {
 
-            const URL=localStorage.getItem('MOVIEURL')
             
-            ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL);
+            if (localStorage.getItem('MovieNavigation')==='SavedMovies') {
+                
+                ANDROIDWISHLISTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+            } else {
+               
+                const URL=localStorage.getItem('MOVIEURL')
+            
+                ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL);
+                
+            }
+
+            
         }
 
     });

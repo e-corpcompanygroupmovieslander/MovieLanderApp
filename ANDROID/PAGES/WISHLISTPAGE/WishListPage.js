@@ -58,7 +58,7 @@ const ANDROIDWISHLISTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             
             MOVIESIMAGE.addEventListener('click',()=>{
 
-                ADVANCE.ADDSTORAGE('local','SeeMoreNavigatore','SavedMovies');
+                ADVANCE.ADDSTORAGE('local','MovieNavigation','SavedMovies');
 
                 MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
 
