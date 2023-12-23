@@ -1,4 +1,3 @@
-/*
 const CACHE_NAME = 'Movie-Lander-V.1.0.0';
 const urlsToCache = ['./'];
 
@@ -45,4 +44,3 @@ self.addEventListener('fetch', event => {
     })
   );
 });
-*/
