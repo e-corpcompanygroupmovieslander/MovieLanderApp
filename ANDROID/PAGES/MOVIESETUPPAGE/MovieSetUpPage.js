@@ -17,7 +17,7 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
             <img class='BackIcon' src='${ICONS}back.png'/>
 
-            <img class='LightModeIcon' src='${ICONS}save.png'/>
+            <img id='SAVEMODE' class='LightModeIcon' src=''/>
 
         </div>
 
@@ -92,6 +92,51 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         </div>
     
     `);
+
+    const SaveMovieIcon = document.querySelector('#SAVEMODE');
+
+    // Retrieve existing saved movies from localStorage
+    let SAVEDMOVIES = JSON.parse(localStorage.getItem('SavedMovies')) || [];
+
+    const isMovieSaved = SAVEDMOVIES.some(savedMovie => savedMovie.MovieName === element.MovieName);
+
+        if (isMovieSaved) {
+            // If the movie is already saved, remove it from the array
+            SAVEDMOVIES = SAVEDMOVIES.filter(savedMovie => savedMovie.MovieName !== element.MovieName);
+
+            SaveMovieIcon.src = `${ICONS}saved.png`;
+
+        } else {
+        
+            SaveMovieIcon.src = `${ICONS}save.png`;
+        }
+
+    SaveMovieIcon.addEventListener('click',()=>{
+
+    // Retrieve existing saved movies from localStorage
+    let SAVEMOVIES = JSON.parse(localStorage.getItem('SavedMovies')) || [];
+
+    const isMovieSaved = SAVEMOVIES.some(savedMovie => savedMovie.MovieName === element.MovieName);
+
+        if (isMovieSaved) {
+            // If the movie is already saved, remove it from the array
+            SAVEMOVIES = SAVEMOVIES.filter(savedMovie => savedMovie.MovieName !== element.MovieName);
+
+            // Save the updated array back to localStorage
+            localStorage.setItem('SavedMovies', JSON.stringify(SAVEMOVIES));
+
+            SaveMovieIcon.src = `${ICONS}save.png`;
+        } else {
+            // Add the new element to the array
+            SAVEMOVIES.push(element);
+
+            // Save the updated array back to localStorage
+            localStorage.setItem('SavedMovies', JSON.stringify(SAVEMOVIES));
+
+            SaveMovieIcon.src = `${ICONS}saved.png`;
+        }
+
+    })
 
     if (localStorage.getItem('Device')==='Android') {
 
