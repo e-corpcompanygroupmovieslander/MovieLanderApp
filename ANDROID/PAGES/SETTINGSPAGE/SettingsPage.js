@@ -1,5 +1,6 @@
 import { UPDATEAPI } from "../../../APIS/Api.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
+import { ANDROIDHELPPAGE } from "../HELPPAGE/HelpPage.js";
 import { ANDROIDLOGOUTPAGE } from "../LOGOUTPAGE/LogOutPage.js";
 import { ANDROIDPARENTALCONTROL } from "../PARENTALCONTROL/ParentalControl.js";
 import { ANDROIDPRIVACYPOLICY } from "../PRIVACYPOLICYPAGE/PrivacyPolicyPage.js";
@@ -52,7 +53,7 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button>
+        <button class='Help'>
 
             <h1 class='HolderName'>Help </h1>
 
@@ -215,6 +216,14 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         open(UPDATEAPI);
 
     });
+
+    const HELP=document.querySelector('.Help');
+
+    HELP.addEventListener('click',()=>{
+
+        ANDROIDHELPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
 
 }
 
