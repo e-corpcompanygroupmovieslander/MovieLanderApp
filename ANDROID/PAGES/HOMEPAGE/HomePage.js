@@ -1,5 +1,6 @@
 import { ANDROIDADVERTSPAGE } from "../ADVERTSPAGE/AdvertsPage.js";
 import { ANDROIDCATERGORIES } from "../CATERGORIESPAGE/CatergoriesPage.js";
+import { ANDROIDFREEWATCHPAGE } from "../FREEWATCHPAGE/FreeWatchPage.js";
 import { ANDROIDRECOMMENDEDANIMATION} from "../RECOMMENDEDANIMATION/RecommendedAnimations.js";
 import { ANDROIDRECOMMENDEDMARATHONS } from "../RECOMMENDEDMARATHON/RecommendedMarathon.js";
 import { ANDROIDRECOMMENDEDMOVIES } from "../RECOMMENDEDMOVIES/RecommendedMovies.js";
@@ -78,7 +79,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         <img class='CatergoriesIcon' src='${ICONS}list.png'/>
 
-        <img src='${ICONS}movies.png'/>
+        <img class='FreeWatchIcons' src='${ICONS}movies.png'/>
 
         <img class='ProfileIcon' src='${ICONS}profile.png'/>
     
@@ -146,6 +147,14 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         RoundFooter.style.background='#00000080';
     
     }
+
+    const FREEWATCHICON=document.querySelector('.FreeWatchIcons');
+
+    FREEWATCHICON.addEventListener('click',()=>{
+
+        ANDROIDFREEWATCHPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
 
 }
 

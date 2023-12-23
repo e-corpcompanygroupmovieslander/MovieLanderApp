@@ -26,13 +26,7 @@ const PLAYTHEMOVIE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     }
 
-    const BACKICON=document.querySelector('.BackIcon');
 
-    BACKICON.addEventListener('click',()=>{
-
-        MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
-
-    });
 
 }
 
