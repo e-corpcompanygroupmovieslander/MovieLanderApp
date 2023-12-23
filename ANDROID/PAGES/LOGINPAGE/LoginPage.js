@@ -57,6 +57,8 @@ const ANDROIDLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                         
                         ADVANCE.REMOVESTORAGE('local','Premium');
                     }
+
+                    ADVANCE.ADDSTORAGE('local','Privacy','TRUE')
                     
                     ADVANCE.ADDSTORAGE('local','User',users.SecretCode);
 

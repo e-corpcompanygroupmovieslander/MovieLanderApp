@@ -18,7 +18,7 @@ const ANDROIDPLAYER=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
             <h1 class='Message'>Works With Google Drive Installed</h1>
     
-            <button class='Drive'>
+            <button class='DrivePlayer'>
             
                 <h1 class='HolderName'>Drive Player </h1>
     
@@ -42,7 +42,7 @@ const ANDROIDPLAYER=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
    
 
-    const DRIVEPLAYER=document.querySelector('.Drive');
+    const DRIVEPLAYER=document.querySelector('.DrivePlayer');
 
     DRIVEPLAYER.addEventListener('click',()=>{
 
