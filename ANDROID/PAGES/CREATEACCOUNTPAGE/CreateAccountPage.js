@@ -61,22 +61,10 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
     const CLOSEICON = document.querySelector('.CloseIcon');
     const SEARCHCOUNTRY = document.querySelector('#SearchCountry');
 
-    PASSWORD.addEventListener('input',()=>{
-
-        if (PASSWORD.value.length>=6) {
-            
-            console.log('Password valid')
-
-        } else {
-            
-            DISPLAY(MESSAGE, `Password Must Be Six Above`);
-            setTimeout(() => {
-                DISPLAY(MESSAGE, ``);
-            }, 2000);
-
-        }
-
-    })
+      // Event listener for displaying date picker on click
+      DATE.addEventListener('click', () => {
+        DATE.type = 'date';
+    });
 
     // Event listener for closing the country selection dialog
     CLOSEICON.addEventListener('click', () => {
@@ -142,28 +130,6 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
             .catch(err => console.log(err));
     });
 
-    // Event listener for validating email format
-    EMAIL.addEventListener('input', () => {
-        const emailValue = EMAIL.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (emailRegex.test(emailValue)) {
-            console.log('Valid email format');
-            DISPLAY(MESSAGE, ``); // Clear any previous error messages
-        } else {
-            console.log('Invalid email format');
-            DISPLAY(MESSAGE, `Enter Correct Email Address`);
-            setTimeout(() => {
-                DISPLAY(MESSAGE, ``);
-            }, 2000);
-        }
-    });
-
-    // Event listener for displaying date picker on click
-    DATE.addEventListener('click', () => {
-        DATE.type = 'date';
-    });
-
     // Event listener for navigating to login page
     const LOGINBUTTON = document.querySelector('.LogInAccountButton');
     LOGINBUTTON.addEventListener('click', () => {
@@ -202,14 +168,28 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
             // Validate password criteria
             const passwordValue = PASSWORD.value.trim();
-            const containsUpperCase = /[A-Z]/.test(passwordValue);
-            const containsLowerCase = /[a-z]/.test(passwordValue);
             const containsNumber = /\d/.test(passwordValue);
-            const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(passwordValue);
-            const isNotPassword = passwordValue.toLowerCase() !== 'password';
-            const noSpaces = !/\s/.test(passwordValue);
+            const containsAlphabet = /[a-zA-Z]/.test(passwordValue);
 
-            if (isNotPassword && containsUpperCase && containsLowerCase && containsNumber && containsSpecialChar && noSpaces) {
+            if (passwordValue.length < 6) {
+                DISPLAY(MESSAGE, `Password must be at least 6 characters long`);
+                setTimeout(() => {
+                    DISPLAY(MESSAGE, ``);
+                    DISPLAY(CREATEACCOUNTBUTTON, `Create Account`);
+                }, 2000);
+            } else if (!containsNumber) {
+                DISPLAY(MESSAGE, `Password must contain at least one number`);
+                setTimeout(() => {
+                    DISPLAY(MESSAGE, ``);
+                    DISPLAY(CREATEACCOUNTBUTTON, `Create Account`);
+                }, 2000);
+            } else if (!containsAlphabet) {
+                DISPLAY(MESSAGE, `Password must contain at least one alphabet character`);
+                setTimeout(() => {
+                    DISPLAY(MESSAGE, ``);
+                    DISPLAY(CREATEACCOUNTBUTTON, `Create Account`);
+                }, 2000);
+            } else {
                 // Password meets the criteria
 
                 const emailValue = EMAIL.value.trim();
@@ -321,20 +301,6 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                         DISPLAY(CREATEACCOUNTBUTTON, `Create Account`);
                     }, 2000);
                 }
-            } else {
-                let errorMessage = '';
-
-                if (!isNotPassword) {
-                    errorMessage = `Password cannot be "password"`;
-                } else {
-                    errorMessage = `Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and cannot have spaces`;
-                }
-
-                DISPLAY(MESSAGE, errorMessage);
-                setTimeout(() => {
-                    DISPLAY(MESSAGE, ``);
-                    DISPLAY(CREATEACCOUNTBUTTON, `Create Account`);
-                }, 5000);
             }
         } else {
             DISPLAY(MESSAGE, `Fill All Parts`);
