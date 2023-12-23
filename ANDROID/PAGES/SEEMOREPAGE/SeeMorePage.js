@@ -2,6 +2,7 @@ import { MOVIESPATH } from "../../../APIS/Api.js";
 import { ANDROIDCATERGORIES } from "../CATERGORIESPAGE/CatergoriesPage.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
+import { ANDROIDWISHLISTPAGE } from "../WISHLISTPAGE/WishListPage.js";
 
 const ANDROIDSEEMOREPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)=>{
 
@@ -30,9 +31,17 @@ const ANDROIDSEEMOREPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)=>{
             ANDROIDCATERGORIES(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
         } else {
-        
-            ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
+            if (localStorage.getItem('SeeMoreNavigatore')==='SavedMovies') {
+                
+                ANDROIDWISHLISTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+            } else {
+               
+                ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+                
+            }
+        
         }
 
     });
