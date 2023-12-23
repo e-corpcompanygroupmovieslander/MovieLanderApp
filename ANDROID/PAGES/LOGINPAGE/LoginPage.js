@@ -1,4 +1,4 @@
-import { LOGINAPI } from "../../../APIS/Api.js";
+import { DELETEACCOUNTGET, LOGINAPI } from "../../../APIS/Api.js";
 import { ANDROIDPLAYER } from "../ANDROIDPLAYER/AndroidPlayer.js";
 import { ANDROIDCREATEACCOUNTPAGE } from "../CREATEACCOUNTPAGE/CreateAccountPage.js";
 
@@ -29,25 +29,50 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     const user = result.find(user => user.Email === EMAIL.value);
 
                     if (user) {
-                        if (user.Password === PASSWORD.value) {
-                            if (user.Premium) {
-                                ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
-                            } else {
-                                ADVANCE.REMOVESTORAGE('local', 'Premium');
-                            }
+                        // Assuming DELETEACCOUNTGET returns a list of deleted accounts
+                        ADVANCE.GETPACKAGE(DELETEACCOUNTGET, 'cors')
+                            .then((deletedAccounts) => {
+                                const deleted = deletedAccounts.find(deletedUser => deletedUser.User === user.SecretCode);
 
-                            ADVANCE.ADDSTORAGE('local', 'Privacy', 'TRUE');
-                            ADVANCE.ADDSTORAGE('local', 'User', user.SecretCode);
+                                if (deleted) {
+                                    ADVANCE.REMOVESTORAGE('local', 'User');
 
-                            ANDROIDPLAYER(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
-                        } else {
-                            DISPLAY(MESSAGE, `Wrong password`);
+                                    DISPLAY(MESSAGE, 'User Does Not Exist');
 
-                            setTimeout(() => {
-                                DISPLAY(MESSAGE, '');
-                                DISPLAY(LOGINBUTTON, 'LogIn');
-                            }, 2000);
-                        }
+                                    setTimeout(() => {
+                                        DISPLAY(MESSAGE, '');
+                                        DISPLAY(LOGINBUTTON, 'LogIn');
+                                    }, 2000);
+                                } else {
+                                    if (user.Password === PASSWORD.value) {
+                                        if (user.Premium) {
+                                            ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
+                                        } else {
+                                            ADVANCE.REMOVESTORAGE('local', 'Premium');
+                                        }
+
+                                        ADVANCE.ADDSTORAGE('local', 'Privacy', 'TRUE');
+                                        ADVANCE.ADDSTORAGE('local', 'User', user.SecretCode);
+
+                                        ANDROIDPLAYER(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
+                                    } else {
+                                        DISPLAY(MESSAGE, `Wrong password`);
+
+                                        setTimeout(() => {
+                                            DISPLAY(MESSAGE, '');
+                                            DISPLAY(LOGINBUTTON, 'LogIn');
+                                        }, 2000);
+                                    }
+                                }
+                            })
+                            .catch((err) => {
+                                DISPLAY(MESSAGE, 'Something went wrong');
+
+                                setTimeout(() => {
+                                    DISPLAY(MESSAGE, '');
+                                    DISPLAY(LOGINBUTTON, 'LogIn');
+                                }, 2000);
+                            });
                     } else {
                         DISPLAY(MESSAGE, `Email does not exist`);
 

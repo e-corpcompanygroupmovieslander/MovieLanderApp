@@ -1,5 +1,6 @@
-import { PRIVACYTEXT } from "../../../APIS/Api.js";
+import { DELETEACCOUNTPOST, PRIVACYTEXT } from "../../../APIS/Api.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
+import { ANDROIDLOGINPAGE } from "../LOGINPAGE/LoginPage.js";
 import { ANDROIDSETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
 
 const ANDROIDDELETEACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -87,8 +88,38 @@ const ANDROIDDELETEACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             if (REASON.value && localStorage.getItem('DeleteAccount') ) {
                
+                DISPLAY(DELETEACCOUNTBUTTON,`
+
+                    <img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>
                 
-                alert('Deleted')
+                `)
+
+                const USERDATA={
+                    "User":localStorage.getItem('User'),
+                    "Message":REASON.value,
+                    "Terms":"ON",
+                    "Date":new Date()
+                }
+
+                fetch(DELETEACCOUNTPOST,{
+                    method:"POST",
+                    mode:"no-cors",
+                    body:JSON.stringify(USERDATA)
+                })
+
+                .then(res =>res.text())
+
+                .then((result) => {
+
+                    localStorage.clear();
+
+                    sessionStorage.clear();
+
+                    ANDROIDLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+                }).catch((err) => {
+                    console.log(err)
+                });
                 
 
 
