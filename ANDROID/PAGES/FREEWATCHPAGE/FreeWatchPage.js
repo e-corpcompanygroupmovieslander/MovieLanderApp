@@ -47,6 +47,8 @@ const ANDROIDFREEWATCHPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         CLEAR(FREEWATCHDIV);
 
+        ADVANCE.SHUFFLEDATA(result);
+
         result.forEach(element => {
            
             const CATERGORIESHOLDER=document.createElement('div');
