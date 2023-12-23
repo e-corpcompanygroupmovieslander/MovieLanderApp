@@ -1,5 +1,6 @@
 import { UPDATEAPI } from "../../../APIS/Api.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
+import { ANDROIDDELETEACCOUNTPAGE } from "../DELETEACCOUNT/DeleteAccount.js";
 import { ANDROIDHELPPAGE } from "../HELPPAGE/HelpPage.js";
 import { ANDROIDLOGOUTPAGE } from "../LOGOUTPAGE/LogOutPage.js";
 import { ANDROIDPARENTALCONTROL } from "../PARENTALCONTROL/ParentalControl.js";
@@ -69,7 +70,7 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button>
+        <button class='DeleteAccount' >
 
             <h1 class='HolderName'>Delete Account </h1>
 
@@ -222,6 +223,14 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     HELP.addEventListener('click',()=>{
 
         ANDROIDHELPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
+
+    const DELETEACCOUNT=document.querySelector('.DeleteAccount');
+
+    DELETEACCOUNT.addEventListener('click',()=>{
+
+        ANDROIDDELETEACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     })
 
