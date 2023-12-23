@@ -58,11 +58,18 @@ const ANDROIDMOREAPPS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             MOVIESIMAGE.src=ADVERTSPATH+element.APPIMAGE;
             MOVIESIMAGE.classList.add('MoreAppsImage');
 
-            MOVIESIMAGE.addEventListener('click',()=>{
+            const GETBUTTON=document.createElement('button');
+            GETBUTTON.innerHTML='GET';
+            GETBUTTON.classList.add('GETBUTTON');
+            
+
+            GETBUTTON.addEventListener('click',()=>{
 
                 open(element.APPLINK);
 
             })
+
+            MoviesDivHolder.append(GETBUTTON);
 
             MoviesDivHolder.append(MOVIESIMAGE);
 

@@ -23,8 +23,18 @@
 .MoreMoviesTitle{
     position: relative;
     display: inline-flex;
-    margin-top: auto;
+    margin-top: 1rem;
     margin-bottom: auto;
     margin-left: 10rem;
     margin-right: auto;
+}
+
+.GETBUTTON{
+    position: absolute;
+    left:  40%;
+    height: 32px;
+    bottom: 5%;
+    width: 40%;
+    display: block;
+    font-style: italic;
 }
