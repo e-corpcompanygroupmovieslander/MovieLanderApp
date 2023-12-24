@@ -98,15 +98,26 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                 <img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>
             `);
 
-            if (localStorage.getItem('User')==='') {
+            let SENDER='';
+
+            let SENDERNAME='';
+
+            if (localStorage.getItem('User')==='E19991mpt9' || 'N20011pqyt') {
                 
+                SENDER='Admin';
+
+                SENDERNAME='Admin';
+
             } else {
                 
+                SENDER=localStorage.getItem('User');
+
+                SENDERNAME=sessionStorage.getItem('UserName')
             }
 
             const USERDATA = {
-                "Movie": localStorage.getItem('User'),
-                "Commentor": sessionStorage.getItem('UserName'),
+                "Movie": SENDER,
+                "Commentor": SENDERNAME,
                 "Comment": COMMENT.value,
                 "Date": new Date()
             }
