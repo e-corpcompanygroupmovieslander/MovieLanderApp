@@ -10,6 +10,8 @@ const ANDROIDMTNINSTRUCTIONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <img class='BackIcon' src='${ICONS}back.png'/>
 
+            <h1 class='Payments'>Payment Instructions</h1>
+
         </div>
 
         <div  class='PrivacyPolicyDiv'>

@@ -8,6 +8,7 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
   DISPLAY(DIV, `
     <div class='AndroidHeader'>
       <img class='BackIcon' src='${ICONS}back.png'/>
+      <h1 class='Payments'>MTN PAY</h1>
     </div>
     <br><br><br>
     <h1 class='Message'>Paste Your Message Of Payment Here</h1>
@@ -34,6 +35,12 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
   PAYMTN.addEventListener('click', () => {
     if (MESSAGEPAY.value) {
+
+      DISPLAY(PAYMTN,`
+                
+      <img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>
+
+      `)
       const inputString = MESSAGEPAY.value;
 
       // Define regular expressions to match the relevant information
@@ -76,13 +83,40 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
         const isDateExpired = TODAYSDATEDATE - DATE > 24 * 60 * 60 * 1000;
 
         if (isDateExpired) {
-          alert('This payment is past 24 hours.');
+
+          DISPLAY(MESSAGE,`Subscription Expired`);
+          
+          setTimeout(() => {
+            
+            DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+
+          }, 2000);
+
+
         } else if ((PAIDAMOUNT !== WEEKLYPAYMENT && PAIDAMOUNT !== MONTHLYPAYMENT) ||
           NAME !== PAIDNAME) {
           if (NAME !== PAIDNAME) {
-            alert('Payments made to the wrong company (Movie Lander).');
+            DISPLAY(MESSAGE,`Check Your Subscription Company Name`);
+          
+            setTimeout(() => {
+              
+              DISPLAY(PAYMTN,`Subscribe`);
+
+              DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+  
+            }, 2000);
           } else {
-            alert('Package payment not found.');
+            
+            DISPLAY(MESSAGE,`Check Your Subscription Package`);
+          
+            setTimeout(() => {
+              
+              DISPLAY(PAYMTN,`Subscribe`);
+              
+              DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+  
+            }, 2000);
+
           }
         } else {
           let ExpiryDate = '';
@@ -110,6 +144,7 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
           };
 
           fetch(MTNPREMIUMPAYGET)
+
             .then(res => res.json())
             .then(data => {
               // Assuming data is an array of IDs
@@ -124,8 +159,19 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
               console.log(USEDID);
 
               if (USEDID.includes(parseInt(ID))) {
-                alert('USED');
+                
+                DISPLAY(MESSAGE,`Subscription Used`);
+          
+                setTimeout(() => {
+
+                  DISPLAY(PAYMTN,`Subscribe`);
+                  
+                  DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+        
+                }, 2000);
+
               } else {
+ 
                 fetch(MTNPREMIUMPAY, {
                   method: "POST",
                   mode:'no-cors',
@@ -148,12 +194,23 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
             .catch(err => console.log(err));
         }
       } else {
-        console.log("Information not found in the input string.");
+        DISPLAY(MESSAGE,`Invalid Subscription`);
+          
+        setTimeout(() => {
+          
+          DISPLAY(PAYMTN,`Subscribe`);
+          
+          DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+
+        }, 2000);
       }
     } else {
       DISPLAY(MESSAGE, 'Provide Your Payment Message');
 
       setTimeout(() => {
+
+        DISPLAY(PAYMTN,`Subscribe`);
+
         DISPLAY(MESSAGE, 'Paste Your Message Of Payment Here');
       }, 2000);
     }

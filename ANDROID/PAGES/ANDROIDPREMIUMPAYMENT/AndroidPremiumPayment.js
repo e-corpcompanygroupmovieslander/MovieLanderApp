@@ -13,7 +13,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         console.log('Android Version Changed Colour');
         
     }
-
+    
     CLEAR(DIV);
 
     DISPLAY(DIV,`

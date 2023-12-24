@@ -60,15 +60,6 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         </button>
 
-        <button class='Calls'>
-
-            <h1 class='HolderName'>Call US</h1>
-
-            <img class='AppIcon' src='${ICONS}phone.png'/>
-
-        
-        </button>
-
     `);
 
     const BACKICON=document.querySelector('.BackIcon');

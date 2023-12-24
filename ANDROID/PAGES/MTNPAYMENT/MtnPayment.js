@@ -12,6 +12,8 @@ const ANDROIDMTNPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <img class='BackIcon' src='${ICONS}back.png'/>
 
+            <h1 class='Payments'>MTN</h1>
+
         </div>
 
         <br><br><br><br>
