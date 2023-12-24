@@ -102,7 +102,7 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             let SENDERNAME='';
 
-            if (localStorage.getItem('User')==='E19991mpt9' || 'N20011pqyt') {
+            if (localStorage.getItem('User')==='E19991mpt9' ||localStorage.getItem('User')==='N20011pqyt') {
                 
                 SENDER='Admin';
 

@@ -8,6 +8,8 @@
     background: #00000080;
     top: 60px;
     margin-bottom: 4rem;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
