@@ -51,7 +51,12 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                             ADVANCE.REMOVESTORAGE('local', 'Premium');
                                         }
 
+                                        ADVANCE.ADDSTORAGE('Session','UserName',user.UserName);
+
+                                        ADVANCE.ADDSTORAGE('Session','UserEmail',user.Email);
+
                                         ADVANCE.ADDSTORAGE('local', 'Privacy', 'TRUE');
+
                                         ADVANCE.ADDSTORAGE('local', 'User', user.SecretCode);
 
                                         ANDROIDPLAYER(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);

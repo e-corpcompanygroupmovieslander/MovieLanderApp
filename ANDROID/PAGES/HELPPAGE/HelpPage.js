@@ -12,7 +12,7 @@ const ANDROIDHELPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <img class='BackIcon' src='${ICONS}back.png'/>
 
-            <img class='LightModeIcon' src='${ICONS}help.png'/>
+            <h1 class='Payments'>App Help</h1>
 
         </div>
 

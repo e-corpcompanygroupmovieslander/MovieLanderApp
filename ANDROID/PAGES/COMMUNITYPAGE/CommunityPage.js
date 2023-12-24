@@ -1,4 +1,5 @@
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
+import { ANDROIDREQUESTMOVIEPAGE } from "./RequestMovie.js";
 
 const ANDROIDCOMMUNITYPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -14,11 +15,16 @@ const ANDROIDCOMMUNITYPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         </div>
 
-        <div class='ChatDivMessages'></div>
+        <br><br><br><br>
 
-        <input class='RequestMovieInput' type='text' placeholder='Request A Movie'/>
-    
-        <button class='RequestSendButton'>Send</button>
+        <button class='RequestMovie'>
+
+            <h1 class='HolderName'>Movie Requests </h1>
+
+            <img class='AppIcon' src='${ICONS}liked.png'/>
+        
+        </button>
+
 
     `);
 
@@ -28,6 +34,14 @@ const ANDROIDCOMMUNITYPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     BACKICON.addEventListener('click',()=>{
 
         ANDROIDUSERACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
+
+    const REQUESTMOVIE=document.querySelector('.RequestMovie');
+
+    REQUESTMOVIE.addEventListener('click',()=>{
+
+        ANDROIDREQUESTMOVIEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     })
 

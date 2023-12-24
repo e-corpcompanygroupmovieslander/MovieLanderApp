@@ -12,7 +12,7 @@ const ANDROIDPRIVACYPOLICY=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <img class='BackIcon' src='${ICONS}back.png'/>
 
-            <img class='LightModeIcon' src='${ICONS}privacypolicy.png'/>
+            <h1 class='Payments'>Privacy Policy</h1>
 
         </div>
 

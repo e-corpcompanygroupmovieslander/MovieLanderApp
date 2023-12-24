@@ -260,6 +260,10 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                             .then((result) => {
                                                 const users = result.find(user => user.Email === EMAIL.value);
                                                 if (users) {
+                                                    
+                                                    ADVANCE.ADDSTORAGE('Session','UserName',users.UserName);
+
+                                                    ADVANCE.ADDSTORAGE('Session','UserEmail',users.Email);
                                                     if (users.Premium) {
                                                         ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
                                                     } else {

@@ -17,7 +17,7 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <img class='BackIcon' src='${ICONS}back.png'/>
 
-            <img class='LightModeIcon' src='${ICONS}setting.png'/>
+            <h1 class='Payments'>Settings</h1>
 
         </div>
         <br><br><br><br>

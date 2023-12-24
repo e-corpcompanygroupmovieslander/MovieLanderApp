@@ -12,7 +12,7 @@ const ANDROIDPARENTALCONTROL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <img class='BackIcon' src='${ICONS}back.png'/>
 
-            <img class='LightModeIcon' src='${ICONS}parentalcontrol.png'/>
+            <h1 class='Payments'>Parental Control</h1>
 
         </div>
 

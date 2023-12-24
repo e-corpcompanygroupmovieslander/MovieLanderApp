@@ -26,3 +26,25 @@
     left:  77%;
     margin-bottom: 1rem;
 }
+
+.AdminName{
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    right:  5%;
+    text-align: right;
+    color: blue;
+}
+
+.AdminComment{
+    position: relative;
+    width: 95%;
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    right:1%;
+    font-style: italic; 
+    word-wrap: break-word;
+    color: blue;
+}

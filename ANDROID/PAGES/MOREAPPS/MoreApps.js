@@ -11,7 +11,7 @@ const ANDROIDMOREAPPS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <img class='BackIcon' src='${ICONS}back.png'/>
 
-            <img class='LightModeIcon' src='${ICONS}app.png'/>
+            <h1 class='Payments'>App Store</h1>
 
         </div>
 
