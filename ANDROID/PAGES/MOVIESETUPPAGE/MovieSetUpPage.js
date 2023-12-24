@@ -89,12 +89,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
             <img class='CloseIcon' src='${ICONS}close.png'/>
 
         </div>
-
-        <div class='PremiumMessage'>
-
-            <h1 class='PremiumMessager'>Pay For Premium</h1>
-        
-        </div>
     
     `);
 
