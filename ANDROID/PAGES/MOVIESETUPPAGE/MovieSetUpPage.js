@@ -140,6 +140,7 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     })
 
+
     if (localStorage.getItem('Device')==='Android') {
 
         if (element.PosterColour) {
@@ -157,7 +158,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         
     }
 
-    
     const PREMIUMICON=document.querySelector('#PremiumIcon');
 
     const PREMIUMNAME=document.querySelector('#PremiumName');
