@@ -207,6 +207,8 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     PREMIUMPAGE.addEventListener('click',()=>{
 
+        localStorage.setItem('PayPremium','Direct');
+
         ANDROIDPREMIUMPAYMENT(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     })

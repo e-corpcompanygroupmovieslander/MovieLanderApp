@@ -1,3 +1,4 @@
+import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 import { ANDROIDMTNPAYMENT } from "../MTNPAYMENT/MtnPayment.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
@@ -10,6 +11,8 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     <div class='AndroidHeader'>
 
         <img class='BackIcon' src='${ICONS}back.png'/>
+
+        <h1 class='Payments'>Payments</h1>
 
     </div>
 
@@ -39,7 +42,19 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     BACKICON.addEventListener('click',()=>{
 
-        ANDROIDUSERACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+        if (localStorage.getItem('PayPremium')==='NotDirect') {
+            
+            const element=JSON.parse(localStorage.getItem('Element'));
+
+            MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
+
+        } else {
+           
+            ANDROIDUSERACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+            
+        }
+
+        
 
     });
 

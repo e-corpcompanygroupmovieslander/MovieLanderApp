@@ -64,3 +64,11 @@
     top: 40%;
     left: 40%;
 }
+
+.Payments{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1rem;
+    margin-left: auto;
+}

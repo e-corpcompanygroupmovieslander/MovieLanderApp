@@ -1,5 +1,6 @@
 import { MOVIESPATH } from "../../../APIS/Api.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
+import { ANDROIDPREMIUMPAYMENT } from "../ANDROIDPREMIUMPAYMENT/AndroidPremiumPayment.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { PLAYTHEMOVIE } from "../PLAYTHEMOVIE/PlayTheMovie.js";
 import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
@@ -8,6 +9,8 @@ import { ANDROIDCOMMENTDIV } from "./CommentDiv.js";
 
 
 const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
+
+    localStorage.setItem('Element',JSON.stringify(element))
 
     CLEAR(DIV);
 
@@ -139,7 +142,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         }
 
     })
-
 
     if (localStorage.getItem('Device')==='Android') {
 
@@ -277,16 +279,9 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
             if (element.Subscription && !localStorage.getItem('Premium')) {
                
-                STYLED(PREMIUMMESSAGE,'display','inline-flex');
-                STYLED(PREMIUMMESSAGE,'height','50px');
+                localStorage.setItem('PayPremium','NotDirect');
 
-                setTimeout(() => {
-                    
-                    STYLED(PREMIUMMESSAGE,'display','none');
-
-                    STYLED(PREMIUMMESSAGE,'height','0px');
-
-                }, 2000);
+                ANDROIDPREMIUMPAYMENT(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
                 
             } else {
                 
