@@ -153,7 +153,7 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         console.log('Android Version Changed Colour');
         
     }
-
+    
     const PREMIUMICON=document.querySelector('#PremiumIcon');
 
     const PREMIUMNAME=document.querySelector('#PremiumName');

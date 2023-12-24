@@ -1,3 +1,4 @@
+import { STYLED } from "../../../CONNECTION/Connection.js";
 import { MOVIESETUPPAGE } from "./MovieSetUpPage.js";
 
 const ANDROIDCOMMENTDIV = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE, element) => {
