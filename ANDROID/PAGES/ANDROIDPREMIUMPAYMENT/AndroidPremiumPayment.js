@@ -4,6 +4,16 @@ import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
+    if (localStorage.getItem('Device')==='Android') {
+
+        StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
+        
+    } else {
+       
+        console.log('Android Version Changed Colour');
+        
+    }
+
     CLEAR(DIV);
 
     DISPLAY(DIV,`
