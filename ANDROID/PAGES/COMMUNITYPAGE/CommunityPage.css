@@ -2,31 +2,43 @@
     position: absolute;
     width: 95%;
     left: 2%;
-    border-radius: 20px;
+    border-radius: 10px;
     height: auto;
     bottom: 0;
     background: #00000080;
-    top: 60px;
+    top: 110px;
     margin-bottom: 4rem;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-
-.RequestMovieInput{
+.ContactUsChatDiv{
     position: absolute;
-    bottom: 0;
-    width: 70%;
-    margin-bottom: 1rem;
+    width: 95%;
+    background: #00000080;
+    height: 40px;
+    left: 2%;
+    top: 65px;
+    border-radius: 10px;
+    display: inline-flex;
 }
 
-.RequestSendButton{
+#RequestMovieInput{
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+#SendRequest{
     position: absolute;
     bottom: 0;
     height: 32px;
     width: 20%;
     left:  77%;
     margin-bottom: 1rem;
+    display: none;
 }
 
 .AdminName{

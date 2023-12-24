@@ -1,3 +1,4 @@
+import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDCOMMUNITYPAGE } from "./CommunityPage.js";
 
 const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -14,13 +15,52 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         </div>
 
+        <div class='ContactUsChatDiv'>
+
+            <img class='WhatsApp' src='${ICONS}whatsapp.png'/>
+
+            <img class='Instagram' src='${ICONS}instagram.png'/>
+
+            <img class='WebSite' src='${ICONS}internet.png'/>
+        
+        </div>
+
         <div class='ChatDivMessages'></div>
 
-        <input class='RequestMovieInput' type='text' placeholder='Request A Movie'/>
+        <input id='RequestMovieInput' class='RequestMovieInput' type='text' placeholder='Request A Movie'/>
     
-        <button class='RequestSendButton'>Send</button>
+        <button id='SendRequest' class='RequestSendButton'>Send</button>
 
     `);
+
+    const WHATSAPP = document.querySelector('.WhatsApp');
+
+    WHATSAPP.addEventListener('click', () => {
+        // Replace '123456789' with the actual phone number
+        const phoneNumber = '726292245';
+
+        // Create a WhatsApp URL with the phone number
+        const whatsappUrl = `https://wa.me/${phoneNumber}`;
+
+        // Open WhatsApp in a new window or tab
+        window.open(whatsappUrl, '_blank');
+    });
+
+    const INSTAGRAM=document.querySelector('.Instagram');
+
+    INSTAGRAM.addEventListener('click',()=>{
+
+        open('https://instagram.com/e_corpcompanygroup?igshid=YTQwZjQ0NmI0OA%3D%3D');
+
+    })
+
+    const WEBSITE=document.querySelector('.WebSite');
+
+    WEBSITE.addEventListener('click',()=>{
+
+        open('https://www.e-corpcompanygroup.com');
+
+    })
 
     
     const BACKICON=document.querySelector('.BackIcon');
@@ -92,6 +132,18 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     const COMMENTBUTTON = document.querySelector('.RequestSendButton');
     const COMMENT = document.querySelector('.RequestMovieInput');
 
+    COMMENT.addEventListener('input',()=>{
+
+        if (COMMENT.value.length>=1) {
+            STYLED(COMMENT,'width','70%');
+            STYLED(COMMENTBUTTON,'display','block');
+        } else {
+            STYLED(COMMENT,'width','95%');
+            STYLED(COMMENTBUTTON,'display','none');
+        }
+
+    })
+
     COMMENTBUTTON.addEventListener('click', () => {
         if (COMMENT.value) {
             DISPLAY(COMMENTBUTTON,`
@@ -141,7 +193,6 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                         
                     result.forEach(element => {
 
-                       
                 if (element.Movie) {
 
                     if (element.Movie==='Admin') {

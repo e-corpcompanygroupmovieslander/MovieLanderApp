@@ -10,8 +10,8 @@ const ANDROIDCOMMENTDIV = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE, element) =>
             <img class='BackIcon' src='${ICONS}back.png'/>
             <h1 class='MovieNameComment'>${element.MovieName}</h1>
         </div>
-        <input class='RequestMovieInput' type='text' placeholder='My Comment'/>
-        <button class='RequestSendButton'>Send</button>
+        <input id='RequestMovieInput' class='RequestMovieInput' type='text' placeholder='My Comment'/>
+        <button id='SendRequest' class='RequestSendButton'>Send</button>
     `);
 
     if (localStorage.getItem('Device')==='Android') {
@@ -66,6 +66,18 @@ const ANDROIDCOMMENTDIV = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE, element) =>
 
     const COMMENTBUTTON = document.querySelector('.RequestSendButton');
     const COMMENT = document.querySelector('.RequestMovieInput');
+
+    COMMENT.addEventListener('input',()=>{
+
+        if (COMMENT.value.length>=1) {
+            STYLED(COMMENT,'width','70%');
+            STYLED(COMMENTBUTTON,'display','block');
+        } else {
+            STYLED(COMMENT,'width','95%');
+            STYLED(COMMENTBUTTON,'display','none');
+        }
+
+    })
 
     COMMENTBUTTON.addEventListener('click', () => {
         if (COMMENT.value) {
