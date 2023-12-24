@@ -49,6 +49,8 @@ const ANDROIDRECOMMENDEDSERIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     SEEMORE.addEventListener('click',()=>{
 
+        ADVANCE.ADDSTORAGE('local','MovieId',element.MovieSource);
+
         ADVANCE.ADDSTORAGE('local','SeeMoreNavigatore','Home');
 
         ADVANCE.ADDSTORAGE('local','MovieNavigation','SeeMore');

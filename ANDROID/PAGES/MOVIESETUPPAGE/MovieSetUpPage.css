@@ -134,3 +134,59 @@
     font-size: 20px;
     font-style: italic;
 }
+
+.CommentsDiv{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 60px;
+    bottom: 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+    background: transparent;
+}
+
+.MessageError{
+    position: relative;
+    margin-top: 20rem;
+    left: 20%;
+}
+
+.CommentsHolder{
+    position: relative;
+    width: 95%;
+    height: auto;
+    background: #00000080;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    left: 2%;
+    border-radius: 5px;
+}
+
+.CommentName{
+    position: relative;
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    left: 1%;
+}
+
+.Comment{
+    position: relative;
+    width: 95%;
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    left: 1%;
+    font-style: italic; 
+    word-wrap: break-word;
+}
+
+.MovieNameComment{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 15px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

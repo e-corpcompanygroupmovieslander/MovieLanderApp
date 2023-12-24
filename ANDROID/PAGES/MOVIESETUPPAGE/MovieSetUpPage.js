@@ -4,6 +4,7 @@ import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { PLAYTHEMOVIE } from "../PLAYTHEMOVIE/PlayTheMovie.js";
 import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
 import { ANDROIDWISHLISTPAGE } from "../WISHLISTPAGE/WishListPage.js";
+import { ANDROIDCOMMENTDIV } from "./CommentDiv.js";
 
 
 const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
@@ -74,7 +75,7 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
             <img class='DetailsIcon' src='${ICONS}library.png'/>
 
-            <img id='MenuIcon' class='ProfileIcon' src='${ICONS}menu.png'/>
+            <img id='MenuIcon' class='Comments' src='${ICONS}menu.png'/>
         
         </div>
 
@@ -156,6 +157,7 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         
     }
 
+    
     const PREMIUMICON=document.querySelector('#PremiumIcon');
 
     const PREMIUMNAME=document.querySelector('#PremiumName');
@@ -293,6 +295,14 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
             }
             
         }
+
+    })
+
+    const COMMENTICON=document.querySelector('.Comments');
+
+    COMMENTICON.addEventListener('click',()=>{
+
+        ANDROIDCOMMENTDIV(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
 
     })
 

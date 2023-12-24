@@ -34,6 +34,8 @@ const ANDROIDRECOMMENDEDMARATHONS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             RECOMMENDEDIMAGES.addEventListener('click',()=>{
 
+                ADVANCE.ADDSTORAGE('local','MovieId',element.MovieSource);
+
                 ADVANCE.ADDSTORAGE('local','MOVIEURL',URL);
 
                 MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);

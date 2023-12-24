@@ -33,6 +33,8 @@ const ANDROIDRECOMMENDEDANIMATION=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             ADD(ANIMATIONDIV,RECOMMENDEDIMAGES);
 
             RECOMMENDEDIMAGES.addEventListener('click',()=>{
+
+                ADVANCE.ADDSTORAGE('local','MovieId',element.MovieSource);
                 
                 ADVANCE.ADDSTORAGE('local','MOVIEURL',URL);
 

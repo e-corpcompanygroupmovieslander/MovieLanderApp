@@ -69,6 +69,8 @@ const ANDROIDSEEMOREPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)=>{
 
            CATERGORIESIMAGES.addEventListener('click',()=>{
 
+            ADVANCE.ADDSTORAGE('local','MovieId',element.MovieSource);
+
             MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
 
            })

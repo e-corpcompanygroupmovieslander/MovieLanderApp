@@ -36,6 +36,10 @@ const ANDROIDAUTOLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             if (users) {
 
+                ADVANCE.ADDSTORAGE('Session','UserName',users.UserName);
+
+                ADVANCE.ADDSTORAGE('Session','UserEmail',users.Email);
+
                 if (users.Premium) {
                     
                     ADVANCE.ADDSTORAGE('local','Premium','TRUE');
@@ -59,11 +63,8 @@ const ANDROIDAUTOLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             
                 ADVANCE.DELETESTORAGE('');
                 
-            
                 ANDROIDLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-
-
-                
+   
             }
 
         }).catch((err) => {
