@@ -98,6 +98,12 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                 <img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>
             `);
 
+            if (localStorage.getItem('User')==='') {
+                
+            } else {
+                
+            }
+
             const USERDATA = {
                 "Movie": localStorage.getItem('User'),
                 "Commentor": sessionStorage.getItem('UserName'),
