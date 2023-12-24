@@ -16,6 +16,14 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         <br><br><br><br>
 
+        <button class='RateApp'>
+        
+            <h1 class='HolderName'>Rate This App</h1>
+
+            <img class='AppIcon' src='${ICONS}star.png'/>
+        
+        </button>
+
         <button>
         
             <h1 class='HolderName'>WhatsApp</h1>
@@ -66,6 +74,15 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         ANDROIDUSERACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     });
+
+    const RATEAPP=document.querySelector('.RateApp');
+
+    RATEAPP.addEventListener('click',()=>{
+
+        open('https://play.google.com/store/apps/details?id=com.ecorpcompanygroup.movie_lander&pcampaignid=web_share')
+
+    })
+
 
 }
 
