@@ -24,7 +24,7 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button>
+        <button class='WhatsApp'>
         
             <h1 class='HolderName'>WhatsApp</h1>
 
@@ -32,7 +32,7 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button>
+        <button class='WebSite'>
 
             <h1 class='HolderName'>Web Site</h1>
 
@@ -40,7 +40,7 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         </button>
 
-        <button>
+        <button class='Instagram'>
 
             <h1 class='HolderName'>Instagram</h1>
 
@@ -48,7 +48,7 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button>
+        <button class='Gmail'>
 
             <h1 class='HolderName'>Gmail</h1>
 
@@ -56,7 +56,7 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         </button>
 
-        <button>
+        <button class='Calls'>
 
             <h1 class='HolderName'>Call US</h1>
 
@@ -83,6 +83,58 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     })
 
+    const WHATSAPP = document.querySelector('.WhatsApp');
+
+    WHATSAPP.addEventListener('click', () => {
+        // Replace '123456789' with the actual phone number
+        const phoneNumber = '781476124';
+
+        // Create a WhatsApp URL with the phone number
+        const whatsappUrl = `https://wa.me/${phoneNumber}`;
+
+        // Open WhatsApp in a new window or tab
+        window.open(whatsappUrl, '_blank');
+    });
+
+    const INSTAGRAM=document.querySelector('.Instagram');
+
+    INSTAGRAM.addEventListener('click',()=>{
+
+        open('https://instagram.com/e_corpcompanygroup?igshid=YTQwZjQ0NmI0OA%3D%3D');
+
+    })
+
+    const GMAIL=document.querySelector('.Gmail');
+
+    GMAIL.addEventListener('click',()=>{
+
+        open('movielander1999@gmail.com');
+
+    })
+
+    const WEBSITE=document.querySelector('.WebSite');
+
+    WEBSITE.addEventListener('click',()=>{
+
+        open('https://www.e-corpcompanygroup.com');
+
+    })
+
+    const CALLS = document.querySelector('.Calls');
+
+        CALLS.addEventListener('click', () => {
+            // Replace '123456789' with the actual phone number
+            const phoneNumber = '777187395';
+
+            // Create an anchor element
+            const link = document.createElement('a');
+
+            // Set the href attribute with the tel: scheme
+            link.href = 'tel:' + phoneNumber;
+
+            // Trigger a click event to open the phone app
+            link.click();
+        });
 
 }
 
