@@ -82,7 +82,7 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     WHATSAPP.addEventListener('click', () => {
         // Replace '123456789' with the actual phone number
-        const phoneNumber = '781476124';
+        const phoneNumber = '726292245';
 
         // Create a WhatsApp URL with the phone number
         const whatsappUrl = `https://wa.me/${phoneNumber}`;
