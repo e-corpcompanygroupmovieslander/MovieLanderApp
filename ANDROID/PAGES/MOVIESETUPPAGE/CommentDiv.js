@@ -2,16 +2,6 @@ import { MOVIESETUPPAGE } from "./MovieSetUpPage.js";
 
 const ANDROIDCOMMENTDIV = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE, element) => {
 
-    if (localStorage.getItem('Device')==='Android') {
-
-        StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
-        
-    } else {
-       
-        console.log('Android Version Changed Colour');
-        
-    }
-
     CLEAR(DIV);
 
     DISPLAY(DIV,`
@@ -23,6 +13,16 @@ const ANDROIDCOMMENTDIV = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE, element) =>
         <input class='RequestMovieInput' type='text' placeholder='My Comment'/>
         <button class='RequestSendButton'>Send</button>
     `);
+
+    if (localStorage.getItem('Device')==='Android') {
+
+        StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
+        
+    } else {
+       
+        console.log('Android Version Changed Colour');
+        
+    }
 
     const BACKICON = document.querySelector('.BackIcon');
 

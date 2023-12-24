@@ -250,18 +250,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     const PLAYBUTTON=document.querySelector('.WatchMovieButton');
 
-    const PREMIUMMESSAGE=document.querySelector('.PremiumMessage');
-
-    if (localStorage.getItem('ModeColour')==='#5C829A') {
-
-        STYLED(PREMIUMMESSAGE,'background','#5C829A');
- 
-    } else {
-        
-        STYLED(PREMIUMMESSAGE,'background','#212121');
-        
-    }
-
     PLAYBUTTON.addEventListener('click',()=>{
 
         
