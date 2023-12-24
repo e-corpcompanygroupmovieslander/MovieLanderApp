@@ -104,13 +104,18 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     })
 
-    const GMAIL=document.querySelector('.Gmail');
+    const GMAIL = document.querySelector('.Gmail');
 
-    GMAIL.addEventListener('click',()=>{
+    GMAIL.addEventListener('click', () => {
+        // Replace 'movielander1999@gmail.com' with the actual email address
+        const emailAddress = 'movielander1999@gmail.com';
 
-        open('movielander1999@gmail.com');
+        // Create a mailto URL with the email address
+        const mailtoUrl = `mailto:${emailAddress}`;
 
-    })
+        // Open the default email client with the pre-filled email
+        window.location.href = mailtoUrl;
+    });
 
     const WEBSITE=document.querySelector('.WebSite');
 
@@ -122,19 +127,13 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     const CALLS = document.querySelector('.Calls');
 
-        CALLS.addEventListener('click', () => {
-            // Replace '123456789' with the actual phone number
-            const phoneNumber = '777187395';
+    CALLS.addEventListener('click', () => {
+            // Replace '777187395' with the actual phone number
+         const phoneNumber = '777187395';
 
-            // Create an anchor element
-            const link = document.createElement('a');
-
-            // Set the href attribute with the tel: scheme
-            link.href = 'tel:' + phoneNumber;
-
-            // Trigger a click event to open the phone app
-            link.click();
-        });
+            // Directly set window.location.href to open the phone app
+        window.location.href = 'tel:' + phoneNumber;
+    });
 
 }
 
