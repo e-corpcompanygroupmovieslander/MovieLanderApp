@@ -48,9 +48,13 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button class='Gmail'>
+        <button >
 
-            <h1 class='HolderName'>Gmail</h1>
+            <h1 class='HolderName'>
+
+                <a href="mailto:movielander1999@gmail.com">Gmail</a>
+            
+            </h1>
 
             <img class='AppIcon' src='${ICONS}gmail.png'/>
 
@@ -104,19 +108,6 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     })
 
-    const GMAIL = document.querySelector('.Gmail');
-
-    GMAIL.addEventListener('click', () => {
-        // Replace 'movielander1999@gmail.com' with the actual email address
-        const emailAddress = 'movielander1999@gmail.com';
-
-        // Create a mailto URL with the email address
-        const mailtoUrl = `mailto:${emailAddress}`;
-
-        // Open the default email client with the pre-filled email
-        window.location.href = mailtoUrl;
-    });
-
     const WEBSITE=document.querySelector('.WebSite');
 
     WEBSITE.addEventListener('click',()=>{
@@ -124,16 +115,6 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         open('https://www.e-corpcompanygroup.com');
 
     })
-
-    const CALLS = document.querySelector('.Calls');
-
-    CALLS.addEventListener('click', () => {
-            // Replace '777187395' with the actual phone number
-         const phoneNumber = '777187395';
-
-            // Directly set window.location.href to open the phone app
-        window.location.href = 'tel:' + phoneNumber;
-    });
 
 }
 
