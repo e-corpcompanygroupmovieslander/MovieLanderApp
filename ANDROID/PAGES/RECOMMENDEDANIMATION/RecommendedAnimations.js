@@ -24,7 +24,7 @@ const ANDROIDRECOMMENDEDANIMATION=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         result.forEach(element => {
 
-            //console.log(result);
+            
             
             const RECOMMENDEDIMAGES=document.createElement('img');
             RECOMMENDEDIMAGES.src=MOVIESPATH+element.MovieImage;

@@ -44,6 +44,14 @@ const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         result.forEach(element => {
 
+            const parentalControlEnabled = localStorage.getItem('ParentalControlPin');
+
+            //console.log(result);
+            if (parentalControlEnabled && element.ParentalControl) {
+                // Skip movies with parental control if parental control is enabled
+                return;
+            }
+
            const CATERGORIESHOLDER=document.createElement('div');
            CATERGORIESHOLDER.classList.add('CATERGORIESHOLDER');
 

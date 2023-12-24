@@ -87,6 +87,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     `);
 
+    
 
     const CATERGORIESICON=document.querySelector('.CatergoriesIcon');
 
