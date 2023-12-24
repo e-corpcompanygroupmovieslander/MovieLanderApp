@@ -73,7 +73,7 @@ const ANDROIDWISHLISTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         SeeMoreMoviesDiv.innerHTML=`
         
-        <h1 class='NoMovies'>No Movies Saved</h1>
+        <h1 class='MessageError'>No Movies Saved</h1>
 
         `;
 
