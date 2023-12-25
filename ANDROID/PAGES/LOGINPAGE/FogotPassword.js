@@ -37,6 +37,7 @@ const ANDROIDFORGOTPASSWORD = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
     BACKICON.addEventListener('click', () => {
         sessionStorage.removeItem('Country');
         sessionStorage.removeItem('CountryCode');
+        sessionStorage.removeItem('user')
         ANDROIDLOGINPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
     });
 
