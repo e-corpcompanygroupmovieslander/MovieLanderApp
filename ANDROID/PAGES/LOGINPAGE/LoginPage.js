@@ -1,4 +1,4 @@
-import { DELETEACCOUNTGET, LOGINAPI } from "../../../APIS/Api.js";
+import { DELETEACCOUNTGET, LOGINAPI, MTNPREMIUMPAYGET } from "../../../APIS/Api.js";
 import { ANDROIDPLAYER } from "../ANDROIDPLAYER/AndroidPlayer.js";
 import { ANDROIDCREATEACCOUNTPAGE } from "../CREATEACCOUNTPAGE/CreateAccountPage.js";
 
@@ -45,12 +45,25 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                     }, 2000);
                                 } else {
                                     if (user.Password === PASSWORD.value) {
-                                        if (user.Premium) {
-                                            ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
-                                        } else {
-                                            ADVANCE.REMOVESTORAGE('local', 'Premium');
-                                        }
-
+                                        //CHECK FOR PREMIUM
+                                        fetch(MTNPREMIUMPAYGET)
+                                        .then(res => res.json())
+                                        .then((result) => {
+                                            const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
+                
+                                            if (Premiumed) {
+                                                console.log('Premium On');
+                                                ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
+                                            } else {
+                                                console.log('Premium Expired');
+                                                ADVANCE.REMOVESTORAGE('local', 'Premium');
+                                            }
+                
+                                            console.log(result);
+                                        })
+                                        .catch((err) => {
+                                            console.log(err);
+                                        });
                                         ADVANCE.ADDSTORAGE('Session','UserName',user.UserName);
 
                                         ADVANCE.ADDSTORAGE('Session','UserEmail',user.Email);

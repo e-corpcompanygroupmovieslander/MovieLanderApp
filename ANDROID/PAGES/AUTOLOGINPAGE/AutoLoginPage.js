@@ -1,96 +1,77 @@
-import { LOGINAPI } from "../../../APIS/Api.js";
+import { LOGINAPI, MTNPREMIUMPAYGET } from "../../../APIS/Api.js";
 import { ANDROIDPLAYER } from "../ANDROIDPLAYER/AndroidPlayer.js"
 import { ANDROIDCREATEPRIVACYPOLICYPAGE } from "../CREATEACCOUNTPRIVACYPOLICY/CreateAccountPrivacyPolicy.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js"
 import { ANDROIDLOGINPAGE } from "../LOGINPAGE/LoginPage.js"
 
-const ANDROIDAUTOLOGINPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
+const ANDROIDAUTOLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
     if (localStorage.getItem('User')) {
 
         if (localStorage.getItem('AppPlayer')) {
-
-            ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-            
+            ANDROIDHOMEPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
         } else {
-           
-            ANDROIDPLAYER(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-            
+            ANDROIDPLAYER(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
         }
 
         if (localStorage.getItem('Privacy')) {
-            
-            ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-
+            ANDROIDHOMEPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
         } else {
-           
-            ANDROIDCREATEPRIVACYPOLICYPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-            
+            ANDROIDCREATEPRIVACYPOLICYPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
         }
 
-        ADVANCE.GETPACKAGE(LOGINAPI,'cors')
+        ADVANCE.GETPACKAGE(LOGINAPI, 'cors')
+            .then((result) => {
+                const users = result.find(user => user.SecretCode === localStorage.getItem('User'));
 
-        .then((result) => {
+                if (users) {
+                    ADVANCE.ADDSTORAGE('Session', 'UserName', users.UserName);
+                    ADVANCE.ADDSTORAGE('Session', 'UserEmail', users.Email);
 
-            const users=result.find(user => user.SecretCode === localStorage.getItem('User') );
+                    fetch(MTNPREMIUMPAYGET)
+                        .then(res => res.json())
+                        .then((result) => {
+                            const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
 
-            if (users) {
+                            if (Premiumed) {
+                                console.log('Premium On');
+                                ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
+                            } else {
+                                console.log('Premium Expired');
+                                ADVANCE.REMOVESTORAGE('local', 'Premium');
+                            }
 
-                ADVANCE.ADDSTORAGE('Session','UserName',users.UserName);
-
-                ADVANCE.ADDSTORAGE('Session','UserEmail',users.Email);
-
-                if (users.Premium) {
-                    
-                    ADVANCE.ADDSTORAGE('local','Premium','TRUE');
-
+                            console.log(result);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
                 } else {
-                    
-                    ADVANCE.REMOVESTORAGE('local','Premium');
+                    // User not found, clear all storage and show login page
+                    ADVANCE.REMOVESTORAGE('local', 'User');
+                    ADVANCE.REMOVESTORAGE('local', 'Premium');
+                    ADVANCE.REMOVESTORAGE('local', 'ParentalControlPin');
+                    ADVANCE.REMOVESTORAGE('local', 'AppPlayer');
+                    ADVANCE.REMOVESTORAGE('local', 'Privacy');
+                    ADVANCE.DELETESTORAGE('');
+                    ANDROIDLOGINPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
                 }
-                            
-            } else {
 
-                ADVANCE.REMOVESTORAGE('local','User');
+            })
+            .catch((err) => {
+                console.log(err)
+            });
 
-                ADVANCE.REMOVESTORAGE('local','Premium');
-            
-                ADVANCE.REMOVESTORAGE('local','ParentalControlPin');
-            
-                ADVANCE.REMOVESTORAGE('local','AppPlayer');
-            
-                ADVANCE.REMOVESTORAGE('local','Privacy');
-            
-                ADVANCE.DELETESTORAGE('');
-                
-                ANDROIDLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-   
-            }
-
-        }).catch((err) => {
-
-            console.log(err)
-        
-        });
-        
     } else {
-
-        ADVANCE.REMOVESTORAGE('local','User');
-
-        ADVANCE.REMOVESTORAGE('local','Premium');
-    
-        ADVANCE.REMOVESTORAGE('local','ParentalControlPin');
-    
-        ADVANCE.REMOVESTORAGE('local','AppPlayer');
-    
-        ADVANCE.REMOVESTORAGE('local','Privacy');
-    
+        // User not found, clear all storage and show login page
+        ADVANCE.REMOVESTORAGE('local', 'User');
+        ADVANCE.REMOVESTORAGE('local', 'Premium');
+        ADVANCE.REMOVESTORAGE('local', 'ParentalControlPin');
+        ADVANCE.REMOVESTORAGE('local', 'AppPlayer');
+        ADVANCE.REMOVESTORAGE('local', 'Privacy');
         ADVANCE.DELETESTORAGE('');
-       
-        ANDROIDLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)
-        
+        ANDROIDLOGINPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
     }
-
 }
 
-export{ANDROIDAUTOLOGINPAGE}
+export { ANDROIDAUTOLOGINPAGE }

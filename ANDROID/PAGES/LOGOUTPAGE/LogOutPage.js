@@ -8,8 +8,6 @@ const ANDROIDLOGOUTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     ADVANCE.REMOVESTORAGE('local','ParentalControlPin');
 
-    ADVANCE.REMOVESTORAGE('local','AppPlayer');
-
     ADVANCE.REMOVESTORAGE('local','Privacy');
 
     ADVANCE.DELETESTORAGE('');

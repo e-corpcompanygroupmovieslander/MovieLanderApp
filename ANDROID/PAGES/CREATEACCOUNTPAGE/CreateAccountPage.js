@@ -1,5 +1,5 @@
 // Import statements for APIs and dependencies
-import { CREATEACCOUNTAPI, LOGINAPI } from "../../../APIS/Api.js";
+import { CREATEACCOUNTAPI, LOGINAPI, MTNPREMIUMPAYGET } from "../../../APIS/Api.js";
 import { COUNTRYAPI } from "../../../APIS/IconsApi.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDCREATEPRIVACYPOLICYPAGE } from "../CREATEACCOUNTPRIVACYPOLICY/CreateAccountPrivacyPolicy.js";
@@ -261,14 +261,27 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                                 const users = result.find(user => user.Email === EMAIL.value);
                                                 if (users) {
 
+                                                   //CHECK FOR PREMIUM
+                                                    fetch(MTNPREMIUMPAYGET)
+                                                    .then(res => res.json())
+                                                    .then((result) => {
+                                                        const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
+                            
+                                                        if (Premiumed) {
+                                                            console.log('Premium On');
+                                                            ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
+                                                        } else {
+                                                            console.log('Premium Expired');
+                                                            ADVANCE.REMOVESTORAGE('local', 'Premium');
+                                                        }
+                            
+                                                        console.log(result);
+                                                    })
+                                                    .catch((err) => {
+                                                        console.log(err);
+                                                    });
                                                     ADVANCE.ADDSTORAGE('Session','UserName',users.UserName);
-
                                                     ADVANCE.ADDSTORAGE('Session','UserEmail',users.Email);
-                                                    if (users.Premium) {
-                                                        ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
-                                                    } else {
-                                                        ADVANCE.REMOVESTORAGE('local', 'Premium');
-                                                    }
                                                     ADVANCE.ADDSTORAGE('local', 'User', users.SecretCode);
                                                     ANDROIDCREATEPRIVACYPOLICYPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
                                                 } else {
