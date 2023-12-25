@@ -11,6 +11,7 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
         <h1 class='Message'></h1>
         <input type="email" id='EmailHolder' placeholder="Enter Email">
         <input type="password" id='PasswordHolder' placeholder="Enter Password">
+        <h1 class='ForgotPassword'>Forgot Password</h1>
         <button class='LogInButton'>LogIn</button>
         <button class='CreateAccountButton'>Create Account</button>
     `);
