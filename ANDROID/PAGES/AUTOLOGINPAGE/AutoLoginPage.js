@@ -36,34 +36,6 @@ const ANDROIDAUTOLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     const deviceName = navigator.userAgent;
                     ADVANCE.ADDSTORAGE('local', 'UserDevice', deviceName);
 
-                    // Check if the device is the same as the last login
-                    fetch('https://script.googleusercontent.com/macros/echo?user_content_key=SdrYJC2OFjLVEBIVKaFCiXk5ETZJ1h-ZrCdw71Uqq7E8mI8Agq4ZSzgO6tNjidCSv_hnIOjBXNqfU2yM7tJ8UVDDdyWw_9bLm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHA7V_xHuqt_RHt2NgVI0hxOUNu_k4JAAcyGofLVo3kAuUX_2lfrRxs7ijmLAjMNdCTHOhoKW-IEsRN88vJOgl9Wj29LuqdMLtz9Jw9Md8uu&lib=MK6r_Kpo7IT2Bbfrm-N1YMezilWmV86UI')
-                        .then(res => res.json())
-                        .then((result) => {
-                            const Device = result.find(user => user.User === localStorage.getItem('User') && user.Device === localStorage.getItem('UserDevice') && new Date(user.Date) >= new Date());
-
-                            if (Device) {
-                                // User and device match with a valid date, no action needed
-                            } else {
-                                CLEAR(DIV);
-
-                                DISPLAY(DIV, `
-                                    <h1 class='DeviceMessage'>This Account Is Running On Another Device LogOut To Continue</h1>
-                                    <button class='logoutdevice'>LogOut</button>
-                                `);
-
-                                const LOGOUT_DEVICE = document.querySelector('.logoutdevice');
-
-                                LOGOUT_DEVICE.addEventListener('click', () => {
-                                    localStorage.setItem('DeviceMessage', 'TRUE');
-                                    ANDROIDLOGOUTPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
-                                });
-                            }
-                        })
-                        .catch((err) => {
-                            console.log(err);
-                        });
-
                     // Check if the user has a premium subscription
                     fetch(MTNPREMIUMPAYGET)
                         .then(res => res.json())
