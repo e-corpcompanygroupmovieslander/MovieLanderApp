@@ -90,7 +90,6 @@ const ANDROIDFORGOTPASSWORD = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                         sessionStorage.setItem('CountryCode', element.phoneCode.replace(/\D/g, ''));  // Remove the '+' sign
                         STYLED(SELECTCOUNTRYDIV, 'height', '0');
                         DISPLAY(SelectCountryName, element.name);
-                        DISPLAY(CountryCodeHolder, element.phoneCode);  // Include the '+' sign
                     });
 
                     // Event listener for searching countries
