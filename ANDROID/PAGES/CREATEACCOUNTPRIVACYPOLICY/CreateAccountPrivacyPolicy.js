@@ -37,9 +37,40 @@ const ANDROIDCREATEPRIVACYPOLICYPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         CONTINUE.addEventListener('click',()=>{
 
-            ADVANCE.ADDSTORAGE('local','Privacy','TRUE')
+            DISPLAY(CONTINUE,`
 
-            ANDROIDPLAYER(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+            <img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>
+            
+            `)
+
+               //Send data To database
+               const LOGGEDINDATA={
+                "User":localStorage.getItem('User'),
+                "Device":localStorage.getItem('UserDevice'),
+                "Date":new Date(),
+            }
+
+            fetch('https://script.google.com/macros/s/AKfycbyAcmACiGB_9snZ0eClLSSPP-gRFsvERRvdHxCbfg7s8XbpRAsQD89spq7asP9ZvsgUTA/exec',{
+                method:"POST",
+                mode:'no-cors',
+                body:JSON.stringify(LOGGEDINDATA)
+            })
+
+            .then(res=>res.text())
+
+            .then((result) => {
+                
+                console.log(result);
+
+                localStorage.removeItem('DeviceMessage');
+                
+                ADVANCE.ADDSTORAGE('local','Privacy','TRUE')
+
+                ANDROIDPLAYER(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+                 
+            }).catch((err) => {
+                console.log(err)
+            });
 
         })
 

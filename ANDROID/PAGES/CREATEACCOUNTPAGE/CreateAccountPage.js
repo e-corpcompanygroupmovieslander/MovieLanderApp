@@ -284,6 +284,9 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                                     ADVANCE.ADDSTORAGE('Session','UserEmail',users.Email);
                                                     ADVANCE.ADDSTORAGE('local', 'User', users.SecretCode);
                                                     ANDROIDCREATEPRIVACYPOLICYPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
+
+                                                    
+
                                                 } else {
                                                     DISPLAY(MESSAGE, `User Does not Exist`);
                                                     setTimeout(() => {

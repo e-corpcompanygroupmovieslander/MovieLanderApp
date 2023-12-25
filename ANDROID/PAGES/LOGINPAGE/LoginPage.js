@@ -1,6 +1,7 @@
 import { DELETEACCOUNTGET, LOGINAPI, MTNPREMIUMPAYGET } from "../../../APIS/Api.js";
 import { ANDROIDPLAYER } from "../ANDROIDPLAYER/AndroidPlayer.js";
 import { ANDROIDCREATEACCOUNTPAGE } from "../CREATEACCOUNTPAGE/CreateAccountPage.js";
+import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 
 const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
     CLEAR(DIV);
@@ -47,32 +48,72 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                     if (user.Password === PASSWORD.value) {
                                         //CHECK FOR PREMIUM
                                         fetch(MTNPREMIUMPAYGET)
-                                        .then(res => res.json())
-                                        .then((result) => {
-                                            const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
-                
-                                            if (Premiumed) {
-                                                console.log('Premium On');
-                                                ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
-                                            } else {
-                                                console.log('Premium Expired');
-                                                ADVANCE.REMOVESTORAGE('local', 'Premium');
-                                            }
-                
-                                            console.log(result);
+                                            .then(res => res.json())
+                                            .then((result) => {
+                                                const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
+                                                if (Premiumed) {
+                                                    console.log('Premium On');
+                                                    ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
+                                                } else {
+                                                    console.log('Premium Expired');
+                                                    ADVANCE.REMOVESTORAGE('local', 'Premium');
+                                                }
+                                                console.log(result);
+                                            })
+                                            .catch((err) => {
+                                                console.log(err);
+                                            });
+
+                                        // Save device name to local storage as UserDevice
+                                        const deviceName = navigator.userAgent;
+                                        ADVANCE.ADDSTORAGE('local', 'UserDevice', deviceName);
+
+                                        //Send data To database
+                                        const LOGGEDINDATA={
+                                            "User":user.SecretCode,
+                                            "Device":localStorage.getItem('UserDevice'),
+                                            "Date":new Date(),
+                                        }
+
+                                        fetch('https://script.google.com/macros/s/AKfycbyAcmACiGB_9snZ0eClLSSPP-gRFsvERRvdHxCbfg7s8XbpRAsQD89spq7asP9ZvsgUTA/exec',{
+                                            method:"POST",
+                                            mode:'no-cors',
+                                            body:JSON.stringify(LOGGEDINDATA)
                                         })
-                                        .catch((err) => {
-                                            console.log(err);
+
+                                        .then(res=>res.json())
+
+                                        .then((result) => {
+                                            
+                                            console.log(result);
+                                            
+                                            fetch('https://script.googleusercontent.com/macros/echo?user_content_key=SdrYJC2OFjLVEBIVKaFCiXk5ETZJ1h-ZrCdw71Uqq7E8mI8Agq4ZSzgO6tNjidCSv_hnIOjBXNqfU2yM7tJ8UVDDdyWw_9bLm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHA7V_xHuqt_RHt2NgVI0hxOUNu_k4JAAcyGofLVo3kAuUX_2lfrRxs7ijmLAjMNdCTHOhoKW-IEsRN88vJOgl9Wj29LuqdMLtz9Jw9Md8uu&lib=MK6r_Kpo7IT2Bbfrm-N1YMezilWmV86UI')
+
+                                            .then(res=>res.json())
+
+                                            .then((result) => {
+                                                console.log(result)
+                                            }).catch((err) => {
+                                                console.log(err)
+                                            });
+                                            
+                                        }).catch((err) => {
+                                            console.log(err)
                                         });
-                                        ADVANCE.ADDSTORAGE('Session','UserName',user.UserName);
 
-                                        ADVANCE.ADDSTORAGE('Session','UserEmail',user.Email);
+                                        localStorage.removeItem('DeviceMessage');
 
+                                        ADVANCE.ADDSTORAGE('Session', 'UserName', user.UserName);
+                                        ADVANCE.ADDSTORAGE('Session', 'UserEmail', user.Email);
                                         ADVANCE.ADDSTORAGE('local', 'Privacy', 'TRUE');
-
                                         ADVANCE.ADDSTORAGE('local', 'User', user.SecretCode);
 
-                                        ANDROIDPLAYER(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
+                                        if (localStorage.getItem('AppPlayer')) {
+                                            ANDROIDPLAYER(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);   
+                                        } else {
+                                            ANDROIDHOMEPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE)
+                                        }
+                                        
                                     } else {
                                         DISPLAY(MESSAGE, `Wrong password`);
 

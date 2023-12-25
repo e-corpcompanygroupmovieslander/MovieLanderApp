@@ -9,7 +9,8 @@ import { ANDROIDWISHLISTPAGE } from "../WISHLISTPAGE/WishListPage.js";
 import { GETUSERDETAILS } from "./GetUserDetails.js";
 
 const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
-
+    
+        
     CLEAR(DIV);
 
     DISPLAY(DIV,`

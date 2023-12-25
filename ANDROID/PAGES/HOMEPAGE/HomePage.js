@@ -87,8 +87,7 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     `);
 
-    
-
+            
     const CATERGORIESICON=document.querySelector('.CatergoriesIcon');
 
     CATERGORIESICON.addEventListener('click',()=>{
@@ -156,6 +155,8 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         ANDROIDFREEWATCHPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     })
+
+    
 
 }
 

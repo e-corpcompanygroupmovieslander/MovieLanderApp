@@ -3,6 +3,7 @@ import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
 
 const ANDROIDCATERGORIES = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
+
   CLEAR(DIV);
 
   DISPLAY(DIV, `
