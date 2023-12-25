@@ -4,3 +4,9 @@
     height: 100%;
     display: block;
 }
+
+#SearchMovies{
+    position: absolute;
+    width: 80%;
+    left: 12%;
+}

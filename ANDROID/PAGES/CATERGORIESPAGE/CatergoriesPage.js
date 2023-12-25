@@ -2,93 +2,79 @@ import { CATERGORIESPATH, CATERGORYAPI } from "../../../APIS/Api.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
 
-const ANDROIDCATERGORIES=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
+const ANDROIDCATERGORIES = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
+  CLEAR(DIV);
 
-    CLEAR(DIV);
-
-    DISPLAY(DIV,`
-
+  DISPLAY(DIV, `
     <div class='AndroidHeader'>
-
-        <img class='BackIcon' src='${ICONS}back.png'/>
-
-        <img class='LightModeIcon' src='${ICONS}list.png'/>
-
+      <img class='BackIcon' src='${ICONS}back.png'/>
+      <input type="text" id='SearchCatergory' placeholder="Search For Catergory">
+      <img class='LightModeIcon' src='${ICONS}list.png'/>
     </div>
-
     <div class='CatergoriesStore'></div>
-    
-    `);
+  `);
 
-    const BACKICON=document.querySelector('.BackIcon');
+  const SEARCHCOUNTRY = document.querySelector('#SearchCatergory');
+  const BACKICON = document.querySelector('.BackIcon');
+  const CATERGORIESSTORE = document.querySelector('.CatergoriesStore');
 
-    BACKICON.addEventListener('click',()=>{
+  DISPLAY(CATERGORIESSTORE, `<img id='CatergoriesLoading' class='LoadingIcon' src='${ICONS}loading.png'/>`);
 
-        ANDROIDHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+  BACKICON.addEventListener('click', () => {
+    ANDROIDHOMEPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
+  });
 
-    });
-
-    const CATERGORIESSTORE=document.querySelector('.CatergoriesStore');
-
-    DISPLAY(CATERGORIESSTORE,`
-
-        <img id='CatergoriesLoading' class='LoadingIcon' src='${ICONS}loading.png'/>
-    
-    `);
-
-    ADVANCE.GETPACKAGE(CATERGORYAPI,'cors')
-
+  ADVANCE.GETPACKAGE(CATERGORYAPI, 'cors')
     .then((result) => {
-        
-        CLEAR(CATERGORIESSTORE);
+      CLEAR(CATERGORIESSTORE);
 
-        result.forEach(element => {
+      result.forEach(element => {
+        const parentalControlEnabled = localStorage.getItem('ParentalControlPin');
 
-            const parentalControlEnabled = localStorage.getItem('ParentalControlPin');
+        if (parentalControlEnabled && element.ParentalControl) {
+          // Skip movies with parental control if parental control is enabled
+          return;
+        }
 
-            //console.log(result);
-            if (parentalControlEnabled && element.ParentalControl) {
-                // Skip movies with parental control if parental control is enabled
-                return;
-            }
+        const CATERGORIESHOLDER = document.createElement('div');
+        CATERGORIESHOLDER.classList.add('CATERGORIESHOLDER');
 
-           const CATERGORIESHOLDER=document.createElement('div');
-           CATERGORIESHOLDER.classList.add('CATERGORIESHOLDER');
+        const CATERGORIESIMAGES = document.createElement('img');
+        CATERGORIESIMAGES.classList.add('CATERGORIESIMAGES');
+        CATERGORIESIMAGES.src = CATERGORIESPATH + element.Image;
 
-           const CATERGORIESIMAGES=document.createElement('img');
-           CATERGORIESIMAGES.classList.add('CATERGORIESIMAGES');
-           CATERGORIESIMAGES.src=CATERGORIESPATH+element.Image;
+        const CATERGORIESNAME = document.createElement('h1');
+        CATERGORIESNAME.classList.add('CATERGORIESNAME');
+        DISPLAY(CATERGORIESNAME, element.Sections);
 
-           const CATERGORIESNAME=document.createElement('h1');
-           CATERGORIESNAME.classList.add('CATERGORIESNAME');
-           DISPLAY(CATERGORIESNAME,element.Sections)
+        ADD(CATERGORIESHOLDER, CATERGORIESIMAGES);
+        ADD(CATERGORIESHOLDER, CATERGORIESNAME);
+        ADD(CATERGORIESSTORE, CATERGORIESHOLDER);
 
-           ADD(CATERGORIESHOLDER,CATERGORIESIMAGES);
-
-           ADD(CATERGORIESHOLDER,CATERGORIESNAME);
-
-           ADD(CATERGORIESSTORE,CATERGORIESHOLDER);
-
-           const URL=element.link;
-
-           CATERGORIESHOLDER.addEventListener('click',()=>{
-
-            ADVANCE.ADDSTORAGE('local','MOVIEURL',URL);
-
-            ADVANCE.ADDSTORAGE('local','MovieNavigation','SeeMore');
-
-            ADVANCE.ADDSTORAGE('local','SeeMoreNavigatore','Catergory');
-
-            ANDROIDSEEMOREPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,URL)
-
-           })
-
+        // Event listener for searching countries
+        SEARCHCOUNTRY.addEventListener('input', () => {
+          const searchValue = SEARCHCOUNTRY.value.trim().toLowerCase();
+          const categoryName = CATERGORIESNAME.innerHTML.toLowerCase();
+          if (categoryName.includes(searchValue)) {
+            CATERGORIESHOLDER.style.display = 'inline-table';
+          } else {
+            CATERGORIESHOLDER.style.display = 'none';
+          }
         });
 
-    }).catch((err) => {
-        console.log(err);
+        const URL = element.link;
+
+        CATERGORIESHOLDER.addEventListener('click', () => {
+          ADVANCE.ADDSTORAGE('local', 'MOVIEURL', URL);
+          ADVANCE.ADDSTORAGE('local', 'MovieNavigation', 'SeeMore');
+          ADVANCE.ADDSTORAGE('local', 'SeeMoreNavigatore', 'Catergory');
+          ANDROIDSEEMOREPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE, URL);
+        });
+      });
+    })
+    .catch((err) => {
+      console.log(err);
     });
+};
 
-}
-
-export{ANDROIDCATERGORIES}
+export { ANDROIDCATERGORIES };
