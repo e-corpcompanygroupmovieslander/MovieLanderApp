@@ -2,6 +2,7 @@ import { DELETEACCOUNTGET, LOGINAPI, MTNPREMIUMPAYGET } from "../../../APIS/Api.
 import { ANDROIDPLAYER } from "../ANDROIDPLAYER/AndroidPlayer.js";
 import { ANDROIDCREATEACCOUNTPAGE } from "../CREATEACCOUNTPAGE/CreateAccountPage.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
+import { ANDROIDFORGOTPASSWORD } from "./FogotPassword.js";
 
 const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
     CLEAR(DIV);
@@ -15,6 +16,14 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
         <button class='LogInButton'>LogIn</button>
         <button class='CreateAccountButton'>Create Account</button>
     `);
+
+    const FORGOTPASSWORD=document.querySelector('.ForgotPassword')
+
+    FORGOTPASSWORD.addEventListener('click',()=>{
+
+        ANDROIDFORGOTPASSWORD(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
+
+    })
 
     const LOGINBUTTON = document.querySelector('.LogInButton');
 

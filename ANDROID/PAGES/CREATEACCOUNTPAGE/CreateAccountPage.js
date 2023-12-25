@@ -140,7 +140,7 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
     // Event listener for creating a user account
     CREATEACCOUNTBUTTON.addEventListener('click', () => {
-        if (USERNAME.value && EMAIL.value && PASSWORD.value && TELEPHONE.value && sessionStorage.getItem('Country')) {
+        if (USERNAME.value && EMAIL.value && PASSWORD.value && DATE.value && TELEPHONE.value && sessionStorage.getItem('Country')) {
             // Validate phone number format
             const phoneRegex = /^\d{7,10}$/;
             if (!phoneRegex.test(TELEPHONE.value)) {
