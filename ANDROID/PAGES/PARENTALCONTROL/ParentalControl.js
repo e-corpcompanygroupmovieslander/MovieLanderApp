@@ -24,9 +24,9 @@ const ANDROIDPARENTALCONTROL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         <div class='ChatDivMessages'></div>
 
-        <input class='RequestMovieInput' type='number' placeholder='Enter Your Pin'/>
+        <input id='PinInput' class='RequestMovieInput' type='number' placeholder='Enter Your Pin'/>
     
-        <button class='RequestSendButton'></button>
+        <button id='PinOn' class='RequestSendButton'></button>
 
     `);
 
