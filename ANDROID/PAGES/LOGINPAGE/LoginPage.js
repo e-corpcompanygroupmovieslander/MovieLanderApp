@@ -5,7 +5,10 @@ import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { ANDROIDFORGOTPASSWORD } from "./FogotPassword.js";
 
 const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
+
     CLEAR(DIV);
+
+    admob.createBannerView();
 
     DISPLAY(DIV, `
         <h1 class='AppName'>Movie Lander</h1>
