@@ -167,8 +167,6 @@ cord
                 setTimeout(() => {
                     DISPLAY(MESSAGE, '');
                 }, 2000);
-
-            navigator.vibrate(2000);
            
         }
     });
