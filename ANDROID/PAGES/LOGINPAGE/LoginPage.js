@@ -161,11 +161,19 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     }, 2000);
                 });
         } else {
-            DISPLAY(MESSAGE, 'Fill in all fields');
 
-            setTimeout(() => {
-                DISPLAY(MESSAGE, '');
-            }, 2000);
+            if ('vibrate' in navigator) {
+                // Vibrate for 200 milliseconds
+                navigator.vibrate(200);
+                
+              } else {
+                DISPLAY(MESSAGE, 'Fill in all fields');
+
+                setTimeout(() => {
+                    DISPLAY(MESSAGE, '');
+                }, 2000)
+              }
+           ;
         }
     });
 
