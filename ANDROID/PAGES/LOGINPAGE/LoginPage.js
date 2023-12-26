@@ -7,7 +7,7 @@ import { ANDROIDFORGOTPASSWORD } from "./FogotPassword.js";
 const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
     CLEAR(DIV);
-
+cord
     DISPLAY(DIV, `
         <h1 class='AppName'>Movie Lander</h1>
         <h1 class='Message'></h1>
@@ -161,11 +161,19 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     }, 2000);
                 });
         } else {
-            DISPLAY(MESSAGE, 'Fill in all fields');
 
-            setTimeout(() => {
-                DISPLAY(MESSAGE, '');
-            }, 2000);
+            if (localStorage.getItem('Device')==='Web') {
+
+                DISPLAY(MESSAGE, 'Fill in all fields');
+
+                setTimeout(() => {
+                    DISPLAY(MESSAGE, '');
+                }, 2000);
+                  
+            } else {
+                vibrateDevice()
+            }
+           
         }
     });
 
