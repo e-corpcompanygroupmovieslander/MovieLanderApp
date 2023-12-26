@@ -280,6 +280,9 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                                     .catch((err) => {
                                                         console.log(err);
                                                     });
+                                                    // Save device name to local storage as UserDevice
+                                                    const deviceName = navigator.userAgent;
+                                                    ADVANCE.ADDSTORAGE('local', 'UserDevice', deviceName);
                                                     ADVANCE.ADDSTORAGE('Session','UserName',users.UserName);
                                                     ADVANCE.ADDSTORAGE('Session','UserEmail',users.Email);
                                                     ADVANCE.ADDSTORAGE('local', 'User', users.SecretCode);
