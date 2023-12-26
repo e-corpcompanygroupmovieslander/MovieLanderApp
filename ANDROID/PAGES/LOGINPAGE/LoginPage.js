@@ -171,7 +171,7 @@ cord
                 }, 2000);
                   
             } else {
-                vibrateDevice()
+                navigator.vibrate(2000);
             }
            
         }
