@@ -28,7 +28,15 @@ const ANDROIDADVERTSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             ADVERSTIMAGE.addEventListener('click',()=>{
 
-                open(element.ADVERTLINK);
+                if (localStorage.getItem('Device')==='Web') {
+                   
+                    open(element.ADVERTLINK);
+                    
+                } else {
+                    cordova.InAppBrowser.open(element.ADVERTLINK)
+                }
+
+                
 
             })
 
