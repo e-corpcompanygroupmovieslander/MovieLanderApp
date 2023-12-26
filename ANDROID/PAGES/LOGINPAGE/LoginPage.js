@@ -8,8 +8,6 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
     CLEAR(DIV);
 
-    admob.createBannerView();
-
     DISPLAY(DIV, `
         <h1 class='AppName'>Movie Lander</h1>
         <h1 class='Message'></h1>
