@@ -326,10 +326,37 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                 }
             }
         } else {
-            DISPLAY(MESSAGE, `Fill All Parts`);
-            setTimeout(() => {
-                DISPLAY(MESSAGE, ``);
-            }, 2000);
+            if (localStorage.getItem('Device')==='Web') {
+       
+                DISPLAY(MESSAGE, 'Fill in all fields');
+    
+                    setTimeout(() => {
+                        DISPLAY(MESSAGE, '');
+                }, 2000)
+                
+            } else {
+              
+                if ('vibrate' in navigator) {
+
+                    navigator.vibrate(200);
+
+                    DISPLAY(MESSAGE, 'Fill in all fields');
+    
+                    setTimeout(() => {
+                        DISPLAY(MESSAGE, '');
+                    }, 2000)
+                    // Vibrate for 200 milliseconds
+                    
+                  } else {
+
+                    DISPLAY(MESSAGE, 'Fill in all fields');
+    
+                    setTimeout(() => {
+                        DISPLAY(MESSAGE, '');
+                    }, 2000)
+                  }
+        
+            }
         }
     });
 };
