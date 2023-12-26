@@ -162,17 +162,13 @@ cord
                 });
         } else {
 
-            if (localStorage.getItem('Device')==='Web') {
-
-                DISPLAY(MESSAGE, 'Fill in all fields');
+            DISPLAY(MESSAGE, 'Fill in all fields');
 
                 setTimeout(() => {
                     DISPLAY(MESSAGE, '');
                 }, 2000);
-                  
-            } else {
-                navigator.vibrate(2000);
-            }
+
+            navigator.vibrate(2000);
            
         }
     });
