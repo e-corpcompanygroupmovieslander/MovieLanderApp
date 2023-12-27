@@ -132,11 +132,30 @@ const ANDROIDFORGOTPASSWORD = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
                                 if (deleted) {
                                     ADVANCE.REMOVESTORAGE('local', 'User');
-                                    DISPLAY(MESSAGE, 'User Does Not Exist');
-                                    setTimeout(() => {
-                                        DISPLAY(MESSAGE, '');
-                                        DISPLAY(LOGINBUTTON, 'Recover');
-                                    }, 2000);
+
+                                    if ('vibrate' in navigator) {
+
+                                        navigator.vibrate(200);
+                    
+                                        DISPLAY(MESSAGE, 'User Does Not Exist');
+                        
+                                        setTimeout(() => {
+                                            DISPLAY(MESSAGE, '');
+                                            DISPLAY(LOGINBUTTON, 'Recover');
+                                        }, 2000)
+                                        // Vibrate for 200 milliseconds
+                                        
+                                      } else {
+                    
+                                        DISPLAY(MESSAGE, 'User Does Not Exist');
+                        
+                                        setTimeout(() => {
+                                            DISPLAY(MESSAGE, '');
+                                            DISPLAY(LOGINBUTTON, 'Recover');
+                                        }, 2000)
+                                      }
+                                    
+                                
                                 } else {
                                     if (
                                         user.UserName === USERNAME.value &&
@@ -153,11 +172,28 @@ const ANDROIDFORGOTPASSWORD = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                             errorMessage += ' Incorrect Country';
                                         }
 
-                                        DISPLAY(MESSAGE, errorMessage);
-                                        setTimeout(() => {
-                                            DISPLAY(MESSAGE, '');
-                                            DISPLAY(LOGINBUTTON, 'Recover');
-                                        }, 2000);
+                                        if ('vibrate' in navigator) {
+
+                                            navigator.vibrate(200);
+                        
+                                            DISPLAY(MESSAGE, errorMessage);
+                                            
+                                            setTimeout(() => {
+                                                DISPLAY(MESSAGE, '');
+                                                DISPLAY(LOGINBUTTON, 'Recover');
+                                            }, 2000);
+                                            
+                                          } else {
+                        
+                                            DISPLAY(MESSAGE, errorMessage);
+                                            setTimeout(() => {
+                                                DISPLAY(MESSAGE, '');
+                                                DISPLAY(LOGINBUTTON, 'Recover');
+                                            }, 2000);
+                                            
+                                          }
+
+                                        
                                     }
                                 }
                             })
