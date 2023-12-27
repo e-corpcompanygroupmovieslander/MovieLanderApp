@@ -228,7 +228,7 @@ const ANDROIDCREATEACCOUNTPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                     "CreatedOn": new Date(),
                                     "SecretCode": secretCode,
                                     "Premium": "TRUE",
-                                    "AppVersion": '7.8',
+                                    "AppVersion": '7.9',
                                     "Device": {
                                         "Browser": {
                                             "Name": getBrowserName(),

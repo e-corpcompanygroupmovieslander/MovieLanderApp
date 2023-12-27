@@ -177,7 +177,7 @@ const ANDROIDFORGOTPASSWORD = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                             navigator.vibrate(200);
                         
                                             DISPLAY(MESSAGE, errorMessage);
-                                            
+
                                             setTimeout(() => {
                                                 DISPLAY(MESSAGE, '');
                                                 DISPLAY(LOGINBUTTON, 'Recover');
@@ -191,39 +191,104 @@ const ANDROIDFORGOTPASSWORD = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                                 DISPLAY(LOGINBUTTON, 'Recover');
                                             }, 2000);
                                             
-                                          }
+                                        }
 
                                         
                                     }
                                 }
                             })
                             .catch((err) => {
-                                DISPLAY(MESSAGE, 'Something went wrong');
-                                setTimeout(() => {
-                                    DISPLAY(MESSAGE, '');
-                                    DISPLAY(LOGINBUTTON, 'Recover');
-                                }, 2000);
+
+                                if ('vibrate' in navigator) {
+
+                                    navigator.vibrate(200);
+                
+                                    DISPLAY(MESSAGE, 'Something went wrong');
+                                    setTimeout(() => {
+                                        DISPLAY(MESSAGE, '');
+                                        DISPLAY(LOGINBUTTON, 'Recover');
+                                    }, 2000);
+                                    // Vibrate for 200 milliseconds
+                                    
+                                  } else {
+                
+                                    DISPLAY(MESSAGE, 'Something went wrong');
+                                    setTimeout(() => {
+                                        DISPLAY(MESSAGE, '');
+                                        DISPLAY(LOGINBUTTON, 'Recover');
+                                    }, 2000);
+                                }
+
+                               
                             });
                     } else {
-                        DISPLAY(MESSAGE, `Email does not exist`);
+
+                        if ('vibrate' in navigator) {
+
+                            navigator.vibrate(200);
+        
+                            DISPLAY(MESSAGE, 'Email does not exist');
+                            setTimeout(() => {
+                                DISPLAY(MESSAGE, '');
+                                DISPLAY(LOGINBUTTON, 'Recover');
+                            }, 2000);
+                            // Vibrate for 200 milliseconds
+                            
+                          } else {
+        
+                            DISPLAY(MESSAGE, 'Email does not exist');
+                            setTimeout(() => {
+                                DISPLAY(MESSAGE, '');
+                                DISPLAY(LOGINBUTTON, 'Recover');
+                            }, 2000);
+                        }
+
+                    }
+                })
+                .catch((err) => {
+
+                    if ('vibrate' in navigator) {
+
+                        navigator.vibrate(200);
+    
+                        DISPLAY(MESSAGE, 'Something went wrong');
+                        setTimeout(() => {
+                            DISPLAY(MESSAGE, '');
+                            DISPLAY(LOGINBUTTON, 'Recover');
+                        }, 2000);
+                        // Vibrate for 200 milliseconds
+                        
+                      } else {
+    
+                        DISPLAY(MESSAGE, 'Something went wrong');
                         setTimeout(() => {
                             DISPLAY(MESSAGE, '');
                             DISPLAY(LOGINBUTTON, 'Recover');
                         }, 2000);
                     }
-                })
-                .catch((err) => {
-                    DISPLAY(MESSAGE, 'Something went wrong');
-                    setTimeout(() => {
-                        DISPLAY(MESSAGE, '');
-                        DISPLAY(LOGINBUTTON, 'Recover');
-                    }, 2000);
+
                 });
         } else {
-            DISPLAY(MESSAGE, 'Fill in all fields');
-            setTimeout(() => {
-                DISPLAY(MESSAGE, '');
-            }, 2000);
+
+            if ('vibrate' in navigator) {
+
+                navigator.vibrate(200);
+
+                DISPLAY(MESSAGE, 'Fill in all fields');
+                setTimeout(() => {
+                    DISPLAY(MESSAGE, '');
+                    DISPLAY(LOGINBUTTON, 'Recover');
+                }, 2000);
+                // Vibrate for 200 milliseconds
+                
+              } else {
+
+                DISPLAY(MESSAGE, 'Fill in all fields');
+                setTimeout(() => {
+                    DISPLAY(MESSAGE, '');
+                    DISPLAY(LOGINBUTTON, 'Recover');
+                }, 2000);
+            }
         }
     });
 };

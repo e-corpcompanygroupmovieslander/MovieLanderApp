@@ -252,7 +252,7 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     setTimeout(() => {
                         DISPLAY(MESSAGE, '');
                     }, 2000)
-                  }
+                }
         
             }
         
