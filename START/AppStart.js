@@ -3,6 +3,7 @@ import * as ADVANCE from "../CONNECTION/Connection.js"
 import { WEBHOMEPAGE } from "../WEB/PAGES/HOMEPAGE/HomePage.js";
 
 
+
 const CONNECTION=(DIV)=>{
 
     ADVANCE.OPERATINGSYSTEM();

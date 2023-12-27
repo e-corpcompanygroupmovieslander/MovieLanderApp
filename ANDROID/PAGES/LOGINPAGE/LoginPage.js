@@ -126,39 +126,101 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                         }
                                         
                                     } else {
-                                        DISPLAY(MESSAGE, `Wrong password`);
+                                        if ('vibrate' in navigator) {
 
-                                        setTimeout(() => {
-                                            DISPLAY(MESSAGE, '');
-                                            DISPLAY(LOGINBUTTON, 'LogIn');
-                                        }, 2000);
+                                            navigator.vibrate(200);
+                        
+                                            DISPLAY(MESSAGE, 'Wrong User Password');
+                            
+                                            setTimeout(() => {
+                                                DISPLAY(MESSAGE, '');
+                                                DISPLAY(LOGINBUTTON, 'LogIn');
+                                            }, 2000)
+                                            // Vibrate for 200 milliseconds
+                                            
+                                          } else {
+                        
+                                            DISPLAY(MESSAGE, 'Wrong User Password');
+                            
+                                            setTimeout(() => {
+                                                DISPLAY(MESSAGE, '');
+                                                DISPLAY(LOGINBUTTON, 'LogIn');
+                                            }, 2000)
+                                        }
                                     }
                                 }
                             })
                             .catch((err) => {
-                                DISPLAY(MESSAGE, 'Something went wrong');
+                                if ('vibrate' in navigator) {
 
-                                setTimeout(() => {
-                                    DISPLAY(MESSAGE, '');
-                                    DISPLAY(LOGINBUTTON, 'LogIn');
-                                }, 2000);
+                                    navigator.vibrate(200);
+                
+                                    DISPLAY(MESSAGE, 'Something Went Wrong');
+                    
+                                    setTimeout(() => {
+                                        DISPLAY(MESSAGE, '');
+                                        DISPLAY(LOGINBUTTON, 'LogIn');
+                                    }, 2000)
+                                    // Vibrate for 200 milliseconds
+                                    
+                                  } else {
+                
+                                    DISPLAY(MESSAGE, 'Something Went Wrong');
+                    
+                                    setTimeout(() => {
+                                        DISPLAY(MESSAGE, '');
+                                        DISPLAY(LOGINBUTTON, 'LogIn');
+                                    }, 2000)
+                                }
                             });
                     } else {
-                        DISPLAY(MESSAGE, `Email does not exist`);
 
-                        setTimeout(() => {
-                            DISPLAY(MESSAGE, '');
-                            DISPLAY(LOGINBUTTON, 'LogIn');
-                        }, 2000);
+                        if ('vibrate' in navigator) {
+
+                            navigator.vibrate(200);
+        
+                            DISPLAY(MESSAGE, 'Email does not exist');
+            
+                            setTimeout(() => {
+                                DISPLAY(MESSAGE, '');
+                                DISPLAY(LOGINBUTTON, 'LogIn');
+                            }, 2000)
+                            // Vibrate for 200 milliseconds
+                            
+                          } else {
+        
+                            DISPLAY(MESSAGE, 'Email does not exist');
+            
+                            setTimeout(() => {
+                                DISPLAY(MESSAGE, '');
+                                DISPLAY(LOGINBUTTON, 'LogIn');
+                            }, 2000)
+                        }
+                        
                     }
                 })
                 .catch((err) => {
-                    DISPLAY(MESSAGE, 'Something went wrong');
 
-                    setTimeout(() => {
-                        DISPLAY(MESSAGE, '');
-                        DISPLAY(LOGINBUTTON, 'LogIn');
-                    }, 2000);
+                    if ('vibrate' in navigator) {
+
+                        navigator.vibrate(200);
+    
+                        DISPLAY(MESSAGE, 'Something Went Wrong');
+        
+                        setTimeout(() => {
+                            DISPLAY(MESSAGE, '');
+                        }, 2000)
+                        // Vibrate for 200 milliseconds
+                        
+                      } else {
+    
+                        DISPLAY(MESSAGE, 'Something Went Wrong');
+        
+                        setTimeout(() => {
+                            DISPLAY(MESSAGE, '');
+                        }, 2000)
+                    }
+
                 });
         } else {
 
