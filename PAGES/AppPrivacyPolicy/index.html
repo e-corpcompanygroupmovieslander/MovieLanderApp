@@ -72,15 +72,26 @@ fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/DOCUMENTS
 
     <div class='footer'>
 
-        <img class='CatergoriesIcon' src='${ICONS}home.png'/>
+        <img  onclick='GmaiUs()'  src='${ICONS}gmail.png'/>
 
-        <img class='FreeWatchIcons' src='${ICONS}info.png'/>
-
-        <img class='ProfileIcon' src='${ICONS}phone.png'/>
+        <img onclick='ContactUs()' src='${ICONS}phone.png'/>
 
     </div>
     
     `;
+
+    ContactUs=()=>{
+
+        open('https://www.e-corpcompanygroup.com')
+
+    }
+
+    GmaiUs=()=>{
+
+        window.location.href = 'mailto:movielander1999@gmail.com';
+
+    }
+
 
 }).catch((err) => {
     
