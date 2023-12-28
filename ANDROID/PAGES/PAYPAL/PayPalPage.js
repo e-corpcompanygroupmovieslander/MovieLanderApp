@@ -1,3 +1,5 @@
+import { ANDROIDPREMIUMPAYMENT } from "../ANDROIDPREMIUMPAYMENT/AndroidPremiumPayment.js";
+
 const ANDROIDPAYPAL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     CLEAR(DIV);
@@ -22,7 +24,7 @@ const ANDROIDPAYPAL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             
             <h1 class='MonthlyHeader'>USD.5.20</h1>
 
-            <button class='paymonthly'>Subscribe</button>
+            <button id='paybutton' class='paymonthly'>Subscribe</button>
         
         </div>
 
@@ -34,13 +36,21 @@ const ANDROIDPAYPAL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <h1 class='MonthlyHeader'>USD.55</h1>
 
-            <button class='payAnnually'>Subscribe</button>
+            <button id='paybutton' class='payAnnually'>Subscribe</button>
     
         </div>
     
     </div>
 
     `);
+
+    const BACKICON=document.querySelector('.BackIcon');
+
+    BACKICON.addEventListener('click',()=>{
+
+        ANDROIDPREMIUMPAYMENT(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    });
 
     const PAYMONTHLY=document.querySelector('.paymonthly');
 
