@@ -1,9 +1,11 @@
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 import { ANDROIDMTNPAYMENT } from "../MTNPAYMENT/MtnPayment.js";
+import { ANDROIDPAYPAL } from "../PAYPAL/PayPalPage.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
+    /*
     if (localStorage.getItem('Device')==='Android') {
 
         StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
@@ -13,6 +15,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         console.log('Android Version Changed Colour');
         
     }
+    */
     
     CLEAR(DIV);
 
@@ -72,7 +75,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     PALPAY.addEventListener('click',()=>{
 
-        open('https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-9Y042815JK734272FMWBPYJQ')
+        ANDROIDPAYPAL(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     })
 
