@@ -21,7 +21,17 @@ const PLAYTHEMOVIE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
         </div>
 
-        `)
+        `);
+
+        const BACKICON=document.querySelector('.BackIcon');
+
+        BACKICON.addEventListener('click',()=>{
+    
+            MOVIESETUPPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
+    
+        });
+
+        
 
 
     }
