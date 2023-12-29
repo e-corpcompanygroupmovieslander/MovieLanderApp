@@ -156,8 +156,40 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     })
 
-    
+    //Send Data to the database
 
+    const MODATA={
+        "User":localStorage.getItem('User'),
+        "AppMode":localStorage.getItem("ModeColour"),
+        "SavedMovies":localStorage.getItem("SavedMovies"),
+        "UserDevice":localStorage.getItem('UserDevice'),
+        "Premium":localStorage.getItem('Premium'),
+        "Movie Review":localStorage.getItem('movieReviews')
+    }
+
+    const MYDATA={
+        "UserCode":localStorage.getItem('User'),
+        "Data":MODATA,
+        "Time":new Date()
+    }
+
+    /*
+
+    fetch('https://script.google.com/macros/s/AKfycbzPZxosEYENrhFMl1CdghFHvKKYqDd_narQk62fINkfKc1RVmlBaie0qwY5c3pojtFf/exec',{
+        method:'post',
+        mode:'no-cors',
+        body:JSON.stringify(MYDATA)
+    })
+
+    .then(res=>res.text())
+
+    .then((result) => {
+        console.log(result)
+    }).catch((err) => {
+        console.log(err)
+    });
+    */
+    
 }
 
 export{ANDROIDHOMEPAGE}

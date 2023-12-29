@@ -1,4 +1,4 @@
-import { PRIVACYTEXT } from "../../../APIS/Api.js";
+import { HELPTEXT, PRIVACYTEXT } from "../../../APIS/Api.js";
 import { ANDROIDSETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
 
 const ANDROIDHELPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -36,7 +36,7 @@ const ANDROIDHELPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     `);
 
-    fetch(PRIVACYTEXT)
+    fetch(HELPTEXT)
 
     .then(res =>res.text())
 

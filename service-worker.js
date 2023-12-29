@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Movie-Lander-V.1.0.4';
+const CACHE_NAME = 'Movie-Lander-V.1.0.5';
 const STATIC_CACHE_URLS = ['./'];
 const DYNAMIC_CACHE_NAME = 'Dynamic-Cache-V.1';
 
@@ -14,7 +14,7 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheName !== CACHE_NAME && cacheName.startsWith('Movie-Lander-V.')) {
-            console.log('Deleting old cache:', cacheName);
+           // console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
@@ -27,7 +27,7 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(cachedResponse => {
       if (cachedResponse) {
-        console.log('Asset served from cache:', event.request.url);
+        //console.log('Asset served from cache:', event.request.url);
         return cachedResponse;
       }
 
@@ -35,16 +35,15 @@ self.addEventListener('fetch', event => {
         const responseClone = response.clone();
         caches.open(DYNAMIC_CACHE_NAME).then(cache => cache.put(event.request, responseClone));
 
-        console.log('Asset fetched from server and cached:', event.request.url);
+       // console.log('Asset fetched from server and cached:', event.request.url);
 
         return response;
       }).catch(() => {
         // Handle offline mode here, e.g., return a custom offline page
-        console.log('Failed to fetch asset. Serving offline content.');
+        //console.log('Failed to fetch asset. Serving offline content.');
         // You can customize this based on your needs
         return caches.match('./offline.html');
       });
     })
   );
 });
-

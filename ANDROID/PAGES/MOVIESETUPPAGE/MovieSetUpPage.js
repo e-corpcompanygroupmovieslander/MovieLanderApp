@@ -3,6 +3,7 @@ import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDPREMIUMPAYMENT } from "../ANDROIDPREMIUMPAYMENT/AndroidPremiumPayment.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { PLAYTHEMOVIE } from "../PLAYTHEMOVIE/PlayTheMovie.js";
+import { ANDROIDREVIEWMOVIES } from "../REVIEWMOVIE/ReviewMovies.js";
 import { ANDROIDSEEMOREPAGE } from "../SEEMOREPAGE/SeeMorePage.js";
 import { ANDROIDWISHLISTPAGE } from "../WISHLISTPAGE/WishListPage.js";
 import { ANDROIDCOMMENTDIV } from "./CommentDiv.js";
@@ -10,6 +11,23 @@ import { ANDROIDCOMMENTDIV } from "./CommentDiv.js";
 
 const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
+    if (localStorage.getItem('Device')==='Android') {
+
+        if (element.PosterColour) {
+          
+            StatusBar.backgroundColorByHexString(element.PosterColour);
+            
+        } else {
+            
+            StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
+        }
+  
+    } else {
+       
+        console.log('Android Version Changed Colour');
+        
+    }
+    
     localStorage.setItem('Element',JSON.stringify(element))
 
     CLEAR(DIV);
@@ -74,7 +92,7 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
         <div class='AndroidFooter'>
 
-            <img src='${ICONS}review.png'/>
+            <img  class='ReviewMovies' src='${ICONS}review.png'/>
 
             <img class='DetailsIcon' src='${ICONS}library.png'/>
 
@@ -137,23 +155,6 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
 
     })
 
-    if (localStorage.getItem('Device')==='Android') {
-
-        if (element.PosterColour) {
-          
-            StatusBar.backgroundColorByHexString(element.PosterColour);
-            
-        } else {
-            
-            StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
-        }
-  
-    } else {
-       
-        console.log('Android Version Changed Colour');
-        
-    }
-    
     const PREMIUMICON=document.querySelector('#PremiumIcon');
 
     const PREMIUMNAME=document.querySelector('#PremiumName');
@@ -282,6 +283,15 @@ const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
         ANDROIDCOMMENTDIV(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
 
     })
+
+    const REVIEWICONS=document.querySelector('.ReviewMovies');
+
+    REVIEWICONS.addEventListener('click',()=>{
+
+        ANDROIDREVIEWMOVIES(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element);
+
+    })
+
 
 }
 
