@@ -173,8 +173,6 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         "Time":new Date()
     }
 
-    /*
-
     fetch('https://script.google.com/macros/s/AKfycbzPZxosEYENrhFMl1CdghFHvKKYqDd_narQk62fINkfKc1RVmlBaie0qwY5c3pojtFf/exec',{
         method:'post',
         mode:'no-cors',
@@ -188,7 +186,6 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     }).catch((err) => {
         console.log(err)
     });
-    */
     
 }
 
