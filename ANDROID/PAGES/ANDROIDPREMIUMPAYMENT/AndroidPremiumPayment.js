@@ -15,7 +15,6 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
     }
     
-    
     CLEAR(DIV);
 
     DISPLAY(DIV,`

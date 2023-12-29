@@ -35,11 +35,10 @@
 }
 .Details{
     position: relative;
-    width: 95%;
+    width: 90%;
     text-align: left;
     font-size: 16px; 
     margin-top: 1rem;
     margin-bottom: 1rem;  
-    padding-left: 0.5rem;
-    padding-right: 0.1rem; 
+    padding: 3%;
 }

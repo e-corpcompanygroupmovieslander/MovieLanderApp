@@ -96,27 +96,63 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
         } else if ((PAIDAMOUNT !== WEEKLYPAYMENT && PAIDAMOUNT !== MONTHLYPAYMENT) ||
           NAME !== PAIDNAME) {
           if (NAME !== PAIDNAME) {
-            DISPLAY(MESSAGE,`Check Your Subscription Company Name`);
-          
-            setTimeout(() => {
-              
-              DISPLAY(PAYMTN,`Subscribe`);
 
-              DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+            if ('vibrate' in navigator) {
+
+              navigator.vibrate(200);
+
+              DISPLAY(MESSAGE,`Check Your Subscription Company Name`);
+          
+              setTimeout(() => {
+                
+                DISPLAY(PAYMTN,`Subscribe`);
   
-            }, 2000);
+                DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+    
+              }, 2000);
+              
+            } else {
+
+              DISPLAY(MESSAGE,`Check Your Subscription Company Name`);
+          
+              setTimeout(() => {
+                
+                DISPLAY(PAYMTN,`Subscribe`);
+  
+                DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+    
+              }, 2000);
+          }
+
           } else {
-            
-            DISPLAY(MESSAGE,`Check Your Subscription Package`);
-          
-            setTimeout(() => {
-              
-              DISPLAY(PAYMTN,`Subscribe`);
-              
-              DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
-  
-            }, 2000);
 
+            if ('vibrate' in navigator) {
+
+              navigator.vibrate(200);
+
+              DISPLAY(MESSAGE,`Check Your Subscription Package`);
+          
+              setTimeout(() => {
+                
+                DISPLAY(PAYMTN,`Subscribe`);
+                
+                DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+    
+              }, 2000);
+              
+            } else {
+
+              DISPLAY(MESSAGE,`Check Your Subscription Package`);
+          
+              setTimeout(() => {
+                
+                DISPLAY(PAYMTN,`Subscribe`);
+                
+                DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+    
+              }, 2000);
+           }
+            
           }
         } else {
           let ExpiryDate = '';
@@ -159,17 +195,36 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
               console.log(USEDID);
 
               if (USEDID.includes(parseInt(ID))) {
-                
-                DISPLAY(MESSAGE,`Subscription Used`);
+
+                if ('vibrate' in navigator) {
+
+                  navigator.vibrate(200);
+    
+                  DISPLAY(MESSAGE,`Subscription Used`);
           
-                setTimeout(() => {
-
-                  DISPLAY(PAYMTN,`Subscribe`);
+                  setTimeout(() => {
+  
+                    DISPLAY(PAYMTN,`Subscribe`);
+                    
+                    DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+          
+                  }, 2000);
+  
                   
-                  DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
-        
-                }, 2000);
-
+                } else {
+    
+                  DISPLAY(MESSAGE,`Subscription Used`);
+          
+                  setTimeout(() => {
+  
+                    DISPLAY(PAYMTN,`Subscribe`);
+                    
+                    DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+          
+                  }, 2000);
+  
+               }
+                
               } else {
  
                 fetch(MTNPREMIUMPAY, {
@@ -194,25 +249,65 @@ const ANDROIDMTNPAY = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
             .catch(err => console.log(err));
         }
       } else {
-        DISPLAY(MESSAGE,`Invalid Subscription`);
-          
-        setTimeout(() => {
-          
-          DISPLAY(PAYMTN,`Subscribe`);
-          
-          DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
 
-        }, 2000);
+        if ('vibrate' in navigator) {
+
+          navigator.vibrate(200);
+
+          DISPLAY(MESSAGE,`Invalid Subscription`);
+          
+          setTimeout(() => {
+            
+            DISPLAY(PAYMTN,`Subscribe`);
+            
+            DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+  
+          }, 2000);
+
+          
+        } else {
+          DISPLAY(MESSAGE,`Invalid Subscription`);
+          
+          setTimeout(() => {
+            
+            DISPLAY(PAYMTN,`Subscribe`);
+            
+            DISPLAY(MESSAGE,`Paste Your Message Of Payment Here`);
+  
+          }, 2000);
+
+       }
+
+
       }
     } else {
-      DISPLAY(MESSAGE, 'Provide Your Payment Message');
 
-      setTimeout(() => {
+      if ('vibrate' in navigator) {
 
-        DISPLAY(PAYMTN,`Subscribe`);
+        navigator.vibrate(200);
 
-        DISPLAY(MESSAGE, 'Paste Your Message Of Payment Here');
-      }, 2000);
+        DISPLAY(MESSAGE, 'Provide Your Payment Message');
+
+        setTimeout(() => {
+  
+          DISPLAY(PAYMTN,`Subscribe`);
+  
+          DISPLAY(MESSAGE, 'Paste Your Message Of Payment Here');
+        }, 2000);
+        
+      } else {
+
+        DISPLAY(MESSAGE, 'Provide Your Payment Message');
+
+        setTimeout(() => {
+  
+          DISPLAY(PAYMTN,`Subscribe`);
+  
+          DISPLAY(MESSAGE, 'Paste Your Message Of Payment Here');
+        }, 2000);
+
+     }
+
     }
   });
 };
