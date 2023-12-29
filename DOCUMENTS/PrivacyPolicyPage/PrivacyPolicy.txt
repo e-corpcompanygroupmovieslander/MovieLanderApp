@@ -29,13 +29,13 @@
     <h1 class='SubTopic'>We use your personal information to:</h1>
 
     <p class='Details'>
-        <ol>
-            <li>Provide you with access to the app's features and services.</li>
-            <li>Personalize your experience with the app.</li>
-            <li>Improve the app's functionality and performance.</li>
-            <li>Communicate with you about the app and its feature.</li>
-            <li>Send you promotional offers and other marketing materials.</li>
-            <li>To prevent fraud.</li>
+        <ol class='list'>
+            <li class='list'>Provide you with access to the app's features and services.</li>
+            <li class='list'>Personalize your experience with the app.</li>
+            <li class='list'>Improve the app's functionality and performance.</li>
+            <li class='list'>Communicate with you about the app and its feature.</li>
+            <li class='list'>Send you promotional offers and other marketing materials.</li>
+            <li class='list'>To prevent fraud.</li>
         </ol>
         
     </p>
@@ -49,11 +49,13 @@
     <p class='Details'>
         &nbsp &nbsp &nbsp &nbsp &nbsp We do not share your personal information with third parties, except in the following circumstances:
     </p>
-        <ol>
-            <li>With your consent.</li>
-            <li>To comply with applicable laws, regulations, or legal processes..</li>
-            <li>To enforce our policies or protect our rights, property, or safety, or those of others.</li>
-        </ol>
+
+    <ol class='list'>
+        <li class='list'>With your consent.</li>
+        <li class='list'>To comply with applicable laws, regulations, or legal processes..</li>
+        <li class='list'>To enforce our policies or protect our rights, property, or safety, or those of others.</li>
+    </ol>
+    
 
     <h1 class='PrivacyPolicyTitle'>User Generated Content (U.G.C) - Our policy regarding user-generated content for our movie app is as follows:</h1>
         <p class='Details'>

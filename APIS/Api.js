@@ -20,7 +20,9 @@ const HELPTEXT=`https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/
 
 const UPDATEAPI=`https://play.google.com/store/apps/details?id=com.ecorpcompanygroup.movie_lander`;
 
-const PRIVACYTEXT=`https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/DOCUMENTS/PrivacyPolicyPage/PrivacyPolicy.txt`;
+//const PRIVACYTEXT=`https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/DOCUMENTS/PrivacyPolicyPage/PrivacyPolicy.txt`;
+
+const PRIVACYTEXT=`../DOCUMENTS/PrivacyPolicyPage/PrivacyPolicy.txt`
 
 const PARENTALCONTROLTEXT=`https://e-corpcompanygroupmovieslander.github.io/MovieLander/ParentalControlPage/ParentalControl.txt`;
 
