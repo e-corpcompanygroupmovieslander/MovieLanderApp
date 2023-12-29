@@ -1,16 +1,27 @@
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 
 const ANDROIDREVIEWMOVIES = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE, element) => {
-  CLEAR(DIV);
+ 
+    if (localStorage.getItem('Device')==='Android') {
 
-  DISPLAY(DIV, `
-    <div class='AndroidHeader'>
-      <img class='BackIcon' src='${ICONS}back.png'/>
-      <h1 class='Payments'>${element.MovieName}</h1>
-    </div>
-    <br><br><br>
-    <textarea class='Myreview'></textarea>
-  `);
+        StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
+        
+    } else {
+       
+        console.log('Android Version Changed Colour');
+        
+    }
+
+    CLEAR(DIV);
+
+    DISPLAY(DIV, `
+        <div class='AndroidHeader'>
+        <img class='BackIcon' src='${ICONS}back.png'/>
+        <h1 class='Payments'>${element.MovieName}</h1>
+        </div>
+        <br><br><br>
+        <textarea class='Myreview' placeholder='Write Your Movie Review' ></textarea>
+    `);
 
   const BACKICON = document.querySelector('.BackIcon');
   const TEXTAREA = document.querySelector('.Myreview');

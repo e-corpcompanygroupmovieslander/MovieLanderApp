@@ -10,7 +10,7 @@ import { ANDROIDCOMMENTDIV } from "./CommentDiv.js";
 
 
 const MOVIESETUPPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE,element)=>{
-
+    
     if (localStorage.getItem('Device')==='Android') {
 
         if (element.PosterColour) {
