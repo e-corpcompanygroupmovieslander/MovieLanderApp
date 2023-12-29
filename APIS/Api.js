@@ -16,7 +16,7 @@ const CATERGORYAPI='https://script.googleusercontent.com/macros/echo?user_conten
 
 const CATERGORIESPATH=`https://e-corpcompanygroupmovieslander.github.io/MovieLander/CATERGORIES/`;
 
-const HELPTEXT=`../DOCUMENTS/HelpPage/HelpPage.txt`;
+const HELPTEXT=`https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/DOCUMENTS/HelpPage/HelpPage.txt`;
 
 const UPDATEAPI=`https://play.google.com/store/apps/details?id=com.ecorpcompanygroup.movie_lander`;
 
