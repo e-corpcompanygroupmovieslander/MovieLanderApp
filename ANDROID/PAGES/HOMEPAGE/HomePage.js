@@ -77,9 +77,9 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     <div class='AndroidFooter'>
 
-        <img class='FreeWatchIcons' src='${ICONS}movies.png'/>
-
         <img class='CatergoriesIcon' src='${ICONS}list.png'/>
+
+        <img class='FreeWatchIcons' src='${ICONS}movies.png'/>
 
         <img class='ProfileIcon' src='${ICONS}profile.png'/>
     
