@@ -30,12 +30,20 @@ const ANDROIDPARENTALCONTROL = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
     const DATAHOLDER=document.querySelector('.ChatDivMessages');
 
+    DATAHOLDER.innerHTML=`
+    
+    <img  id='UserLoading' class='LoadingIcon' src='${ICONS}loading.png'/>
+
+    `;
+
     fetch(PARENTALCONTROLTEXT)
 
     .then(res=>res.text())
 
     .then((result) => {
         
+        CLEAR(DATAHOLDER);
+
         DATAHOLDER.innerHTML=result;
 
     }).catch((err) => {
