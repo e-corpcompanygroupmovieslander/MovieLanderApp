@@ -1,4 +1,4 @@
-import { DELETEACCOUNTPOST, PRIVACYTEXT } from "../../../APIS/Api.js";
+import { DELETEACCOUNTPOLICY, DELETEACCOUNTPOST} from "../../../APIS/Api.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDLOGINPAGE } from "../LOGINPAGE/LoginPage.js";
 import { ANDROIDSETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
@@ -38,7 +38,7 @@ const ANDROIDDELETEACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     `);
 
-    fetch(PRIVACYTEXT)
+    fetch(DELETEACCOUNTPOLICY)
 
     .then(res =>res.text())
 
