@@ -48,16 +48,12 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button>
+        <button class='Gmail'>
 
-            <h1 class='HolderName'>
-
-                <a href="mailto:movielander1999@gmail.com">Gmail</a>
-            
-            </h1>
+            <h1 class='HolderName'>Gmail</h1>
 
             <img class='AppIcon' src='${ICONS}gmail.png'/>
-
+    
         </button>
 
     `);
@@ -107,6 +103,12 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     })
 
+    const GMAIL = document.querySelector('.Gmail');
+
+    GMAIL.addEventListener('click', () => {
+        window.location.href = 'mailto:movielander1999@gmail.com';
+    });
+    
 }
 
 export{ANDROIDCONTACTUS}
