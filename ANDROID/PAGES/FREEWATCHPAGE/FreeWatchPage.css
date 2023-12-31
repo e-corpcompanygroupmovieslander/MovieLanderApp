@@ -4,6 +4,9 @@
     background: #00000080;
     overflow-y: auto;
     overflow-x: hidden;
+    bottom: 0;
+    height: auto;
+    width: 100%;
 }
 
 #freeLoading{
