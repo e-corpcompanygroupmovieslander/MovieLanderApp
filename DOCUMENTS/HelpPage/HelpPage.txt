@@ -1,6 +1,4 @@
-<h1 class='PrivacyPolicyTitle'>Movie Lander Help</h1>
-
-    <h1 class='SubTopic'>Series Section</h1>
+<h1 class='SubTopic'>Series Section</h1>
 
 <p class='Details'>
 
