@@ -21,7 +21,7 @@
     position: absolute;
     bottom: 0;
     margin-bottom: 1rem;
-    width: 55%;
+    width: 95%;
     display: block;
     
 }
@@ -32,6 +32,6 @@
     margin-bottom: 1rem;
     width: 30%;
     height: 32px;
-    display: block; 
+    display: none; 
     left: 65%;
 }

@@ -1,162 +1,116 @@
+// Import statement for ANDROIDSETTINGSPAGE (assuming it's in the same directory)
+import { PARENTALCONTROLTEXT } from "../../../APIS/Api.js";
 import { ANDROIDSETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
 
-const ANDROIDPARENTALCONTROL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
-
-    const STYLED=ADVANCE.STYLED;
+const ANDROIDPARENTALCONTROL = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
+    const STYLED = ADVANCE.STYLED;
 
     CLEAR(DIV);
 
-    DISPLAY(DIV,`
-
+    DISPLAY(DIV, `
         <div class='AndroidHeader'>
-
             <img class='BackIcon' src='${ICONS}back.png'/>
-
             <h1 class='Payments'>Parental Control</h1>
-
         </div>
-
-        <div class='MessageDiv'>
-
-            <h1 id='Message'></h1>
-
-        </div>
-
+        <br><br><br>
+        <h1 class='Message'></h1>
         <div class='ChatDivMessages'></div>
-
-        <input id='PinInput' class='RequestMovieInput' type='number' placeholder='Enter Your Pin'/>
-    
-        <button id='PinOn' class='RequestSendButton'></button>
-
+        <input id='PinInput' minlength='4' maxlength='5' class='RequestMovieInput' type='number' placeholder='Enter Your Pin'/>
+        <button id='PinOn' class='RequestSendButton'>ON</button>
     `);
 
-    const MessageDiv=document.querySelector('.MessageDiv');
+    const BACKICON = document.querySelector('.BackIcon');
+    BACKICON.addEventListener('click', () => {
+        ANDROIDSETTINGSPAGE(DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE);
+    });
+
+    const MESSAGE = document.querySelector('.Message');
+    const ParentalControlButton = document.querySelector('.RequestSendButton');
+    const ParentalControlInput = document.querySelector('.RequestMovieInput');
+
+    const DATAHOLDER=document.querySelector('.ChatDivMessages');
+
+    fetch(PARENTALCONTROLTEXT)
+
+    .then(res=>res.text())
+
+    .then((result) => {
         
-    STYLED(MessageDiv,'background',localStorage.getItem('ModeColour'));
+        DATAHOLDER.innerHTML=result;
 
-    
-    const BACKICON=document.querySelector('.BackIcon');
-
-    BACKICON.addEventListener('click',()=>{
-
-        ANDROIDSETTINGSPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-
-    })
-
-    const ParentalControlButton=document.querySelector('.RequestSendButton');
-
-    const ParentalControlInput=document.querySelector('.RequestMovieInput');
-
-    const MESSAGE=document.querySelector('#Message')
+    }).catch((err) => {
+       console.log(err) 
+    });
 
     if (localStorage.getItem('ParentalControlPin')) {
-                 
-        DISPLAY(ParentalControlButton,`ON`);
-        
+        DISPLAY(ParentalControlButton, 'OFF');
+        STYLED(ParentalControlButton, 'background', 'red');
     } else {
-        
-        DISPLAY(ParentalControlButton,`OFF`);
-
+        DISPLAY(ParentalControlButton, 'ON');
+        STYLED(ParentalControlButton, 'background', 'blue');
     }
 
-
-    ParentalControlButton.addEventListener('click',()=>{
-
-        if (ParentalControlInput.value.length>=5) {
-
-            const STOREDPIN=localStorage.getItem('ParentalControlPin');
-
-            const SETPIN=ParentalControlInput.value;
-
-            if (STOREDPIN===SETPIN) {
-                
-                localStorage.removeItem('ParentalControlPin');
-
-                ParentalControlButton.innerHTML='OFF';
-
-                setTimeout(() => {
-    
-                    ParentalControlInput.value='';
-
-                    ParentalControlButton.innerHTML='ON'; 
-                    
-                }, 2000);
-
-            } else {
-                
-                
-                STYLED(MessageDiv,'height','50px')
-
-                MESSAGE.innerHTML='Enter Correct Pin';
-
-                setTimeout(() => {
-                    
-                    ParentalControlInput.value='';
-
-                    STYLED(MessageDiv,'height','0');
-
-                    MESSAGE.innerHTML='';
-
-                    if (localStorage.getItem('ParentalControlPin')) {
-                     
-                        ParentalControlButton.innerHTML='ON'; 
-                        
-                    } else {
-                        
-                        ParentalControlButton.innerHTML='OFF'; 
-    
-                    }
-                    
-                }, 2000);
-
-            }
-
-            if(!STOREDPIN){
-
-                localStorage.setItem('ParentalControlPin',SETPIN);
-
-                ParentalControlButton.innerHTML='OFF';
-
-                setTimeout(() => {
-    
-                    ParentalControlInput.value='';
-
-                    ParentalControlButton.innerHTML='ON'; 
-                    
-                }, 2000);
-
-            }
-                  
+    ParentalControlInput.addEventListener('input', () => {
+        if (ParentalControlInput.value.length >= 5) {
+            STYLED(ParentalControlInput, 'width', '55%');
+            STYLED(ParentalControlButton, 'display', 'block');
         } else {
+            STYLED(ParentalControlInput, 'width', '95%');
+            STYLED(ParentalControlButton, 'display', 'none');
+        }
+    });
 
-            STYLED(MessageDiv,'height','50px')
-
-            MESSAGE.innerHTML='Enter Atleast 5 digit Pin';
-            
-            setTimeout(() => {
-
-                ParentalControlInput.value='';
-
-                MESSAGE.innerHTML='';
-
-                STYLED(MessageDiv,'height','0')
-
-                if (localStorage.getItem('ParentalControlPin')) {
-
-                    ParentalControlButton.innerHTML='OFF'; 
-                    
+    ParentalControlButton.addEventListener('click', () => {
+        if (ParentalControlInput.value.length >= 5) {
+            if (localStorage.getItem('ParentalControlPin')) {
+                if (ParentalControlInput.value === localStorage.getItem('ParentalControlPin')) {
+                    // Turn off parental control
+                    localStorage.removeItem('ParentalControlPin');
+                    DISPLAY(ParentalControlButton, 'ON');
+                    STYLED(ParentalControlButton, 'background', 'blue');
+                    STYLED(ParentalControlInput, 'width', '95%');
+                    STYLED(ParentalControlButton, 'display', 'none');
+                    ParentalControlInput.value = '';
                 } else {
                     
-                    ParentalControlButton.innerHTML='ON'; 
+                     // Display a message for an invalid pin length
+                    if ('vibrate' in navigator) {
+                        navigator.vibrate(200);
+                    }
+                    STYLED(MESSAGE, 'height', '100px');
+                    DISPLAY(MESSAGE, 'Enter Correct Pin');
+                    setTimeout(() => {
+                        DISPLAY(MESSAGE, '');
+                    }, 2000);
 
+                    ParentalControlInput.value = '';
+
+                    STYLED(ParentalControlInput, 'width', '95%');
+
+                    STYLED(ParentalControlButton, 'display', 'none');
                 }
-                
+  
+            } else {
+                // Set the pin and turn on parental control
+                localStorage.setItem('ParentalControlPin', ParentalControlInput.value);
+                DISPLAY(ParentalControlButton, 'OFF');
+                STYLED(ParentalControlButton, 'background', 'red');
+                STYLED(ParentalControlInput, 'width', '95%');
+                STYLED(ParentalControlButton, 'display', 'none');
+                ParentalControlInput.value = '';
+            }
+        } else {
+            // Display a message for an invalid pin length
+            if ('vibrate' in navigator) {
+                navigator.vibrate(200);
+            }
+            STYLED(MESSAGE, 'height', '100px');
+            DISPLAY(MESSAGE, 'Enter 5 digit Pin');
+            setTimeout(() => {
+                DISPLAY(MESSAGE, '');
             }, 2000);
-
         }
+    });
+};
 
-    })
-
-}
-
-export{ANDROIDPARENTALCONTROL}
+export { ANDROIDPARENTALCONTROL };
