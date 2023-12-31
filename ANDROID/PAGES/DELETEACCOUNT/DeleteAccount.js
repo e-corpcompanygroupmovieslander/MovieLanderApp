@@ -121,11 +121,14 @@ const ANDROIDDELETEACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                     console.log(err)
                 });
                 
-
-
             } else {
 
                 if (!REASON.value && localStorage.getItem('DeleteAccount') ) {
+
+                      // Display a message for an invalid pin length
+                    if ('vibrate' in navigator) {
+                        navigator.vibrate(200);
+                    }
                     
                     DISPLAY(MESSAGE,`Reason For Deletion Cannot be Empty`);
 
@@ -137,7 +140,14 @@ const ANDROIDDELETEACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 } else {
 
+                      // Display a message for an invalid pin length
+                      
                     if (REASON.value && !localStorage.getItem('DeleteAccount')) {
+
+                          // Display a message for an invalid pin length
+                        if ('vibrate' in navigator) {
+                            navigator.vibrate(200);
+                        }
                         
                         DISPLAY(MESSAGE,`Agree To Terms And Conditions`);
 
@@ -151,6 +161,11 @@ const ANDROIDDELETEACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                          
                         DISPLAY(MESSAGE,`Check All Requirement `);
 
+                          // Display a message for an invalid pin length
+                        if ('vibrate' in navigator) {
+                            navigator.vibrate(200);
+                        }
+
                         setTimeout(() => {
 
                             DISPLAY(MESSAGE,`Enter Reason For Account Deletion`);
@@ -159,8 +174,6 @@ const ANDROIDDELETEACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                     }
 
-                    
-   
                 }
                      
             }
