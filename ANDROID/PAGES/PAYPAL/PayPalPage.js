@@ -17,6 +17,18 @@ const ANDROIDPAYPAL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     <div class='PrivacyPolicyDiv'>
 
         <div class='MonthlyDiv'>
+                
+            <h1 class='MonthlyHeader'>Daily Subscription Plan</h1>
+
+            <p>Get Access To All Movies and Features on the App For One Day</p>
+            
+            <h1 class='MonthlyHeader'>USD.1.20</h1>
+
+            <button id='paybutton' class='paydaily'>Subscribe</button>
+
+        </div>
+
+        <div class='MonthlyDiv'>
         
             <h1 class='MonthlyHeader'>Monthly Subscription Plan</h1>
 
@@ -52,6 +64,15 @@ const ANDROIDPAYPAL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     });
 
+    const DAILYMONTHLY=document.querySelector('.paydaily');
+
+    DAILYMONTHLY.addEventListener('click',()=>{
+
+        open('https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-297406085E6526343MWKSUWQ');
+
+    })
+
+
     const PAYMONTHLY=document.querySelector('.paymonthly');
 
     PAYMONTHLY.addEventListener('click',()=>{
@@ -68,7 +89,6 @@ const ANDROIDPAYPAL=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         open('https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-06M99592YV1798817MWGYUPY')
 
     })
-
 
 }
 
