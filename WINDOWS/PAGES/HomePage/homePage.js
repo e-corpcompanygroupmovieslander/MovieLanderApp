@@ -4,7 +4,16 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     DISPLAY(DIV,`
     
-    <div class='WindowsHeader'></div>
+    <div class='WindowsHeader'>
+
+        <img src='${ICONS}moon.png' class=''/>
+
+        <img src='${ICONS}sun.png' class=''/>
+
+        <img src='${ICONS}profile.png' class=''/>
+
+    
+    </div>
 
     <div class='WindowsDivHolder'></div>
 
