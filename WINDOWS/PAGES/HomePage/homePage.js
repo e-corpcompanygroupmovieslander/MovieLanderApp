@@ -8,7 +8,7 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     <di class='WindowsHeader'>
 
-        <input class='WindowsInputHolder' type="text" name="" id="" placeholder='Search here' >
+        <input class='WindowsInputHolder' type="search" name="" id="" placeholder='Search here' >
         
         <div class='WindowsrightHolder'>
 
