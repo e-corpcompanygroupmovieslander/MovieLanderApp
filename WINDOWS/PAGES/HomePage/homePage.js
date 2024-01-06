@@ -1,0 +1,7 @@
+const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
+
+    alert('Windows');
+
+}
+
+export{WINDOWSHOMEPAGE}

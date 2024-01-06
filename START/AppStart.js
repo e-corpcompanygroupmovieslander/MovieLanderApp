@@ -1,6 +1,7 @@
 import { ANDROIDAUTOLOGINPAGE } from "../ANDROID/PAGES/AUTOLOGINPAGE/AutoLoginPage.js";
 import * as ADVANCE from "../CONNECTION/Connection.js"
 import { WEBHOMEPAGE } from "../WEB/PAGES/HOMEPAGE/HomePage.js";
+import { WINDOWSHOMEPAGE } from "../WINDOWS/PAGES/HomePage/homePage.js";
 
 
 
@@ -20,9 +21,17 @@ const CONNECTION=(DIV)=>{
 
     console.log(ADVANCE);
 
-    if (localStorage.getItem('Device')==='Web') {
+    if (localStorage.getItem('Device')==='Windows') {
        
-        WEBHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+        if (localStorage.getItem('Device')==='Web') {
+
+            WEBHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);  
+            
+        } else {
+            
+            WINDOWSHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)
+        }
+        
         
     } else {
       
