@@ -10,7 +10,7 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         <img src='${ICONS}sun.png' class=''/>
 
-        <img src='${ICONS}profile.png' class=''/>
+        <img src='${ICONS}user.png' class=''/>
 
     
     </div>
