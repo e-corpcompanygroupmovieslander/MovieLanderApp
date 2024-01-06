@@ -6,8 +6,10 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     DISPLAY(DIV,`
     
-    <div class='WindowsHeader'>
+    <di class='WindowsHeader'>
 
+        <input class='WindowsInputHolder' type="text" name="" id="" placeholder='Search here' >
+        
         <div class='WindowsrightHolder'>
 
             <img src='${ICONS}notifications.png' class=''/>
@@ -19,6 +21,8 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             <img src='${ICONS}user.png' class=''/>
 
         </div>
+
+
 
  
 
