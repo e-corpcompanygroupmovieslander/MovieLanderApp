@@ -38,7 +38,7 @@ const BODY=document.querySelector('body');
   DIV.style.background = STATUSMODE;
   BODY.style.background = STATUSMODE;
 
-localStorage.setItem('Device','Android');
+localStorage.setItem('Device','Windows');
 
 
 setTimeout(() => {

@@ -23,3 +23,6 @@
 @import url('../ANDROID/PAGES/REVIEWMOVIE/ReviewMovies.css');
 /*WEB SITE CODE*/
 @import url('../WEB/PAGES/HOMEPAGE/HomePage.css');
+
+/* WINDOWS SITE CODE*/
+@import url('../WINDOWS/PAGES/HomePage/homePage.css');

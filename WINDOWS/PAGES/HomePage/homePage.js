@@ -1,6 +1,14 @@
 const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
-    alert('Windows');
+    CLEAR(DIV);
+
+    DISPLAY(DIV,`
+    
+    <div class='WindowsHeader'></div>
+
+    <div class='WindowsDivHolder'></div>
+
+    `)
 
 }
 

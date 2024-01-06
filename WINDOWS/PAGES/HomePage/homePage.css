@@ -1,0 +1,22 @@
+.WindowsHeader{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: #00000080;
+    display: inline-flex;
+    overflow: hidden;
+}
+
+.WindowsDivHolder{
+    position: absolute;
+    width: 7%;
+    height: auto;
+    bottom: 0;
+    top: 51px;
+    background: #00000080;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden
+    
+
+}
