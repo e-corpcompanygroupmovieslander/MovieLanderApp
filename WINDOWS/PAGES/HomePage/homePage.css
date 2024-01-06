@@ -11,23 +11,13 @@
     position: relative;
     display: inline-flex;
     width: 30%;
-    background: #00000080;
+    height: auto;
+    background:transparent;
     margin-left: auto;
     margin-right: 0rem;
     border-radius: 0px 0px 0px 0px;
 }
 
-.WindowsDivHolder{
-    position: absolute;
-    width: 7%;
-    height: auto;
-    bottom: 0;
-    top: 51px;
-    background: #00000080;
-    display: block;
-    overflow-y: auto;
-    overflow-x: hidden
-}
 
 .WindowsLight{
     display: block;
@@ -48,5 +38,27 @@
     margin-right: 10%;
     border-radius: 20px;
     text-align: left;
+    display: block;
 
+}
+
+.WindowsLeftDivHolder{
+    left: 0;
+    background: #00000080; ;
+    width: 100px;
+    height: auto;
+    bottom: 0;
+    top: 52px;
+    display: block;
+    overflow-y: auto;
+}
+
+.HomeIcons{
+    position: relative;
+    width: 30px;
+    height: auto;
+    margin-left: 1.8rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }

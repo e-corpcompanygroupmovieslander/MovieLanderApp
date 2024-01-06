@@ -8,7 +8,7 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     <di class='WindowsHeader'>
 
-        <input class='WindowsInputHolder' type="search" name="" id="" placeholder='Search here' >
+        <input class='WindowsInputHolder' type="search" placeholder='Search here' >
         
         <div class='WindowsrightHolder'>
 
@@ -22,14 +22,23 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         </div>
 
-
-
- 
-
-    
     </div>
 
-    <div class='WindowsDivHolder'></div>
+    <div class='WindowsLeftDivHolder'>
+
+        <img src='${ICONS}home.png' class='HomeIcons'/>
+
+        <img src='${ICONS}list.png' class='HomeIcons'/>
+
+        <img src='${ICONS}movies.png' class='HomeIcons'/>
+
+        <img src='${ICONS}save.png' class='HomeIcons'/>
+
+        <img src='${ICONS}chat.png' class='HomeIcons'/>
+
+        <img src='${ICONS}setting.png' class='HomeIcons'/>
+    
+    </div>
 
     `);
 
