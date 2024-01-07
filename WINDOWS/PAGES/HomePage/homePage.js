@@ -40,6 +40,9 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     </div>
 
+    <div class='WindowsDataDiv'></div>
+   
+
     `);
 
     //APPMODES
