@@ -1,7 +1,7 @@
 import { ANDROIDAUTOLOGINPAGE } from "../ANDROID/PAGES/AUTOLOGINPAGE/AutoLoginPage.js";
 import * as ADVANCE from "../CONNECTION/Connection.js"
 import { WEBHOMEPAGE } from "../WEB/PAGES/HOMEPAGE/HomePage.js";
-import { WINDOWSHOMEPAGE } from "../WINDOWS/PAGES/HomePage/homePage.js";
+import { WINDOWSAUTOLOGIN } from "../WINDOWS/FUNCTIONS/AUTOLOGIN/WindowsAutoLogin.js";
 
 
 
@@ -29,7 +29,8 @@ const CONNECTION=(DIV)=>{
             
         } else {
             
-            WINDOWSHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)
+            WINDOWSAUTOLOGIN(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
         }
         
         
