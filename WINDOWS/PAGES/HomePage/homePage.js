@@ -1,5 +1,6 @@
 import { LOGINAPI } from "../../../APIS/Api.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
+import { WINDOWSADVERST } from "../../FUNCTIONS/ADVERTSPAGE/Adverts.js";
 import { WINDOWSLOGINPAGE } from "../LoginPage/LoginPage.js";
 
 const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -60,6 +61,9 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
    
 
     `);
+
+    //APP STARTS
+    WINDOWSADVERST(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
     //APPMODES
 

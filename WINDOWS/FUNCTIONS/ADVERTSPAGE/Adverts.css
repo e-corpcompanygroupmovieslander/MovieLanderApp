@@ -1,0 +1,12 @@
+.ADVERTSDIVHOLDER{
+    position: relative;
+    width: 20%;
+    background: #00000080;
+    height: 50%;
+    display: inline-flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
