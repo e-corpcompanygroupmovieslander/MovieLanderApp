@@ -74,3 +74,29 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+.WindowsUserAccountDiv{
+    right: 0;
+    width: 0%;
+    height: auto;
+    bottom: 0;
+    top: 0px;
+    display: block;
+    overflow-y: hidden;
+    overflow-x: hidden;  
+    background: transparent;
+}
+
+.MyDataHolder{
+    position: absolute;
+    top: 60px;
+    width: 95%;
+    height: auto;
+    left: 2%;
+    bottom: 0;
+    margin-bottom: 0.5rem;
+    background: #00000080;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border-radius: 20px;
+}

@@ -1,4 +1,6 @@
+import { LOGINAPI } from "../../../APIS/Api.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
+import { WINDOWSLOGINPAGE } from "../LoginPage/LoginPage.js";
 
 const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -18,7 +20,7 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <img src='${ICONS}moon.png' class='WindowsDark'/>
 
-            <img src='${ICONS}user.png' class=''/>
+            <img src='${ICONS}user.png' class='UserProfile'/>
 
         </div>
 
@@ -41,6 +43,20 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     </div>
 
     <div class='WindowsDataDiv'></div>
+
+    <div class='WindowsUserAccountDiv'>
+
+        <div class='AndroidHeader'>
+
+            <img class='BackIcon' src='${ICONS}back.png'/>
+
+            <img class='LightModeIcon' src='${ICONS}profile.png'/>
+
+        </div>
+
+        <div class='MyDataHolder'></div>
+        
+    </div>
    
 
     `);
@@ -90,6 +106,98 @@ const WINDOWSHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         DIV.style.background='#5C829A';
 
     })
+
+    //GET USERS PROFILE DATA
+    const USERPROFILE=document.querySelector('.UserProfile');
+
+    const USERACCOUNTDIV=document.querySelector('.WindowsUserAccountDiv');
+
+    const MyDataHolder=document.querySelector('.MyDataHolder');
+
+    USERPROFILE.addEventListener('click',()=>{
+
+        STYLED(USERACCOUNTDIV,'background',localStorage.getItem('ModeColour'));
+
+        STYLED(USERACCOUNTDIV,'width','30%');
+
+        DISPLAY(MyDataHolder,`
+
+        <img id='freeLoading' class='LoadingIcon' src='${ICONS}loading.png'/>
+        
+        `)
+
+        fetch(LOGINAPI)
+
+        .then(res=>res.json())
+
+        .then((result) => {
+
+
+            CLEAR(MyDataHolder)
+
+            const user = result.find(user => user.SecretCode === localStorage.getItem('User'));
+                
+            if (user) {
+                
+                DISPLAY(MyDataHolder,`
+
+                <br>
+                
+                <button>${user.UserName}</button>
+
+                <br>
+                
+                <button>${user.Email}</button>
+
+                <br>
+                
+                <button>${user.Telephone}</button>
+
+                <br>
+                
+                <button>${user.Location}</button>
+
+                <br>
+                
+                <button class='SignOut'>Sign Out</button>
+                
+                `);
+
+                const SIGNOUT=document.querySelector('.SignOut');
+
+                SIGNOUT.addEventListener('click',()=>{
+            
+                    localStorage.removeItem('User');
+            
+                    WINDOWSLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+            
+                })
+                
+            } else {
+                
+                localStorage.removeItem('User');
+
+                WINDOWSLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+            }
+            
+        }).catch((err) => {
+            console.log(err)
+        });
+
+
+
+    })
+
+    const BACKICON=document.querySelector('.BackIcon');
+
+    BACKICON.addEventListener('click',()=>{
+        
+        STYLED(USERACCOUNTDIV,'width','0%');
+
+    })
+
+
 
 
 }
