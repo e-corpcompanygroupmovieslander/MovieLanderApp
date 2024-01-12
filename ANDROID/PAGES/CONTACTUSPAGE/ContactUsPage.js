@@ -24,14 +24,6 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button class='WhatsApp'>
-        
-            <h1 class='HolderName'>WhatsApp</h1>
-
-            <img class='AppIcon' src='${ICONS}whatsapp.png'/>
-        
-        </button>
-
         <button class='WebSite'>
 
             <h1 class='HolderName'>Web Site</h1>
@@ -73,19 +65,6 @@ const ANDROIDCONTACTUS=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         open('https://play.google.com/store/apps/details?id=com.ecorpcompanygroup.movie_lander&pcampaignid=web_share')
 
     })
-
-    const WHATSAPP = document.querySelector('.WhatsApp');
-
-    WHATSAPP.addEventListener('click', () => {
-        // Replace '123456789' with the actual phone number
-        const phoneNumber = '726292245';
-
-        // Create a WhatsApp URL with the phone number
-        const whatsappUrl = `https://wa.me/${phoneNumber}`;
-
-        // Open WhatsApp in a new window or tab
-        window.open(whatsappUrl, '_blank');
-    });
 
     const INSTAGRAM=document.querySelector('.Instagram');
 
