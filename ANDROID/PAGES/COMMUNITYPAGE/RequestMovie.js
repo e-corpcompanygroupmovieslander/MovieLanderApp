@@ -1,3 +1,4 @@
+import { MOVIIEREQUESTAPI, MOVIIEREQUESTEDAPI } from "../../../APIS/Api.js";
 import { STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDCOMMUNITYPAGE } from "./CommunityPage.js";
 
@@ -77,7 +78,7 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         <img id='UserLoading' class='LoadingIcon' src='${ICONS}loading.png'/>
     `);
 
-    fetch('https://script.googleusercontent.com/macros/echo?user_content_key=nXMhppWJckaAyXaZy6D__S0lqeR0atqSxAq1kOkk2GEnJWWQ52CPfpL7F9U8Vd-wdwSw_qpzVpQfuKi-IxfflDFevpOXFM4Fm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDR547rJpn-Psy8MhiNxA-XQ-PS5P5L6nk8-Qayof4LLnMQUyXJJ2RPUI3gNjWu4MkYFRvveLc41ggslj1gFlVzYr3vgDTt1Fw&lib=MR-C6dZ5Kz2htDo2AXf6_I-zilWmV86UI')
+    fetch(MOVIIEREQUESTEDAPI)
     .then(res => res.json())
     .then(result=> {
 
@@ -174,13 +175,13 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
                 "Date": new Date()
             }
 
-            fetch('https://script.google.com/macros/s/AKfycbxSMyblhcQKYRvLsPCy5f1raiwW_nNQlkeveIxspjkWF3odNlyVsVevQ1ErqiJRQJtO/exec', {
+            fetch(MOVIIEREQUESTAPI, {
                 method: 'POST',
                 mode: 'no-cors',
                 body: JSON.stringify(USERDATA)
             })
             .then((result) => {
-                fetch('https://script.googleusercontent.com/macros/echo?user_content_key=KuQ0_mrBO_3CmTQh5IK8yz7RaG-eVNka0NIVZxLCdH6PvGt9n_FaT6m3ZwWT4iLBU6MCr8AMkQZEdrG-c3iahcubmkTZxa0Gm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnEs7UJ0dlvB27hDMA137eagoFAsTqY-HPehJ5_2CaZu1n_yZTcsRd6NJ4kiwA9VyeDiWxKZD0X-nujIekQxU0gNOSwMBEY_a-tz9Jw9Md8uu&lib=MZgXdYXtlqVeWWvMj2IqGu-zilWmV86UI')
+                fetch(MOVIIEREQUESTEDAPI)
                 .then(res => res.json())
                 .then(result=> {
 
@@ -246,7 +247,7 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     setInterval(() => {
         
-        fetch('https://script.googleusercontent.com/macros/echo?user_content_key=KuQ0_mrBO_3CmTQh5IK8yz7RaG-eVNka0NIVZxLCdH6PvGt9n_FaT6m3ZwWT4iLBU6MCr8AMkQZEdrG-c3iahcubmkTZxa0Gm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnEs7UJ0dlvB27hDMA137eagoFAsTqY-HPehJ5_2CaZu1n_yZTcsRd6NJ4kiwA9VyeDiWxKZD0X-nujIekQxU0gNOSwMBEY_a-tz9Jw9Md8uu&lib=MZgXdYXtlqVeWWvMj2IqGu-zilWmV86UI')
+        fetch(MOVIIEREQUESTEDAPI)
         .then(res => res.json())
         .then(result=> {
 
