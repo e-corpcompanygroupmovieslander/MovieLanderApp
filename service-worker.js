@@ -1,4 +1,3 @@
-/*
 const CACHE_NAME = 'Movie-Lander-V.1.0.6';
 const STATIC_CACHE_URLS = ['./'];
 const DYNAMIC_CACHE_NAME = 'Dynamic-Cache-V.1';
@@ -48,4 +47,3 @@ self.addEventListener('fetch', event => {
     })
   );
 });
-*/
