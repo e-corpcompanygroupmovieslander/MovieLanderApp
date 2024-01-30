@@ -18,7 +18,7 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         <div class='ContactUsChatDiv'>
 
-            <img class='WhatsApp' src='${ICONS}whatsapp.png'/>
+            <img class='Gmail' src='${ICONS}gmail.png'/>
 
             <img class='Instagram' src='${ICONS}instagram.png'/>
 
@@ -34,17 +34,17 @@ const ANDROIDREQUESTMOVIEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     `);
 
-    const WHATSAPP = document.querySelector('.WhatsApp');
+    const GMAIL = document.querySelector('.Gmail');
 
-    WHATSAPP.addEventListener('click', () => {
-        // Replace '123456789' with the actual phone number
-        const phoneNumber = '726292245';
+    GMAIL.addEventListener('click', () => {
+        // Replace 'user@example.com' with the actual Gmail email address
+        const emailAddress = 'movielander1999@gmail.com';
 
-        // Create a WhatsApp URL with the phone number
-        const whatsappUrl = `https://wa.me/${phoneNumber}`;
+        // Create a Gmail URL with the email address
+        const gmailUrl = `mailto:${emailAddress}`;
 
-        // Open WhatsApp in a new window or tab
-        window.open(whatsappUrl, '_blank');
+        // Open Gmail in a new window or tab
+        window.open(gmailUrl, '_blank');
     });
 
     const INSTAGRAM=document.querySelector('.Instagram');
