@@ -1,6 +1,5 @@
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 import { ANDROIDMTNPAYMENT } from "../MTNPAYMENT/MtnPayment.js";
-import { ANDROIDPAYPAL } from "../PAYPAL/PayPalPage.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
@@ -28,16 +27,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     </div>
 
     <br><br><br><br>
-
-    <button class='PalPay'>
-
-        <h1 class='HolderName'>Pay Pal </h1>
-        
-        <img class='AppIcon' src='${ICONS}paypal.png'/>
-    
-    </button>
-
-    
+   
     <button class='MTN'>
 
         <h1 class='HolderName'>MTN </h1>
@@ -69,14 +59,6 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     });
 
-    const PALPAY=document.querySelector('.PalPay');
-
-    PALPAY.addEventListener('click',()=>{
-
-        ANDROIDPAYPAL(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-
-    })
-
     const MTN=document.querySelector('.MTN');
 
     MTN.addEventListener('click',()=>{
@@ -85,8 +67,6 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     });
    
-
-
 
 }
 
