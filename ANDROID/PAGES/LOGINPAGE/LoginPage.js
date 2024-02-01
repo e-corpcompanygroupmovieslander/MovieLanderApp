@@ -96,14 +96,12 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
                                         .then((result) => {
                                             
-                                            console.log(result);
-                                            
                                             fetch('https://script.googleusercontent.com/macros/echo?user_content_key=SdrYJC2OFjLVEBIVKaFCiXk5ETZJ1h-ZrCdw71Uqq7E8mI8Agq4ZSzgO6tNjidCSv_hnIOjBXNqfU2yM7tJ8UVDDdyWw_9bLm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHA7V_xHuqt_RHt2NgVI0hxOUNu_k4JAAcyGofLVo3kAuUX_2lfrRxs7ijmLAjMNdCTHOhoKW-IEsRN88vJOgl9Wj29LuqdMLtz9Jw9Md8uu&lib=MK6r_Kpo7IT2Bbfrm-N1YMezilWmV86UI')
 
                                             .then(res=>res.json())
 
                                             .then((result) => {
-                                                console.log(result)
+                                               //Do the
                                             }).catch((err) => {
                                                 console.log(err)
                                             });

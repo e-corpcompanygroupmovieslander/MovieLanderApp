@@ -40,14 +40,15 @@ const ANDROIDAUTOLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     fetch(MTNPREMIUMPAYGET)
                         .then(res => res.json())
                         .then((result) => {
-                            
+
                             const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
 
                             if (Premiumed) {
-                                console.log('Premium On');
+                                
                                 ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
+                                
                             } else {
-                                console.log('Premium Expired');
+                               
                                 ADVANCE.REMOVESTORAGE('local', 'Premium');
                             }
 
