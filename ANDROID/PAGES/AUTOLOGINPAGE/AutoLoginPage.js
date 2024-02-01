@@ -3,7 +3,7 @@ import { ANDROIDPLAYER } from "../ANDROIDPLAYER/AndroidPlayer.js";
 import { ANDROIDCREATEPRIVACYPOLICYPAGE } from "../CREATEACCOUNTPRIVACYPOLICY/CreateAccountPrivacyPolicy.js";
 import { ANDROIDHOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { ANDROIDLOGINPAGE } from "../LOGINPAGE/LoginPage.js";
-import { ANDROIDLOGOUTPAGE } from "../LOGOUTPAGE/LogOutPage.js";
+
 
 const ANDROIDAUTOLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
     // Check if User is logged in
@@ -40,6 +40,7 @@ const ANDROIDAUTOLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                     fetch(MTNPREMIUMPAYGET)
                         .then(res => res.json())
                         .then((result) => {
+                            
                             const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
 
                             if (Premiumed) {
@@ -50,7 +51,6 @@ const ANDROIDAUTOLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                 ADVANCE.REMOVESTORAGE('local', 'Premium');
                             }
 
-                            console.log(result);
                         })
                         .catch((err) => {
                             console.log(err);

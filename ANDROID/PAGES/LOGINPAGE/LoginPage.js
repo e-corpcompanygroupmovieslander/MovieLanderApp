@@ -63,13 +63,13 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                             .then((result) => {
                                                 const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
                                                 if (Premiumed) {
-                                                    console.log('Premium On');
+                                                    
                                                     ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
                                                 } else {
-                                                    console.log('Premium Expired');
+                                                    
                                                     ADVANCE.REMOVESTORAGE('local', 'Premium');
                                                 }
-                                                console.log(result);
+                                                
                                             })
                                             .catch((err) => {
                                                 console.log(err);
