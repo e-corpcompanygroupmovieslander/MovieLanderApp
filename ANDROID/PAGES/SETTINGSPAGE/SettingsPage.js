@@ -81,6 +81,14 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         <button class='LogOut'>
 
+        <h1 class='SafeArea'>Safe Area View </h1>
+
+        <img class='AppIcon' src='${ICONS}settings.png'/>
+    
+        </button>
+
+        <button class='LogOut'>
+
             <h1 class='HolderName'>LogOut </h1>
 
             <img class='AppIcon' src='${ICONS}logout.png'/>
@@ -240,6 +248,14 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     CONNECTDEVICE.addEventListener('click',()=>{
 
         ANDROIDCONNECTDEVICE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+
+    })
+
+    const SafeArea=document.querySelector('.SafeArea');
+
+    SafeArea.addEventListener('click',()=>{
+
+        localStorage.setItem('SafeAreaView','YES')
 
     })
 

@@ -35,6 +35,14 @@ const CONNECTION=(DIV)=>{
         
         
     } else {
+
+        if (localStorage.getItem('SafeArea')==='TRUE' && localStorage.getItem('SafeAreaView')==='YES') {
+
+            APPMODE(localStorage.getItem('ModeColour'));
+
+            DIV.style.bottom='0'
+
+        } 
       
         ANDROIDAUTOLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
 
