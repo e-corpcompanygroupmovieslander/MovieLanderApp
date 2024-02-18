@@ -79,11 +79,11 @@ const ANDROIDSETTINGSPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         
         </button>
 
-        <button class='LogOut'>
+        <button class='SafeArea'>
 
-        <h1 class='SafeArea'>Safe Area View </h1>
+        <h1 class='HolderName'>Safe Area View </h1>
 
-        <img class='AppIcon' src='${ICONS}settings.png'/>
+        <img class='AppIcon' src='${ICONS}setting.png'/>
     
         </button>
 
