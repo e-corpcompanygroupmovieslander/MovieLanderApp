@@ -1,51 +1,58 @@
-/*
-const CACHE_NAME = 'Movie-Lander-V.1.0.6';
-const STATIC_CACHE_URLS = ['./'];
-const DYNAMIC_CACHE_NAME = 'Dynamic-Cache-V.1';
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(STATIC_CACHE_URLS))
+const staticCacheName = 'Niber Music';
+const dynamicCacheName = 'Niber Music Pages';
+const assets = [
+  './','/'
+];
+// cache size limit function
+const limitCacheSize = (name, size) => {
+  caches.open(name).then(cache => {
+    cache.keys().then(keys => {
+      if(keys.length > size){
+        cache.delete(keys[0]).then(limitCacheSize(name, size));
+      }
+    });
+  });
+};
+// install event
+self.addEventListener('install', evt => {
+  //console.log('service worker installed');
+  evt.waitUntil(
+    caches.open(staticCacheName).then((cache) => {
+      console.log('caching shell assets');
+      cache.addAll(assets);
+    })
   );
 });
-
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME && cacheName.startsWith('Movie-Lander-V.')) {
-           // console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
+// activate event
+self.addEventListener('activate', evt => {
+  //console.log('service worker activated');
+  evt.waitUntil(
+    caches.keys().then(keys => {
+      //console.log(keys);
+      return Promise.all(keys
+        .filter(key => key !== staticCacheName && key !== dynamicCacheName)
+        .map(key => caches.delete(key))
       );
     })
   );
 });
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      if (cachedResponse) {
-        //console.log('Asset served from cache:', event.request.url);
-        return cachedResponse;
-      }
-
-      return fetch(event.request).then(response => {
-        const responseClone = response.clone();
-        caches.open(DYNAMIC_CACHE_NAME).then(cache => cache.put(event.request, responseClone));
-
-       // console.log('Asset fetched from server and cached:', event.request.url);
-
-        return response;
-      }).catch(() => {
-        // Handle offline mode here, e.g., return a custom offline page
-        //console.log('Failed to fetch asset. Serving offline content.');
-        // You can customize this based on your needs
-        return caches.match('./offline.html');
+// fetch event
+self.addEventListener('fetch', evt => {
+  //console.log('fetch event', evt);
+  evt.respondWith(
+    caches.match(evt.request).then(cacheRes => {
+      return cacheRes || fetch(evt.request).then(fetchRes => {
+        return caches.open(dynamicCacheName).then(cache => {
+          cache.put(evt.request.url, fetchRes.clone());
+          // check cached items size
+          limitCacheSize(dynamicCacheName, 100);
+          return fetchRes;
+        })
       });
+    }).catch(() => {
+      if(evt.request.url.indexOf('.html') > -1){
+        return caches.match('/offline.html');
+      }
     })
   );
 });
-*/
