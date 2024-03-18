@@ -4,7 +4,7 @@ import { AUDIO } from "../COMPONENTS/AUDIO/Audio.js";
 import { BODY } from "../COMPONENTS/BODY/Body.js";
 import { BOTTOMDRAWER } from "../COMPONENTS/BOTTOMDRAWER/BottomDrawer.js";
 import { BUTTON } from "../COMPONENTS/BUTTON/button.js";
-import { CONFIRMBOX } from "../COMPONENTS/CONFIRMBOX/ConfirmBox.JS";
+import { CONFIRMBOX } from "../COMPONENTS/CONFIRMBOX/ConfirmBox.js";
 import { FOOTER } from "../COMPONENTS/FOOTER/Footer.js";
 import { HEADER } from "../COMPONENTS/HEADER/Header.js";
 import { ICONS } from "../COMPONENTS/ICONS/Icons.js";
