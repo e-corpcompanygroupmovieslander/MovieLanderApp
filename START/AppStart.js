@@ -1,9 +1,9 @@
 import { TEXT } from "../RESOURCES/CONNECTION/Connection.js";
 
-const CONNECTION = (DIV) => {
+const CONNECTION=(DIV)=>{
 
     TEXT(DIV,'h1','h3','',()=>{
-        alert('')
+        alert('jj')
     })
 
       
