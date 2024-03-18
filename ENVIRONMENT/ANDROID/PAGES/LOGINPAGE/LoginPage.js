@@ -10,7 +10,7 @@ const LOGINPAGE=(DIV)=>{
 
     TEXT(DIV,'h1','Movie Lander','AppName',()=>{});
 
-    VIBRATION(500);
+    
     
 
 
