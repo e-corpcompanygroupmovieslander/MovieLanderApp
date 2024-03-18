@@ -1,6 +1,4 @@
-import { BODY, CLEAR, ENVIRONMENT, INPUT, TEXT } from "../RESOURCES/CONNECTION/Connection.js";
-
-BODY();
+import { BODY, CLEAR, ENVIRONMENT, INPUT} from "../RESOURCES/CONNECTION/Connection.js";
 
 let CONNECTION;
 
@@ -12,7 +10,7 @@ if (localStorage.getItem('Environment')) {
 
         ENVIRONMENT('');
 
-        TEXT('','h1','Fire','',()=>{});
+        INPUT('','Email','Enter A Emails','');
     
     }
 
@@ -20,9 +18,11 @@ if (localStorage.getItem('Environment')) {
 
     CONNECTION = (DIV) => {
 
+        BODY();
+
         CLEAR('');
 
-        INPUT('','Email','Enter A Emails','')
+        INPUT('','Email','Enter A Emails','');
 
           
     }
