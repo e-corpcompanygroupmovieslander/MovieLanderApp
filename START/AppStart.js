@@ -1,69 +1,31 @@
-import { ANDROIDAUTOLOGINPAGE } from "../ANDROID/PAGES/AUTOLOGINPAGE/AutoLoginPage.js";
-import * as ADVANCE from "../CONNECTION/Connection.js"
-import { WEBHOMEPAGE } from "../WEB/PAGES/HOMEPAGE/HomePage.js";
-import { WINDOWSAUTOLOGIN } from "../WINDOWS/FUNCTIONS/AUTOLOGIN/WindowsAutoLogin.js";
+import { BODY, CLEAR, ENVIRONMENT, INPUT, TEXT } from "../RESOURCES/CONNECTION/Connection.js";
 
+BODY();
 
+let CONNECTION;
 
-const CONNECTION=(DIV)=>{
+if (localStorage.getItem('Environment')) {
 
-    ADVANCE.OPERATINGSYSTEM();
+    CONNECTION = () => {
 
-    ADVANCE.ZOOMEFFECT();
+        CLEAR('');
 
-    const ADD=ADVANCE.ADDPACKAGE;
+        ENVIRONMENT('');
 
-    const CLEAR=ADVANCE.CLEARCOMPONENTS;
-
-    const DISPLAY=ADVANCE.DISPLAYDATA;
-
-    const ICONS=ADVANCE.ICONSPATH;
-
-    console.log(ADVANCE);
-
-    if (localStorage.getItem('Device')==='Windows') {
-       
-        if (localStorage.getItem('Device')==='Web') {
-
-            WEBHOMEPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);  
-            
-        } else {
-            
-            WINDOWSAUTOLOGIN(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-
-        }
-        
-        
-    } else {
-
-        if (localStorage.getItem('SafeArea')==='TRUE' && localStorage.getItem('SafeAreaView')==='YES') {
-
-            APPMODE(localStorage.getItem('ModeColour'));
-
-            DIV.style.bottom='0'
-
-        } 
-      
-        ANDROIDAUTOLOGINPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
-
-    }
-
+        TEXT('','h1','Fire','',()=>{});
     
-    const linkElement = document.createElement('link');
-    linkElement.rel = 'manifest';
-    linkElement.href = './manifest.json';
-    document.head.appendChild(linkElement);
-
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./service-worker.js')
-        .then((registration) => {
-            //console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-           // console.error('Service Worker registration failed:', error);
-        });
     }
-   
+
+} else {
+
+    CONNECTION = (DIV) => {
+
+        CLEAR('');
+
+        INPUT('','Email','Enter A Emails','')
+
+          
+    }
 }
 
-export{CONNECTION}
+export { CONNECTION }

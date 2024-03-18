@@ -1,5 +1,0 @@
-const MOVIENIGHT=()=>{
-
-}
-
-export{MOVIENIGHT}

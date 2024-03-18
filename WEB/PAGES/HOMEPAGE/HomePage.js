@@ -1,7 +1,0 @@
-const WEBHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
-
-    alert('WEB')
-
-}
-
-export{WEBHOMEPAGE}
