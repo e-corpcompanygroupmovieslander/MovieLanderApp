@@ -1,8 +1,7 @@
+import { BUTTON } from "../../../../RESOURCES/COMPONENTS/BUTTON/Button.js";
+import { INPUT } from "../../../../RESOURCES/COMPONENTS/INPUT/Input.js"
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js"
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
-import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js"
-import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js"
-import { VIBRATION } from "../../../../RESOURCES/PLUGINS/VIBRATION/Vibration.js"
 
 const LOGINPAGE=(DIV)=>{
 
@@ -10,6 +9,17 @@ const LOGINPAGE=(DIV)=>{
 
     TEXT(DIV,'h1','Movie Lander','AppName',()=>{});
 
+    INPUT(DIV,'email','Enter User Email','');
+
+    INPUT(DIV,'password','Enter User Email','');
+
+    BUTTON(DIV,'LogIn','','',()=>{
+        
+    })
+    
+    BUTTON(DIV,'Create Account','','',()=>{
+        
+    })
     
     
 
