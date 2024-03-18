@@ -5,7 +5,7 @@ const CONNECTION=(DIV)=>{
 
     VERIFY(DIV);
 
-    ENVIRONMENT('');
+    ENVIRONMENT('n');
      
 }
 

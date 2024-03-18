@@ -1,11 +1,35 @@
+import { ICONSPATH } from "../../../../API/Api.js";
 import { FOOTER } from "../../../../RESOURCES/COMPONENTS/FOOTER/Footer.js";
+import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
+import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
+import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 
 const HOMEPAGE=(DIV)=>{
 
     CLEAR(DIV);
 
     FOOTER(DIV,'HOMEFOOTER');
+
+    DECLARATION('.HOMEFOOTER',(ELEMENT)=>{
+
+        ICONS(ELEMENT,`${ICONSPATH}list.png`,'',()=>{});
+
+        ICONS(ELEMENT,`${ICONSPATH}movies.png`,'',()=>{});
+
+        ICONS(ELEMENT,`${ICONSPATH}profile.png`,'',()=>{});
+
+        STYLED(ELEMENT,'width','95%');
+        STYLED(ELEMENT,'borderRadius','50px');
+        STYLED(ELEMENT,'left','2%');
+        STYLED(ELEMENT,'bottom','0.5rem')
+
+
+        
+
+
+
+    })
 
     
 

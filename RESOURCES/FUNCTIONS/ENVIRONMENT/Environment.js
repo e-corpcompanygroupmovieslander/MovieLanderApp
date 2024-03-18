@@ -6,7 +6,7 @@ import { STYLED } from "../STYLED/Styled.js";
 //ENVIRONMENT
 const ENVIRONMENT=(TEXT)=>{
 
-    CONDITION(TEXT.value,
+    CONDITION(TEXT,
 
         ()=>DECLARATION('body',(ELEMENT)=>{
 
