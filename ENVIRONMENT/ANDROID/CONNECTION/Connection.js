@@ -1,8 +1,16 @@
-import { TEXT } from "../../../RESOURCES/COMPONENTS/TEXT/Text.js"
+import { CONDITION } from "../../../RESOURCES/FUNCTIONS/CONDITION/Condition.js"
+import { HOMEPAGE } from "../PAGES/HOMEPAGE/HomePage.js"
+import { LOGINPAGE } from "../PAGES/LOGINPAGE/LoginPage.js"
 
 const ANDROIDCONNECTION=(DIV)=>{
 
-    TEXT(DIV,'h2','MovieLander','',()=>{});
+    CONDITION(localStorage.getItem('User'),
+
+    ()=>HOMEPAGE(DIV),
+
+    ()=>LOGINPAGE(DIV)
+    
+    )
 
 
 }

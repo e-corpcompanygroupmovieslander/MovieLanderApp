@@ -1,3 +1,5 @@
+import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js"
+
 //VIBRATION PLUGIN
 const VIBRATION=(TIME)=>{
 
