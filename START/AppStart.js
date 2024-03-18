@@ -1,27 +1,12 @@
 import { TEXT } from "../RESOURCES/CONNECTION/Connection.js";
 
-let CONNECTION;
+const CONNECTION = (DIV) => {
 
-if (localStorage.getItem('Environment')) {
+    TEXT(DIV,'h1','h3','',()=>{
+        alert('')
+    })
 
-    CONNECTION = () => {
-
-        TEXT('','h1','h3','',()=>{
-            alert('')
-        })
-    
-    }
-
-} else {
-
-    CONNECTION = (DIV) => {
-
-        TEXT(DIV,'h1','h3','',()=>{
-            alert('')
-        })
-
-          
-    }
+      
 }
 
 export { CONNECTION }
