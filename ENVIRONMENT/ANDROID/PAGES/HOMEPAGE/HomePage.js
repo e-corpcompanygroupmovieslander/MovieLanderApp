@@ -1,4 +1,6 @@
 import { ICONSPATH } from "../../../../API/Api.js";
+import { WHITELISTICON } from "../../../../RESOURCES/ASSETS/ICONS/LISTICON/WhiteListIcon.js";
+import { WHITEMOVIESICON } from "../../../../RESOURCES/ASSETS/ICONS/MOVIESICON/WhiteMoviesIcon.js";
 import { WHITEPROFILEICON } from "../../../../RESOURCES/ASSETS/ICONS/PROFILEICON/WhiteProfileIcon.js";
 import { FOOTER } from "../../../../RESOURCES/COMPONENTS/FOOTER/Footer.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
@@ -14,9 +16,9 @@ const HOMEPAGE=(DIV)=>{
 
     DECLARATION('.HOMEFOOTER',(ELEMENT)=>{
 
-        ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{});
+        ICONS(ELEMENT,WHITELISTICON,'',()=>{});
 
-        ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{});
+        ICONS(ELEMENT,WHITEMOVIESICON,'',()=>{});
 
         ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{});
 
