@@ -1,12 +1,12 @@
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
-import { ANDROIDMTNPAYMENT } from "../MTNPAYMENT/MtnPayment.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
+import { PESAPAL } from "./pesapal.js";
 
 const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     if (localStorage.getItem('Device')==='Android') {
 
-        StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
+      // StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
         
     } else {
        
@@ -30,9 +30,9 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
    
     <button class='MTN'>
 
-        <h1 class='HolderName'>MTN </h1>
+        <h1 class='HolderName'>PESAPAL </h1>
         
-        <img class='AppIcon' src='${ICONS}mtn.jpg'/>
+        <img class='AppIcon' src='${ICONS}peasapal.png'/>
     
     </button>
 
@@ -56,14 +56,15 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         }
 
         
-
     });
 
     const MTN=document.querySelector('.MTN');
 
     MTN.addEventListener('click',()=>{
 
-        ANDROIDMTNPAYMENT(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
+        PESAPAL()
+
+        DISPLAY(DIV,`<h1 class='AppName'>Please Wait</h1>`);
 
     });
    
