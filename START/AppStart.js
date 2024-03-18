@@ -16,7 +16,7 @@ if (localStorage.getItem('Environment')) {
 
     CONNECTION = (DIV) => {
 
-        TEXT('','h1','h3','',()=>{
+        TEXT(DIV,'h1','h3','',()=>{
             alert('')
         })
 
