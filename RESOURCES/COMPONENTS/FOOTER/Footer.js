@@ -1,3 +1,8 @@
+import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js";
+import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
+
+
 //CREATE A FOOTER
 const FOOTER=(ELEMENT,CLASS)=>{
 
@@ -14,7 +19,7 @@ const FOOTER=(ELEMENT,CLASS)=>{
     STYLED(footer,'bottom','0');
     STYLED(footer,'background','#00000080');
     STYLED(footer,'width','100%');
-    STYLED(footer,'height','50px');
+    STYLED(footer,'height','10%');
     STYLED(footer,'display','inline-flex');
 
     //Append

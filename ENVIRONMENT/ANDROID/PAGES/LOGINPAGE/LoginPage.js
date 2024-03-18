@@ -2,6 +2,7 @@ import { BUTTON } from "../../../../RESOURCES/COMPONENTS/BUTTON/Button.js";
 import { INPUT } from "../../../../RESOURCES/COMPONENTS/INPUT/Input.js"
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js"
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
+import { HOMEPAGE } from "../HOMEPAGE/HomePage.js";
 
 const LOGINPAGE=(DIV)=>{
 
@@ -14,6 +15,8 @@ const LOGINPAGE=(DIV)=>{
     INPUT(DIV,'password','Enter User Email','');
 
     BUTTON(DIV,'LogIn','','',()=>{
+
+        HOMEPAGE(DIV);
         
     })
     
@@ -21,9 +24,6 @@ const LOGINPAGE=(DIV)=>{
         
     })
     
-    
-
-
 }
 
 export{LOGINPAGE}
