@@ -1,4 +1,3 @@
-import { ICONSPATH } from "../../../../API/Api.js";
 import { WHITELISTICON } from "../../../../RESOURCES/ASSETS/ICONS/LISTICON/WhiteListIcon.js";
 import { WHITEMOVIESICON } from "../../../../RESOURCES/ASSETS/ICONS/MOVIESICON/WhiteMoviesIcon.js";
 import { WHITEPROFILEICON } from "../../../../RESOURCES/ASSETS/ICONS/PROFILEICON/WhiteProfileIcon.js";
