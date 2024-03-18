@@ -1,4 +1,5 @@
 import { ICONSPATH } from "../../../../API/Api.js";
+import { WHITEPROFILEICON } from "../../../../RESOURCES/ASSETS/ICONS/PROFILEICON/WhiteProfileIcon.js";
 import { FOOTER } from "../../../../RESOURCES/COMPONENTS/FOOTER/Footer.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
@@ -13,11 +14,11 @@ const HOMEPAGE=(DIV)=>{
 
     DECLARATION('.HOMEFOOTER',(ELEMENT)=>{
 
-        ICONS(ELEMENT,`${ICONSPATH}list.png`,'',()=>{});
+        ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{});
 
-        ICONS(ELEMENT,`${ICONSPATH}movies.png`,'',()=>{});
+        ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{});
 
-        ICONS(ELEMENT,`${ICONSPATH}profile.png`,'',()=>{});
+        ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{});
 
         STYLED(ELEMENT,'width','95%');
         STYLED(ELEMENT,'borderRadius','50px');
