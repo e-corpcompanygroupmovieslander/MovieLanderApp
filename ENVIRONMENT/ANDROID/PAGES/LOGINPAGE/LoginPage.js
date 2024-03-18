@@ -1,13 +1,23 @@
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js"
+import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
+import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js"
+import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js"
 import { VIBRATION } from "../../../../RESOURCES/PLUGINS/VIBRATION/Vibration.js"
 
 const LOGINPAGE=(DIV)=>{
 
-    TEXT(DIV,'h2','MovieLander','',()=>{
+    CLEAR(DIV);
 
-        VIBRATION(500)
+    TEXT(DIV,'h1','Movie Lander','AppName',()=>{});
 
-    })
+    DECLARATION('.AppName',(ELEMENT)=>{
+
+        STYLED(ELEMENT,'color','red'); STYLED(ELEMENT,'marginTop','2rem');
+
+    });
+
+    
+
 
 }
 
