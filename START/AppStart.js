@@ -1,10 +1,14 @@
+import { TEXT } from "../RESOURCES/CONNECTION/Connection.js";
+
 let CONNECTION;
 
 if (localStorage.getItem('Environment')) {
 
     CONNECTION = () => {
 
-        alert('From Advance');
+        TEXT('','h1','h3','',()=>{
+            alert('')
+        })
     
     }
 
@@ -12,7 +16,9 @@ if (localStorage.getItem('Environment')) {
 
     CONNECTION = (DIV) => {
 
-        alert('From Cordova')
+        TEXT('','h1','h3','',()=>{
+            alert('')
+        })
 
           
     }
