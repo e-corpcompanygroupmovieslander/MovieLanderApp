@@ -19,7 +19,7 @@ const FOOTER=(ELEMENT,CLASS)=>{
     STYLED(footer,'bottom','0');
     STYLED(footer,'background','#00000080');
     STYLED(footer,'width','100%');
-    STYLED(footer,'height','10%');
+    STYLED(footer,'height','50px');
     STYLED(footer,'display','inline-flex');
 
     //Append
