@@ -36,8 +36,10 @@ const BUTTON=(ELEMENT,TEXT,IMAGE,CLASS,onClick = null)=>{
     STYLED(holder, 'position', 'relative');
     STYLED(holder, 'color', '#ffffff');
     STYLED(holder, 'textAlign', 'left');
-    STYLED(holder, 'marginLeft', '1rem');
+    STYLED(holder, 'marginLeft', 'auto');
     STYLED(holder, 'marginRight', 'auto');
+    STYLED(holder, 'marginTop', 'auto');
+    STYLED(holder, 'marginBottom', 'auto');
 
     DISPLAY(holder,TEXT);
     
