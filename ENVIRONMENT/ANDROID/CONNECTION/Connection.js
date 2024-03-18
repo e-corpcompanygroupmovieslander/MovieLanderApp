@@ -1,11 +1,9 @@
-import { APPMODE } from "../../../RESOURCES/CONNECTION/Connection.js";
-import { LOGINPAGE } from "../PAGES/LOGINPAGE/LoginPage.js"
+import { TEXT } from "../../../RESOURCES/COMPONENTS/TEXT/Text.js"
 
-const ANDROIDCONNECTION=()=>{
+const ANDROIDCONNECTION=(DIV)=>{
 
-    LOGINPAGE();
+    TEXT(DIV,'h2','MovieLander','',()=>{});
 
-    APPMODE('','','teal');
 
 }
 

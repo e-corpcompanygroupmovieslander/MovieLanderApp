@@ -1,10 +1,9 @@
-import { TEXT } from "../RESOURCES/COMPONENTS/TEXT/Text.js"
+import { VERIFY } from "../CONNECTION/Connection.js"
 
 const CONNECTION=(DIV)=>{
 
-TEXT(DIV,'h1','hello','',()=>{
-    
-})
+
+    VERIFY(DIV);
 
       
 }
