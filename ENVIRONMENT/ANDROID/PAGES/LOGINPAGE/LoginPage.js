@@ -10,13 +10,7 @@ const LOGINPAGE=(DIV)=>{
 
     TEXT(DIV,'h1','Movie Lander','AppName',()=>{});
 
-    DECLARATION('.AppName',(ELEMENT)=>{
-
-        STYLED(ELEMENT,'color','red'); STYLED(ELEMENT,'marginTop','2rem');
-
-    });
-
-    VIBRATION(1000)
+    VIBRATION(500);
     
 
 
