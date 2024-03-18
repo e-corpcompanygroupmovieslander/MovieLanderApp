@@ -16,6 +16,7 @@ const LOGINPAGE=(DIV)=>{
 
     });
 
+    VIBRATION(1000)
     
 
 
