@@ -1,4 +1,8 @@
-import { ADD, CONDITION, DISPLAY, STYLED } from "../../CONNECTION/Connection.js";
+import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js";
+import { DISPLAY } from "../../FUNCTIONS/DISPLAY/Display.js";
+import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
+
 
 //CREATE A TEXT
 const TEXT = (ELEMENT,TYPE, LABEL,CLASS,onClick = null) => {

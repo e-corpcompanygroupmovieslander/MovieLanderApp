@@ -1,10 +1,10 @@
-import { BODY, DISPLAY } from "../RESOURCES/CONNECTION/Connection.js"
+import { TEXT } from "../RESOURCES/COMPONENTS/TEXT/Text.js"
 
 const CONNECTION=(DIV)=>{
 
-    BODY();
-
-   DISPLAY(DIV,'hello');
+TEXT(DIV,'h1','hello','',()=>{
+    
+})
 
       
 }
