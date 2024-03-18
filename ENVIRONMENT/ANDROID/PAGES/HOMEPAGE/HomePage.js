@@ -7,6 +7,7 @@ import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
+import { VIBRATION } from "../../../../RESOURCES/PLUGINS/VIBRATION/Vibration.js";
 
 const HOMEPAGE=(DIV)=>{
 
@@ -20,7 +21,11 @@ const HOMEPAGE=(DIV)=>{
 
         ICONS(ELEMENT,WHITEMOVIESICON,'',()=>{});
 
-        ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{});
+        ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{
+
+            VIBRATION(500);
+
+        });
 
         STYLED(ELEMENT,'width','95%');
         STYLED(ELEMENT,'borderRadius','50px');
