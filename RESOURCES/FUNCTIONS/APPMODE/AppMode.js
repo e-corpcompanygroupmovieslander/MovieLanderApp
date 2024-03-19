@@ -37,7 +37,7 @@ const APPMODE = (ELEMENT, IMG,DEFAULT) => {
 
         if (localStorage.getItem('Device')==='Android') {
 
-            StatusBar.backgroundColorByHexString(localStorage.setItem('ModeColour',DEFAULT));
+            StatusBar.backgroundColorByHexString(localStorage.getItem('ModeColour'));
         
         }
 
