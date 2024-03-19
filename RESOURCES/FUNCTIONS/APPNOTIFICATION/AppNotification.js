@@ -1,4 +1,6 @@
-//SAFE NOTIFICATIONS VIEW
+import { STYLED } from "../STYLED/Styled.js";
+
+//APPNOTIFICATIONS
 const APPNOTIFICATIONS=()=>{
 
     const DIV=document.createElement('div');

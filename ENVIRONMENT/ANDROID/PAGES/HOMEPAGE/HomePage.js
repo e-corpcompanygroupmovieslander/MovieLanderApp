@@ -6,6 +6,7 @@ import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
+import { NOTIFICATIONS } from "../../../../RESOURCES/PLUGINS/NOTIFICATIONS/Notification.js";
 import { VIBRATION } from "../../../../RESOURCES/PLUGINS/VIBRATION/Vibration.js";
 
 const HOMEPAGE=(DIV)=>{
@@ -18,7 +19,11 @@ const HOMEPAGE=(DIV)=>{
 
         ICONS(ELEMENT,WHITELISTICON,'',()=>{});
 
-        ICONS(ELEMENT,WHITEMOVIESICON,'',()=>{});
+        ICONS(ELEMENT,WHITEMOVIESICON,'',()=>{
+
+            NOTIFICATIONS('hello','home')
+           
+        });
 
         ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{
 
@@ -29,7 +34,9 @@ const HOMEPAGE=(DIV)=>{
         STYLED(ELEMENT,'width','95%');
         STYLED(ELEMENT,'borderRadius','50px');
         STYLED(ELEMENT,'left','2%');
-        STYLED(ELEMENT,'bottom','0.5rem')
+        STYLED(ELEMENT,'bottom','0.5rem');
+
+       
 
 
         
@@ -37,6 +44,8 @@ const HOMEPAGE=(DIV)=>{
 
 
     })
+
+    
 
     
 

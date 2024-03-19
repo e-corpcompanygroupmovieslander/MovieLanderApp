@@ -1,3 +1,9 @@
+import { WHITELISTICON } from "../../ASSETS/ICONS/LISTICON/WhiteListIcon.js";
+import { APPNOTIFICATIONS } from "../../FUNCTIONS/APPNOTIFICATION/AppNotification.js";
+import { VIBRATION } from "../VIBRATION/Vibration.js";
+
+
+
 //NOTIFICATIONS PLUGIN
 const NOTIFICATIONS=(TITLE,MESSAGE)=>{
 
@@ -26,7 +32,7 @@ const NOTIFICATIONS=(TITLE,MESSAGE)=>{
                 // Display a notification
                 var options = {
                 body: MESSAGE,
-                icon: "/app/src/main/res/drawable/app_icon.jpg"
+                icon: WHITELISTICON
                 };
 
                 if (localStorage.getItem('AppNotifications')==='TRUE') {
