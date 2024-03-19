@@ -31,8 +31,7 @@ const LOGINPAGE=(DIV)=>{
 
     TEXT(DIV,'h3','ForgotPassword?','Forgot',()=>{})
     DECLARATION('.Forgot',(ELEMENT)=>{
-        STYLED(ELEMENT,'padding','1% 1%');
-        STYLED(ELEMENT,'margin','1% 53%');      
+        STYLED(ELEMENT,'margin','1% 55% ');      
     })
 
     BUTTON(DIV,'LogIn','','',()=>{
