@@ -79,6 +79,12 @@ const LOGINPAGE=(DIV)=>{
 
                                                     ()=>CHECK(user,(result)=>{
 
+                                                        STORE('local','UserName',result.UserName);
+
+                                                        STORE('local','Email',result.Email);
+
+                                                        STORE('local','Location',result.Location);
+
                                                         STORE('local','User',result.SecretCode);
 
                                                         HOMEPAGE(DIV);
