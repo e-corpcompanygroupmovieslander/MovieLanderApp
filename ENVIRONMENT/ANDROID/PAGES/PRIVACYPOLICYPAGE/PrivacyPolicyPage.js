@@ -1,3 +1,4 @@
+import { PRIVACYTEXT } from "../../../../API/Api.js";
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
@@ -5,9 +6,11 @@ import { LOADER } from "../../../../RESOURCES/COMPONENTS/LOADER/Loader.js";
 import { MESSAGE } from "../../../../RESOURCES/COMPONENTS/MESSAGE/Message.js";
 import { SCROLLVIEW } from "../../../../RESOURCES/COMPONENTS/SCROLLVIEW/ScrollView.js";
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
+import { ADD } from "../../../../RESOURCES/FUNCTIONS/ADD/Add.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditioner.js";
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
+import { GETPACKAGE } from "../../../../RESOURCES/FUNCTIONS/GETPACKAGE/GetPackage.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { SETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
 
@@ -25,9 +28,13 @@ const PRIVACYPOLICYPAGE=(DIV)=>{
 
         CONDITIONER(navigator.onLine,false,
 
-            ()=>LOADER(ELEMENT,3000),
+            ()=>MESSAGE(DIV,'Please Check Your Internet Connection',''),
 
-            ()=>MESSAGE(DIV,'Please Check Your Internet Connection','')
+            ()=>LOADER(ELEMENT,3000),GETPACKAGE(PRIVACYTEXT,'cors',(data)=>{
+
+                CLEAR(ELEMENT),ADD(ELEMENT,data);
+
+            })
             
         )
        

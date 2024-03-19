@@ -45,42 +45,7 @@ const HOMEPAGE=(DIV)=>{
 
 
 
-        GETPACKAGE(ANIMATIONAPI,'cors',(data)=>{
-            
-            SHUFFLE(data,(data)=>{
-
-                REDUX(data,(element)=>{
-                    console.log(element)
-
-                    CREATEELEMENT('div','gg',(ELEMENT)=>{
-
-                        STYLED(ELEMENT,'position','1rem');
-                        STYLED(ELEMENT,'display','block');
-                        STYLED(ELEMENT,'width','95%');
-                        STYLED(ELEMENT,'height','30%');
-                        STYLED(ELEMENT,'marginTop','1rem');
-                        STYLED(ELEMENT,'marginBottom','1rem');
-                        STYLED(ELEMENT,'left','1rem');
-                        STYLED(ELEMENT,'background','red');
-
-                        ADD(DIV,ELEMENT);
-                        
-                    })
-
-                  
-                    
-
-                    
-
-                    
-
-                    
-                })
-
-            })
-            
-
-        })
+        
 
 
         
