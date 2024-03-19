@@ -1,3 +1,9 @@
+import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js";
+import { DISPLAY } from "../../FUNCTIONS/DISPLAY/Display.js";
+import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
+import { VIBRATION } from "../../PLUGINS/VIBRATION/Vibration.js";
+
 //DISPLAY A MESSAGE
 const MESSAGE=(ELEMENT,Message,TIME,TIMER)=>{
 

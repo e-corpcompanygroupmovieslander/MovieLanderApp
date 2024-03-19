@@ -1,3 +1,9 @@
+import { WHITELOADERICON } from "../../ASSETS/ICONS/LOADERICON/WhiteLoaderIcon.js";
+import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js";
+import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
+
+
 //CREATE A SPINING LOADER
 const LOADER=(ELEMENT,TIME)=>{
 
@@ -18,7 +24,7 @@ const LOADER=(ELEMENT,TIME)=>{
 
     const IMAGE=document.createElement('img');
 
-    IMAGE.src=WHITELOADINGICON;
+    IMAGE.src=WHITELOADERICON;
 
     //STYLE
     STYLED(IMAGE,'width','50%');
