@@ -2,14 +2,11 @@ import { ANIMATIONAPI, MOVIESPATH } from "../../../../API/Api.js";
 import { WHITELISTICON } from "../../../../RESOURCES/ASSETS/ICONS/LISTICON/WhiteListIcon.js";
 import { WHITEMOVIESICON } from "../../../../RESOURCES/ASSETS/ICONS/MOVIESICON/WhiteMoviesIcon.js";
 import { WHITEPROFILEICON } from "../../../../RESOURCES/ASSETS/ICONS/PROFILEICON/WhiteProfileIcon.js";
-import { MOVIELANDERPNG } from "../../../../RESOURCES/ASSETS/IMAGES/MOVIELANDERIMAGES/MovieLanderPng.js";
 import { FOOTER } from "../../../../RESOURCES/COMPONENTS/FOOTER/Footer.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { IMAGE } from "../../../../RESOURCES/COMPONENTS/IMAGE/Image.js";
-import { LOADER } from "../../../../RESOURCES/COMPONENTS/LOADER/Loader.js";
 import { SCROLLVIEW } from "../../../../RESOURCES/COMPONENTS/SCROLLVIEW/ScrollView.js";
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
-import { VIEW } from "../../../../RESOURCES/COMPONENTS/VIEW/View.js";
 import { ADD } from "../../../../RESOURCES/FUNCTIONS/ADD/Add.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { CREATEELEMENT } from "../../../../RESOURCES/FUNCTIONS/CREATEELEMENT/CreateElement.js";
