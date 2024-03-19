@@ -1,3 +1,9 @@
+import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js";
+import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
+
+
+STYLED
 //CREATE A HEADER
 const HEADER=(ELEMENT,CLASS)=>{
 

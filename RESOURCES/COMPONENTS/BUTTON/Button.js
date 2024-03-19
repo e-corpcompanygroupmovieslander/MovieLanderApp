@@ -68,6 +68,8 @@ const BUTTON=(ELEMENT,TEXT,IMAGE,CLASS,onClick = null)=>{
 
         button.append(image);
 
+        STYLED(holder, 'marginLeft', '1rem');
+
     }else{
 
         STYLED(holder, 'marginLeft', 'auto');

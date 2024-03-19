@@ -8,6 +8,8 @@ import { LOGINPAGE } from "../PAGES/LOGINPAGE/LoginPage.js"
 
 const ANDROIDCONNECTION=(DIV)=>{
 
+    /*
+
     CLEAR(DIV);
 
     BREAK(DIV),BREAK(DIV),BREAK(DIV),BREAK(DIV);
@@ -26,20 +28,15 @@ const ANDROIDCONNECTION=(DIV)=>{
     })
 
 
+    */
 
-    /*
-
-    CONDITION(localStorage.getItem('User'),
+    CONDITION(!localStorage.getItem('User'),
 
     ()=>HOMEPAGE(DIV),
 
     ()=>LOGINPAGE(DIV)
     
     )
-
-    */
-    
-
 
 }
 

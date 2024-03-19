@@ -8,6 +8,7 @@ import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declara
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { NOTIFICATIONS } from "../../../../RESOURCES/PLUGINS/NOTIFICATIONS/Notification.js";
 import { VIBRATION } from "../../../../RESOURCES/PLUGINS/VIBRATION/Vibration.js";
+import { USERACCOUNPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const HOMEPAGE=(DIV)=>{
 
@@ -27,7 +28,7 @@ const HOMEPAGE=(DIV)=>{
 
         ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{
 
-            VIBRATION(500);
+            USERACCOUNPAGE(DIV);
 
         });
 
@@ -36,6 +37,8 @@ const HOMEPAGE=(DIV)=>{
         STYLED(ELEMENT,'left','2%');
         STYLED(ELEMENT,'bottom','0.5rem');
 
+
+        
        
 
 
