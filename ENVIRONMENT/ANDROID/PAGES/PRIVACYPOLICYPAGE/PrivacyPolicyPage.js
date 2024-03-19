@@ -6,10 +6,10 @@ import { LOADER } from "../../../../RESOURCES/COMPONENTS/LOADER/Loader.js";
 import { MESSAGE } from "../../../../RESOURCES/COMPONENTS/MESSAGE/Message.js";
 import { SCROLLVIEW } from "../../../../RESOURCES/COMPONENTS/SCROLLVIEW/ScrollView.js";
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
-import { ADD } from "../../../../RESOURCES/FUNCTIONS/ADD/Add.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditioner.js";
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
+import { DISPLAY } from "../../../../RESOURCES/FUNCTIONS/DISPLAY/Display.js";
 import { GETPACKAGE } from "../../../../RESOURCES/FUNCTIONS/GETPACKAGE/GetPackage.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { SETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
@@ -32,7 +32,7 @@ const PRIVACYPOLICYPAGE=(DIV)=>{
 
             ()=>LOADER(ELEMENT,3000),GETPACKAGE(PRIVACYTEXT,'cors',(data)=>{
 
-                CLEAR(ELEMENT),ADD(ELEMENT,data);
+                CLEAR(ELEMENT),DISPLAY(ELEMENT,data);
 
             })
             
