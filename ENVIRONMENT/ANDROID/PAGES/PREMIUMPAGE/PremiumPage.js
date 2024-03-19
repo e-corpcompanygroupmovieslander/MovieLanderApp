@@ -11,6 +11,7 @@ import { BREAK } from "../../../../RESOURCES/FUNCTIONS/BREAK/Break.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditioner.js";
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
+import { REMOVESTORE } from "../../../../RESOURCES/FUNCTIONS/REMOVESTORE/RemoveStore.js";
 import { SHUFFLE } from "../../../../RESOURCES/FUNCTIONS/SHUFFLE/Shuffle.js";
 import { STORE } from "../../../../RESOURCES/FUNCTIONS/STORE/Store.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
@@ -23,6 +24,8 @@ import { YEARLYPAYMENT } from "./YearlyPremiumPage.js";
 
 
 const PREMIUMPAGE=(DIV)=>{
+
+    REMOVESTORE('','Amount');
 
     const Numbers=[
 

@@ -13,6 +13,7 @@ import { BREAK } from "../../../../RESOURCES/FUNCTIONS/BREAK/Break.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditioner.js";
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
+import { REMOVESTORE } from "../../../../RESOURCES/FUNCTIONS/REMOVESTORE/RemoveStore.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { PESAPALREGISTERIPN } from "../../../../RESOURCES/PACKAGES/PESAPAL/REGISTER/PesaPalIpnRegistration.js";
 import { PESAPALSUMBITORDER } from "../../../../RESOURCES/PACKAGES/PESAPAL/SUMBIT/PesaPalPayment.js";
@@ -91,7 +92,7 @@ const DAILYPREMIUMPAGE=(DIV)=>{
         
         });
 
-        BUTTON(ELEMENT,'Cancel','','',()=>{PREMIUMPAGE(DIV)});
+        BUTTON(ELEMENT,'Cancel','','',()=>{REMOVESTORE('','Amount');PREMIUMPAGE(DIV)});
               
     })
 
@@ -100,7 +101,11 @@ const DAILYPREMIUMPAGE=(DIV)=>{
     DECLARATION('.AppHeader',(ELEMENT)=>{
         STYLED(ELEMENT,'background','Transparent');
         ICONS(ELEMENT,WHITEBACKICON,'BackIcon',()=>{
+
+            REMOVESTORE('','Amount');
+
             PREMIUMPAGE(DIV);
+
         })
         DECLARATION('.BackIcon',(ELEMENT)=>{
             STYLED(ELEMENT,'marginLeft','1rem');
