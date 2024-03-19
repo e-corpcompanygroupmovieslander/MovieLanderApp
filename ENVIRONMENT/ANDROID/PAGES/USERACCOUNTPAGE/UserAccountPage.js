@@ -56,7 +56,7 @@ const USERACCOUNPAGE=(DIV)=>{
             STYLED(ELEMENT,'width','20px');
             STYLED(ELEMENT,'height','20px');
         })
-        TEXT(ELEMENT,'h2','My Profile','Profile',()=>{})
+        TEXT(ELEMENT,'h2','Profile','Profile',()=>{})
         DECLARATION('.Profile',(ELEMENT)=>{
             STYLED(ELEMENT,'fontSize','20px');
             STYLED(ELEMENT,'marginTop','auto');
