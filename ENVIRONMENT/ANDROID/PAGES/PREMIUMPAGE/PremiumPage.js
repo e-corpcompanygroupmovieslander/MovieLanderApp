@@ -9,12 +9,44 @@ import { SCROLLVIEW } from "../../../../RESOURCES/COMPONENTS/SCROLLVIEW/ScrollVi
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
 import { BREAK } from "../../../../RESOURCES/FUNCTIONS/BREAK/Break.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
+import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditioner.js";
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
+import { RANDOMCODE } from "../../../../RESOURCES/FUNCTIONS/RANDOMCODE/RandomCode.js";
+import { SHUFFLE } from "../../../../RESOURCES/FUNCTIONS/SHUFFLE/Shuffle.js";
+import { STORE } from "../../../../RESOURCES/FUNCTIONS/STORE/Store.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
+import { PESAPALENVIRONMENT } from "../../../../RESOURCES/PACKAGES/PESAPAL/ENVIRONMENT/PesaPalEnvironment.js";
 import { USERACCOUNPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
+import { DAILYPREMIUMPAGE } from "./DailyPremiumPage.js";
+import { MONTHLYPAYMENT } from "./MonthlyPremiumPage.js";
+import { WEEKLYPAYMENT } from "./WeeklyPremiumPage.js";
+import { YEARLYPAYMENT } from "./YearlyPremiumPage.js";
 
 
 const PREMIUMPAGE=(DIV)=>{
+
+    const Numbers=[
+
+        1,2,3,4,5,6,7,8,9,0,
+        2,3,4,5,6,7,8,9,0,1,
+        3,4,5,6,7,8,9,0,1,2,
+        4,5,6,7,8,9,0,1,2,3,
+        5,6,7,8,9,0,1,2,3,4,
+        6,7,8,9,0,1,2,3,4,5,
+        7,8,9,0,1,2,3,4,5,6,
+        8,9,0,1,2,3,4,5,6,7,
+        9,0,1,2,3,4,5,6,7,8,
+        0,1,2,3,4,5,6,7,8,9
+
+    ]
+
+    SHUFFLE(Numbers,(data)=>{
+
+        STORE('','Site',data);
+
+    })
+
+    PESAPALENVIRONMENT('');
 
     CLEAR(DIV);
 
@@ -39,13 +71,93 @@ const PREMIUMPAGE=(DIV)=>{
 
         BREAK(ELEMENT);BREAK(ELEMENT);
 
-        BUTTON(ELEMENT,'Daily',WHITELOCKICON,'',()=>{});
+        BUTTON(ELEMENT,'Daily',WHITELOCKICON,'',()=>{
 
-        BUTTON(ELEMENT,'Weekly',WHITELOCKICON,'',()=>{});
+            CONDITIONER(localStorage.getItem('Location'),'Uganda',
 
-        BUTTON(ELEMENT,'Monthly',WHITELOCKICON,'',()=>{});
+            ()=>STORE('','Currency','UGX'),
+    
+            ()=>STORE('','Currency','USD')
+            
+            )
+    
+            CONDITIONER(localStorage.getItem('Location'),'Uganda',
+    
+            ()=>STORE('','Amount','1000'),
+    
+            ()=>STORE('','Amount','1')
+            
+            )
 
-        BUTTON(ELEMENT,'Yearly',WHITELOCKICON,'',()=>{});
+            DAILYPREMIUMPAGE(DIV);
+        
+        });
+
+        BUTTON(ELEMENT,'Weekly',WHITELOCKICON,'',()=>{
+
+            CONDITIONER(localStorage.getItem('Location'),'Uganda',
+
+            ()=>STORE('','Currency','UGX'),
+    
+            ()=>STORE('','Currency','USD')
+            
+            )
+    
+            CONDITIONER(localStorage.getItem('Location'),'Uganda',
+    
+            ()=>STORE('','Amount','5000'),
+    
+            ()=>STORE('','Amount','4')
+            
+            )
+
+            WEEKLYPAYMENT(DIV);
+
+        });
+
+        BUTTON(ELEMENT,'Monthly',WHITELOCKICON,'',()=>{
+
+            CONDITIONER(localStorage.getItem('Location'),'Uganda',
+
+            ()=>STORE('','Currency','UGX'),
+    
+            ()=>STORE('','Currency','USD')
+            
+            )
+    
+            CONDITIONER(localStorage.getItem('Location'),'Uganda',
+    
+            ()=>STORE('','Amount','25000'),
+    
+            ()=>STORE('','Amount','20')
+            
+            )
+
+            MONTHLYPAYMENT(DIV);
+
+        });
+
+        BUTTON(ELEMENT,'Yearly',WHITELOCKICON,'',()=>{
+
+            CONDITIONER(localStorage.getItem('Location'),'Uganda',
+
+            ()=>STORE('','Currency','UGX'),
+    
+            ()=>STORE('','Currency','USD')
+            
+            )
+    
+            CONDITIONER(localStorage.getItem('Location'),'Uganda',
+    
+            ()=>STORE('','Amount','150000'),
+    
+            ()=>STORE('','Amount','100')
+            
+            )
+
+            YEARLYPAYMENT(DIV);
+
+        });
       
     })
 

@@ -1,5 +1,10 @@
+import { WHITECLOSEICON } from "../../ASSETS/ICONS/CLOSEICON/WhiteCloseIcon.js";
+import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { EVENT } from "../../FUNCTIONS/EVENT/Event.js";
+import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
+
 //CREATE A WEBVIEW
-const WEBVIEW=(PATH)=>{
+const WEBVIEW=(ELEMENT,PATH)=>{
 
     const web=document.createElement('iframe');
 
@@ -23,23 +28,23 @@ const WEBVIEW=(PATH)=>{
     STYLED(Image,'width','25px');
     STYLED(Image,'height','25px');
     STYLED(Image,'top','5px');
-    STYLED(Image,'left','5px');
+    STYLED(Image,'right','5px');
     STYLED(Image,'padding','5px');
     STYLED(Image,'borderRadius','20px');
     STYLED(Image,'display','block')
 
     web.src=PATH;
-   
-    Image.addEventListener('click',()=>{
+
+    EVENT(Image,'click',()=>{
 
         STYLED(web,'display','none');
         STYLED(Image,'display','none');
 
     })
 
-    ADD('',web)
-
-    ADD('',Image);
+    ADD(ELEMENT,web);
+    
+    ADD(ELEMENT,Image);
 
 }
 
