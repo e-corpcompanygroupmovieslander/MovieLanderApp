@@ -40,7 +40,7 @@ const HOMEPAGE=(DIV)=>{
 
         
        
-
+        VIBRATION(500)
 
         
 
