@@ -50,12 +50,12 @@ const HOMEPAGE=(DIV)=>{
 
                             //STYLES
                         STYLED(ELEMENT,'position','relative');
-                        STYLED(ELEMENT,'width','85%');
-                        STYLED(ELEMENT,'height','50%');
+                        STYLED(ELEMENT,'width','80%');
+                        STYLED(ELEMENT,'height','60%');
                         STYLED(ELEMENT,'background','transparent')
-                        STYLED(ELEMENT,'left','7.5%');
-                        STYLED(ELEMENT,'marginTop','1rem');
-                        STYLED(ELEMENT,'marginBottom','1rem');
+                        STYLED(ELEMENT,'left','10%');
+                        STYLED(ELEMENT,'marginTop','0.5rem');
+                        STYLED(ELEMENT,'marginBottom','0.5rem');
                         STYLED(ELEMENT,'borderRadius','10px');
                         STYLED(ELEMENT,'overFlow','hidden');
 
