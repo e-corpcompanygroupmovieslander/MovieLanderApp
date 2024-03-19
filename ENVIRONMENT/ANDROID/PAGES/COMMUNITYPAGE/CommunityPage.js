@@ -43,6 +43,10 @@ const COMMUNITYPAGE=(DIV)=>{
         BUTTON(ELEMENT,'Movie Request',WHITELOCKICON,'',()=>{});
 
         BUTTON(ELEMENT,'Chat',WHITECHATICON,'',()=>{});
+
+        BUTTON(ELEMENT,'Movie Night',WHITECHATICON,'',()=>{});
+
+        BUTTON(ELEMENT,'Trends',WHITECHATICON,'',()=>{});
       
     })
 
