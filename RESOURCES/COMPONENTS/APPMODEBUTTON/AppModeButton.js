@@ -1,4 +1,10 @@
-import { ADD, APPMODE, CHECK, CONDITION, CONDITIONER, STYLED } from "../../CONNECTION/Connection.js";
+import { WHITEDARKLIGHTMODEICON } from "../../ASSETS/ICONS/MODEICON/WhiteDarkLightMode.js";
+import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { APPMODE } from "../../FUNCTIONS/APPMODE/AppMode.js";
+import { CHECK } from "../../FUNCTIONS/CHECK/Check.js";
+import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js";
+import { CONDITIONER } from "../../FUNCTIONS/CONDITIONER/Conditioner.js";
+import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
 
 
 //APP MODE BUTTON
@@ -29,6 +35,8 @@ const APPMODEBUTTON=(ELEMENT,COLOR,DEFAULT)=>{
     STYLED(holder, 'textAlign', 'left');
     STYLED(holder, 'marginLeft', '1rem');
     STYLED(holder, 'marginRight', 'auto');
+    STYLED(holder, 'marginTop', 'auto');
+    STYLED(holder, 'marginBottom', 'auto');
     holder.innerHTML='App Mode';
 
     button.append(holder)
@@ -50,7 +58,7 @@ const APPMODEBUTTON=(ELEMENT,COLOR,DEFAULT)=>{
     STYLED(image,'marginRight','1rem');
 
     //IMAGE PATH
-    image.src=WHITEAPPMODEICON;
+    image.src=WHITEDARKLIGHTMODEICON;
 
     ADD(button,image);
 

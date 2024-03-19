@@ -28,6 +28,16 @@ const APPMODE = (ELEMENT, IMG,DEFAULT) => {
         }
         
     }
+
+    if (!localStorage.getItem('Environment')) {
+        
+        localStorage.setItem('ModeColour',DEFAULT);
+
+        document.querySelector('div').style.background = DEFAULT;
+
+    } 
+
+    
 };
 
 export{APPMODE}
