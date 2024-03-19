@@ -54,7 +54,7 @@ const HOMEPAGE=(DIV)=>{
                         STYLED(ELEMENT,'height','60%');
                         STYLED(ELEMENT,'background','transparent')
                         STYLED(ELEMENT,'left','10%');
-                        STYLED(ELEMENT,'marginTop','0.5rem');
+                        STYLED(ELEMENT,'marginTop','1.5rem');
                         STYLED(ELEMENT,'marginBottom','0.5rem');
                         STYLED(ELEMENT,'borderRadius','10px');
                         STYLED(ELEMENT,'overFlow','hidden');
