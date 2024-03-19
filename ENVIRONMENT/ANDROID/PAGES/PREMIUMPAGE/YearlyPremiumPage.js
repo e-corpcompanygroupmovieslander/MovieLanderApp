@@ -99,6 +99,8 @@ const YEARLYPAYMENT=(DIV)=>{
         });
 
         BUTTON(ELEMENT,'Cancel','','',()=>{PREMIUMPAGE(DIV)});
+
+        BREAK(ELEMENT);BREAK(ELEMENT);
               
     })
 
