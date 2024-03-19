@@ -1,7 +1,13 @@
 import { UPDATEAPI } from "../../../../API/Api.js";
+import { WHITEAPPICON } from "../../../../RESOURCES/ASSETS/ICONS/APPICON/WhiteAppIcon.js";
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
+import { WHITEHELPICON } from "../../../../RESOURCES/ASSETS/ICONS/HELPICON/WhiteHelpIcon.js";
 import { WHITELOCKICON } from "../../../../RESOURCES/ASSETS/ICONS/LOCKICON/WhiteLockIcon.js";
 import { WHITELOGOUTICON } from "../../../../RESOURCES/ASSETS/ICONS/LOGOUTICON/WhiteLogOutIcon.js";
+import { WHITENOTIFICATIONICON } from "../../../../RESOURCES/ASSETS/ICONS/NOTIFICATION/WhiteNotificationIcon.js";
+import { WHITEPARENTALCONTROLICON } from "../../../../RESOURCES/ASSETS/ICONS/PARENTALCONTROLICON/WhiteParentalControlIcon.js";
+import { WHITEPLAYERICON } from "../../../../RESOURCES/ASSETS/ICONS/PLAYERICON/WhitePlayerIcon.js";
+import { WHITEPRIVACYPOLICYICON } from "../../../../RESOURCES/ASSETS/ICONS/PRIVACYPOLICYICON/WhitePrivacyPolicyIcon.js";
 import { APPMODEBUTTON } from "../../../../RESOURCES/COMPONENTS/APPMODEBUTTON/AppModeButton.js";
 import { BUTTON } from "../../../../RESOURCES/COMPONENTS/BUTTON/Button.js";
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
@@ -34,17 +40,17 @@ const SETTINGSPAGE=(DIV)=>{
 
         APPMODEBUTTON(ELEMENT,'#5C829A','#121212');
 
-        BUTTON(ELEMENT,'App Player',WHITELOCKICON,'',()=>{});
+        BUTTON(ELEMENT,'App Player',WHITEPLAYERICON,'',()=>{});
 
-        BUTTON(ELEMENT,'App Notifications',WHITELOCKICON,'',()=>{});
+        BUTTON(ELEMENT,'App Notifications',WHITENOTIFICATIONICON,'',()=>{});
 
-        BUTTON(ELEMENT,'Parental Control',WHITELOCKICON,'',()=>{});
+        BUTTON(ELEMENT,'Parental Control',WHITEPARENTALCONTROLICON,'',()=>{});
 
-        BUTTON(ELEMENT,'Privacy Policy',WHITELOCKICON,'',()=>{PRIVACYPOLICYPAGE(DIV)});
+        BUTTON(ELEMENT,'Privacy Policy',WHITEPRIVACYPOLICYICON,'',()=>{PRIVACYPOLICYPAGE(DIV)});
 
-        BUTTON(ELEMENT,'Help',WHITELOCKICON,'',()=>{HELPPAGE(DIV)});
+        BUTTON(ELEMENT,'Help',WHITEHELPICON,'',()=>{HELPPAGE(DIV)});
 
-        BUTTON(ELEMENT,'Update',WHITELOCKICON,'',()=>{WEBSITE(UPDATEAPI)});
+        BUTTON(ELEMENT,'Update',WHITEAPPICON,'',()=>{WEBSITE(UPDATEAPI)});
 
         BUTTON(ELEMENT,'App Version',WHITELOCKICON,'',()=>{});
 

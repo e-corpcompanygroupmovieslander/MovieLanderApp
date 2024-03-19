@@ -1,6 +1,9 @@
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
 import { WHITECHATICON } from "../../../../RESOURCES/ASSETS/ICONS/CHATICON/WhiteChatIcon.js";
+import { WHITEFACEBOOKICON } from "../../../../RESOURCES/ASSETS/ICONS/FACEBOOKICON/WhiteFaceBookIcon.js";
+import { WHITEINSTAGRRAMICON } from "../../../../RESOURCES/ASSETS/ICONS/INSTAGRAM/WhiteInstagramIcon.js";
 import { WHITELOCKICON } from "../../../../RESOURCES/ASSETS/ICONS/LOCKICON/WhiteLockIcon.js";
+import { WHITEWEBSITEICON } from "../../../../RESOURCES/ASSETS/ICONS/WEBSITEICON/WhiteWebSiteIcon.js";
 import { MOVIELANDERPNG } from "../../../../RESOURCES/ASSETS/IMAGES/MOVIELANDERIMAGES/MovieLanderPng.js";
 import { BUTTON } from "../../../../RESOURCES/COMPONENTS/BUTTON/Button.js";
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
@@ -46,11 +49,11 @@ const CONTACTUSPAGE=(DIV)=>{
 
         BUTTON(ELEMENT,'Gmai',WHITELOCKICON,'',()=>{GMAIL('movielander1999@gmail.com')});
 
-        BUTTON(ELEMENT,'Facebook',WHITECHATICON,'',()=>{FACEBOOK('')});
+        BUTTON(ELEMENT,'Facebook',WHITEFACEBOOKICON,'',()=>{FACEBOOK('')});
 
-        BUTTON(ELEMENT,'Instagram',WHITECHATICON,'',()=>{INSTAGRAM('e_corp_company_group')});
+        BUTTON(ELEMENT,'Instagram',WHITEINSTAGRRAMICON,'',()=>{INSTAGRAM('e_corp_company_group')});
 
-        BUTTON(ELEMENT,'Website',WHITECHATICON,'',()=>{WEBSITE('https://www.e-corpcompanygroup.com')});
+        BUTTON(ELEMENT,'Website',WHITEWEBSITEICON,'',()=>{WEBSITE('https://www.e-corpcompanygroup.com')});
       
     })
 
