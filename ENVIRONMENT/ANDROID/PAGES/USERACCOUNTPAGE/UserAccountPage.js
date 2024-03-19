@@ -2,6 +2,7 @@ import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/White
 import { WHITEGRIDICON } from "../../../../RESOURCES/ASSETS/ICONS/GRIDICON/WhiteGridIcon.js";
 import { WHITEGROUPICON } from "../../../../RESOURCES/ASSETS/ICONS/GROUPICON/WhiteGroupIcon.js";
 import { WHITELIBRARYICON } from "../../../../RESOURCES/ASSETS/ICONS/LIBRARYICON/WhiteLibraryIcon.js";
+import { WHITENOTIFICATIONICON } from "../../../../RESOURCES/ASSETS/ICONS/NOTIFICATION/WhiteNotificationIcon.js";
 import { WHITEPHONEICON } from "../../../../RESOURCES/ASSETS/ICONS/PHONEICON/WhitePhoneIcon.js";
 import { WHITESETTINGSICON } from "../../../../RESOURCES/ASSETS/ICONS/SETTINGSICON/WhiteSettingsIcon.js";
 import { WHITEUNLOCKEDICON } from "../../../../RESOURCES/ASSETS/ICONS/UNLOCKICON/WhiteUnlockedIcon.js";
@@ -14,7 +15,9 @@ import { VIEW } from "../../../../RESOURCES/COMPONENTS/VIEW/View.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
+import { COMMUNITYPAGE } from "../COMMUNITYPAGE/CommunityPage.js";
 import { HOMEPAGE } from "../HOMEPAGE/HomePage.js";
+import { PREMIUMPAGE } from "../PREMIUMPAGE/PremiumPage.js";
 import { SETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
 
 
@@ -31,11 +34,13 @@ const USERACCOUNPAGE=(DIV)=>{
 
         VIEW(ELEMENT,'ProfileData');
 
-        BUTTON(ELEMENT,'Premium',WHITEUNLOCKEDICON,'',()=>{});
+        BUTTON(ELEMENT,'Premium',WHITEUNLOCKEDICON,'',()=>{PREMIUMPAGE(DIV)});
 
-        BUTTON(ELEMENT,'Community',WHITEGROUPICON,'',()=>{});
+        BUTTON(ELEMENT,'Community',WHITEGROUPICON,'',()=>{COMMUNITYPAGE(DIV)});
 
         BUTTON(ELEMENT,'Library',WHITELIBRARYICON,'',()=>{});
+
+        BUTTON(ELEMENT,'Notification',WHITENOTIFICATIONICON,'',()=>{});
 
         BUTTON(ELEMENT,'Settings',WHITESETTINGSICON,'',()=>{SETTINGSPAGE(DIV)});
 
