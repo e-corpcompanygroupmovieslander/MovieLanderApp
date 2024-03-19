@@ -1,10 +1,6 @@
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
-import { WHITEGRIDICON } from "../../../../RESOURCES/ASSETS/ICONS/GRIDICON/WhiteGridIcon.js";
-import { WHITEGROUPICON } from "../../../../RESOURCES/ASSETS/ICONS/GROUPICON/WhiteGroupIcon.js";
-import { WHITELIBRARYICON } from "../../../../RESOURCES/ASSETS/ICONS/LIBRARYICON/WhiteLibraryIcon.js";
 import { WHITELOCKICON } from "../../../../RESOURCES/ASSETS/ICONS/LOCKICON/WhiteLockIcon.js";
-import { WHITEPHONEICON } from "../../../../RESOURCES/ASSETS/ICONS/PHONEICON/WhitePhoneIcon.js";
-import { WHITESETTINGSICON } from "../../../../RESOURCES/ASSETS/ICONS/SETTINGSICON/WhiteSettingsIcon.js";
+import { WHITELOGOUTICON } from "../../../../RESOURCES/ASSETS/ICONS/LOGOUTICON/WhiteLogOutIcon.js";
 import { APPMODEBUTTON } from "../../../../RESOURCES/COMPONENTS/APPMODEBUTTON/AppModeButton.js";
 import { BUTTON } from "../../../../RESOURCES/COMPONENTS/BUTTON/Button.js";
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
@@ -13,7 +9,9 @@ import { SCROLLVIEW } from "../../../../RESOURCES/COMPONENTS/SCROLLVIEW/ScrollVi
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
+import { REMOVESTORE } from "../../../../RESOURCES/FUNCTIONS/REMOVESTORE/RemoveStore.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
+import { LOGINPAGE } from "../LOGINPAGE/LoginPage.js";
 import { USERACCOUNPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 
@@ -31,6 +29,20 @@ const SETTINGSPAGE=(DIV)=>{
         BUTTON(ELEMENT,'AppLock',WHITELOCKICON,'',()=>{});
 
         APPMODEBUTTON(ELEMENT,'#5C829A','#121212')
+
+        BUTTON(ELEMENT,'LogOut',WHITELOGOUTICON,'',()=>{
+
+            REMOVESTORE('local','UserName');
+
+            REMOVESTORE('local','Email');
+
+            REMOVESTORE('local','Location');
+
+            REMOVESTORE('local','User');
+
+            LOGINPAGE(DIV);
+
+        });
         
 
     })
