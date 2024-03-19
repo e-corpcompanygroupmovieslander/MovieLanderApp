@@ -36,7 +36,7 @@ const COMMUNITYPAGE=(DIV)=>{
             
         })
 
-        TEXT(ELEMENT,'h2','Subscription Plan','SubsrciptionPlan',()=>{})
+        TEXT(ELEMENT,'h2','Connect With Others','SubsrciptionPlan',()=>{})
 
         BREAK(ELEMENT);BREAK(ELEMENT);
 
@@ -58,7 +58,7 @@ const COMMUNITYPAGE=(DIV)=>{
             STYLED(ELEMENT,'width','20px');
             STYLED(ELEMENT,'height','20px');
         })
-        TEXT(ELEMENT,'h2','Subscription','Subscription',()=>{})
+        TEXT(ELEMENT,'h2','Community','Subscription',()=>{})
         DECLARATION('.Subscription',(ELEMENT)=>{
             STYLED(ELEMENT,'fontSize','20px');
             STYLED(ELEMENT,'marginTop','auto');
