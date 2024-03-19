@@ -1,25 +1,25 @@
-import { UPDATEAPI } from "../../../../API/Api.js";
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
+import { WHITECHATICON } from "../../../../RESOURCES/ASSETS/ICONS/CHATICON/WhiteChatIcon.js";
 import { WHITELOCKICON } from "../../../../RESOURCES/ASSETS/ICONS/LOCKICON/WhiteLockIcon.js";
-import { WHITELOGOUTICON } from "../../../../RESOURCES/ASSETS/ICONS/LOGOUTICON/WhiteLogOutIcon.js";
-import { APPMODEBUTTON } from "../../../../RESOURCES/COMPONENTS/APPMODEBUTTON/AppModeButton.js";
+import { MOVIELANDERPNG } from "../../../../RESOURCES/ASSETS/IMAGES/MOVIELANDERIMAGES/MovieLanderPng.js";
 import { BUTTON } from "../../../../RESOURCES/COMPONENTS/BUTTON/Button.js";
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
+import { IMAGE } from "../../../../RESOURCES/COMPONENTS/IMAGE/Image.js";
 import { SCROLLVIEW } from "../../../../RESOURCES/COMPONENTS/SCROLLVIEW/ScrollView.js";
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
+import { BREAK } from "../../../../RESOURCES/FUNCTIONS/BREAK/Break.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
-import { REMOVESTORE } from "../../../../RESOURCES/FUNCTIONS/REMOVESTORE/RemoveStore.js";
+import { FACEBOOK } from "../../../../RESOURCES/FUNCTIONS/FACEBOOK/FaceBook.js";
+import { GMAIL } from "../../../../RESOURCES/FUNCTIONS/GMAIL/Gmail.js";
+import { INSTAGRAM } from "../../../../RESOURCES/FUNCTIONS/INSTAGRAM/Instagram.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { WEBSITE } from "../../../../RESOURCES/FUNCTIONS/WEBSITE/WebSite.js";
-import { HELPPAGE } from "../HELPPAGE/HelpPage.js";
-import { LOGINPAGE } from "../LOGINPAGE/LoginPage.js";
-import { PRIVACYPOLICYPAGE } from "../PRIVACYPOLICYPAGE/PrivacyPolicyPage.js";
 import { USERACCOUNPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 
-const SETTINGSPAGE=(DIV)=>{
+const CONTACTUSPAGE=(DIV)=>{
 
     CLEAR(DIV);
 
@@ -29,41 +29,29 @@ const SETTINGSPAGE=(DIV)=>{
 
         STYLED(ELEMENT,'top','50px');
         STYLED(ELEMENT,'background','Transparent');
-
-        BUTTON(ELEMENT,'AppLock',WHITELOCKICON,'',()=>{});
-
-        APPMODEBUTTON(ELEMENT,'#5C829A','#121212');
-
-        BUTTON(ELEMENT,'App Player',WHITELOCKICON,'',()=>{});
-
-        BUTTON(ELEMENT,'App Notifications',WHITELOCKICON,'',()=>{});
-
-        BUTTON(ELEMENT,'Parental Control',WHITELOCKICON,'',()=>{});
-
-        BUTTON(ELEMENT,'Privacy Policy',WHITELOCKICON,'',()=>{PRIVACYPOLICYPAGE(DIV)});
-
-        BUTTON(ELEMENT,'Help',WHITELOCKICON,'',()=>{HELPPAGE(DIV)});
-
-        BUTTON(ELEMENT,'Update',WHITELOCKICON,'',()=>{WEBSITE(UPDATEAPI)});
-
-        BUTTON(ELEMENT,'App Version',WHITELOCKICON,'',()=>{});
-
-        BUTTON(ELEMENT,'Delete  Account',WHITELOCKICON,'',()=>{});
-
-        BUTTON(ELEMENT,'LogOut',WHITELOGOUTICON,'',()=>{
-
-            REMOVESTORE('local','UserName');
-
-            REMOVESTORE('local','Email');
-
-            REMOVESTORE('local','Location');
-
-            REMOVESTORE('local','User');
-
-            LOGINPAGE(DIV);
+  
+        IMAGE(ELEMENT,MOVIELANDERPNG,'AppImage',()=>{})   
+        
+        DECLARATION('.AppImage',(ELEMENT)=>{
+            STYLED(ELEMENT,'width','30%');
+            STYLED(ELEMENT,'height','auto');
+            STYLED(ELEMENT,'padding','10% 2%');
+            STYLED(ELEMENT,'margin','2% 30%');
             
-        });
-           
+        })
+
+        TEXT(ELEMENT,'h2','Get In Touch','SubsrciptionPlan',()=>{})
+
+        BREAK(ELEMENT);BREAK(ELEMENT);
+
+        BUTTON(ELEMENT,'Gmai',WHITELOCKICON,'',()=>{GMAIL('movielander1999@gmail.com')});
+
+        BUTTON(ELEMENT,'Facebook',WHITECHATICON,'',()=>{FACEBOOK('')});
+
+        BUTTON(ELEMENT,'Instagram',WHITECHATICON,'',()=>{INSTAGRAM('e_corp_company_group')});
+
+        BUTTON(ELEMENT,'Website',WHITECHATICON,'',()=>{WEBSITE('https://www.e-corpcompanygroup.com')});
+      
     })
 
     HEADER(DIV,'AppHeader');
@@ -78,8 +66,8 @@ const SETTINGSPAGE=(DIV)=>{
             STYLED(ELEMENT,'width','20px');
             STYLED(ELEMENT,'height','20px');
         })
-        TEXT(ELEMENT,'h2','Settings','Profile',()=>{})
-        DECLARATION('.Profile',(ELEMENT)=>{
+        TEXT(ELEMENT,'h2','Reach Us','Subscription',()=>{})
+        DECLARATION('.Subscription',(ELEMENT)=>{
             STYLED(ELEMENT,'fontSize','20px');
             STYLED(ELEMENT,'marginTop','auto');
             STYLED(ELEMENT,'marginBottom','auto');
@@ -90,4 +78,4 @@ const SETTINGSPAGE=(DIV)=>{
     
 }
 
-export{SETTINGSPAGE}
+export{CONTACTUSPAGE}

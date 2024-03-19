@@ -16,7 +16,11 @@ import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { COMMUNITYPAGE } from "../COMMUNITYPAGE/CommunityPage.js";
+import { CONTACTUSPAGE } from "../CONTACTUSPAGE/ContactUsPage.js";
 import { HOMEPAGE } from "../HOMEPAGE/HomePage.js";
+import { LIBARYPAGE } from "../LIBARYPAGE/libraryPage.js";
+import { MOREAPPSPAGE } from "../MOREAPPSPAGE/MoreAppsPage.js";
+import { NOTIFICATIONSPAGE } from "../NOTIFICATIONSPAGE/NotificationsPage.js";
 import { PREMIUMPAGE } from "../PREMIUMPAGE/PremiumPage.js";
 import { SETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
 
@@ -38,15 +42,15 @@ const USERACCOUNPAGE=(DIV)=>{
 
         BUTTON(ELEMENT,'Community',WHITEGROUPICON,'',()=>{COMMUNITYPAGE(DIV)});
 
-        BUTTON(ELEMENT,'Library',WHITELIBRARYICON,'',()=>{});
+        BUTTON(ELEMENT,'Library',WHITELIBRARYICON,'',()=>{LIBARYPAGE(DIV)});
 
-        BUTTON(ELEMENT,'Notification',WHITENOTIFICATIONICON,'',()=>{});
+        BUTTON(ELEMENT,'Notification',WHITENOTIFICATIONICON,'',()=>{NOTIFICATIONSPAGE(DIV)});
 
         BUTTON(ELEMENT,'Settings',WHITESETTINGSICON,'',()=>{SETTINGSPAGE(DIV)});
 
-        BUTTON(ELEMENT,'More Apps',WHITEGRIDICON,'',()=>{});
+        BUTTON(ELEMENT,'More Apps',WHITEGRIDICON,'',()=>{MOREAPPSPAGE(DIV)});
 
-        BUTTON(ELEMENT,'Contact Us',WHITEPHONEICON,'',()=>{});
+        BUTTON(ELEMENT,'Contact Us',WHITEPHONEICON,'',()=>{CONTACTUSPAGE(DIV)});
 
     })
 
