@@ -41,10 +41,9 @@ const SETTINGSPAGE=(DIV)=>{
             REMOVESTORE('local','User');
 
             LOGINPAGE(DIV);
-
+            
         });
         
-
     })
 
     HEADER(DIV,'AppHeader');
