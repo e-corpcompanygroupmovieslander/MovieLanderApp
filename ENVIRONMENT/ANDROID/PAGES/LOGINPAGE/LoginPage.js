@@ -29,7 +29,11 @@ const LOGINPAGE=(DIV)=>{
 
     INPUT(DIV,'password','Enter User Email','');
 
-    TEXT(DIV,'h2','ForgotPassword?','Forgot',()=>{})
+    TEXT(DIV,'h3','ForgotPassword?','Forgot',()=>{})
+    DECLARATION('.Forgot',(ELEMENT)=>{
+        STYLED(ELEMENT,'padding','2% 1%');
+        STYLED(ELEMENT,'margin','1% 52%');      
+    })
 
     BUTTON(DIV,'LogIn','','',()=>{
 
