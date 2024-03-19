@@ -28,7 +28,23 @@ const SETTINGSPAGE=(DIV)=>{
 
         BUTTON(ELEMENT,'AppLock',WHITELOCKICON,'',()=>{});
 
-        APPMODEBUTTON(ELEMENT,'#5C829A','#121212')
+        APPMODEBUTTON(ELEMENT,'#5C829A','#121212');
+
+        BUTTON(ELEMENT,'App Player',WHITELOCKICON,'',()=>{});
+
+        BUTTON(ELEMENT,'App Notifications',WHITELOCKICON,'',()=>{});
+
+        BUTTON(ELEMENT,'Parental Control',WHITELOCKICON,'',()=>{});
+
+        BUTTON(ELEMENT,'Privacy Policy',WHITELOCKICON,'',()=>{});
+
+        BUTTON(ELEMENT,'Help',WHITELOCKICON,'',()=>{});
+
+        BUTTON(ELEMENT,'Update',WHITELOCKICON,'',()=>{});
+
+        BUTTON(ELEMENT,'App Version',WHITELOCKICON,'',()=>{});
+
+        BUTTON(ELEMENT,'Delete  Account',WHITELOCKICON,'',()=>{});
 
         BUTTON(ELEMENT,'LogOut',WHITELOGOUTICON,'',()=>{
 
@@ -43,7 +59,7 @@ const SETTINGSPAGE=(DIV)=>{
             LOGINPAGE(DIV);
             
         });
-        
+           
     })
 
     HEADER(DIV,'AppHeader');
