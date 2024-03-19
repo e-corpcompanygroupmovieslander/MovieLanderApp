@@ -42,7 +42,6 @@ const USERACCOUNPAGE=(DIV)=>{
 
         BUTTON(ELEMENT,'Contact Us',WHITEPHONEICON,'',()=>{});
 
-
     })
 
     HEADER(DIV,'AppHeader');
@@ -53,7 +52,9 @@ const USERACCOUNPAGE=(DIV)=>{
             HOMEPAGE(DIV)
         })
         DECLARATION('.BackIcon',(ELEMENT)=>{
-            STYLED(ELEMENT,'marginLeft','1rem')
+            STYLED(ELEMENT,'marginLeft','1rem');
+            STYLED(ELEMENT,'width','20px');
+            STYLED(ELEMENT,'height','20px');
         })
         TEXT(ELEMENT,'h2','My Profile','Profile',()=>{})
         DECLARATION('.Profile',(ELEMENT)=>{
