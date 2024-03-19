@@ -1,3 +1,4 @@
+import { HELPTEXT } from "../../../../API/Api.js";
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
@@ -8,6 +9,8 @@ import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditioner.js";
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
+import { DISPLAY } from "../../../../RESOURCES/FUNCTIONS/DISPLAY/Display.js";
+import { GETPACKAGE } from "../../../../RESOURCES/FUNCTIONS/GETPACKAGE/GetPackage.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { SETTINGSPAGE } from "../SETTINGSPAGE/SettingsPage.js";
 
@@ -25,9 +28,13 @@ const HELPPAGE=(DIV)=>{
 
         CONDITIONER(navigator.onLine,false,
 
-            ()=>LOADER(ELEMENT,3000),
+            ()=>MESSAGE(DIV,'Please Check Your Internet Connection',''),
 
-            ()=>MESSAGE(DIV,'Please Check Your Internet Connection','')
+            ()=>LOADER(ELEMENT,3000),GETPACKAGE(HELPTEXT,'cors',(data)=>{
+
+                CLEAR(ELEMENT),DISPLAY(ELEMENT,data);
+
+            })
             
         )
        
