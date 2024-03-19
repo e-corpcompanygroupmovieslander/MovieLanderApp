@@ -7,7 +7,6 @@ import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { NOTIFICATIONS } from "../../../../RESOURCES/PLUGINS/NOTIFICATIONS/Notification.js";
-import { VIBRATION } from "../../../../RESOURCES/PLUGINS/VIBRATION/Vibration.js";
 import { USERACCOUNPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const HOMEPAGE=(DIV)=>{
@@ -40,7 +39,7 @@ const HOMEPAGE=(DIV)=>{
 
         
        
-        VIBRATION(500)
+ 
 
         
 
