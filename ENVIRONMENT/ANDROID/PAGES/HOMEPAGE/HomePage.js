@@ -48,7 +48,7 @@ const HOMEPAGE=(DIV)=>{
 
                     CREATEELEMENT('div',(ELEMENT)=>{
 
-                            //STYLES
+                        //STYLES
                         STYLED(ELEMENT,'position','relative');
                         STYLED(ELEMENT,'width','80%');
                         STYLED(ELEMENT,'height','60%');
@@ -65,7 +65,7 @@ const HOMEPAGE=(DIV)=>{
 
                     })
                     
-                })
+                })                
 
             })
 
