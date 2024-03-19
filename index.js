@@ -41,7 +41,7 @@ DIV.style.background = STATUSMODE;
 
 BODY.style.background = STATUSMODE;
 
-localStorage.setItem('Device','Web');
+localStorage.setItem('Device','Android');
 
 
 setTimeout(() => {

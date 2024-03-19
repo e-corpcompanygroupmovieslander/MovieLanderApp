@@ -1,4 +1,6 @@
-import { ADD, CONDITION, STYLED } from "../../CONNECTION/Connection.js";
+import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js";
+import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
 
 //CREATE A IMAGE
 const IMAGE = (ELEMENT,PATH,CLASS,onClick = null) => {

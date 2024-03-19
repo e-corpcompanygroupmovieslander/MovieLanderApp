@@ -4,7 +4,7 @@ import { LOGINPAGE } from "../PAGES/LOGINPAGE/LoginPage.js"
 
 const ANDROIDCONNECTION=(DIV)=>{
 
-    CONDITION(!localStorage.getItem('User'),
+    CONDITION(localStorage.getItem('User'),
 
     ()=>HOMEPAGE(DIV),
 
