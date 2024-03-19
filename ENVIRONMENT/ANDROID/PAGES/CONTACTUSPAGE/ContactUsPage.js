@@ -1,6 +1,7 @@
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
 import { WHITECHATICON } from "../../../../RESOURCES/ASSETS/ICONS/CHATICON/WhiteChatIcon.js";
 import { WHITEFACEBOOKICON } from "../../../../RESOURCES/ASSETS/ICONS/FACEBOOKICON/WhiteFaceBookIcon.js";
+import { WHITEGMAILICON } from "../../../../RESOURCES/ASSETS/ICONS/GMAILICON/WhiteGmailIcon.js";
 import { WHITEINSTAGRRAMICON } from "../../../../RESOURCES/ASSETS/ICONS/INSTAGRAM/WhiteInstagramIcon.js";
 import { WHITELOCKICON } from "../../../../RESOURCES/ASSETS/ICONS/LOCKICON/WhiteLockIcon.js";
 import { WHITEWEBSITEICON } from "../../../../RESOURCES/ASSETS/ICONS/WEBSITEICON/WhiteWebSiteIcon.js";
@@ -47,7 +48,7 @@ const CONTACTUSPAGE=(DIV)=>{
 
         BREAK(ELEMENT);BREAK(ELEMENT);
 
-        BUTTON(ELEMENT,'Gmai',WHITELOCKICON,'',()=>{GMAIL('movielander1999@gmail.com')});
+        BUTTON(ELEMENT,'Gmai',WHITEGMAILICON,'',()=>{GMAIL('movielander1999@gmail.com')});
 
         BUTTON(ELEMENT,'Facebook',WHITEFACEBOOKICON,'',()=>{FACEBOOK('')});
 
