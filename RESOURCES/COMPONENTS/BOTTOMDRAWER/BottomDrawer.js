@@ -1,3 +1,9 @@
+import { WHITECLOSEICON } from "../../ASSETS/ICONS/CLOSEICON/WhiteCloseIcon.js";
+import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { CLEAR } from "../../FUNCTIONS/CLEAR/Clear.js";
+import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js";
+import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
+
 //CREATE A BOTTOM DRAWER
 const BOTTOMDRAWER=(ELEMENT,CLASS)=>{
 
@@ -42,7 +48,10 @@ const BOTTOMDRAWER=(ELEMENT,CLASS)=>{
    
     Image.addEventListener('click',()=>{
 
+        CLEAR(DIV);
+
         STYLED(DIV,'display','none');
+        
 
     })
 
