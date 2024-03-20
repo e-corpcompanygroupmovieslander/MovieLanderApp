@@ -37,8 +37,6 @@ const MOREAPPSPAGE=(DIV)=>{
               
                 REDUX(data,(element)=>{
 
-                    console.log(element);
-
                     CREATEELEMENT('div',(ELEMENT)=>{
 
                         //STYLES
