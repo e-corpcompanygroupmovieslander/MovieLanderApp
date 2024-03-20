@@ -33,7 +33,6 @@ const MOVIESDATAPAGE=(DIV)=>{
 
         })
 
-
         HEADER(DIV,'AppHeader');
 
         DECLARATION('.AppHeader',(ELEMENT)=>{
