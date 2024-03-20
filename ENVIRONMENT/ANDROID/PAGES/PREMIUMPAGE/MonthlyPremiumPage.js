@@ -112,10 +112,13 @@ const MONTHLYPAYMENT=(DIV)=>{
         })
         TEXT(ELEMENT,'h2','Monthly','Profile',()=>{})
         DECLARATION('.Profile',(ELEMENT)=>{
-            STYLED(ELEMENT,'fontSize','20px');
+            STYLED(ELEMENT,'fontSize','15px');
             STYLED(ELEMENT,'marginTop','auto');
             STYLED(ELEMENT,'marginBottom','auto');
             STYLED(ELEMENT,'marginRight','1rem');
+            STYLED(ELEMENT,'background','#00000080');
+            STYLED(ELEMENT,'borderRadius','50px');
+            STYLED(ELEMENT,'padding','5px');
 
         })
     })

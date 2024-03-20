@@ -5,8 +5,10 @@ import { WHITEPROFILEICON } from "../../../../RESOURCES/ASSETS/ICONS/PROFILEICON
 import { FOOTER } from "../../../../RESOURCES/COMPONENTS/FOOTER/Footer.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { IMAGE } from "../../../../RESOURCES/COMPONENTS/IMAGE/Image.js";
+import { LOADER } from "../../../../RESOURCES/COMPONENTS/LOADER/Loader.js";
 import { SCROLLVIEW } from "../../../../RESOURCES/COMPONENTS/SCROLLVIEW/ScrollView.js";
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
+import { VIEW } from "../../../../RESOURCES/COMPONENTS/VIEW/View.js";
 import { ADD } from "../../../../RESOURCES/FUNCTIONS/ADD/Add.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { CREATEELEMENT } from "../../../../RESOURCES/FUNCTIONS/CREATEELEMENT/CreateElement.js";
@@ -17,6 +19,7 @@ import { SHUFFLE } from "../../../../RESOURCES/FUNCTIONS/SHUFFLE/Shuffle.js";
 import { STORE } from "../../../../RESOURCES/FUNCTIONS/STORE/Store.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { NOTIFICATIONS } from "../../../../RESOURCES/PLUGINS/NOTIFICATIONS/Notification.js";
+import { CATERGORIESPAGE } from "../CATERGORIESPAGE/CatergoriesPage.js";
 import { MOVIESDATAPAGE } from "../MOVIESDATAPAGE/MoviesDataPage.js";
 import { USERACCOUNPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
@@ -27,6 +30,14 @@ const HOMEPAGE=(DIV)=>{
     SCROLLVIEW(DIV,'HomeDiv');
     const HOMEDIV=document.querySelector('.HomeDiv');
     DECLARATION('.HomeDiv',(ELEMENT)=>{
+
+        LOADER(ELEMENT,10000,'HOMELOADER');
+
+        DECLARATION('.HOMELOADER',(ELEMENT)=>{
+
+            STYLED(ELEMENT,'bottom','300px')
+            
+        })
 
         STYLED(ELEMENT,'background','transparent');
 
@@ -75,7 +86,7 @@ const HOMEPAGE=(DIV)=>{
 
     DECLARATION('.HOMEFOOTER',(ELEMENT)=>{
 
-        ICONS(ELEMENT,WHITELISTICON,'',()=>{});
+        ICONS(ELEMENT,WHITELISTICON,'',()=>{CATERGORIESPAGE(DIV)});
 
         ICONS(ELEMENT,WHITEMOVIESICON,'',()=>{
 

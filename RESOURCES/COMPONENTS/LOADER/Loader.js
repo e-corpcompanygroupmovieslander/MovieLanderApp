@@ -1,13 +1,20 @@
 import { WHITELOADERICON } from "../../ASSETS/ICONS/LOADERICON/WhiteLoaderIcon.js";
 import { ADD } from "../../FUNCTIONS/ADD/Add.js";
+import { CHECK } from "../../FUNCTIONS/CHECK/Check.js";
 import { CONDITION } from "../../FUNCTIONS/CONDITION/Condition.js";
 import { STYLED } from "../../FUNCTIONS/STYLED/Styled.js";
 
 
 //CREATE A SPINING LOADER
-const LOADER=(ELEMENT,TIME)=>{
+const LOADER=(ELEMENT,TIME,CLASS)=>{
 
     const loader=document.createElement('div');
+
+    if (CLASS) {
+
+        loader.classList.add(CLASS);
+        
+    }
 
     //STYLES
     STYLED(loader,'width','20%');
