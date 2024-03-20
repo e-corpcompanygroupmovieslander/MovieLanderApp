@@ -64,7 +64,7 @@ const WEEKLYPAYMENT=(DIV)=>{
 
                     CONDITIONER(result.ipn_status_decription,'Active',
 
-                    ()=>PESAPALSUMBITORDER(TOKEN,result.id,result.ipn_id,REDIRECTSITE,sessionStorage.getItem('Currency'),sessionStorage.getItem('Amount'),localStorage.getItem('Email'),(result)=>{
+                    ()=>PESAPALSUMBITORDER(TOKEN,result.id,result.ipn_id,REDIRECTSITE,(result)=>{
 
                         CONDITIONER(result.status,'200',
 

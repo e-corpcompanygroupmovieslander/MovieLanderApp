@@ -1,5 +1,5 @@
 //Sumbit Payment
-const PESAPALSUMBITORDER=(TOKEN,ID,IPNID,SITE,CURRENCY,AMOUNT,EMAIL,callback)=>{
+const PESAPALSUMBITORDER=(TOKEN,ID,IPNID,SITE,callback)=>{
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -7,13 +7,13 @@ const PESAPALSUMBITORDER=(TOKEN,ID,IPNID,SITE,CURRENCY,AMOUNT,EMAIL,callback)=>{
 
     var raw = JSON.stringify({
     "id":ID ,
-    "currency": CURRENCY,
-    "amount": AMOUNT,
+    "currency": sessionStorage.getItem('Currency'),
+    "amount": sessionStorage.getItem('Amount'),
     "description": "Movie Lander Subscription",
     "callback_url": SITE,
     "notification_id": IPNID,
     "billing_address": {
-        "email_address": EMAIL,
+        "email_address": localStorage.getItem('Email'),
         "phone_number":"xxx" ,
         "country_code": "",
         "first_name": "xxx",
