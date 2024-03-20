@@ -5,9 +5,11 @@ import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { IMAGE } from "../../../../RESOURCES/COMPONENTS/IMAGE/Image.js";
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
+import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditioner.js";
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
 import { DEJSON } from "../../../../RESOURCES/FUNCTIONS/DEJSON/Dejson.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
+import { FREEWATCHPAGE } from "../FREEWATCHPAGE/FreeWatchPage.js";
 import { HOMEPAGE } from "../HOMEPAGE/HomePage.js";
 
 
@@ -38,7 +40,16 @@ const MOVIESDATAPAGE=(DIV)=>{
         DECLARATION('.AppHeader',(ELEMENT)=>{
             STYLED(ELEMENT,'background','Transparent');
             ICONS(ELEMENT,WHITEBACKICON,'BackIcon',()=>{
-                HOMEPAGE(DIV)
+
+                CONDITIONER(sessionStorage.getItem('BackPath'),'Free',
+
+                ()=>FREEWATCHPAGE(DIV),
+
+                ()=>HOMEPAGE(DIV)
+                
+                )
+
+                
             })
             DECLARATION('.BackIcon',(ELEMENT)=>{
                 STYLED(ELEMENT,'marginLeft','1rem');

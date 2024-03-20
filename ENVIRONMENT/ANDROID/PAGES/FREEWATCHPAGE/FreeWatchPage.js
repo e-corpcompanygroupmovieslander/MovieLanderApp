@@ -1,12 +1,11 @@
-import { ANIMATIONAPI, MOVIESPATH } from "../../../../API/Api.js";
-import { WHITELISTICON } from "../../../../RESOURCES/ASSETS/ICONS/LISTICON/WhiteListIcon.js";
-import { WHITEMOVIESICON } from "../../../../RESOURCES/ASSETS/ICONS/MOVIESICON/WhiteMoviesIcon.js";
-import { WHITEPROFILEICON } from "../../../../RESOURCES/ASSETS/ICONS/PROFILEICON/WhiteProfileIcon.js";
-import { FOOTER } from "../../../../RESOURCES/COMPONENTS/FOOTER/Footer.js";
+import { FREEMOVIESAPI, MOVIESPATH } from "../../../../API/Api.js";
+import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
+import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { IMAGE } from "../../../../RESOURCES/COMPONENTS/IMAGE/Image.js";
 import { LOADER } from "../../../../RESOURCES/COMPONENTS/LOADER/Loader.js";
 import { SCROLLVIEW } from "../../../../RESOURCES/COMPONENTS/SCROLLVIEW/ScrollView.js";
+import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
 import { ADD } from "../../../../RESOURCES/FUNCTIONS/ADD/Add.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { CREATEELEMENT } from "../../../../RESOURCES/FUNCTIONS/CREATEELEMENT/CreateElement.js";
@@ -16,18 +15,21 @@ import { REDUX } from "../../../../RESOURCES/FUNCTIONS/REDUX/Redux.js";
 import { SHUFFLE } from "../../../../RESOURCES/FUNCTIONS/SHUFFLE/Shuffle.js";
 import { STORE } from "../../../../RESOURCES/FUNCTIONS/STORE/Store.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
-import { CATERGORIESPAGE } from "../CATERGORIESPAGE/CatergoriesPage.js";
-import { FREEWATCHPAGE } from "../FREEWATCHPAGE/FreeWatchPage.js";
+import { HOMEPAGE } from "../HOMEPAGE/HomePage.js";
 import { MOVIESDATAPAGE } from "../MOVIESDATAPAGE/MoviesDataPage.js";
-import { USERACCOUNPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
-const HOMEPAGE=(DIV)=>{
+
+const FREEWATCHPAGE=(DIV)=>{
 
     CLEAR(DIV);
 
-    SCROLLVIEW(DIV,'HomeDiv');
-    const HOMEDIV=document.querySelector('.HomeDiv');
-    DECLARATION('.HomeDiv',(ELEMENT)=>{
+    SCROLLVIEW(DIV,'Holder');
+    const HOMEDIV=document.querySelector('.Holder');
+
+    DECLARATION('.Holder',(ELEMENT)=>{
+
+        STYLED(ELEMENT,'top','50px');
+        STYLED(ELEMENT,'background','Transparent');
 
         LOADER(ELEMENT,10000,'HOMELOADER');
 
@@ -37,9 +39,7 @@ const HOMEPAGE=(DIV)=>{
             
         })
 
-        STYLED(ELEMENT,'background','transparent');
-
-        GETPACKAGE(ANIMATIONAPI,'cors',(data)=>{
+        GETPACKAGE(FREEMOVIESAPI,'cors',(data)=>{
 
             CLEAR(HOMEDIV);
 
@@ -62,8 +62,7 @@ const HOMEPAGE=(DIV)=>{
 
                         IMAGE(ELEMENT,MOVIESPATH+element.MovieImage,'',()=>{
 
-                            STORE('','BackPath','Home');
-
+                            STORE('','BackPath','Free');
                             STORE('','MovieData',JSON.stringify(element));
 
                             MOVIESDATAPAGE(DIV);
@@ -80,34 +79,35 @@ const HOMEPAGE=(DIV)=>{
 
         })
 
-    })
-
-    FOOTER(DIV,'HOMEFOOTER');
-
-    DECLARATION('.HOMEFOOTER',(ELEMENT)=>{
-
-        ICONS(ELEMENT,WHITELISTICON,'',()=>{CATERGORIESPAGE(DIV)});
-
-        ICONS(ELEMENT,WHITEMOVIESICON,'',()=>{
-
-            FREEWATCHPAGE(DIV);
+        
            
-        });
-
-        ICONS(ELEMENT,WHITEPROFILEICON,'',()=>{
-
-            USERACCOUNPAGE(DIV);
-
-        });
-
-        STYLED(ELEMENT,'width','95%');
-        STYLED(ELEMENT,'borderRadius','50px');
-        STYLED(ELEMENT,'left','2%');
-        STYLED(ELEMENT,'bottom','0.5rem');
-
     })
 
+    HEADER(DIV,'AppHeader');
 
+    DECLARATION('.AppHeader',(ELEMENT)=>{
+        STYLED(ELEMENT,'background','Transparent');
+        ICONS(ELEMENT,WHITEBACKICON,'BackIcon',()=>{
+            HOMEPAGE(DIV);
+        })
+        DECLARATION('.BackIcon',(ELEMENT)=>{
+            STYLED(ELEMENT,'marginLeft','1rem');
+            STYLED(ELEMENT,'width','20px');
+            STYLED(ELEMENT,'height','20px');
+        })
+        TEXT(ELEMENT,'h2','Free Watch','Profile',()=>{})
+        DECLARATION('.Profile',(ELEMENT)=>{
+            STYLED(ELEMENT,'fontSize','15px');
+            STYLED(ELEMENT,'marginTop','auto');
+            STYLED(ELEMENT,'marginBottom','auto');
+            STYLED(ELEMENT,'marginRight','1rem');
+            STYLED(ELEMENT,'background','#00000080');
+            STYLED(ELEMENT,'borderRadius','50px');
+            STYLED(ELEMENT,'padding','5px');
+
+        })
+    })
+    
 }
 
-export{HOMEPAGE}
+export{FREEWATCHPAGE}
