@@ -1,6 +1,8 @@
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
 import { WHITECHATICON } from "../../../../RESOURCES/ASSETS/ICONS/CHATICON/WhiteChatIcon.js";
-import { WHITELOCKICON } from "../../../../RESOURCES/ASSETS/ICONS/LOCKICON/WhiteLockIcon.js";
+import { WHITEMOVIENIGHTICON } from "../../../../RESOURCES/ASSETS/ICONS/MOVIENIGHTICON/MovieNightIcon.js";
+import { WHITETRENDICON } from "../../../../RESOURCES/ASSETS/ICONS/TRENDICON/WhiteTrendIcon.js";
+import { WHITEWRITEICON } from "../../../../RESOURCES/ASSETS/ICONS/WRITEICON/WhiteWriteIcon.js";
 import { MOVIELANDERPNG } from "../../../../RESOURCES/ASSETS/IMAGES/MOVIELANDERIMAGES/MovieLanderPng.js";
 import { BUTTON } from "../../../../RESOURCES/COMPONENTS/BUTTON/Button.js";
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
@@ -40,13 +42,13 @@ const COMMUNITYPAGE=(DIV)=>{
 
         BREAK(ELEMENT);BREAK(ELEMENT);
 
-        BUTTON(ELEMENT,'Movie Request',WHITELOCKICON,'',()=>{});
+        BUTTON(ELEMENT,'Movie Request',WHITEWRITEICON,'',()=>{});
 
         BUTTON(ELEMENT,'Chat',WHITECHATICON,'',()=>{});
 
-        BUTTON(ELEMENT,'Movie Night',WHITECHATICON,'',()=>{});
+        BUTTON(ELEMENT,'Movie Night',WHITEMOVIENIGHTICON,'',()=>{});
 
-        BUTTON(ELEMENT,'Trends',WHITECHATICON,'',()=>{});
+        BUTTON(ELEMENT,'Trends',WHITETRENDICON,'',()=>{});
       
     })
 
