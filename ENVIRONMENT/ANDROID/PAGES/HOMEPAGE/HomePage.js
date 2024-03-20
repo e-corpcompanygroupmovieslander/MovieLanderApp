@@ -28,13 +28,6 @@ const HOMEPAGE=(DIV)=>{
 
         STYLED(ELEMENT,'background','transparent');
 
-        TEXT(ELEMENT,'h3','Please Wait','Notification',()=>{})
-        DECLARATION('.Notification',(ELEMENT)=>{
-
-            STYLED(ELEMENT,'margin','70% 10%');
-
-        })
-
         GETPACKAGE(ANIMATIONAPI,'cors',(data)=>{
 
             CLEAR(HOMEDIV);

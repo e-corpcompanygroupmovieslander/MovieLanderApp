@@ -3,6 +3,7 @@ import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/White
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { IMAGE } from "../../../../RESOURCES/COMPONENTS/IMAGE/Image.js";
+import { LOADER } from "../../../../RESOURCES/COMPONENTS/LOADER/Loader.js";
 import { SCROLLVIEW } from "../../../../RESOURCES/COMPONENTS/SCROLLVIEW/ScrollView.js";
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
 import { ADD } from "../../../../RESOURCES/FUNCTIONS/ADD/Add.js";
@@ -28,6 +29,8 @@ const MOREAPPSPAGE=(DIV)=>{
 
         STYLED(ELEMENT,'top','50px');
         STYLED(ELEMENT,'background','Transparent');
+
+        LOADER(ELEMENT,3000);
 
         GETPACKAGE(MOREAPPSAPI,'cors',(data)=>{
 
