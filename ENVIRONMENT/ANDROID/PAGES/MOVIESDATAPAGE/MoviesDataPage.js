@@ -42,14 +42,21 @@ const MOVIESDATAPAGE=(DIV)=>{
 
             ()=>alert(''),
             
-            ()=>IFRAME(DIV,'https://www.youtube.com/embed/'+data.MoveTrailer,'YOUTUBEPLAYER')
+            ()=>VIEW(DIV,'PlayerHolder')
  
         )
 
-        DECLARATION('.YOUTUBEPLAYER',(ELEMENT)=>{
+        DECLARATION('.PlayerHolder',(ELEMENT)=>{
+            
             STYLED(ELEMENT,'position','absolute');
+            STYLED(ELEMENT,'width','100%');
+            STYLED(ELEMENT,'height','100%');
             STYLED(ELEMENT,'top','0');
+            STYLED(ELEMENT,'marginTop','0');
             STYLED(ELEMENT,'bottom','0');
+            STYLED(ELEMENT,'left','0');
+
+            IFRAME(ELEMENT,'https://www.youtube.com/embed/'+data.MoveTrailer,'YOUTUBEPLAYER')
 
         })
 
