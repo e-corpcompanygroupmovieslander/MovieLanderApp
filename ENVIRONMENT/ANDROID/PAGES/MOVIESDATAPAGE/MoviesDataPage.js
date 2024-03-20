@@ -2,8 +2,10 @@ import { MOVIESPATH } from "../../../../API/Api.js";
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
+import { IFRAME } from "../../../../RESOURCES/COMPONENTS/IFRAME/Iframe.js";
 import { IMAGE } from "../../../../RESOURCES/COMPONENTS/IMAGE/Image.js";
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
+import { VIEW } from "../../../../RESOURCES/COMPONENTS/VIEW/View.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
 import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditioner.js";
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
@@ -35,6 +37,14 @@ const MOVIESDATAPAGE=(DIV)=>{
             STYLED(ELEMENT,'marginTop','0');
 
         })
+
+        CONDITIONER(sessionStorage.getItem('BackPath'),'Home',
+
+            ()=>alert(''),
+            
+            ()=>IFRAME(DIV,'https://www.youtube.com/embed/'+data.MoveTrailer,'YOUTUBEPLAYER')
+ 
+        )
 
         HEADER(DIV,'AppHeader');
 

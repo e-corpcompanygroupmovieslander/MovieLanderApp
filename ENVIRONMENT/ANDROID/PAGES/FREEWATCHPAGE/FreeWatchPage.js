@@ -62,7 +62,7 @@ const FREEWATCHPAGE=(DIV)=>{
 
                         IMAGE(ELEMENT,MOVIESPATH+element.MovieImage,'',()=>{
 
-                            STORE('','BackPath','Fre');
+                            STORE('','BackPath','Free');
                             STORE('','MovieData',JSON.stringify(element));
 
                             MOVIESDATAPAGE(DIV);
