@@ -36,9 +36,9 @@ const SETTINGSPAGE=(DIV)=>{
         STYLED(ELEMENT,'top','50px');
         STYLED(ELEMENT,'background','Transparent');
 
-        BUTTON(ELEMENT,'AppLock',WHITELOCKICON,'',()=>{});
-
         APPMODEBUTTON(ELEMENT,'#5C829A','#121212');
+
+        BUTTON(ELEMENT,'AppLock',WHITELOCKICON,'',()=>{});
 
         BUTTON(ELEMENT,'App Player',WHITEPLAYERICON,'',()=>{});
 
