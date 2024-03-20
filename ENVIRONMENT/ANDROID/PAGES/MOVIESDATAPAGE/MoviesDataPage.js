@@ -46,6 +46,13 @@ const MOVIESDATAPAGE=(DIV)=>{
  
         )
 
+        DECLARATION('.YOUTUBEPLAYER',(ELEMENT)=>{
+            STYLED(ELEMENT,'position','absolute');
+            STYLED(ELEMENT,'top','0');
+            STYLED(ELEMENT,'bottom','0');
+
+        })
+
         HEADER(DIV,'AppHeader');
 
         DECLARATION('.AppHeader',(ELEMENT)=>{
