@@ -9,6 +9,7 @@ import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditi
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
 import { DEJSON } from "../../../../RESOURCES/FUNCTIONS/DEJSON/Dejson.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
+import { CATERGORIESSEARCHPAGE } from "../CATERGORIESEARCHPAGE/CatergoriesSearchPage.js";
 import { FREEWATCHPAGE } from "../FREEWATCHPAGE/FreeWatchPage.js";
 import { HOMEPAGE } from "../HOMEPAGE/HomePage.js";
 
@@ -41,15 +42,20 @@ const MOVIESDATAPAGE=(DIV)=>{
             STYLED(ELEMENT,'background','Transparent');
             ICONS(ELEMENT,WHITEBACKICON,'BackIcon',()=>{
 
-                CONDITIONER(sessionStorage.getItem('BackPath'),'Free',
+                CONDITIONER(sessionStorage.getItem('BackPath'),'Home',
 
-                ()=>FREEWATCHPAGE(DIV),
+                ()=>HOMEPAGE(DIV),
 
-                ()=>HOMEPAGE(DIV)
+                ()=>CONDITIONER(sessionStorage.getItem('BackPath'),'MoviesSearch',
+
+                ()=>CATERGORIESSEARCHPAGE(DIV),
+
+                ()=>FREEWATCHPAGE(DIV)
                 
                 )
-
                 
+                )
+  
             })
             DECLARATION('.BackIcon',(ELEMENT)=>{
                 STYLED(ELEMENT,'marginLeft','1rem');
