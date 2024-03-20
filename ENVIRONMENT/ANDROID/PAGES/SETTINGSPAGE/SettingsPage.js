@@ -1,7 +1,9 @@
 import { UPDATEAPI } from "../../../../API/Api.js";
 import { WHITEAPPICON } from "../../../../RESOURCES/ASSETS/ICONS/APPICON/WhiteAppIcon.js";
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
+import { WHITEDELETEICON } from "../../../../RESOURCES/ASSETS/ICONS/DELETEICON/WhiteDeleteIcon.js";
 import { WHITEHELPICON } from "../../../../RESOURCES/ASSETS/ICONS/HELPICON/WhiteHelpIcon.js";
+import { WHITEINFORMATIONICON } from "../../../../RESOURCES/ASSETS/ICONS/INFORMATIONICON/WhiteInformationIcon.js";
 import { WHITELOCKICON } from "../../../../RESOURCES/ASSETS/ICONS/LOCKICON/WhiteLockIcon.js";
 import { WHITELOGOUTICON } from "../../../../RESOURCES/ASSETS/ICONS/LOGOUTICON/WhiteLogOutIcon.js";
 import { WHITENOTIFICATIONICON } from "../../../../RESOURCES/ASSETS/ICONS/NOTIFICATION/WhiteNotificationIcon.js";
@@ -52,9 +54,9 @@ const SETTINGSPAGE=(DIV)=>{
 
         BUTTON(ELEMENT,'Update',WHITEAPPICON,'',()=>{WEBSITE(UPDATEAPI)});
 
-        BUTTON(ELEMENT,'App Version',WHITELOCKICON,'',()=>{});
+        BUTTON(ELEMENT,'App Version',WHITEINFORMATIONICON,'',()=>{});
 
-        BUTTON(ELEMENT,'Delete  Account',WHITELOCKICON,'',()=>{});
+        BUTTON(ELEMENT,'Delete  Account',WHITEDELETEICON,'',()=>{});
 
         BUTTON(ELEMENT,'LogOut',WHITELOGOUTICON,'',()=>{
 
