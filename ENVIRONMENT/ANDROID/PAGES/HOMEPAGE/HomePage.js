@@ -14,8 +14,10 @@ import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declara
 import { GETPACKAGE } from "../../../../RESOURCES/FUNCTIONS/GETPACKAGE/GetPackage.js";
 import { REDUX } from "../../../../RESOURCES/FUNCTIONS/REDUX/Redux.js";
 import { SHUFFLE } from "../../../../RESOURCES/FUNCTIONS/SHUFFLE/Shuffle.js";
+import { STORE } from "../../../../RESOURCES/FUNCTIONS/STORE/Store.js";
 import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { NOTIFICATIONS } from "../../../../RESOURCES/PLUGINS/NOTIFICATIONS/Notification.js";
+import { MOVIESDATAPAGE } from "../MOVIESDATAPAGE/MoviesDataPage.js";
 import { USERACCOUNPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 
 const HOMEPAGE=(DIV)=>{
@@ -49,7 +51,13 @@ const HOMEPAGE=(DIV)=>{
                         STYLED(ELEMENT,'borderRadius','10px');
                         STYLED(ELEMENT,'overFlow','hidden');
 
-                        IMAGE(ELEMENT,MOVIESPATH+element.MovieImage,'',()=>{})
+                        IMAGE(ELEMENT,MOVIESPATH+element.MovieImage,'',()=>{
+
+                            STORE('','MovieData',JSON.stringify(element));
+
+                            MOVIESDATAPAGE(DIV);
+
+                        })
 
                         ADD(HOMEDIV,ELEMENT);
 
