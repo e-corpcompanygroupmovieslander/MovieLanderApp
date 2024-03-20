@@ -1,5 +1,6 @@
 import { MOVIESPATH } from "../../../../API/Api.js";
 import { WHITEBACKICON } from "../../../../RESOURCES/ASSETS/ICONS/BACKICON/WhiteBackIcon.js";
+import { ALERTBOX } from "../../../../RESOURCES/COMPONENTS/ALERTBOX/AlertBox.js";
 import { HEADER } from "../../../../RESOURCES/COMPONENTS/HEADER/Header.js";
 import { ICONS } from "../../../../RESOURCES/COMPONENTS/ICONS/Icons.js";
 import { IFRAME } from "../../../../RESOURCES/COMPONENTS/IFRAME/Iframe.js";
@@ -40,21 +41,23 @@ const MOVIESDATAPAGE=(DIV)=>{
 
         CONDITIONER(sessionStorage.getItem('BackPath'),'Home',
 
-            ()=>alert(''),
+            ()=>ALERTBOX(DIV,'Movie Lander ','Under Development'),
             
             ()=>VIEW(DIV,'PlayerHolder')
  
         )
 
         DECLARATION('.PlayerHolder',(ELEMENT)=>{
-            
-            STYLED(ELEMENT,'position','absolute');
+
+            STYLED(ELEMENT,'position','fixed');
             STYLED(ELEMENT,'width','100%');
             STYLED(ELEMENT,'height','100%');
-            STYLED(ELEMENT,'top','0');
-            STYLED(ELEMENT,'marginTop','0');
-            STYLED(ELEMENT,'bottom','0');
+            STYLED(ELEMENT,'borderRadius','0');
             STYLED(ELEMENT,'left','0');
+            STYLED(ELEMENT,'right','0');
+            STYLED(ELEMENT,'top','0');
+            STYLED(ELEMENT,'bottom','0');
+            STYLED(ELEMENT,'marginTop','0');
 
             IFRAME(ELEMENT,'https://www.youtube.com/embed/'+data.MoveTrailer,'YOUTUBEPLAYER')
 
