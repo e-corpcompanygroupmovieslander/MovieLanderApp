@@ -33,32 +33,36 @@ const MOVIESDATAPAGE=(DIV)=>{
 
         })
 
-        console.log(data)
 
+        HEADER(DIV,'AppHeader');
+
+        DECLARATION('.AppHeader',(ELEMENT)=>{
+            STYLED(ELEMENT,'background','Transparent');
+            ICONS(ELEMENT,WHITEBACKICON,'BackIcon',()=>{
+                HOMEPAGE(DIV)
+            })
+            DECLARATION('.BackIcon',(ELEMENT)=>{
+                STYLED(ELEMENT,'marginLeft','1rem');
+                STYLED(ELEMENT,'width','20px');
+                STYLED(ELEMENT,'height','20px');
+                STYLED(ELEMENT,'background','#00000080');
+                STYLED(ELEMENT,'borderRadius','50px');
+                STYLED(ELEMENT,'padding','5px');
+            })
+            TEXT(ELEMENT,'h2',data.MovieName,'Profile',()=>{})
+            DECLARATION('.Profile',(ELEMENT)=>{
+                STYLED(ELEMENT,'fontSize','15px');
+                STYLED(ELEMENT,'marginTop','auto');
+                STYLED(ELEMENT,'marginBottom','auto');
+                STYLED(ELEMENT,'marginRight','1rem');
+                STYLED(ELEMENT,'background','#00000080');
+                STYLED(ELEMENT,'borderRadius','50px');
+                STYLED(ELEMENT,'padding','5px');
+    
+            })
+        })
+    
     })
-
-    HEADER(DIV,'AppHeader');
-
-    DECLARATION('.AppHeader',(ELEMENT)=>{
-        STYLED(ELEMENT,'background','Transparent');
-        ICONS(ELEMENT,WHITEBACKICON,'BackIcon',()=>{
-            HOMEPAGE(DIV)
-        })
-        DECLARATION('.BackIcon',(ELEMENT)=>{
-            STYLED(ELEMENT,'marginLeft','1rem');
-            STYLED(ELEMENT,'width','20px');
-            STYLED(ELEMENT,'height','20px');
-        })
-        TEXT(ELEMENT,'h2','Movie Name','Profile',()=>{})
-        DECLARATION('.Profile',(ELEMENT)=>{
-            STYLED(ELEMENT,'fontSize','20px');
-            STYLED(ELEMENT,'marginTop','auto');
-            STYLED(ELEMENT,'marginBottom','auto');
-            STYLED(ELEMENT,'marginRight','1rem');
-
-        })
-    })
-
 
 }
 
