@@ -8,6 +8,7 @@ import { IMAGE } from "../../../../RESOURCES/COMPONENTS/IMAGE/Image.js";
 import { TEXT } from "../../../../RESOURCES/COMPONENTS/TEXT/Text.js";
 import { VIEW } from "../../../../RESOURCES/COMPONENTS/VIEW/View.js";
 import { CLEAR } from "../../../../RESOURCES/FUNCTIONS/CLEAR/Clear.js"
+import { CONDITION } from "../../../../RESOURCES/FUNCTIONS/CONDITION/Condition.js";
 import { CONDITIONER } from "../../../../RESOURCES/FUNCTIONS/CONDITIONER/Conditioner.js";
 import { DECLARATION } from "../../../../RESOURCES/FUNCTIONS/DECLARATION/Declaration.js";
 import { DEJSON } from "../../../../RESOURCES/FUNCTIONS/DEJSON/Dejson.js";
@@ -15,7 +16,6 @@ import { STYLED } from "../../../../RESOURCES/FUNCTIONS/STYLED/Styled.js";
 import { CATERGORIESSEARCHPAGE } from "../CATERGORIESEARCHPAGE/CatergoriesSearchPage.js";
 import { FREEWATCHPAGE } from "../FREEWATCHPAGE/FreeWatchPage.js";
 import { HOMEPAGE } from "../HOMEPAGE/HomePage.js";
-
 
 const MOVIESDATAPAGE=(DIV)=>{
 
@@ -39,7 +39,7 @@ const MOVIESDATAPAGE=(DIV)=>{
 
         })
 
-        CONDITIONER(sessionStorage.getItem('BackPath'),'Home',
+        CONDITION(sessionStorage.getItem('BackPath')==='Home'||'MoviesSearch',
 
             ()=>ALERTBOX(DIV,'Movie Lander ','Under Development'),
             
