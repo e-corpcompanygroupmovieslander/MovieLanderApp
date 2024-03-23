@@ -36,7 +36,7 @@ const LOGINPAGE=(DIV)=>{
 
     INPUT(DIV,'email','Enter User Email','UserEmail');
 
-    INPUT(DIV,'password','Enter User Email','UserPassword');
+    INPUT(DIV,'password','Enter User Password','UserPassword');
 
     TEXT(DIV,'h3','ForgotPassword?','Forgot',()=>{})
     DECLARATION('.Forgot',(ELEMENT)=>{
