@@ -1,6 +1,7 @@
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 import { PESAPAL } from "./pesapal.js";
+import { STYLED } from "../../../CONNECTION/Connection.js";
 
 const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -22,9 +23,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         sessionStorage.setItem('Yearly','150000');
 
         sessionStorage.setItem('Currency','UGX');
-
-        
-        
+   
     }else{
        
         sessionStorage.setItem('Daily','1');
@@ -50,7 +49,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     <br><br><br><br>
 
-    <div class='Payment'>
+    <div class='Payment' id='dailypay'>
 
         <h1 class='paytitle'>Daily</h1>
 
@@ -58,7 +57,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     </div>
 
-    <div class='Payment'>
+    <div class='Payment' id='Weeklypay'>
 
         <h1 class='paytitle'>Weelky</h1>
 
@@ -66,7 +65,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     </div>
 
-    <div class='Payment'>
+    <div class='Payment'  id='Monthlypay' >
 
         <h1 class='paytitle'>Monthly</h1>
 
@@ -74,7 +73,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     </div>
 
-    <div class='Payment'>
+    <div class='Payment' id='Yearlypay'>
 
         <h1 class='paytitle'>Yearly</h1>
 
@@ -82,10 +81,29 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     
     </div>
 
+    <div class='DetailsPage'></div>
 
     
+    <div class='PaymentPage'></div>
+
     `);
 
+    const CLOSEICON=document.querySelector('.closepayment');
+    
+    const DetailsPage=document.querySelector('.DetailsPage');
+
+
+    if (localStorage.getItem('ModeColour')==='#5C829A') {
+
+        STYLED(DetailsPage,'background','#5C829A');
+
+        
+    } else {
+        
+        STYLED(DetailsPage,'background','#212121');
+        
+    }
+ 
     const BACKICON=document.querySelector('.BackIcon');
 
     BACKICON.addEventListener('click',()=>{
@@ -101,17 +119,207 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
             ANDROIDUSERACCOUNTPAGE(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE);
             
         }
-
-        
+   
     });
 
-    const MTN=document.querySelector('.MTN');
+    const DAILY=document.querySelector('#dailypay');
 
-    MTN.addEventListener('click',()=>{
+    DAILY.addEventListener('click',()=>{
 
-        PESAPAL()
+        localStorage.removeItem('redirect');
 
-        DISPLAY(DIV,`<h1 class='AppName'>Please Wait</h1>`);
+        localStorage.setItem('Amount',sessionStorage.getItem('Daily'));
+
+        DetailsPage.style.display='block';
+
+        DISPLAY(DetailsPage,`
+
+            <h1 class='PaymentMenu'>Features</h1>
+
+            <button>Access To All Movies</button>
+
+            <div class='Payment' id='Yearlypay'>
+
+                <button class='Cancel' id='Cancel'>Cancel</button>
+
+                <button class='Cancel' id='Pay' >Pay</button>
+
+
+            </div>
+        
+        `)
+
+        const Cancel=document.querySelector('#Cancel');
+
+        Cancel.addEventListener('click',()=>{
+    
+            DetailsPage.style.display='none';
+            
+        })    
+
+        const Pay=document.querySelector('#Pay');
+
+        Pay.addEventListener('click',()=>{
+
+            DISPLAY(Pay, `<img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>`);
+
+            PESAPAL()
+
+        });
+
+    });
+
+    const WEEKLY=document.querySelector('#Weeklypay');
+
+    WEEKLY.addEventListener('click',()=>{
+
+        localStorage.removeItem('redirect');
+
+        localStorage.setItem('Amount',sessionStorage.getItem('Weekly'));
+
+        DetailsPage.style.display='block';
+
+        DISPLAY(DetailsPage,`
+
+            <h1 class='PaymentMenu'>Features</h1>
+
+            <button>Access To All Movies</button>
+
+            <button>Access To Community</button>
+
+            <div class='Payment' id='Yearlypay'>
+
+                <button class='Cancel' id='Cancel'>Cancel</button>
+
+                <button class='Cancel' id='Pay' >Pay</button>
+
+            </div>
+        
+        `)
+
+        const Cancel=document.querySelector('#Cancel');
+
+        Cancel.addEventListener('click',()=>{
+    
+            DetailsPage.style.display='none';
+            
+        })    
+
+        const Pay=document.querySelector('#Pay');
+
+        Pay.addEventListener('click',()=>{
+
+            DISPLAY(Pay, `<img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>`);
+
+            PESAPAL()
+
+        });
+
+    });
+
+    const MONTHLY=document.querySelector('#Monthlypay');
+
+    MONTHLY.addEventListener('click',()=>{
+
+        localStorage.removeItem('redirect');
+
+        localStorage.setItem('Amount',sessionStorage.getItem('Monthly'));
+
+        DetailsPage.style.display='block';
+
+        DISPLAY(DetailsPage,`
+
+            <h1 class='PaymentMenu'>Features</h1>
+
+            <button>Access To All Movies</button>
+
+            <button>Access To Community</button>
+
+            <button>1 Week Extra</button>
+
+            <div class='Payment' id='Yearlypay'>
+
+                <button class='Cancel' id='Cancel'>Cancel</button>
+
+                <button class='Cancel' id='Pay' >Pay</button>
+
+            </div>
+        
+        `)
+
+        const Cancel=document.querySelector('#Cancel');
+
+        Cancel.addEventListener('click',()=>{
+    
+            DetailsPage.style.display='none';
+            
+        })    
+
+        const Pay=document.querySelector('#Pay');
+
+        Pay.addEventListener('click',()=>{
+
+            DISPLAY(Pay, `<img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>`);
+
+            PESAPAL()
+
+        });
+
+
+    });
+
+    const YEARLY=document.querySelector('#Yearlypay');
+
+    YEARLY.addEventListener('click',()=>{
+
+        localStorage.removeItem('redirect');
+
+        localStorage.setItem('Amount',sessionStorage.getItem('Yearly'));
+
+        DetailsPage.style.display='block';
+
+        DISPLAY(DetailsPage,`
+
+            <h1 class='PaymentMenu'>Features</h1>
+
+            <button>Access To All Movies</button>
+
+            <button>Access To Community</button>
+
+            <button>3 Months Extra</button>
+
+            <button>Offline Usage</button>
+
+            <button>1gb cloud Storage</button>
+
+            <div class='Payment' id='Yearlypay'>
+
+                <button class='Cancel' id='Cancel'>Cancel</button>
+
+                <button class='Cancel' id='Pay' >Pay</button>
+
+            </div>
+        
+        `)
+
+        const Cancel=document.querySelector('#Cancel');
+
+        Cancel.addEventListener('click',()=>{
+    
+            DetailsPage.style.display='none';
+            
+        })    
+
+        const Pay=document.querySelector('#Pay');
+
+        Pay.addEventListener('click',()=>{
+
+            DISPLAY(Pay, `<img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>`);
+
+            PESAPAL()
+
+        });
+
 
     });
    

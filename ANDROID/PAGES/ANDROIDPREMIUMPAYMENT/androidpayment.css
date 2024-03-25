@@ -24,3 +24,56 @@
     margin-left: auto;
     margin-right: 1rem;
 }
+
+.PaymentPage{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    display: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.PaymentDisplay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.closepayment{
+    position: fixed;
+    margin-top: 1rem;
+    right: 1rem;
+    background: #00000080;
+    padding: 2%;
+    border-radius: 50px;
+}
+
+.DetailsPage{
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    display: none;
+    border-radius: 20px 20px 0px 0px;
+    border: 1px solid black;
+}
+
+.PaymentMenu{
+    position: relative;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+.Cancel{
+    position: relative;
+    width: 40%;
+    background: blue;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}

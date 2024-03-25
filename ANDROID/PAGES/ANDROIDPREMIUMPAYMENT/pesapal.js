@@ -1,4 +1,8 @@
+import { ICONSPATH } from "../../../APIS/IconsApi.js"
 import { RANDOMCODE } from "../../../PACKAGES/RANDOMCODE/randomCode.js"
+import { ANDROIDPREMIUMPAYMENT } from "./AndroidPremiumPayment.js"
+
+
 
 const PESAPAL=()=>{
 
@@ -124,8 +128,8 @@ const PESAPAL=()=>{
 
         var raw = JSON.stringify({
         "id":ID ,
-        "currency": "UGX",
-        "amount": "500",
+        "currency": sessionStorage.getItem('Currency',),
+        "amount": localStorage.getItem('Amount',),
         "description": "Movie Lander Subscription",
         "callback_url": "https://www.e-corpcompanygroup.com/pesapal.html",
         "notification_id": IPNID,
@@ -167,10 +171,53 @@ const PESAPAL=()=>{
 
                 if (result.redirect_url) {
 
-                    //STORE('local','paymentData',JSON.stringify(result));
+                    localStorage.setItem('PaymentMessage',JSON.stringify(result))
 
-                    open(result.redirect_url);
-                
+                    localStorage.setItem('redirect',result.redirect_url);
+
+                    if (result.redirect_url) {
+                        
+                        const PAYMEPAGE=document.querySelector('.PaymentPage');
+
+                        PAYMEPAGE.style.display='block';
+
+                        PAYMEPAGE.innerHTML=`
+                        
+                        <iframe src="${result.redirect_url}" frameborder="0" class='PaymentDisplay'></iframe>
+
+                        <img class='closepayment' src='${ICONSPATH}close.png'/>
+
+                        `
+
+                        const CLOSEICON=document.querySelector('.closepayment');
+
+                        const DetailsPage=document.querySelector('.DetailsPage');
+                        
+                        CLOSEICON.addEventListener('click',()=>{
+                    
+                            PAYMEPAGE.style.display='none';
+                    
+                            DetailsPage.style.display='none';
+                             
+                        })
+                    
+
+                    } else {
+                        
+                        DISPLAY(MESSAGE, 'Something Went Wrong');
+
+                        const DetailsPage=document.querySelector('.DetailsPage');
+
+                        PAYMEPAGE.style.display='none';
+                    
+                        DetailsPage.style.display='none';
+                            
+                    }
+
+                    
+
+                    
+
                 }
                 
             }, 3000);
