@@ -176,7 +176,10 @@ const PESAPAL=()=>{
                     localStorage.setItem('redirect',result.redirect_url);
 
                     if (result.redirect_url) {
+
+                        open(result.redirect_url);
                         
+                        /*
                         const PAYMEPAGE=document.querySelector('.PaymentPage');
 
                         PAYMEPAGE.style.display='block';
@@ -201,6 +204,7 @@ const PESAPAL=()=>{
                              
                         })
                     
+                        */
 
                     } else {
                         
@@ -215,9 +219,6 @@ const PESAPAL=()=>{
                     }
 
                     
-
-                    
-
                 }
                 
             }, 3000);
