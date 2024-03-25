@@ -1,0 +1,16 @@
+.FreeMoviesDiv{
+    position: absolute;
+    top: 60px;
+    background: #00000080;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+}
+
+#freeLoading{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+}

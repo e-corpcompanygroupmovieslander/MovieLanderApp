@@ -1,0 +1,193 @@
+.TrailorPlayer{
+    position: absolute;
+    width: 95%;
+    height: 30%;
+    background: #00000080;
+    left: 2%;
+    top: 45px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.Player{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#MenuIcon{
+    transform: rotate(90deg);
+}
+
+.WatchMovieButton{
+    position: absolute;
+    top: 40%;
+}
+
+.MovieDetailsHolder{
+    position: absolute;
+    top: 50%;
+    background: #00000080;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.DetailsDiv{
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+    background: transparent;
+    text-align: justify;
+}
+ 
+.CloseIcon{
+    position: absolute;
+    background: #00000080;
+    padding: 3% ;
+    border-radius: 0px 0px 25px 25px;
+    left: 45%;
+    top: 0;
+}
+
+.MovieName{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+
+.SegegmetsHolders{
+    position: relative;
+    width: 100%;
+    top: 20px;
+    height: 30%;
+    display: inline-flex;
+    background: #00000080;
+}
+
+.HolderSectionsMovies{
+    position: relative;
+    width: 30%;
+    height: 80%;
+    border-radius: 20px;
+    display: inline-flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+    background: #00000080;
+    border: 1px solid #00808080 ;
+}
+
+.CatergoryHolder{
+    position: relative;
+    width: 30px;
+    height: 30px; 
+}
+
+.CatergoryName{
+    position: absolute;
+    bottom: 0;
+    font-size: 15px;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.MoviePlayer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.BackgroundImage{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.PremiumMessage{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 50px;
+    border-radius: 0px 0px 20px 20px;
+    display: none;
+}
+
+.PremiumMessager{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.CommentsDiv{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 60px;
+    bottom: 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+    background: transparent;
+}
+
+.MessageError{
+    position: relative;
+    margin-top: 20rem;
+    width: 100%;
+    text-align: center;
+}
+
+.CommentsHolder{
+    position: relative;
+    width: 95%;
+    height: auto;
+    background: #00000080;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    left: 2%;
+    border-radius: 5px;
+}
+
+.CommentName{
+    position: relative;
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    left: 1%;
+}
+
+.Comment{
+    position: relative;
+    width: 95%;
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    left: 1%;
+    font-style: italic; 
+    word-wrap: break-word;
+}
+
+.MovieNameComment{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 15px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

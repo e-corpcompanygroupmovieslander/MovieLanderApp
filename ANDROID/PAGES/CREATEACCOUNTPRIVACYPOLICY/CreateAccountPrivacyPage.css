@@ -1,0 +1,53 @@
+.CreateAccountPrivacyPolicy{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.3rem;
+}
+
+.CreateAccountPrivacyPolicyButton{
+    position: relative;
+    bottom: 0;
+    margin-bottom: 1rem;
+    left: 0;
+}
+
+.PrivacyPolicyTitle{
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.SubTopic{
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.Details{
+    position: relative;
+    width: 90%;
+    text-align: left;
+    font-size: 16px; 
+    margin-top: 1rem;
+    margin-bottom: 1rem;  
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.list{
+    width: 95%;
+    position: relative;
+    display: block;
+    left: 1rem;
+    color: gainsboro;
+}

@@ -1,16 +1,31 @@
-import { ANDROIDCONNECTION } from "../ENVIRONMENT/ANDROID/CONNECTION/Connection.js"
-import { CONDITION } from "../RESOURCES/FUNCTIONS/CONDITION/Condition.js"
+import { ICONSPATH } from "../APIS/IconsApi.js";
 
-const VERIFY=(DIV)=>{
+import { ADDPACKAGE } from "../PACKAGES/ADDPACKAGE/AddPackage.js";
 
-    CONDITION(localStorage.getItem('Device')==='Android',
+import { ADDSTORAGE } from "../PACKAGES/ADDSTORAGE/AddStorage.js";
 
-    ()=>ANDROIDCONNECTION(DIV),
+import { CHOOSEFILE, CHOOSENFILE } from "../PACKAGES/CHOOSEFILE/ChooseFile.js";
 
-    ()=>null,
-    
-    )
+import { CLEARCOMPONENTS } from "../PACKAGES/CLEARCOMPONENTS/ClearComponents.js";
 
-}
+import { DELETESTORAGE } from "../PACKAGES/DELETESTORAGE/DeleteStorage.js";
 
-export{VERIFY}
+import { DISPLAYDATA } from "../PACKAGES/DISPLAYDATA/DisplayData.js";
+
+import { GETPACKAGE } from "../PACKAGES/GETPACKAGE/GetPackage.js";
+
+import { GETSTORAGE } from "../PACKAGES/GETSTORAGE/GetStorage.js";
+
+import { OPERATINGSYSTEM } from "../PACKAGES/OPERATIONCHECKER/OperationChecker.js";
+
+import { POSTPACKAGE } from "../PACKAGES/POSTPACKAGE/PostPage.js";
+
+import { REMOVESTORAGE } from "../PACKAGES/REMOVESTORAGE/RemoveStorage.js";
+
+import { SHUFFLEDATA } from "../PACKAGES/SHUFFLEDATA/ShuffleData.js";
+
+import { STYLED } from "../PACKAGES/STYLECOMPONENTS/StyleComponents.js";
+
+import { ZOOMEFFECT } from "../PACKAGES/ZOOMEFFECT/ZoomEffect.js";
+
+export{ICONSPATH,ADDPACKAGE,ADDSTORAGE,CHOOSEFILE,CHOOSENFILE,CLEARCOMPONENTS,DELETESTORAGE,DISPLAYDATA,GETPACKAGE,GETSTORAGE,OPERATINGSYSTEM,POSTPACKAGE,REMOVESTORAGE,STYLED,SHUFFLEDATA,ZOOMEFFECT}

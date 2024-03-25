@@ -1,6 +1,0 @@
-//MIRCOPHONE PLUGIN
-const MIRCOPHONE=()=>{
-
-}
-
-export{MIRCOPHONE}

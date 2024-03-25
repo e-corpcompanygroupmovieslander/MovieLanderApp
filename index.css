@@ -1,1 +1,28 @@
 @import url('./CONNECTION/Connection.css');
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: white;
+    transition: 1s;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    position: fixed;
+    background: #;
+    overflow: hidden;
+    display: block;  
+}
+
+div{
+    position: fixed;
+    background: #5C829A;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}

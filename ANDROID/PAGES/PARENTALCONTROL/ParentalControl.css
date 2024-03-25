@@ -1,0 +1,37 @@
+.MessageDiv{
+    position: absolute;
+    top: 0;
+    height: 0;
+    border-radius: 0px 0px 20px 20px;
+    display: inline-flex;
+
+}
+
+#Message{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+}
+
+
+#PinInput{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+    width: 95%;
+    display: block;
+    
+}
+
+#PinOn{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+    width: 30%;
+    height: 32px;
+    display: none; 
+    left: 65%;
+}

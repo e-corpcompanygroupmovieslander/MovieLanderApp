@@ -20,7 +20,9 @@ document.addEventListener('touchstart', function(event) {
     
 });
 
-const DIV=document.querySelector('body');
+const DIV=document.querySelector('div');
+
+const BODY=document.querySelector('body');
 
 // Now you can use the StatusBar API
 let STATUSMODE = localStorage.getItem('ModeColour');
@@ -36,6 +38,8 @@ if (!STATUSMODE) {
 
 // Set the background color of DIV
 DIV.style.background = STATUSMODE;
+
+BODY.style.background = STATUSMODE;
 
 localStorage.setItem('Device','Android');
 

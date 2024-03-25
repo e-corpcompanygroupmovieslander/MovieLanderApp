@@ -1,0 +1,26 @@
+.AdvertsImage{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 10px;
+}
+
+.LoadingIcon {
+    position: relative;
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+    border: 4px solid #ccc; /* Adjust the border color and thickness as needed */
+    border-top: 4px solid #5C829A; /* Adjust the top border color to give a sense of rotation */
+    border-radius: 50%;
+    animation: spin 1s linear infinite reverse; /* Note the addition of 'reverse' to make it spin in the opposite direction */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); } /* Negative value to spin in the opposite direction */
+}
