@@ -114,6 +114,7 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
 
                                         ADVANCE.ADDSTORAGE('Session', 'UserName', user.UserName);
                                         ADVANCE.ADDSTORAGE('Session', 'UserEmail', user.Email);
+                                        ADVANCE.ADDSTORAGE('local', 'location', user.Location);
                                         ADVANCE.ADDSTORAGE('local', 'Email', user.Email);
                                         ADVANCE.ADDSTORAGE('local', 'Privacy', 'TRUE');
                                         ADVANCE.ADDSTORAGE('local', 'User', user.SecretCode);

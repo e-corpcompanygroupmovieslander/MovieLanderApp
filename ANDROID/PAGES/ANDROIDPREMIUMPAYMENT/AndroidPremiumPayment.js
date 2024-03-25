@@ -13,6 +13,28 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         console.log('Android Version Changed Colour');
         
     }
+
+    if (localStorage.getItem('location')==='Uganda') {
+
+        sessionStorage.setItem('Daily','1000');
+        sessionStorage.setItem('Weekly','5000');
+        sessionStorage.setItem('Monthly','25000');
+        sessionStorage.setItem('Yearly','150000');
+
+        sessionStorage.setItem('Currency','UGX');
+
+        
+        
+    }else{
+       
+        sessionStorage.setItem('Daily','1');
+        sessionStorage.setItem('Weekly','5');
+        sessionStorage.setItem('Monthly','25');
+        sessionStorage.setItem('Yearly','100');
+
+        sessionStorage.setItem('Currency','USD');
+        
+    }
     
     CLEAR(DIV);
 
@@ -27,14 +49,39 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     </div>
 
     <br><br><br><br>
-   
-    <button class='MTN'>
 
-        <h1 class='HolderName'>PESAPAL </h1>
-        
-        <img class='AppIcon' src='${ICONS}peasapal.png'/>
+    <div class='Payment'>
+
+        <h1 class='paytitle'>Daily</h1>
+
+        <h1 class='Amount'>${sessionStorage.getItem('Daily')}${sessionStorage.getItem('Currency')}</h1>
     
-    </button>
+    </div>
+
+    <div class='Payment'>
+
+        <h1 class='paytitle'>Weelky</h1>
+
+        <h1 class='Amount'>${sessionStorage.getItem('Weekly')}${sessionStorage.getItem('Currency')}</h1>
+    
+    </div>
+
+    <div class='Payment'>
+
+        <h1 class='paytitle'>Monthly</h1>
+
+        <h1 class='Amount'>${sessionStorage.getItem('Monthly')}${sessionStorage.getItem('Currency')}</h1>
+    
+    </div>
+
+    <div class='Payment'>
+
+        <h1 class='paytitle'>Yearly</h1>
+
+        <h1 class='Amount'>${sessionStorage.getItem('Yearly')}${sessionStorage.getItem('Currency')}</h1>
+    
+    </div>
+
 
     
     `);

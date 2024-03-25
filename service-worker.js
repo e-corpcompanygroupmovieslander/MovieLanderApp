@@ -1,3 +1,4 @@
+/*
 const staticCacheName = 'Niber Music';
 const dynamicCacheName = 'Niber Music Pages';
 const assets = [
@@ -56,3 +57,5 @@ self.addEventListener('fetch', evt => {
     })
   );
 });
+
+*/
