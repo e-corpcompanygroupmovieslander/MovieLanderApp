@@ -108,7 +108,7 @@ const PESAPAL=()=>{
                     
                         setTimeout(() => {
                         
-                            SUMBITORDER(TOKEN,result.id,result.ipn_id,)
+                            SUMBITORDER(TOKEN,result.ipn_id,)
 
                         }, 2000);
                         
@@ -122,14 +122,14 @@ const PESAPAL=()=>{
     };
 
     //Sumbit Payment
-    const SUMBITORDER=(TOKEN,ID,IPNID,)=>{
+    const SUMBITORDER=(TOKEN,IPNID,)=>{
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Authorization", "Bearer " + TOKEN);
 
         var raw = JSON.stringify({
-        "id":ID ,
+        "id":localStorage.getItem('Email') ,
         "currency": sessionStorage.getItem('Currency',),
         "amount": localStorage.getItem('Amount',),
         "description": "Movie Lander Subscription",
