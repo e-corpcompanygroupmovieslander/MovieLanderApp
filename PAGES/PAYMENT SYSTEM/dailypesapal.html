@@ -23,27 +23,46 @@
 
   <script>
 
-  fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
-    .then(res => {
-      // Get headers as an object
-      const headers = {};
-      res.headers.forEach((value, name) => {
-        headers[name] = value;
-      });
+fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
+  .then(res => {
+    // Extract headers as an object
+    const headers = {};
+    res.headers.forEach((value, name) => {
+      headers[name] = value;
+    });
 
-      // Save headers to local storage
-      localStorage.setItem('headers', JSON.stringify(headers));
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const params = {};
+    for (const [key, value] of urlParams) {
+      params[key] = value;
+    }
 
-      localStorage.setItem('data',JSON.stringify(res.url))
+    // Read response body as text
+    return res.text().then(body => {
+      // Combine all data into an object
+      const requestData = {
+        url: res.url,
+        method: res.method,
+        headers: headers,
+        parameters: params,
+        body: body
+      };
 
-      // Return the response
-      return res;
-    })
-    .then(data => {
-      // Here you can do something with the response data if needed
-      console.log(data);
-    })
-    .catch(error => console.log(error, 'error'));
+      // Save the combined data to local storage
+      localStorage.setItem('requestData', JSON.stringify(requestData));
+
+      // Return the combined data
+      return requestData;
+    });
+  })
+  .then(requestData => {
+    // Here you can access the combined data if needed
+    console.log(requestData);
+  })
+  .catch(error => console.log(error, 'error'));
+
+
 
   </script>
 
