@@ -17,7 +17,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     if (localStorage.getItem('location')==='Uganda') {
 
-        sessionStorage.setItem('Daily','500');
+        sessionStorage.setItem('Daily','1000');
         sessionStorage.setItem('Weekly','5000');
         sessionStorage.setItem('Monthly','25000');
         sessionStorage.setItem('Yearly','150000');
