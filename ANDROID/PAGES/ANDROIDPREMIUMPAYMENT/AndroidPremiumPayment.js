@@ -1,7 +1,8 @@
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 import { PESAPAL } from "./pesapal.js";
-import { SHUFFLEDATA, STYLED } from "../../../CONNECTION/Connection.js";
+import { GETPACKAGE, SHUFFLEDATA, STYLED } from "../../../CONNECTION/Connection.js";
+import { MTNPREMIUMPAYGET } from "../../../APIS/Api.js";
 
 const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -17,7 +18,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     if (localStorage.getItem('location')==='Uganda') {
 
-        sessionStorage.setItem('Daily','500');
+        sessionStorage.setItem('Daily','1000');
         sessionStorage.setItem('Weekly','5000');
         sessionStorage.setItem('Monthly','25000');
         sessionStorage.setItem('Yearly','150000');
@@ -345,7 +346,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             <h1 class='payment'>Enter Reference Number Of Payment From Email</h1>
 
-            <input type='number' placeholder='Enter Reference Number' >
+            <input class='ReferenceNumber' type='number' placeholder='Enter Reference Number' >
 
             <div class='Payment' id='Yearlypay'>
 
@@ -368,14 +369,62 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
         })    
 
         const Pay=document.querySelector('#Pay');
+        
+        const ReferenceNumber=document.querySelector('.ReferenceNumber');
 
         Pay.addEventListener('click',()=>{
 
-            DISPLAY(Pay, `<img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>`);
+            if (ReferenceNumber.value) {
+                
+                DISPLAY(Pay, `<img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>`);  
 
-            PESAPAL()
+                GETPACKAGE(MTNPREMIUMPAYGET,'cors')
 
-        });
+                .then(data=>{
+
+                    const Premiumed = data.find(user => user.User === ReferenceNumber.value);
+
+                    if (Premiumed) {
+                        
+                        if (Premiumed.ExpiryDate >= new Date()) {
+                          
+                            ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
+
+                            console.log(data);
+                            
+                        } else {
+
+                            ADVANCE.REMOVESTORAGE('local', 'Premium');
+                            
+                            alert('Payment Expired');
+
+                            DetailsPage.style.display='none';
+
+                        }
+                        
+
+                    } else {
+                        
+                        ADVANCE.REMOVESTORAGE('local', 'Premium');
+
+                        alert('invalid PayMent')
+
+                        DetailsPage.style.display='none';
+
+                    }
+
+                })
+
+                .catch(error=>console.error(error))
+
+            } else {
+                
+                alert('Enter Your Reference Number');
+
+            }
+
+        })
+            
 
     })
    
