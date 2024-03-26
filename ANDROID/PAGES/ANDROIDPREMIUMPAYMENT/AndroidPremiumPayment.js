@@ -128,7 +128,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         localStorage.removeItem('redirect');
 
-        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
+        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html' + localStorage.getItem('User') )
 
         localStorage.setItem('Amount',sessionStorage.getItem('Daily'));
 
@@ -177,7 +177,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         localStorage.removeItem('redirect');
 
-        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/weeklypesapal.html')
+        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/weeklypesapal.html'  + localStorage.getItem('User') )
 
         localStorage.setItem('Amount',sessionStorage.getItem('Weekly'));
 
@@ -227,7 +227,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         localStorage.removeItem('redirect');
 
-        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/monthlypesapal.html')
+        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/monthlypesapal.html' + localStorage.getItem('User'))
 
         localStorage.setItem('Amount',sessionStorage.getItem('Monthly'));
 
@@ -279,8 +279,8 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     YEARLY.addEventListener('click',()=>{
 
         localStorage.removeItem('redirect');
-
-        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/yearlypesapal.html')
+ 
+        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/yearlypesapal.html' + localStorage.getItem('User'))
 
         localStorage.setItem('Amount',sessionStorage.getItem('Yearly'));
 
