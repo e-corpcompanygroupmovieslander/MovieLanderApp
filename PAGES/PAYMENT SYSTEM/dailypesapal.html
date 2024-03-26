@@ -80,7 +80,7 @@
     const storedParameters = localStorage.getItem('parameters');
     if (storedParameters) {
       console.log(JSON.parse(storedParameters));
-      localStorage.setItem('user',storedParameters.OrderMerchantReference);
+      localStorage.setItem('user',JSON.stringify(storedParameters.OrderMerchantReference));
     } else {
       console.log('No parameters found in local storage');
     }
