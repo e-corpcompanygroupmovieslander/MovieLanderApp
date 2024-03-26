@@ -129,7 +129,7 @@ const PESAPAL=()=>{
         myHeaders.append("Authorization", "Bearer " + TOKEN);
 
         var raw = JSON.stringify({
-        "id":localStorage.getItem('Email') ,
+        "id":localStorage.getItem('User') ,
         "currency": sessionStorage.getItem('Currency'),
         "amount": localStorage.getItem('Amount'),
         "description": "Movie Lander Subscription",
