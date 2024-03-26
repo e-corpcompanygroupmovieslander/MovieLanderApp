@@ -11,7 +11,7 @@
 
   <h1>MOVIE LANDER </h1>
 
-  <h1>Pay Ment Made For Yearly Subscription</h1>
+  <h1>Pay Ment Made For YEARLY Subscription</h1>
 
   <h1>Thank You For Pay For Your </h1>
   
@@ -56,12 +56,8 @@
         // Calculate expiration time (1 year)
         const expirationTime = new Date(currentTime.getTime() + (365 * 24 * 60 * 60 * 1000));
 
-        // Save expiration time parts separately
-        localStorage.setItem('currentdate', currentTime.toDateString());
-        localStorage.setItem('currenttime', currentTime.toLocaleTimeString());
-        localStorage.setItem('expiryDate', expirationTime.toDateString());
-        localStorage.setItem('expiryTime', expirationTime.toLocaleTimeString());
-        localStorage.setItem('expiryHours', expirationTime.getHours().toString());
+        // Save expiration time in ISO 8601 format
+        localStorage.setItem('expiryTime', expirationTime.toISOString());
 
         // Save the combined data to local storage
         localStorage.setItem('requestData', JSON.stringify(requestData));
@@ -89,7 +85,7 @@
         "PayeeName":"MovieLander",
         "Id":JSON.parse(storedParameters).OrderTrackingId,
         "PayDate":localStorage.getItem('currentdate')+localStorage.getItem('currenttime'),
-        "ExpiryDate":localStorage.getItem('expiryDate')+localStorage.getItem('expiryTime'),
+        "ExpiryDate":localStorage.getItem('expiryTime'),
         "Message":"Movie Lander"
       }
 
