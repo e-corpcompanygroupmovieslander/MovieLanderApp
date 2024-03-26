@@ -23,49 +23,57 @@
 
   <script>
 
-fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
-  .then(response => {
-    // Extract headers
-    const headers = {};
-    response.headers.forEach((value, name) => {
-      headers[name] = value;
-    });
+  fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
+    .then(res => {
+      // Extract headers as an object
+      const headers = {};
+      res.headers.forEach((value, name) => {
+        headers[name] = value;
+      });
 
-    // Extract parameters from URL
-    const url = new URL('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html');
-    const params = {};
-    for (const [key, value] of url.searchParams) {
-      params[key] = value;
-    }
+      // Get URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const params = {};
+      for (const [key, value] of urlParams) {
+        params[key] = value;
+      }
 
-    // Get current time
+      // Read response body as text
+      return res.text().then(body => {
+        // Combine all data into an object
+        const requestData = {
+          url: res.url,
+          method: res.method,
+          headers: headers,
+          parameters: params,
+          body: body
+        };
+
+          // Get current time
     const currentTime = new Date();
 
     // Calculate expiration time (24 hours)
     const expirationTime = new Date(currentTime.getTime() + (24 * 60 * 60 * 1000));
 
-    // Combine headers, parameters, and metadata
-    const data = {
-      headers: headers,
-      parameters: params,
-      storageDate: currentTime.toLocaleDateString(),
-      storageTime: currentTime.toLocaleTimeString(),
-      storageHours: currentTime.getHours(),
-      expiryDate: expirationTime.toLocaleDateString(),
-      expiryTime: expirationTime.toLocaleTimeString(),
-      expiryHours: expirationTime.getHours()
-    };
+    // Save expiration time parts separately
+    localStorage.setItem('currentdate', currentTime.toDateString());
+    localStorage.setItem('currenttime', currentTime.toLocaleTimeString());
+    localStorage.setItem('expiryDate', expirationTime.toDateString());
+    localStorage.setItem('expiryTime', expirationTime.toLocaleTimeString());
+    localStorage.setItem('expiryHours', expirationTime.getHours().toString());
 
-    // Save to local storage
-    localStorage.setItem('requestData', JSON.stringify(data));
+        // Save the combined data to local storage
+        localStorage.setItem('requestData', JSON.stringify(requestData));
 
-    // Return combined data
-    return data;
-  })
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => console.error(error));
+        // Return the combined data
+        return requestData;
+      });
+    })
+    .then(requestData => {
+      // Here you can access the combined data if needed
+      console.log(requestData);
+    })
+    .catch(error => console.log(error, 'error'));
 
 
 
