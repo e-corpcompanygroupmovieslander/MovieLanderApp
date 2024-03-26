@@ -1,3 +1,4 @@
+/*
 const staticCacheName = 'Movie Lander';
 const dynamicCacheName = 'Movie_Lander_Pages';
 const assets = [
@@ -56,4 +57,6 @@ self.addEventListener('fetch', evt => {
     })
   );
 });
+
+*/
 

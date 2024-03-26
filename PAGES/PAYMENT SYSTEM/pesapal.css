@@ -1,4 +1,3 @@
-@import url('./CONNECTION/Connection.css');
 *{
     padding: 0;
     margin: 0;
@@ -16,13 +15,13 @@ body{
     background: #5C829A;
     overflow: hidden;
     display: block;  
-}
-
-div{
-    position: fixed;
-    background: #5C829A;
     width: 100%;
     height: 100%;
-    display: block;
-    overflow: hidden;
+}
+
+h1{
+    position: relative;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
