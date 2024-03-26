@@ -72,15 +72,38 @@
     })
     .then(requestData => {
       // Here you can access the combined data if needed
-      console.log(requestData);
+      //console.log(requestData);
     })
     .catch(error => console.log(error, 'error'));
 
     // Retrieving parameters from local storage and logging them
     const storedParameters = localStorage.getItem('parameters');
     if (storedParameters) {
-      console.log(JSON.parse(storedParameters));
+      //console.log(JSON.parse(storedParameters));
       localStorage.setItem('user',JSON.stringify(JSON.parse(storedParameters).OrderMerchantReference));
+
+      const DATA={
+        "User":JSON.parse(storedParameters).OrderMerchantReference,
+        "AmountPaid":"DAILY",
+        "PaidTo":"Movie Lander",
+        "PayeeName":"MovieLander",
+        "Id":localStorage.getItem('user'),
+        "PayDate":localStorage.getItem('currentdate')+localStorage.getItem('currenttime'),
+        "ExpiryDate":localStorage.getItem('expiryDate')+localStorage.getItem('expiryTime')
+      }
+
+      fetch('https://script.google.com/macros/s/AKfycbwgGvYpjnmCe3h6SKdyIlKajs5fuN2287dXQqQ2VWTKfNMBY1mIKHlSDai8PY__u-pb/exec',{
+        method:"POST",
+        mode:'no-cors',
+        body:JSON.stringify(DATA)
+      })
+
+      .then(res=>res.text())
+      .then(data =>{
+        console.log(data);
+      })
+      .catch(error=>console.log(error))
+
     } else {
       console.log('No parameters found in local storage');
     }
