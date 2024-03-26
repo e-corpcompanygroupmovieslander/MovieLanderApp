@@ -130,8 +130,8 @@ const PESAPAL=()=>{
 
         var raw = JSON.stringify({
         "id":localStorage.getItem('Email') ,
-        "currency": sessionStorage.getItem('Currency',),
-        "amount": localStorage.getItem('Amount',),
+        "currency": sessionStorage.getItem('Currency'),
+        "amount": localStorage.getItem('Amount'),
         "description": "Movie Lander Subscription",
         "callback_url": localStorage.getItem('backurl'),
         "notification_id": IPNID,
@@ -139,7 +139,7 @@ const PESAPAL=()=>{
             "email_address": localStorage.getItem('Email'),
             "phone_number":"" ,
             "country_code": "",
-            "first_name": "",
+            "first_name": localStorage.getItem('Email'),
             "middle_name": "",
             "last_name": "",
             "line_1": "",
