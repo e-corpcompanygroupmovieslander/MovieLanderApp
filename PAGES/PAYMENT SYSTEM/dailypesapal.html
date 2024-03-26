@@ -20,6 +20,7 @@
   <button>BACK TO MOVIE LANDER</button>
 
   <script>
+    // Fetching data and storing it in local storage
     fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
     .then(res => {
       // Extract headers as an object
@@ -74,6 +75,15 @@
       console.log(requestData);
     })
     .catch(error => console.log(error, 'error'));
+
+    // Retrieving parameters from local storage and logging them
+    const storedParameters = localStorage.getItem('parameters');
+    if (storedParameters) {
+      console.log(JSON.parse(storedParameters));
+      localStorage.setItem('user',storedParameters.OrderMerchantReference);
+    } else {
+      console.log('No parameters found in local storage');
+    }
   </script>
 </body>
 </html>
