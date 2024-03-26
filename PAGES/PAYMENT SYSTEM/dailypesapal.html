@@ -49,7 +49,7 @@
           body: body
         };
 
-        localStorage.setItem('para',requestData.parameters)
+        localStorage.setItem('para',JSON.stringify(requestData.parameters))
 
           // Get current time
     const currentTime = new Date();
