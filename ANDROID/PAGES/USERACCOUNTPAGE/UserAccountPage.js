@@ -1,4 +1,4 @@
-import { STYLED } from "../../../CONNECTION/Connection.js";
+import { SHUFFLEDATA, STYLED } from "../../../CONNECTION/Connection.js";
 import { ANDROIDPREMIUMPAYMENT } from "../ANDROIDPREMIUMPAYMENT/AndroidPremiumPayment.js";
 import { ANDROIDCOMMUNITYPAGE } from "../COMMUNITYPAGE/CommunityPage.js";
 import { ANDROIDCONTACTUS } from "../CONTACTUSPAGE/ContactUsPage.js";

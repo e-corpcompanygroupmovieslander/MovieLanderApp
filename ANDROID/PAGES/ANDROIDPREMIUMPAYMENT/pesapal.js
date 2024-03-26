@@ -21,6 +21,35 @@ const PESAPAL=()=>{
 
     }
 
+    const DATA = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 0,
+        2, 3, 4, 5, 6, 7, 8, 9, 0, 1,
+        3, 4, 5, 6, 7, 8, 9, 0, 1, 2,
+        4, 5, 6, 7, 8, 9, 0, 1, 2, 3,
+        5, 6, 7, 8, 9, 0, 1, 2, 3, 4,
+        6, 7, 8, 9, 0, 1, 2, 3, 4, 5,
+        7, 8, 9, 0, 1, 2, 3, 4, 5, 6,
+        8, 9, 0, 1, 2, 3, 4, 5, 6, 7,
+        9, 0, 1, 2, 3, 4, 5, 6, 7, 8
+    ];
+    
+    const SHUFFLEDATA = (array) => {
+        const shuffledArray = [...array]; // Create a copy of the array to avoid modifying the original
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+        // Save the shuffled array to sessionStorage
+        sessionStorage.setItem('Site', shuffledArray);
+    };
+    
+    SHUFFLEDATA(DATA);
+    
+
+
+    SHUFFLEDATA(DATA)
+
+
     //Create Token
     const TOKEN = () => {
         const raw = JSON.stringify({
@@ -64,10 +93,6 @@ const PESAPAL=()=>{
             .catch(error => console.log('error', error));
     };
 
-    RANDOMCODE(1234567890,(data)=>{
-        
-        sessionStorage.setItem('Site',data);
-    })
 
     //Register IPN
     const REGISTERIPN = (TOKEN,) => {
@@ -77,7 +102,7 @@ const PESAPAL=()=>{
         myHeaders.append("Authorization", "Bearer " + TOKEN);
 
         const raw = JSON.stringify({
-            "url": 'https://www.e-corpcompanygroup'+sessionStorage.getItem('Site'),
+            "url": 'https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/'+sessionStorage.getItem('Site'),
             "ipn_notification_type": "GET",
         });
 
@@ -108,7 +133,7 @@ const PESAPAL=()=>{
                     
                         setTimeout(() => {
                         
-                            SUMBITORDER(TOKEN,result.ipn_id,)
+                            SUMBITORDER(TOKEN,result.id,result.ipn_id,)
 
                         }, 2000);
                         
@@ -122,14 +147,14 @@ const PESAPAL=()=>{
     };
 
     //Sumbit Payment
-    const SUMBITORDER=(TOKEN,IPNID,)=>{
+    const SUMBITORDER=(TOKEN,ID,IPNID,)=>{
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Authorization", "Bearer " + TOKEN);
 
         var raw = JSON.stringify({
-        "id":localStorage.getItem('User') ,
+        "id":ID,
         "currency": sessionStorage.getItem('Currency'),
         "amount": localStorage.getItem('Amount'),
         "description": "Movie Lander Subscription",
@@ -179,7 +204,7 @@ const PESAPAL=()=>{
 
                     if (result.redirect_url) {
 
-                        open(result.redirect_url);
+                       open(result.redirect_url);
                         
                         /*
                         const PAYMEPAGE=document.querySelector('.PaymentPage');

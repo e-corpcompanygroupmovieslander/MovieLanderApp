@@ -1,7 +1,7 @@
 import { MOVIESETUPPAGE } from "../MOVIESETUPPAGE/MovieSetUpPage.js";
 import { ANDROIDUSERACCOUNTPAGE } from "../USERACCOUNTPAGE/UserAccountPage.js";
 import { PESAPAL } from "./pesapal.js";
-import { STYLED } from "../../../CONNECTION/Connection.js";
+import { SHUFFLEDATA, STYLED } from "../../../CONNECTION/Connection.js";
 
 const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
@@ -48,6 +48,8 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     </div>
 
     <br><br><br><br>
+
+    <button class='confirmpayment'> Confirm My Payment </button>
 
     <div class='Payment' id='dailypay'>
 
@@ -330,6 +332,52 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
 
     });
+
+    const confirmpayment=document.querySelector('.confirmpayment');
+
+    confirmpayment.addEventListener('click',()=>{
+
+        DetailsPage.style.display='block';
+
+        DISPLAY(DetailsPage,`
+
+            <h1 class='PaymentMenu'>PAYMENT REFERENCE</h1>
+
+            <h1 class='payment'>Enter Reference Number Of Payment From Email</h1>
+
+            <input type='number' placeholder='Enter Reference Number' >
+
+            <div class='Payment' id='Yearlypay'>
+
+                <button class='Cancel' id='Cancel'>Cancel</button>
+
+                <button class='Cancel' id='Pay' >Pay</button>
+
+            </div>
+
+            <br><br>
+        
+        `)
+
+        const Cancel=document.querySelector('#Cancel');
+
+        Cancel.addEventListener('click',()=>{
+    
+            DetailsPage.style.display='none';
+            
+        })    
+
+        const Pay=document.querySelector('#Pay');
+
+        Pay.addEventListener('click',()=>{
+
+            DISPLAY(Pay, `<img  id='LoadingIcon' class='LoadingIcon' src='${ICONS}loading.png'/>`);
+
+            PESAPAL()
+
+        });
+
+    })
    
 
 }
