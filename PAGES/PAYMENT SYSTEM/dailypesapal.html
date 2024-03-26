@@ -89,7 +89,8 @@
         "PayeeName":"MovieLander",
         "Id":JSON.parse(storedParameters).OrderTrackingId,
         "PayDate":localStorage.getItem('currentdate')+localStorage.getItem('currenttime'),
-        "ExpiryDate":localStorage.getItem('expiryDate')+localStorage.getItem('expiryTime')
+        "ExpiryDate":localStorage.getItem('expiryDate')+localStorage.getItem('expiryTime'),
+        "Message":"Movie Lander"
       }
 
       fetch('https://script.google.com/macros/s/AKfycbwgGvYpjnmCe3h6SKdyIlKajs5fuN2287dXQqQ2VWTKfNMBY1mIKHlSDai8PY__u-pb/exec',{
