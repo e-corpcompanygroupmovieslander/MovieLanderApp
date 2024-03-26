@@ -87,7 +87,7 @@
         "AmountPaid":"DAILY",
         "PaidTo":"Movie Lander",
         "PayeeName":"MovieLander",
-        "Id":localStorage.getItem('user'),
+        "Id":JSON.parse(storedParameters).OrderTrackingId,
         "PayDate":localStorage.getItem('currentdate')+localStorage.getItem('currenttime'),
         "ExpiryDate":localStorage.getItem('expiryDate')+localStorage.getItem('expiryTime')
       }
