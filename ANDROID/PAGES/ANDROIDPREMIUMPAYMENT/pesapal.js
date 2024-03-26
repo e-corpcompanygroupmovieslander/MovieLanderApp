@@ -98,6 +98,8 @@ const PESAPAL=()=>{
             .then(response => response.json())
             .then(result => {
 
+                localStorage.setItem('id',result.id);
+
                 console.log(result)
 
                 if (result.status==='200') {
@@ -131,7 +133,7 @@ const PESAPAL=()=>{
         "currency": sessionStorage.getItem('Currency',),
         "amount": localStorage.getItem('Amount',),
         "description": "Movie Lander Subscription",
-        "callback_url": "https://www.e-corpcompanygroup.com/pesapal.html",
+        "callback_url": localStorage.getItem('backurl'),
         "notification_id": IPNID,
         "billing_address": {
             "email_address": localStorage.getItem('Email'),
@@ -186,7 +188,7 @@ const PESAPAL=()=>{
 
                         PAYMEPAGE.innerHTML=`
                         
-                        <iframe src="${result.redirect_url}" frameborder="0" class='PaymentDisplay'></iframe>
+                        <iframe src="${localStorage.getItem('redirect')}" frameborder="0" class='PaymentDisplay'></iframe>
 
                         <img class='closepayment' src='${ICONSPATH}close.png'/>
 
@@ -203,9 +205,8 @@ const PESAPAL=()=>{
                             DetailsPage.style.display='none';
                              
                         })
-                    
                         */
-
+                    
                     } else {
                         
                         DISPLAY(MESSAGE, 'Something Went Wrong');

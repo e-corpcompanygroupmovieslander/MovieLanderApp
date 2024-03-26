@@ -17,7 +17,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     if (localStorage.getItem('location')==='Uganda') {
 
-        sessionStorage.setItem('Daily','1000');
+        sessionStorage.setItem('Daily','500');
         sessionStorage.setItem('Weekly','5000');
         sessionStorage.setItem('Monthly','25000');
         sessionStorage.setItem('Yearly','150000');
@@ -128,6 +128,8 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         localStorage.removeItem('redirect');
 
+        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
+
         localStorage.setItem('Amount',sessionStorage.getItem('Daily'));
 
         DetailsPage.style.display='block';
@@ -174,6 +176,8 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     WEEKLY.addEventListener('click',()=>{
 
         localStorage.removeItem('redirect');
+
+        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
 
         localStorage.setItem('Amount',sessionStorage.getItem('Weekly'));
 
@@ -222,6 +226,8 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     MONTHLY.addEventListener('click',()=>{
 
         localStorage.removeItem('redirect');
+
+        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
 
         localStorage.setItem('Amount',sessionStorage.getItem('Monthly'));
 
@@ -273,6 +279,8 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     YEARLY.addEventListener('click',()=>{
 
         localStorage.removeItem('redirect');
+
+        localStorage.setItem('backurl','https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
 
         localStorage.setItem('Amount',sessionStorage.getItem('Yearly'));
 

@@ -23,7 +23,27 @@
 
   <script>
 
-    fetch()
+  fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
+    .then(res => {
+      // Get headers as an object
+      const headers = {};
+      res.headers.forEach((value, name) => {
+        headers[name] = value;
+      });
+
+      // Save headers to local storage
+      localStorage.setItem('headers', JSON.stringify(headers));
+
+      localStorage.setItem('data',JSON.stringify(res.url))
+
+      // Return the response
+      return res;
+    })
+    .then(data => {
+      // Here you can do something with the response data if needed
+      console.log(data);
+    })
+    .catch(error => console.log(error, 'error'));
 
   </script>
 
