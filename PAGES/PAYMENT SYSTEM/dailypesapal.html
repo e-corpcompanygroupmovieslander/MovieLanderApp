@@ -44,17 +44,16 @@ fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAY
     // Calculate expiration time (24 hours)
     const expirationTime = new Date(currentTime.getTime() + (24 * 60 * 60 * 1000));
 
-    // Save expiration time parts separately
-    localStorage.setItem('CurrentDate', currentTime);
-    localStorage.setItem('expiryDate', expirationTime.toDateString());
-    localStorage.setItem('expiryTime', expirationTime.toLocaleTimeString());
-    localStorage.setItem('expiryHours', expirationTime.getHours().toString());
-
     // Combine headers, parameters, and metadata
     const data = {
       headers: headers,
       parameters: params,
-      storageTime: currentTime.getTime()
+      storageDate: currentTime.toLocaleDateString(),
+      storageTime: currentTime.toLocaleTimeString(),
+      storageHours: currentTime.getHours(),
+      expiryDate: expirationTime.toLocaleDateString(),
+      expiryTime: expirationTime.toLocaleTimeString(),
+      expiryHours: expirationTime.getHours()
     };
 
     // Save to local storage
@@ -67,6 +66,7 @@ fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAY
     console.log(data);
   })
   .catch(error => console.error(error));
+
 
 
   </script>
