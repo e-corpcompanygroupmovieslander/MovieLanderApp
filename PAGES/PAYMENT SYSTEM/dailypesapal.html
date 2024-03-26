@@ -9,8 +9,6 @@
 </head>
 <body>
 
-
-
   <h1>MOVIE LANDER </h1>
 
   <h1>Pay Ment Made For Daily Subscription</h1>
@@ -22,8 +20,7 @@
   <button>BACK TO MOVIE LANDER</button>
 
   <script>
-
-  fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
+    fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
     .then(res => {
       // Extract headers as an object
       const headers = {};
@@ -49,20 +46,21 @@
           body: body
         };
 
-        localStorage.setItem('para',JSON.stringify(requestData.parameters))
+        // Save parameters as JSON
+        localStorage.setItem('parameters', JSON.stringify(requestData.parameters));
 
-          // Get current time
-    const currentTime = new Date();
+        // Get current time
+        const currentTime = new Date();
 
-    // Calculate expiration time (24 hours)
-    const expirationTime = new Date(currentTime.getTime() + (24 * 60 * 60 * 1000));
+        // Calculate expiration time (24 hours)
+        const expirationTime = new Date(currentTime.getTime() + (24 * 60 * 60 * 1000));
 
-    // Save expiration time parts separately
-    localStorage.setItem('currentdate', currentTime.toDateString());
-    localStorage.setItem('currenttime', currentTime.toLocaleTimeString());
-    localStorage.setItem('expiryDate', expirationTime.toDateString());
-    localStorage.setItem('expiryTime', expirationTime.toLocaleTimeString());
-    localStorage.setItem('expiryHours', expirationTime.getHours().toString());
+        // Save expiration time parts separately
+        localStorage.setItem('currentdate', currentTime.toDateString());
+        localStorage.setItem('currenttime', currentTime.toLocaleTimeString());
+        localStorage.setItem('expiryDate', expirationTime.toDateString());
+        localStorage.setItem('expiryTime', expirationTime.toLocaleTimeString());
+        localStorage.setItem('expiryHours', expirationTime.getHours().toString());
 
         // Save the combined data to local storage
         localStorage.setItem('requestData', JSON.stringify(requestData));
@@ -76,12 +74,6 @@
       console.log(requestData);
     })
     .catch(error => console.log(error, 'error'));
-
-
-
   </script>
-
-
-    
 </body>
 </html>
