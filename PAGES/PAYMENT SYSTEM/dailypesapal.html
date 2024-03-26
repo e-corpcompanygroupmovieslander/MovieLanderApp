@@ -24,44 +24,48 @@
   <script>
 
 fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
-  .then(res => {
-    // Extract headers as an object
+  .then(response => {
+    // Extract headers
     const headers = {};
-    res.headers.forEach((value, name) => {
+    response.headers.forEach((value, name) => {
       headers[name] = value;
     });
 
-    // Get URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
+    // Extract parameters from URL
+    const url = new URL('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html');
     const params = {};
-    for (const [key, value] of urlParams) {
+    for (const [key, value] of url.searchParams) {
       params[key] = value;
     }
 
-    // Read response body as text
-    return res.text().then(body => {
-      // Combine all data into an object
-      const requestData = {
-        url: res.url,
-        method: res.method,
-        headers: headers,
-        parameters: params,
-        body: body
-      };
+    // Get current time
+    const currentTime = new Date();
 
-      // Save the combined data to local storage
-      localStorage.setItem('requestData', JSON.stringify(requestData));
+    // Calculate expiration time (24 hours)
+    const expirationTime = new Date(currentTime.getTime() + (24 * 60 * 60 * 1000));
 
-      // Return the combined data
-      return requestData;
-    });
+    // Save expiration time parts separately
+    localStorage.setItem('expiryDate', expirationTime.toDateString());
+    localStorage.setItem('expiryTime', expirationTime.toLocaleTimeString());
+    localStorage.setItem('expiryHours', expirationTime.getHours().toString());
+
+    // Combine headers, parameters, and metadata
+    const data = {
+      headers: headers,
+      parameters: params,
+      storageTime: currentTime.getTime()
+    };
+
+    // Save to local storage
+    localStorage.setItem('requestData', JSON.stringify(data));
+
+    // Return combined data
+    return data;
   })
-  .then(requestData => {
-    // Here you can access the combined data if needed
-    console.log(requestData);
+  .then(data => {
+    console.log(data);
   })
-  .catch(error => console.log(error, 'error'));
-
+  .catch(error => console.error(error));
 
 
   </script>
