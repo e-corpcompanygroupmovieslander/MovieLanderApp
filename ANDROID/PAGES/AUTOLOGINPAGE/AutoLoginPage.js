@@ -41,7 +41,7 @@ const ANDROIDAUTOLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                         .then(res => res.json())
                         .then((result) => {
 
-                            const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
+                            const Premiumed = result.find(user => user.User === localStorage.getItem('Email') && new Date(user.ExpiryDate) >= new Date());
 
                             if (Premiumed) {
                                 

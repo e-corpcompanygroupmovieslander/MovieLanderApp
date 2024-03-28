@@ -50,8 +50,6 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     <br><br><br><br>
 
-    <button class='confirmpayment'> Confirm My Payment </button>
-
     <div class='Payment' id='dailypay'>
 
         <h1 class='paytitle'>Daily</h1>

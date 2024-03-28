@@ -61,7 +61,7 @@ const ANDROIDLOGINPAGE = (DIV, ADD, CLEAR, DISPLAY, ICONS, ADVANCE) => {
                                         fetch(MTNPREMIUMPAYGET)
                                             .then(res => res.json())
                                             .then((result) => {
-                                                const Premiumed = result.find(user => user.User === localStorage.getItem('User') && new Date(user.ExpiryDate) >= new Date());
+                                                const Premiumed = result.find(user => user.User === localStorage.getItem('Email') && new Date(user.ExpiryDate) >= new Date());
                                                 if (Premiumed) {
                                                     
                                                     ADVANCE.ADDSTORAGE('local', 'Premium', 'TRUE');
