@@ -120,7 +120,7 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     const DARKMODE=document.querySelector('.DarkModeIcon');
 
-    if (localStorage.getItem('ModeColour')==='#5C829A') {
+    if (localStorage.getItem('ModeColour')==='#311f68') {
 
         STYLED(DARKMODE,'display','none');
 
@@ -170,7 +170,7 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     DARKMODE.onclick=()=>{
 
-        DIV.style.background='#5C829A';
+        DIV.style.background='#311f68';
 
         STYLED(DARKMODE,'display','none');
 
@@ -178,7 +178,7 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
         if (localStorage.getItem('Device')==='Android') {
 
-            ADVANCE.ADDSTORAGE('local','ModeColour','#5C829A');
+            ADVANCE.ADDSTORAGE('local','ModeColour','#311f68');
 
             if (localStorage.getItem('SafeArea')==='TRUE') {
 
@@ -186,7 +186,7 @@ const ANDROIDUSERACCOUNTPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
             } else {
                
-                StatusBar.backgroundColorByHexString('#5C829A');
+                StatusBar.backgroundColorByHexString('#311f68');
                 
             }
 

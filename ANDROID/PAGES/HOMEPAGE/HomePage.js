@@ -137,12 +137,13 @@ const ANDROIDHOMEPAGE=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
     });
 
-    if (localStorage.getItem('ModeColour')==='#5C829A') {
+    if (localStorage.getItem('ModeColour')==='#311f68') {
 
-        RoundFooter.style.background='#5C829A';
+        RoundFooter.style.background='#311f6895';
      
     
     } else {
+        
         
         RoundFooter.style.background='#00000080';
     

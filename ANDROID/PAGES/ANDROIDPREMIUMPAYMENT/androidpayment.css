@@ -1,12 +1,12 @@
 .Payment{
     position: relative;
-    background: black;
+    background: #5b59ad;
     width: 95%;
     left: 2%;
     height: 100px;
     display: inline-flex;
-    border-radius: 20px;
-    margin-top: 0.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
 }
 
 .paytitle{
@@ -58,7 +58,7 @@
     bottom: 0;
     display: none;
     border-radius: 20px 20px 0px 0px;
-    border: 1px solid black;
+    box-shadow: 0px 0px 10px 2px #111111;
 }
 
 .PaymentMenu{
@@ -71,7 +71,17 @@
 .Cancel{
     position: relative;
     width: 40%;
-    background: blue;
+    background: #cc0000;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pay{
+    position: relative;
+    width: 40%;
+    background: #009900;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;

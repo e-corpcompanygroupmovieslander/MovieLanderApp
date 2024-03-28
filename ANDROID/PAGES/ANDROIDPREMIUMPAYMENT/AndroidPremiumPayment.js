@@ -94,9 +94,9 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
     const DetailsPage=document.querySelector('.DetailsPage');
 
 
-    if (localStorage.getItem('ModeColour')==='#5C829A') {
+    if (localStorage.getItem('ModeColour')==='#311f68') {
 
-        STYLED(DetailsPage,'background','#5C829A');
+        STYLED(DetailsPage,'background','#311f68');
 
         
     } else {
@@ -145,7 +145,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <button class='Cancel' id='Cancel'>Cancel</button>
 
-                <button class='Cancel' id='Pay' >Pay</button>
+                <button class='pay' id='Pay' >Pay</button>
 
 
             </div>
@@ -196,7 +196,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <button class='Cancel' id='Cancel'>Cancel</button>
 
-                <button class='Cancel' id='Pay' >Pay</button>
+                <button class='pay' id='Pay' >Pay</button>
 
             </div>
         
@@ -248,7 +248,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <button class='Cancel' id='Cancel'>Cancel</button>
 
-                <button class='Cancel' id='Pay' >Pay</button>
+                <button class='pay' id='Pay' >Pay</button>
 
             </div>
         
@@ -305,7 +305,7 @@ const ANDROIDPREMIUMPAYMENT=(DIV,ADD,CLEAR,DISPLAY,ICONS,ADVANCE)=>{
 
                 <button class='Cancel' id='Cancel'>Cancel</button>
 
-                <button class='Cancel' id='Pay' >Pay</button>
+                <button class='pay' id='Pay' >Pay</button>
 
             </div>
         

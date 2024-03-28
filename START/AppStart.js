@@ -5,7 +5,23 @@ import { WINDOWSAUTOLOGIN } from "../WINDOWS/FUNCTIONS/AUTOLOGIN/WindowsAutoLogi
 
 
 
+
 const CONNECTION=(DIV)=>{
+
+    if (localStorage.getItem('ModeColour')==='#311f68') {
+
+        ADVANCE.STYLED(DIV,'background','#212121');    
+        
+        localStorage.setItem('ModeColour','#212121')
+        
+    } else {
+
+        ADVANCE.STYLED(DIV,'background','#311f68');
+
+        localStorage.setItem('ModeColour','#311f68')
+
+        
+    }
 
     ADVANCE.OPERATINGSYSTEM();
 
