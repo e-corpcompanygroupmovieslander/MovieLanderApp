@@ -15,98 +15,125 @@
 
   <h1>Thank You For Pay For Your </h1>
 
-  <h1> OPEN THE APP AND CONFIRM YOUR PAYMENTS WITH YOUR REFERENCE Number Sent To Your Email.</h1>
+  <h1> Enter Your Movie Lander Email To Complete Payment</h1>
   
+  <input class="input" type="email" placeholder="Enter Your Movie Lander Email"/>
+
+  <button onclick="complete()">Complete Your Payment</button>
 
   <script>
-    // Fetching data and storing it in local storage
-    fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
-    .then(res => {
-      // Extract headers as an object
-      const headers = {};
-      res.headers.forEach((value, name) => {
-        headers[name] = value;
-      });
 
-      // Get URL parameters
-      const urlParams = new URLSearchParams(window.location.search);
-      const params = {};
-      for (const [key, value] of urlParams) {
-        params[key] = value;
+    const INPUT=document.querySelector('.input');
+
+    complete=()=>{
+      
+      if (!INPUT.value) {
+
+        alert('Enter Your Movie Lander Email');
+
+      } else {
+          
+      // Fetching data and storing it in local storage
+      fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
+      .then(res => {
+        // Extract headers as an object
+        const headers = {};
+        res.headers.forEach((value, name) => {
+          headers[name] = value;
+        });
+
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const params = {};
+        for (const [key, value] of urlParams) {
+          params[key] = value;
+        }
+
+        // Read response body as text
+        return res.text().then(body => {
+          // Combine all data into an object
+          const requestData = {
+            url: res.url,
+            method: res.method,
+            headers: headers,
+            parameters: params,
+            body: body
+          };
+
+          // Save parameters as JSON
+          localStorage.setItem('parameters', JSON.stringify(requestData.parameters));
+
+          // Get current time
+          const currentTime = new Date();
+
+          // Calculate expiration time (24 hours)
+          const expirationTime = new Date(currentTime.getTime() + (24 * 60 * 60 * 1000));
+
+          // Save expiration time parts separately
+          localStorage.setItem('currentdate', currentTime.toDateString());
+          localStorage.setItem('currenttime', currentTime.toLocaleTimeString());
+          localStorage.setItem('expiryDate', expirationTime.toDateString());
+          localStorage.setItem('expiryTime', expirationTime.toLocaleTimeString());
+          localStorage.setItem('expiryHours', expirationTime.getHours().toString());
+
+          // Save the combined data to local storage
+          localStorage.setItem('requestData', JSON.stringify(requestData));
+
+          // Return the combined data
+          return requestData;
+        });
+      })
+      .then(requestData => {
+        // Here you can access the combined data if needed
+        //console.log(requestData);
+      })
+      .catch(error => console.log(error, 'error'));
+
+      // Retrieving parameters from local storage and logging them
+      const storedParameters = localStorage.getItem('parameters');
+      if (storedParameters) {
+        //console.log(JSON.parse(storedParameters));
+        localStorage.setItem('user',JSON.stringify(JSON.parse(storedParameters).OrderMerchantReference));
+
+        const DATA={
+          "User":INPUT.value,
+          "AmountPaid":"DAILY",
+          "PaidTo":"Movie Lander",
+          "PayeeName":"MovieLander",
+          "Id":JSON.parse(storedParameters).OrderMerchantReference,
+          "PayDate":localStorage.getItem('currentdate')+localStorage.getItem('currenttime'),
+          "ExpiryDate":localStorage.getItem('expiryDate')+localStorage.getItem('expiryTime'),
+          "Message":"Movie Lander"
+        }
+
+        fetch('https://script.google.com/macros/s/AKfycbwgGvYpjnmCe3h6SKdyIlKajs5fuN2287dXQqQ2VWTKfNMBY1mIKHlSDai8PY__u-pb/exec',{
+          method:"POST",
+          mode:'no-cors',
+          body:JSON.stringify(DATA)
+        })
+
+        .then(res=>res.text())
+        .then(data =>{
+          
+          document.querySelector('body').innerHTML=`
+
+          <h1>Payment Complete</h1>
+          
+          <h1>Open App To Start Enjoy</h1>
+
+          `
+
+        })
+        .catch(error=>console.log(error))
+
+      } else {
+        console.log('No parameters found in local storage');
       }
 
-      // Read response body as text
-      return res.text().then(body => {
-        // Combine all data into an object
-        const requestData = {
-          url: res.url,
-          method: res.method,
-          headers: headers,
-          parameters: params,
-          body: body
-        };
+        }
 
-        // Save parameters as JSON
-        localStorage.setItem('parameters', JSON.stringify(requestData.parameters));
-
-        // Get current time
-        const currentTime = new Date();
-
-        // Calculate expiration time (24 hours)
-        const expirationTime = new Date(currentTime.getTime() + (24 * 60 * 60 * 1000));
-
-        // Save expiration time parts separately
-        localStorage.setItem('currentdate', currentTime.toDateString());
-        localStorage.setItem('currenttime', currentTime.toLocaleTimeString());
-        localStorage.setItem('expiryDate', expirationTime.toDateString());
-        localStorage.setItem('expiryTime', expirationTime.toLocaleTimeString());
-        localStorage.setItem('expiryHours', expirationTime.getHours().toString());
-
-        // Save the combined data to local storage
-        localStorage.setItem('requestData', JSON.stringify(requestData));
-
-        // Return the combined data
-        return requestData;
-      });
-    })
-    .then(requestData => {
-      // Here you can access the combined data if needed
-      //console.log(requestData);
-    })
-    .catch(error => console.log(error, 'error'));
-
-    // Retrieving parameters from local storage and logging them
-    const storedParameters = localStorage.getItem('parameters');
-    if (storedParameters) {
-      //console.log(JSON.parse(storedParameters));
-      localStorage.setItem('user',JSON.stringify(JSON.parse(storedParameters).OrderMerchantReference));
-
-      const DATA={
-        "User":JSON.parse(storedParameters).OrderMerchantReference,
-        "AmountPaid":"DAILY",
-        "PaidTo":"Movie Lander",
-        "PayeeName":"MovieLander",
-        "Id":JSON.parse(storedParameters).OrderTrackingId,
-        "PayDate":localStorage.getItem('currentdate')+localStorage.getItem('currenttime'),
-        "ExpiryDate":localStorage.getItem('expiryDate')+localStorage.getItem('expiryTime'),
-        "Message":"Movie Lander"
       }
 
-      fetch('https://script.google.com/macros/s/AKfycbwgGvYpjnmCe3h6SKdyIlKajs5fuN2287dXQqQ2VWTKfNMBY1mIKHlSDai8PY__u-pb/exec',{
-        method:"POST",
-        mode:'no-cors',
-        body:JSON.stringify(DATA)
-      })
-
-      .then(res=>res.text())
-      .then(data =>{
-        console.log(data);
-      })
-      .catch(error=>console.log(error))
-
-    } else {
-      console.log('No parameters found in local storage');
-    }
   </script>
 </body>
 </html>

@@ -9,17 +9,32 @@
 </head>
 <body>
 
+
   <h1>MOVIE LANDER </h1>
 
   <h1>Pay Ment Made For Monthly Subscription</h1>
 
   <h1>Thank You For Pay For Your </h1>
+
+  <h1> Enter Your Movie Lander Email To Complete Payment</h1>
   
-  <h1> OPEN THE APP AND CONFIRM YOUR PAYMENTS WITH YOUR REFERENCE Number Sent To Your Email.</h1>
-  
+  <input class="input" type="email" placeholder="Enter Your Movie Lander Email"/>
+
+  <button onclick="complete()">Complete Your Payment</button> 
 
   <script>
-    // Fetching data and storing it in local storage
+
+    const INPUT=document.querySelector('.input');
+
+    complete=()=>{
+      
+      if (!INPUT.value) {
+
+        alert('Enter Your Movie Lander Email');
+
+      } else {
+
+            // Fetching data and storing it in local storage
     fetch('https://e-corpcompanygroupmovieslander.github.io/MovieLanderApp/PAGES/PAYMENT%20SYSTEM/dailypesapal.html')
     .then(res => {
       // Extract headers as an object
@@ -82,11 +97,11 @@
       localStorage.setItem('user',JSON.stringify(JSON.parse(storedParameters).OrderMerchantReference));
 
       const DATA={
-        "User":JSON.parse(storedParameters).OrderMerchantReference,
+        "User":INPUT.value,
         "AmountPaid":"MONTHLY",
         "PaidTo":"Movie Lander",
         "PayeeName":"MovieLander",
-        "Id":JSON.parse(storedParameters).OrderTrackingId,
+        "Id":JSON.parse(storedParameters).OrderMerchantReference,
         "PayDate":localStorage.getItem('currentdate')+localStorage.getItem('currenttime'),
         "ExpiryDate":localStorage.getItem('expiryDate')+localStorage.getItem('expiryTime'),
         "Message":"Movie Lander"
@@ -100,13 +115,27 @@
 
       .then(res=>res.text())
       .then(data =>{
-        console.log(data);
+        
+        document.querySelector('body').innerHTML=`
+
+          <h1>Payment Complete</h1>
+          
+          <h1>Open App To Start Enjoy</h1>
+
+          `;
+
       })
       .catch(error=>console.log(error))
 
     } else {
       console.log('No parameters found in local storage');
     }
+
+    }
+  }      
+   
+
   </script>
+
 </body>
 </html>
